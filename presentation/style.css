@@ -1,0 +1,203 @@
+:root {
+    --ted-red: #eb0028;
+    --ted-black: #000000;
+    --ted-white: #ffffff;
+    --ted-gray: #f2f2f2;
+    --ted-dark-gray: #1a1a1a;
+    --font-main: 'Inter', sans-serif;
+    --font-heading: 'Outfit', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--ted-black);
+    color: var(--ted-white);
+    font-family: var(--font-main);
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+}
+
+.presentation {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem;
+    opacity: 0;
+    transform: translateX(100px);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.slide.active {
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: auto;
+}
+
+.content {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1000px;
+}
+
+.background-text {
+    position: absolute;
+    font-family: var(--font-heading);
+    font-size: 30vw;
+    font-weight: 900;
+    color: rgba(255, 255, 255, 0.02);
+    z-index: 1;
+    white-space: nowrap;
+    pointer-events: none;
+    user-select: none;
+}
+
+/* Title Slide */
+.logo {
+    font-family: var(--font-heading);
+    font-size: 8rem;
+    font-weight: 900;
+    letter-spacing: -2px;
+}
+
+.red {
+    color: var(--ted-red);
+}
+
+.subtitle {
+    font-size: 2rem;
+    color: #888;
+    margin-top: 1rem;
+}
+
+.tagline {
+    margin-top: 4rem;
+    font-size: 1.2rem;
+    letter-spacing: 0.5em;
+    text-transform: uppercase;
+    color: var(--ted-red);
+}
+
+/* Content Slide */
+.content-slide {
+    background-color: var(--ted-dark-gray);
+    justify-content: flex-start;
+}
+
+.content-slide h2 {
+    font-family: var(--font-heading);
+    font-size: 4rem;
+    margin-bottom: 2rem;
+    position: relative;
+    display: inline-block;
+}
+
+.content-slide h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 100px;
+    height: 4px;
+    background-color: var(--ted-red);
+}
+
+.content-body ul {
+    list-style: none;
+    font-size: 2rem;
+    margin-top: 2rem;
+}
+
+.content-body li {
+    margin-bottom: 1.5rem;
+    padding-left: 2rem;
+    position: relative;
+}
+
+.content-body li::before {
+    content: '▶';
+    position: absolute;
+    left: 0;
+    color: var(--ted-red);
+    font-size: 1.2rem;
+    top: 0.8rem;
+}
+
+/* Mission Slide */
+.mission-slide {
+    background: linear-gradient(135deg, var(--ted-red), #800);
+    text-align: center;
+}
+
+.mission-slide .content {
+    max-width: 1200px;
+}
+
+.mission-text {
+    font-family: var(--font-heading);
+    font-size: 4.5rem;
+    font-weight: 900;
+    line-height: 1.2;
+}
+
+.mission-label {
+    margin-top: 3rem;
+    font-size: 1.2rem;
+    letter-spacing: 0.3em;
+    opacity: 0.7;
+}
+
+/* Controls */
+.controls {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    z-index: 10;
+}
+
+.control-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: background 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.control-btn:hover {
+    background: var(--ted-red);
+}
+
+#slideIndicator {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    opacity: 0.5;
+}
