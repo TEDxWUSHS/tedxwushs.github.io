@@ -25,7 +25,7 @@ const Header = () => {
     { name: 'Home', href: '/' },
     { name: 'About', href: '/about' },
     { name: 'Speakers', href: '/speakers' },
-    { name: 'Team', href: '/team' },
+    // { name: 'Team', href: '/team' },
     { name: 'Join Us', href: '/join-us' },
     { name: 'FAQ', href: '/faq' },
   ];
@@ -94,6 +94,7 @@ const Header = () => {
           z-index: 1000;
           padding: 1.5rem 0;
           transition: var(--transition-smooth);
+          will-change: background, padding;
         }
 
         .header.scrolled {

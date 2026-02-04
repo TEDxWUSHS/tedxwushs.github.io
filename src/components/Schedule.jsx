@@ -2,12 +2,15 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const scheduleData = [
-  { time: "14:30", event: "Door Open", description: "開場・受付" },
-  { time: "15:00", event: "Opening Ceremony", description: "オープニングセッション" },
-  { time: "15:15", event: "Session 1", description: "若き才能による3つのトーク" },
-  { time: "16:15", event: "Coffee Break", description: "ネットワーキング & 休憩" },
-  { time: "16:45", event: "Session 2", description: "未来を創るためのアイデア" },
-  { time: "17:45", event: "Closing Room", description: "クロージング & 集合写真" }
+  { time: "15:30", event: "Doors Open", description: "開場" },
+  { time: "16:00", event: "Opening Ceremony", description: "開会" },
+  { time: "16:15", event: "Session 1", description: "トーク１" },
+  { time: "16:50", event: "Workshop 1", description: "ワークショップ１" },
+  { time: "17:10", event: "Break", description: "休憩" },
+  { time: "17:20", event: "Session 2", description: "トーク２" },
+  { time: "18:20", event: "Closing Ceremony", description: "閉会" },
+  { time: "18:30", event: "Networking", description: "交流会" },
+  { time: "19:00", event: "End", description: "イベント終了" }
 ];
 
 const Schedule = () => {

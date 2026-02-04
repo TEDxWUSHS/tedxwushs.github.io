@@ -88,6 +88,7 @@ const Hero = () => {
         .hero-cta {
           display: flex;
           gap: 1.5rem;
+          flex-wrap: wrap;
         }
 
         .btn {
@@ -131,18 +132,19 @@ const Hero = () => {
           box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
           position: relative;
           z-index: 2;
+          will-change: transform;
         }
 
         .poster-glow {
           position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background: var(--ted-red);
-          filter: blur(80px);
-          opacity: 0.2;
+          top: -20%;
+          left: -20%;
+          width: 140%;
+          height: 140%;
+          background: radial-gradient(circle, rgba(235, 0, 40, 0.4) 0%, rgba(235, 0, 40, 0) 70%);
+          opacity: 0.6;
           z-index: 1;
+          will-change: transform;
         }
 
         @media (max-width: 1024px) {
@@ -152,6 +154,9 @@ const Hero = () => {
         }
 
         @media (max-width: 768px) {
+          .hero {
+            padding-bottom: 60px;
+          }
           .hero-container {
             grid-template-columns: 1fr;
             text-align: center;
