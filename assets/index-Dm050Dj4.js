@@ -423,6 +423,7 @@ Error generating stack: `+s.message+`
         .hero-cta {
           display: flex;
           gap: 1.5rem;
+          flex-wrap: wrap;
         }
 
         .btn {
@@ -488,6 +489,9 @@ Error generating stack: `+s.message+`
         }
 
         @media (max-width: 768px) {
+          .hero {
+            padding-bottom: 60px;
+          }
           .hero-container {
             grid-template-columns: 1fr;
             text-align: center;
