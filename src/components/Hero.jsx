@@ -18,14 +18,14 @@ const Hero = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5 }}
           >
-            TEDx Waseda University Senior High School Youth
+            Waseda University Senior High School
           </motion.span>
           <h1 className="hero-title">
             Ideas Worth <br /> <span className="highlight-red">Spreading</span>
           </h1>
           <p className="hero-description">
-            早稲田大学高等学院で開催される、次世代の若者たちによるTEDxイベント。
-            常識を打ち破り、新しい価値観を創造する場所。
+            早稲田大学高等学院で開催される、学院生によるTEDxイベント。
+            広める価値のあるアイデアを
           </p>
           <div className="hero-cta">
             <Link to="/about" className="btn btn-primary">Discover More</Link>
