@@ -2,15 +2,15 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const scheduleData = [
-  { time: "15:30", event: "Doors Open", description: "開場" },
-  { time: "16:00", event: "Opening Ceremony", description: "開会" },
-  { time: "16:15", event: "Session 1", description: "トーク１" },
-  { time: "16:50", event: "Workshop 1", description: "ワークショップ１" },
-  { time: "17:10", event: "Break", description: "休憩" },
-  { time: "17:20", event: "Session 2", description: "トーク２" },
-  { time: "18:20", event: "Closing Ceremony", description: "閉会" },
-  { time: "18:30", event: "Networking", description: "交流会" },
-  { time: "19:00", event: "End", description: "イベント終了" }
+  { time: "13:00", event: "Doors Open", description: "開場" },
+  { time: "13:30", event: "Opening Ceremony", description: "開会" },
+  { time: "13:45", event: "Session 1", description: "トーク１" },
+  { time: "14:45", event: "Workshop 1", description: "ワークショップ１" },
+  { time: "15:20", event: "Break", description: "休憩" },
+  { time: "15:30", event: "Session 2", description: "トーク２" },
+  { time: "16:30", event: "Closing Ceremony", description: "閉会" },
+  { time: "16:45", event: "Networking", description: "交流会" },
+  { time: "18:00", event: "End", description: "イベント終了" }
 ];
 
 const Schedule = () => {
@@ -24,7 +24,7 @@ const Schedule = () => {
           viewport={{ once: true }}
         >
           <h2 className="section-title">Event <span className="highlight-red">Schedule</span></h2>
-          <p className="section-subtitle">2026年5月の開催予定。時間は前後する可能性があります。</p>
+          <p className="section-subtitle">2026年10月31日（土）13:00〜18:00 開催予定。時間は前後する可能性があります。</p>
         </motion.div>
 
         <div className="timeline">

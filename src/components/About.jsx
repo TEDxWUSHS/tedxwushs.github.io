@@ -36,7 +36,7 @@ const About = () => {
               私たちは、対話を通じて互いの可能性を広げ、新しい一歩を踏み出すきっかけを作ります。
             </p>
             <p className="event-info">
-              <strong>Date:</strong> May 2026 (Day to be announced)<br />
+              <strong>Date:</strong> October 31, 2026 (13:00 - 18:00)<br />
               <strong>Venue:</strong> <a href="https://www.waseda.jp/school/shs/" target="_blank" rel="noopener" className="highlight-link">Waseda University Senior High School</a>, Nerima, Tokyo<br />
               <strong>Theme:</strong> To be announced
             </p>
