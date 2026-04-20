@@ -711,7 +711,7 @@ Error generating stack: `+s.message+`
           font-size: 0.8rem;
           letter-spacing: 0.1em;
         }
-      `})]}),B2=[{time:"13:00",event:"Doors Open",description:"開場"},{time:"13:30",event:"Opening Ceremony",description:"開会"},{time:"13:45",event:"Session 1",description:"トーク１"},{time:"14:45",event:"Workshop 1",description:"ワークショップ１"},{time:"15:20",event:"Break",description:"休憩"},{time:"15:30",event:"Session 2",description:"トーク２"},{time:"16:30",event:"Closing Ceremony",description:"閉会"},{time:"16:45",event:"Networking",description:"交流会"},{time:"18:00",event:"End",description:"イベント終了"}],U2=()=>f.jsxs("section",{id:"schedule",className:"schedule section-padding",children:[f.jsxs("div",{className:"container",children:[f.jsxs(ye.div,{className:"section-header",initial:{opacity:0,y:20},whileInView:{opacity:1,y:0},viewport:{once:!0},children:[f.jsxs("h2",{className:"section-title",children:["Event ",f.jsx("span",{className:"highlight-red",children:"Schedule"})]}),f.jsx("p",{className:"section-subtitle",children:"2026年10月31日（土）13:00〜18:00 開催予定。時間は前後する可能性があります。"})]}),f.jsx("div",{className:"timeline",children:B2.map((e,t)=>f.jsxs(ye.div,{className:"timeline-item",initial:{opacity:0,x:t%2===0?-50:50},whileInView:{opacity:1,x:0},viewport:{once:!0},transition:{delay:t*.1},children:[f.jsx("div",{className:"time",children:e.time}),f.jsxs("div",{className:"event-content",children:[f.jsx("h3",{children:e.event}),f.jsx("p",{children:e.description})]})]},t))})]}),f.jsx("style",{jsx:!0,children:`
+      `})]}),B2=[{time:"14:00",event:"Doors Open",description:"開場"},{time:"14:30",event:"Opening Ceremony",description:"開会"},{time:"14:40",event:"Session 1",description:"トーク１"},{time:"15:40",event:"Workshop 1",description:"ワークショップ１"},{time:"16:10",event:"Break",description:"休憩"},{time:"16:20",event:"Session 2",description:"トーク２"},{time:"17:20",event:"Closing Ceremony",description:"閉会"},{time:"17:30",event:"Networking",description:"交流会"},{time:"18:00",event:"Event Ends",description:"イベント終了"}],U2=()=>f.jsxs("section",{id:"schedule",className:"schedule section-padding",children:[f.jsxs("div",{className:"container",children:[f.jsxs(ye.div,{className:"section-header",initial:{opacity:0,y:20},whileInView:{opacity:1,y:0},viewport:{once:!0},children:[f.jsxs("h2",{className:"section-title",children:["Event ",f.jsx("span",{className:"highlight-red",children:"Schedule"})]}),f.jsx("p",{className:"section-subtitle",children:"2026年10月31日（土）13:00〜18:00 開催予定。時間は前後する可能性があります。"})]}),f.jsx("div",{className:"timeline",children:B2.map((e,t)=>f.jsxs(ye.div,{className:"timeline-item",initial:{opacity:0,x:t%2===0?-50:50},whileInView:{opacity:1,x:0},viewport:{once:!0},transition:{delay:t*.1},children:[f.jsx("div",{className:"time",children:e.time}),f.jsxs("div",{className:"event-content",children:[f.jsx("h3",{children:e.event}),f.jsx("p",{children:e.description})]})]},t))})]}),f.jsx("style",{jsx:!0,children:`
         .schedule {
           background-color: var(--ted-dark-gray);
         }
@@ -1128,6 +1128,7 @@ Error generating stack: `+s.message+`
         .cta-box h3 { font-size: 2.5rem; margin-bottom: 1rem; }
         .cta-box p { margin-bottom: 3rem; opacity: 0.9; font-size: 1.2rem; }
         .btn-primary-large {
+          display: inline-block;
           background: white;
           color: var(--ted-red);
           padding: 1.5rem 4rem;
@@ -1135,6 +1136,7 @@ Error generating stack: `+s.message+`
           font-weight: 800;
           text-transform: uppercase;
           font-size: 1.1rem;
+          white-space: nowrap;
           transition: var(--transition-smooth);
         }
         .btn-primary-large:hover { transform: scale(1.05); box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
@@ -1143,6 +1145,7 @@ Error generating stack: `+s.message+`
           .benefits-grid, .steps-container { grid-template-columns: 1fr; }
           h1 { font-size: 2.5rem; }
           .cta-box { padding: 3rem 1.5rem; }
+          .btn-primary-large { padding: 1.2rem 2.5rem; font-size: 1rem; }
         }
       `})]})},G2=()=>{const e=[{title:"Operations",icon:f.jsx(cl,{size:32}),desc:"イベントの全体企画、進行、会場設営などを担います。"},{title:"Marketing",icon:f.jsx(P2,{size:32}),desc:"SNSやWebサイトを通じた広報活動、ブランディングを担います。"},{title:"Curation",icon:f.jsx(N2,{size:32}),desc:"スピーカーの選定、スピーチ構成のサポートを担います。"},{title:"Creative",icon:f.jsx(f2,{size:32}),desc:"デザイン、映像制作、Web開発などを担います。"}];return f.jsxs("div",{className:"recruit-page",style:{paddingTop:"120px"},children:[f.jsxs("div",{className:"container",children:[f.jsxs(Ue,{to:"/join-us",className:"back-link",children:[f.jsx(bu,{size:16})," Back to Opportunities"]}),f.jsxs("header",{className:"recruit-header",children:[f.jsx("div",{className:"icon-circle",children:f.jsx(cl,{size:48})}),f.jsxs("h1",{children:["Join the ",f.jsx("span",{className:"highlight-red",children:"Team"})]}),f.jsx("p",{className:"lead-text",children:"運営、デザイン、広報など、共にイベントを創り上げる仲間を募集しています。"})]}),f.jsxs("section",{className:"detail-section",children:[f.jsx("h2",{children:"Departments"}),f.jsx("div",{className:"departments-grid",children:e.map((t,n)=>f.jsxs("div",{className:"dept-card",children:[f.jsx("div",{className:"dept-icon",children:t.icon}),f.jsx("h3",{children:t.title}),f.jsx("p",{children:t.desc})]},n))})]}),f.jsxs("section",{className:"why-join-section",children:[f.jsx("h2",{children:"What we look for"}),f.jsxs("div",{className:"values-grid",children:[f.jsxs("div",{className:"value-item",children:[f.jsx("h3",{children:"Passion"}),f.jsx("p",{children:"アイデアを広めること、新しい価値を創ることに情熱を持っている方。"})]}),f.jsxs("div",{className:"value-item",children:[f.jsx("h3",{children:"Collaboration"}),f.jsx("p",{children:"多様な視点を尊重し、チームで最高のパフォーマンスを発揮できる方。"})]}),f.jsxs("div",{className:"value-item",children:[f.jsx("h3",{children:"Proactive"}),f.jsx("p",{children:"自ら考え、行動し、変化を恐れずに挑戦し続けられる方。"})]})]})]}),f.jsxs("div",{className:"cta-box blue-gradient",children:[f.jsx("h3",{children:"Your Journey Starts Here"}),f.jsx("p",{children:"早稲田大学高等学院から、世界を動かすチームになりましょう。"}),f.jsx("button",{className:"btn-white-large",children:"Apply to Join the Team"})]})]}),f.jsx("style",{jsx:!0,children:`
         .recruit-page { background: var(--ted-black); color: white; padding-bottom: 8rem; }
