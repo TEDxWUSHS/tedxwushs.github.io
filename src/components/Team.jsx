@@ -7,20 +7,20 @@ const Team = () => {
       role: 'Co-Organizer',
       name: '松田 龍昌',
       englishName: 'Tatsuaki Matsuda',
-      grade: '2-J'
+      grade: '3-J'
     },
     {
       role: 'Organizer',
       name: '川俣 晴輝',
       englishName: 'Haruki Kawamata',
-      grade: '2-F',
+      grade: '3-F',
       main: true
     },
     {
       role: 'Co-Organizer',
       name: '坂井 寛徳',
       englishName: 'Hironori Sakai',
-      grade: '1-D'
+      grade: '2-D'
     }
   ];
 
