@@ -145,6 +145,7 @@ const SpeakerRecruitment = () => {
         .cta-box h3 { font-size: 2.5rem; margin-bottom: 1rem; }
         .cta-box p { margin-bottom: 3rem; opacity: 0.9; font-size: 1.2rem; }
         .btn-primary-large {
+          display: inline-block;
           background: white;
           color: var(--ted-red);
           padding: 1.5rem 4rem;
@@ -152,6 +153,7 @@ const SpeakerRecruitment = () => {
           font-weight: 800;
           text-transform: uppercase;
           font-size: 1.1rem;
+          white-space: nowrap;
           transition: var(--transition-smooth);
         }
         .btn-primary-large:hover { transform: scale(1.05); box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
@@ -160,6 +162,7 @@ const SpeakerRecruitment = () => {
           .benefits-grid, .steps-container { grid-template-columns: 1fr; }
           h1 { font-size: 2.5rem; }
           .cta-box { padding: 3rem 1.5rem; }
+          .btn-primary-large { padding: 1.2rem 2.5rem; font-size: 1rem; }
         }
       `}</style>
     </div>
