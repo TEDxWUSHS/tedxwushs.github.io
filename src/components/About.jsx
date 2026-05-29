@@ -38,7 +38,7 @@ const About = () => {
             <p className="event-info">
               <strong>Date:</strong> October 31, 2026 (14:00 - 18:00)<br />
               <strong>Venue:</strong> <a href="https://www.waseda.jp/school/shs/" target="_blank" rel="noopener" className="highlight-link">Waseda University Senior High School</a>, Nerima, Tokyo<br />
-              <strong>Theme:</strong> To be announced
+              <strong>Theme:</strong> Breakshot
             </p>
           </motion.div>
         </div>
@@ -52,7 +52,7 @@ const About = () => {
         >
           <h3>Theme</h3>
           <p className="mission-text">
-            "To be announced..."
+            "Breakshot"
           </p>
         </motion.div>
       </div>

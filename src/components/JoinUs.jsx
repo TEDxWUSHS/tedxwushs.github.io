@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Users, Mic, Ticket, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const JoinUs = () => {
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
   const opportunities = [
     {
       title: 'Become a Speaker',
@@ -74,11 +76,38 @@ const JoinUs = () => {
         >
           <div className="newsletter-content">
             <h3>Stay Updated</h3>
-            <p>イベントの最新情報や募集のお知らせをメールでお届けします。</p>
-            <form className="newsletter-form" onSubmit={(e) => e.preventDefault()}>
-              <input type="email" placeholder="Enter your email address" />
-              <button type="submit" className="btn-primary">Subscribe</button>
-            </form>
+
+            <iframe
+              title="hidden_iframe"
+              name="hidden_iframe"
+              id="hidden_iframe"
+              style={{ display: 'none' }}
+            ></iframe>
+
+            <div style={{ display: isSubmitted ? 'block' : 'none' }} className="success-message">
+              <p>登録完了しました<br />イベントの最新情報をお届けしますのでお楽しみに。</p>
+            </div>
+
+            <div style={{ display: isSubmitted ? 'none' : 'block' }}>
+              <p>イベントの最新情報や募集のお知らせをメールでお届けします。</p>
+              <form
+                className="newsletter-form"
+                action="https://docs.google.com/forms/d/e/1FAIpQLScvnsbAaQFhyodG3GY4qXmTAj919BFivczNyE9bOt4Z_TxuWw/formResponse"
+                method="post"
+                target="hidden_iframe"
+                onSubmit={() => {
+                  setTimeout(() => setIsSubmitted(true), 300);
+                }}
+              >
+                <input
+                  type="email"
+                  name="entry.269866944"
+                  placeholder="Enter your email address"
+                  required
+                />
+                <button type="submit" className="btn-primary">Subscribe</button>
+              </form>
+            </div>
           </div>
         </motion.div>
       </div>
@@ -222,6 +251,17 @@ const JoinUs = () => {
         .btn-primary:hover {
           background: #ff1a40;
           transform: scale(1.05);
+        }
+
+        .success-message {
+          background: rgba(255, 255, 255, 0.05);
+          border: 1px solid var(--ted-red);
+          border-radius: 8px;
+          padding: 2rem;
+          margin-top: 1.5rem;
+          color: white;
+          font-weight: 500;
+          line-height: 1.6;
         }
 
         @media (max-width: 1024px) {

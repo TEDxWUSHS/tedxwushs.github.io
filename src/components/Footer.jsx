@@ -34,7 +34,7 @@ const Footer = () => {
             <div className="social-icons">
               <a href="https://www.instagram.com/tedxwushs/" target="_blank" rel="noopener" aria-label="Instagram"><Instagram size={24} /></a>
               <a href="https://x.com/TEDxWUSHS" target="_blank" rel="noopener" aria-label="Twitter"><Twitter size={24} /></a>
-              <a href="#" aria-label="YouTube"><Youtube size={24} /></a>
+              {/* <a href="#" aria-label="YouTube"><Youtube size={24} /></a> */}
               <a href="mailto:tedxwushs@gmail.com" aria-label="Email"><Mail size={24} /></a>
             </div>
             <p className="footer-handle">@TEDxWUSHS</p>

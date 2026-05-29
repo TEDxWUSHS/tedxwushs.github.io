@@ -24,7 +24,7 @@ const Schedule = () => {
           viewport={{ once: true }}
         >
           <h2 className="section-title">Event <span className="highlight-red">Schedule</span></h2>
-          <p className="section-subtitle">2026年10月31日（土）13:00〜18:00 開催予定。時間は前後する可能性があります。</p>
+          <p className="section-subtitle">2026年10月31日（土）14:00〜18:00 開催予定。時間は前後する可能性があります。</p>
         </motion.div>
 
         <div className="timeline">
