@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://tedxwushs.github.io/sitemap.xml
