@@ -1,11 +1,9 @@
-import React from 'react';
-import { motion } from 'framer-motion';
 import { Mic, CheckCircle, ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const SpeakerRecruitment = () => {
   const steps = [
-    { title: 'Application', desc: 'フォームからあなたのアイデアを応募してください。' },
+    { title: 'Application', desc: '2026年開催分の応募受付は終了しました。' },
     { title: 'Audition', desc: '運営チームとの面談で、アイデアを深掘りします。' },
     { title: 'Curation', desc: 'TEDxの基準に合わせて、スピーチを磨き上げます。' },
     { title: 'The Stage', desc: 'TEDxWUSHS Youthのステージで、世界へ発信！' }
@@ -20,8 +18,8 @@ const SpeakerRecruitment = () => {
 
         <header className="recruit-header">
           <div className="icon-circle"><Mic size={48} /></div>
-          <h1>Become a <span className="highlight-red">Speaker</span></h1>
-          <p className="lead-text">あなたの「広める価値のあるアイデア」をステージで共有しませんか？</p>
+          <h1>Speaker <span className="highlight-red">Applications</span></h1>
+          <p className="lead-text">2026年開催分のスピーカー募集は終了しました。</p>
         </header>
 
         <section className="detail-section">
@@ -56,20 +54,13 @@ const SpeakerRecruitment = () => {
         </section>
 
         <div className="cta-box">
-          <h3>Are you ready?</h3>
-          <p>あなたのアイデアには、誰かの世界を変える力があります。</p>
-          <a
-            href="https://docs.google.com/forms/d/e/1FAIpQLSc00EYE-VJXP5QKmI0rAPVIox4JvTGai1prv12fOMLviPG_mA/viewform"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-primary-large"
-          >
-            Apply as a Speaker
-          </a>
+          <h3>Applications Closed</h3>
+          <p>たくさんのご応募ありがとうございました。今後の募集については、ウェブサイトとSNSでお知らせします。</p>
+          <span className="closed-label">2026 Speaker Applications Closed</span>
         </div>
       </div>
 
-      <style jsx>{`
+      <style>{`
         .recruit-page {
           background-color: var(--ted-black);
           color: white;
@@ -144,25 +135,23 @@ const SpeakerRecruitment = () => {
         }
         .cta-box h3 { font-size: 2.5rem; margin-bottom: 1rem; }
         .cta-box p { margin-bottom: 3rem; opacity: 0.9; font-size: 1.2rem; }
-        .btn-primary-large {
+        .closed-label {
           display: inline-block;
           background: white;
           color: var(--ted-red);
-          padding: 1.5rem 4rem;
+          padding: 1.2rem 2.5rem;
           border-radius: 100px;
           font-weight: 800;
           text-transform: uppercase;
-          font-size: 1.1rem;
+          font-size: 0.9rem;
           white-space: nowrap;
-          transition: var(--transition-smooth);
         }
-        .btn-primary-large:hover { transform: scale(1.05); box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
 
         @media (max-width: 900px) {
           .benefits-grid, .steps-container { grid-template-columns: 1fr; }
           h1 { font-size: 2.5rem; }
           .cta-box { padding: 3rem 1.5rem; }
-          .btn-primary-large { padding: 1.2rem 2.5rem; font-size: 1rem; }
+          .closed-label { padding: 1rem 1.5rem; font-size: 0.75rem; }
         }
       `}</style>
     </div>

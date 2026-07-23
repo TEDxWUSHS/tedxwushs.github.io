@@ -1,16 +1,21 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 
 const scheduleData = [
-  { time: "13:30", event: "Doors Open", description: "開場" },
-  { time: "14:00", event: "Opening Ceremony", description: "開会" },
-  { time: "14:10", event: "Session 1", description: "トーク１" },
-  { time: "15:10", event: "Workshop 1", description: "ワークショップ１" },
-  { time: "15:40", event: "Break", description: "休憩" },
-  { time: "15:50", event: "Session 2", description: "トーク２" },
-  { time: "17:00", event: "Closing Ceremony", description: "閉会" },
-  { time: "17:10", event: "Networking", description: "交流会" },
-  { time: "17:50", event: "Event Ends", description: "イベント終了" }
+  { time: "14:00", event: "Doors Open", description: "開場" },
+  { time: "14:30", event: "Opening", description: "開会・オープニング" },
+  { time: "14:40", event: "Talk Section 1", description: "トークセクション1" },
+  { time: "14:45–15:00", event: "Talk 1", description: "トーク1" },
+  { time: "15:00–15:15", event: "Talk 2", description: "トーク2" },
+  { time: "15:15–15:30", event: "Talk 3", description: "トーク3" },
+  { time: "15:30–15:50", event: "Break", description: "休憩" },
+  { time: "15:50", event: "Talk Section 2", description: "トークセクション2" },
+  { time: "16:00–16:10", event: "Talk 4", description: "トーク4" },
+  { time: "16:15–16:25", event: "Talk 5", description: "トーク5" },
+  { time: "16:30–16:45", event: "Talk 6", description: "トーク6" },
+  { time: "16:45–17:00", event: "Talk 7", description: "トーク7" },
+  { time: "17:00", event: "Closing", description: "閉会" },
+  { time: "17:20–17:50", event: "Workshop & Networking", description: "Workshop・交流会" },
+  { time: "18:00頃", event: "Event Ends", description: "終了" }
 ];
 
 const Schedule = () => {
@@ -47,7 +52,7 @@ const Schedule = () => {
         </div>
       </div>
 
-      <style jsx>{`
+      <style>{`
         .schedule {
           background-color: var(--ted-dark-gray);
         }
@@ -103,12 +108,13 @@ const Schedule = () => {
 
         .time {
           font-family: var(--font-heading);
-          font-size: 1.5rem;
+          font-size: clamp(1rem, 2.2vw, 1.5rem);
           font-weight: 800;
           color: var(--ted-red);
           position: absolute;
           right: calc(50% + 30px);
           top: -10px;
+          white-space: nowrap;
         }
 
         .timeline-item:nth-child(even) .time {

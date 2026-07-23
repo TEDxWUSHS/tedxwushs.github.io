@@ -1,5 +1,3 @@
-import React from 'react';
-import { motion } from 'framer-motion';
 import { Ticket, Bell, Calendar, ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -14,7 +12,7 @@ const AudienceRegistration = () => {
                 <header className="recruit-header">
                     <div className="icon-circle"><Ticket size={48} /></div>
                     <h1>Register as <span className="highlight-red">Audience</span></h1>
-                    <p className="lead-text">最新情報を受け取り、次回のイベント参加チケットを予約しましょう。</p>
+                    <p className="lead-text">参加申込みは2026年9月開始予定です。受付開始まで今しばらくお待ちください。</p>
                 </header>
 
                 <div className="audience-layout">
@@ -31,34 +29,23 @@ const AudienceRegistration = () => {
                             <div className="info-icon"><Calendar size={24} /></div>
                             <div>
                                 <h3>Upcoming Events</h3>
-                                <p>次回のカンファレンスの日程は現在調整中です。決定次第、メールにてお知らせいたします。</p>
+                                <p>2026年10月31日（土）14:00〜18:00、早稲田大学高等学院 講堂にて開催します（受付開始13:30）。</p>
                             </div>
                         </section>
                     </div>
 
                     <div className="form-side">
                         <div className="registration-card">
-                            <h3>Priority Access</h3>
-                            <p>優先案内リストに登録する</p>
-
-                            <a
-                                href="https://docs.google.com/forms/d/e/YOUR_FORM_ID/viewform"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="btn-primary-full"
-                            >
-                                Register Now
-                            </a>
-
-                            <p className="form-note">
-                                ※新しいタブでフォームが開きます
-                            </p>
+                            <span className="registration-status">Coming in September</span>
+                            <h3>参加申込みについて</h3>
+                            <p>申込みは2026年9月開始予定です。開始時にウェブサイトとSNSでご案内します。</p>
+                            <div className="registration-date">2026.09</div>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <style jsx>{`
+            <style>{`
         .recruit-page { background: var(--ted-black); color: white; padding-bottom: 8rem; }
         .back-link { display: flex; align-items: center; gap: 0.5rem; color: #888; font-weight: 600; margin-bottom: 3rem; }
         .back-link:hover { color: var(--ted-red); }
@@ -77,6 +64,9 @@ const AudienceRegistration = () => {
         .registration-card { background: #111; padding: 3rem; border-radius: 20px; border: 1px solid rgba(255,255,255,0.05); box-shadow: 0 20px 50px rgba(0,0,0,0.5); }
         .registration-card h3 { font-size: 1.8rem; margin-bottom: 0.5rem; }
         .registration-card p { color: #666; margin-bottom: 2.5rem; }
+
+        .registration-status { display: inline-block; margin-bottom: 1rem; color: var(--ted-red); font-size: 0.75rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; }
+        .registration-date { padding: 1rem; border: 1px solid rgba(235,0,40,0.45); border-radius: 8px; color: var(--ted-red); font-family: var(--font-heading); font-size: 2rem; font-weight: 800; text-align: center; }
 
         .form-group { margin-bottom: 1.5rem; }
         .form-group label { display: block; font-size: 0.8rem; font-weight: 700; color: #888; text-transform: uppercase; margin-bottom: 0.5rem; }
