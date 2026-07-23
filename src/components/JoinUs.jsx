@@ -1,19 +1,12 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Users, Mic, Ticket, ArrowRight } from 'lucide-react';
+import { Users, Ticket, ArrowRight, Mail } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const JoinUs = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const opportunities = [
-    {
-      title: 'Become a Speaker',
-      icon: <Mic size={32} />,
-      description: 'あなたの「広める価値のあるアイデア」をステージで共有しませんか？',
-      link: '/join-us/speaker',
-      color: '#eb0028'
-    },
     {
       title: 'Join the Team',
       icon: <Users size={32} />,
@@ -24,7 +17,7 @@ const JoinUs = () => {
     {
       title: 'Register as Audience',
       icon: <Ticket size={32} />,
-      description: '最新情報を受け取り、次回のイベント参加チケットを予約しましょう。',
+      description: '参加申込みは2026年9月開始予定です。最新情報を受け取って、受付開始をお待ちください。',
       link: '/join-us/audience',
       color: '#fff'
     }
@@ -42,8 +35,18 @@ const JoinUs = () => {
           <span className="join-tagline">Be part of the community</span>
           <h2 className="section-title">Join <span className="highlight-red">Us</span></h2>
           <p className="section-subtitle">
-            TEDxWUSHS Youthは、情熱を持った全ての人の挑戦を待っています。
+            TEDxWUSHS Youthへの参加方法と最新情報をご案内します。
           </p>
+        </motion.div>
+
+        <motion.div
+          className="recruitment-closed"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          <strong>Speaker applications are closed</strong>
+          <p>2026年開催分のスピーカー募集は終了しました。たくさんのご応募ありがとうございました。</p>
         </motion.div>
 
         <div className="opportunities-grid">
@@ -110,9 +113,24 @@ const JoinUs = () => {
             </div>
           </div>
         </motion.div>
+
+        <motion.div
+          className="contact-box"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          <Mail size={30} aria-hidden="true" />
+          <div>
+            <span>Questions about the event?</span>
+            <h3>お問い合わせ</h3>
+            <p>参加方法や当日の運営についてのご質問は、イベント事務局までご連絡ください。</p>
+            <a href="mailto:tedxwushs@gmail.com">tedxwushs@gmail.com</a>
+          </div>
+        </motion.div>
       </div>
 
-      <style jsx>{`
+      <style>{`
         .join-us {
           background-color: var(--ted-black);
           position: relative;
@@ -140,9 +158,32 @@ const JoinUs = () => {
           font-size: 1.1rem;
         }
 
+        .recruitment-closed {
+          max-width: 820px;
+          margin: -2rem auto 4rem;
+          padding: 1.5rem 2rem;
+          border: 1px solid rgba(235, 0, 40, 0.45);
+          border-radius: 12px;
+          background: rgba(235, 0, 40, 0.08);
+          text-align: center;
+        }
+
+        .recruitment-closed strong {
+          display: block;
+          margin-bottom: 0.5rem;
+          color: var(--ted-red);
+          font-family: var(--font-heading);
+          letter-spacing: 0.08em;
+          text-transform: uppercase;
+        }
+
+        .recruitment-closed p {
+          color: #bbb;
+        }
+
         .opportunities-grid {
           display: grid;
-          grid-template-columns: repeat(3, 1fr);
+          grid-template-columns: repeat(2, minmax(0, 1fr));
           gap: 2.5rem;
           margin-bottom: 6rem;
         }
@@ -264,6 +305,45 @@ const JoinUs = () => {
           line-height: 1.6;
         }
 
+        .contact-box {
+          display: grid;
+          grid-template-columns: auto 1fr;
+          gap: 1.5rem;
+          align-items: start;
+          margin-top: 3rem;
+          padding: 2rem;
+          border-radius: 16px;
+          background: var(--ted-dark-gray);
+          border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .contact-box > svg {
+          color: var(--ted-red);
+        }
+
+        .contact-box span {
+          color: #777;
+          font-size: 0.75rem;
+          font-weight: 800;
+          letter-spacing: 0.12em;
+          text-transform: uppercase;
+        }
+
+        .contact-box h3 {
+          margin: 0.25rem 0 0.6rem;
+          font-size: 1.5rem;
+        }
+
+        .contact-box p {
+          margin-bottom: 0.7rem;
+          color: #aaa;
+        }
+
+        .contact-box a {
+          color: var(--ted-red);
+          font-weight: 700;
+        }
+
         @media (max-width: 1024px) {
           .opportunities-grid {
             grid-template-columns: 1fr;
@@ -274,6 +354,13 @@ const JoinUs = () => {
           }
           .newsletter-form {
             flex-direction: column;
+          }
+          .contact-box {
+            grid-template-columns: 1fr;
+            text-align: center;
+          }
+          .contact-box > svg {
+            margin: 0 auto;
           }
         }
       `}</style>

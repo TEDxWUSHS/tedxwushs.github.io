@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { CalendarDays, Clock3, MapPin } from 'lucide-react';
 import poster from '../assets/poster.png';
 
 const Hero = () => {
@@ -25,8 +26,32 @@ const Hero = () => {
           </h1>
           <p className="hero-description">
             早稲田大学高等学院で開催される、学院生によるTEDxイベント。
-            広める価値のあるアイデアを
+            広める価値のあるアイデアを高等学院から。
           </p>
+          <div className="hero-event-details" aria-label="開催情報">
+            <div className="hero-event-detail">
+              <CalendarDays size={22} aria-hidden="true" />
+              <div>
+                <span>Date</span>
+                <strong>2026年10月31日（土）</strong>
+              </div>
+            </div>
+            <div className="hero-event-detail">
+              <Clock3 size={22} aria-hidden="true" />
+              <div>
+                <span>Time</span>
+                <strong>14:00～18:00</strong>
+                <small>受付開始 13:30</small>
+              </div>
+            </div>
+            <div className="hero-event-detail">
+              <MapPin size={22} aria-hidden="true" />
+              <div>
+                <span>Venue</span>
+                <strong>早稲田大学高等学院 講堂</strong>
+              </div>
+            </div>
+          </div>
           <div className="hero-cta">
             <Link to="/about" className="btn btn-primary">Discover More</Link>
             <Link to="/join-us" className="btn btn-outline">Join Us</Link>
@@ -46,7 +71,7 @@ const Hero = () => {
         </motion.div>
       </div>
 
-      <style jsx>{`
+      <style>{`
         .hero {
           min-height: 100vh;
           display: flex;
@@ -82,7 +107,55 @@ const Hero = () => {
           font-size: 1.1rem;
           color: #aaa;
           max-width: 500px;
-          margin-bottom: 3rem;
+          margin-bottom: 2rem;
+        }
+
+        .hero-event-details {
+          display: grid;
+          gap: 0.75rem;
+          max-width: 580px;
+          margin-bottom: 2.5rem;
+        }
+
+        .hero-event-detail {
+          display: grid;
+          grid-template-columns: 28px 1fr;
+          gap: 0.9rem;
+          align-items: center;
+          padding: 0.9rem 1rem;
+          border-left: 3px solid var(--ted-red);
+          background: rgba(255, 255, 255, 0.045);
+          text-align: left;
+        }
+
+        .hero-event-detail > svg {
+          color: var(--ted-red);
+        }
+
+        .hero-event-detail div {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 0.25rem 0.75rem;
+          align-items: baseline;
+        }
+
+        .hero-event-detail span {
+          min-width: 50px;
+          color: var(--ted-red);
+          font-size: 0.68rem;
+          font-weight: 800;
+          letter-spacing: 0.12em;
+          text-transform: uppercase;
+        }
+
+        .hero-event-detail strong {
+          color: white;
+          font-size: 1rem;
+        }
+
+        .hero-event-detail small {
+          color: #999;
+          font-size: 0.8rem;
         }
 
         .hero-cta {
@@ -165,7 +238,10 @@ const Hero = () => {
             font-size: 3rem;
           }
           .hero-description {
-            margin: 0 auto 3rem;
+            margin: 0 auto 2rem;
+          }
+          .hero-event-details {
+            margin: 0 auto 2.5rem;
           }
           .hero-cta {
             justify-content: center;

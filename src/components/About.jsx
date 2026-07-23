@@ -1,4 +1,3 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 
 const About = () => {
@@ -36,8 +35,8 @@ const About = () => {
               私たちは、対話を通じて互いの可能性を広げ、新しい一歩を踏み出すきっかけを作ります。
             </p>
             <p className="event-info">
-              <strong>Date:</strong> October 31, 2026 (13:30 - 17:50)<br />
-              <strong>Venue:</strong> <a href="https://www.waseda.jp/school/shs/" target="_blank" rel="noopener" className="highlight-link">Waseda University Senior High School</a>, Nerima, Tokyo<br />
+              <strong>Date:</strong> October 31, 2026 (14:00 - 18:00 / Reception 13:30)<br />
+              <strong>Venue:</strong> <a href="https://www.waseda.jp/school/shs/" target="_blank" rel="noopener" className="highlight-link">早稲田大学高等学院 講堂</a>, Nerima, Tokyo<br />
               <strong>Theme:</strong> Breakshot
             </p>
           </motion.div>
@@ -52,12 +51,26 @@ const About = () => {
         >
           <h3>Theme</h3>
           <p className="mission-text">
-            "Breakshot"
+            Breakshot
           </p>
+          <div className="mission-description">
+            <p>
+              人生は予測不能なショットの連続である。<br />
+              しかし、自分の軌道を決めるのは運ではない。
+            </p>
+            <p>
+              工夫と情熱を込めたその一打が、閉ざされた未来を「無限の可能性」へと変える。<br />
+              決断を恐れず、life-changingな最高のBreakshotを放て。
+            </p>
+            <p>
+              今回は七人のスピーカーに、人生の「軌道」を変えたBreakshotについて語ってもらいます。<br />
+              オーディエンスの皆さんの人生を変える機会となることを願っています。
+            </p>
+          </div>
         </motion.div>
       </div>
 
-      <style jsx>{`
+      <style>{`
         .about {
           background-color: var(--ted-dark-gray);
           position: relative;
@@ -141,6 +154,23 @@ const About = () => {
           font-size: 2.5rem;
           font-weight: 800;
           font-family: var(--font-heading);
+          margin-bottom: 2rem;
+        }
+
+        .mission-description {
+          max-width: 850px;
+          margin: 0 auto;
+        }
+
+        .mission-description p {
+          margin-bottom: 1.2rem;
+          color: rgba(255, 255, 255, 0.92);
+          font-size: 1.05rem;
+          line-height: 2;
+        }
+
+        .mission-description p:last-child {
+          margin-bottom: 0;
         }
 
         @media (max-width: 900px) {

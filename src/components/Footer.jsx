@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import logoRed from '../assets/logo_red.png';
-import { Instagram, Twitter, Mail, Youtube } from 'lucide-react';
+import { Instagram, Twitter, Mail } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -38,6 +38,7 @@ const Footer = () => {
               <a href="mailto:tedxwushs@gmail.com" aria-label="Email"><Mail size={24} /></a>
             </div>
             <p className="footer-handle">@TEDxWUSHS</p>
+            <a className="footer-email" href="mailto:tedxwushs@gmail.com">tedxwushs@gmail.com</a>
           </div>
         </div>
 
@@ -46,7 +47,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <style jsx>{`
+      <style>{`
         .footer {
           background-color: var(--ted-black);
           padding: 5rem 0 3rem;
@@ -118,6 +119,17 @@ const Footer = () => {
           font-weight: 700;
           color: var(--ted-red);
           letter-spacing: 0.1em;
+        }
+
+        .footer-email {
+          display: inline-block;
+          margin-top: 0.5rem;
+          color: #aaa;
+          font-size: 0.9rem;
+        }
+
+        .footer-email:hover {
+          color: var(--ted-white);
         }
 
         .footer-bottom {
