@@ -1,22 +1,23 @@
-import React from 'react';
 import { motion } from 'framer-motion';
 
+// Placeholder data for the speaker grid that will be enabled after announcements.
+// eslint-disable-next-line no-unused-vars
 const speakers = [
   {
     name: "Coming Soon",
-    role: "TEDxWUSHS Speaker",
+    role: "TEDxWUSHS Youth Speaker",
     topic: "Revealing soon...",
     image: "https://via.placeholder.com/400x400/1a1a1a/ffffff?text=TEDx"
   },
   {
     name: "Coming Soon",
-    role: "TEDxWUSHS Speaker",
+    role: "TEDxWUSHS Youth Speaker",
     topic: "Revealing soon...",
     image: "https://via.placeholder.com/400x400/1a1a1a/ffffff?text=TEDx"
   },
   {
     name: "Coming Soon",
-    role: "TEDxWUSHS Speaker",
+    role: "TEDxWUSHS Youth Speaker",
     topic: "Revealing soon...",
     image: "https://via.placeholder.com/400x400/1a1a1a/ffffff?text=TEDx"
   }
@@ -68,7 +69,7 @@ const Speakers = () => {
 */}
       </div>
 
-      <style jsx>{`
+      <style>{`
         .speakers {
           background-color: var(--ted-black);
         }

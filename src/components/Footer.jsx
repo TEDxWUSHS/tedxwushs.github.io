@@ -11,7 +11,7 @@ const Footer = () => {
         <div className="footer-top">
           <div className="footer-brand">
             <Link to="/">
-              <img src={logoRed} alt="TEDxWUSHS" className="footer-logo" />
+              <img src={logoRed} alt="TEDxWUSHS Youth" className="footer-logo" />
             </Link>
             <p className="footer-tagline">
               This independent TEDx event is operated under license from TED.

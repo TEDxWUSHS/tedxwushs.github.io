@@ -10,15 +10,19 @@ const JoinUs = () => {
     {
       title: 'Join the Team',
       icon: <Users size={32} />,
-      description: '運営、デザイン、広報など、共にイベントを創り上げる仲間を募集しています。',
+      description: '2026年開催分の運営チーム募集は終了しました。今後の募集はウェブサイトとSNSでお知らせします。',
       link: '/join-us/team',
+      action: '募集状況を見る',
+      status: 'Recruitment Closed',
+      closed: true,
       color: '#fff'
     },
     {
       title: 'Register as Audience',
       icon: <Ticket size={32} />,
-      description: '参加申込みは2026年9月開始予定です。最新情報を受け取って、受付開始をお待ちください。',
+      description: '対象は早稲田大学高等学院の生徒及びその保護者です。参加申込みは2026年9月開始予定です。',
       link: '/join-us/audience',
+      action: '対象・申込情報を見る',
       color: '#fff'
     }
   ];
@@ -45,15 +49,15 @@ const JoinUs = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <strong>Speaker applications are closed</strong>
-          <p>2026年開催分のスピーカー募集は終了しました。たくさんのご応募ありがとうございました。</p>
+          <strong>2026 Applications Update</strong>
+          <p>2026年開催分のスピーカー募集及び運営チーム募集は終了しました。たくさんのご応募ありがとうございました。</p>
         </motion.div>
 
         <div className="opportunities-grid">
           {opportunities.map((opt, index) => (
             <motion.div
               key={opt.title}
-              className="opt-card"
+              className={`opt-card${opt.closed ? ' opt-card--closed' : ''}`}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -62,10 +66,11 @@ const JoinUs = () => {
               <div className="opt-icon">
                 {opt.icon}
               </div>
+              {opt.status && <span className="opt-status">{opt.status}</span>}
               <h3 className="opt-title">{opt.title}</h3>
               <p className="opt-description">{opt.description}</p>
               <Link to={opt.link} className="opt-link">
-                Learn More <ArrowRight size={16} />
+                {opt.action} <ArrowRight size={16} />
               </Link>
             </motion.div>
           ))}
@@ -202,6 +207,23 @@ const JoinUs = () => {
           transform: translateY(-10px) !important;
           border-color: var(--ted-red);
           background: linear-gradient(145deg, var(--ted-dark-gray), #000);
+        }
+
+        .opt-card--closed {
+          border-color: rgba(255, 255, 255, 0.12);
+        }
+
+        .opt-status {
+          display: inline-block;
+          margin-bottom: 1rem;
+          padding: 0.35rem 0.7rem;
+          border: 1px solid rgba(235, 0, 40, 0.55);
+          border-radius: 999px;
+          color: var(--ted-red);
+          font-size: 0.7rem;
+          font-weight: 800;
+          letter-spacing: 0.08em;
+          text-transform: uppercase;
         }
 
         .opt-icon {

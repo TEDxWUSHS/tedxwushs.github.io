@@ -1,27 +1,29 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const faqs = [
   {
-    question: "TEDxWUSHSとは何ですか？",
-    answer: "早稲田大学高等学院の生徒が立ち上げ、運営しているTEDxイベントです。若者の視点から『広める価値のあるアイデア』を発信することを目的としています。"
+    question: "TEDxWUSHS Youthとは何ですか？",
+    answer: "早稲田大学高等学院の生徒が独立して企画・運営するTEDxイベントです。『Ideas change everything.』という考えのもと、対話と変化につながるアイデアを若者の視点から届けます。"
   },
   {
     question: "誰でも参加できますか？",
-    answer: "先着100名の方がご参加いただけます。詳細はチケット情報をご確認ください。"
+    answer: "会場参加の対象は、早稲田大学高等学院の生徒及びその保護者です。参加申込みは2026年9月開始予定で、詳細はウェブサイトと公式SNSでご案内します。"
   },
   {
     question: "ボランティアとして参加したいのですが、どうすればいいですか？",
-    answer: "運営メンバー募集の時期になりましたら、ウェブサイトの『Join Us』ページにて詳細を掲載します。SNSでも告知を行いますので、ぜひフォローをお願いします。"
+    answer: "2026年開催分の運営チーム募集は終了しました。今後の募集はウェブサイトの『Join Us』ページと公式SNSでお知らせします。"
   }
 ];
 
+// FAQItem receives data only from the static, local FAQ list above.
+// eslint-disable-next-line react/prop-types
 const FAQItem = ({ question, answer }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <div className="faq-item">
-      <button className="faq-question" onClick={() => setIsOpen(!isOpen)}>
+      <button className="faq-question" onClick={() => setIsOpen(!isOpen)} aria-expanded={isOpen}>
         <span>{question}</span>
         <span className={`icon ${isOpen ? 'open' : ''}`}>+</span>
       </button>
@@ -56,7 +58,7 @@ const FAQ = () => {
         </div>
       </div>
 
-      <style jsx>{`
+      <style>{`
         .faq {
           background-color: var(--ted-black);
         }
