@@ -1,7 +1,38 @@
 import { Ticket, Bell, Calendar, ArrowLeft, Users } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useLanguage } from '../i18n/LanguageContext';
+
+const contentByLanguage = {
+    ja: {
+        lead: '参加申込みは2026年9月開始予定です。受付開始まで今しばらくお待ちください。',
+        eligibilityLabel: 'Audience Eligibility / 参加対象',
+        eligibilityTitle: '早稲田大学高等学院の生徒及びその保護者',
+        eligibilityDescription: '本イベントの会場参加は、上記の方を対象としています。対象をご確認のうえ、受付開始をお待ちください。',
+        newsletterDescription: 'ニュースレターに登録して、チケット販売開始の通知や、公開前のスピーカー情報をいち早く入手しましょう。',
+        eventDescription: '2026年10月31日（土）14:00〜18:00、早稲田大学高等学院 講堂にて開催します（受付開始13:30）。',
+        registrationTitle: '参加申込みについて',
+        registrationDescription: '申込みは2026年9月開始予定です。開始時にウェブサイトとSNSでご案内します。',
+        audienceLabel: '対象',
+        audienceValue: '学院生・保護者'
+    },
+    en: {
+        lead: 'Registration is scheduled to open in September 2026. Please check back when registration begins.',
+        eligibilityLabel: 'Audience Eligibility',
+        eligibilityTitle: 'Students of Waseda University Senior High School and Their Parents or Guardians',
+        eligibilityDescription: 'In-person attendance is limited to the group listed above. Please confirm your eligibility and check back when registration opens.',
+        newsletterDescription: 'Sign up for the newsletter to be among the first to receive registration updates and speaker announcements.',
+        eventDescription: 'The event will be held on Saturday, October 31, 2026, from 2:00 p.m. to 6:00 p.m. at the auditorium of Waseda University Senior High School (doors open at 1:30 p.m.).',
+        registrationTitle: 'Registration Information',
+        registrationDescription: 'Registration is scheduled to open in September 2026. We will announce the opening on this website and our social media channels.',
+        audienceLabel: 'Eligible Attendees',
+        audienceValue: 'Students & Parents/Guardians'
+    }
+};
 
 const AudienceRegistration = () => {
+    const { language } = useLanguage();
+    const content = contentByLanguage[language] ?? contentByLanguage.ja;
+
     return (
         <div className="recruit-page" style={{ paddingTop: '120px' }}>
             <div className="container">
@@ -12,15 +43,15 @@ const AudienceRegistration = () => {
                 <header className="recruit-header">
                     <div className="icon-circle"><Ticket size={48} /></div>
                     <h1>Register as <span className="highlight-red">Audience</span></h1>
-                    <p className="lead-text">参加申込みは2026年9月開始予定です。受付開始まで今しばらくお待ちください。</p>
+                    <p className="lead-text">{content.lead}</p>
                 </header>
 
                 <section className="eligibility-panel" aria-labelledby="audience-eligibility-title">
                     <div className="eligibility-icon"><Users size={36} aria-hidden="true" /></div>
                     <div>
-                        <span className="eligibility-label">Audience Eligibility / 参加対象</span>
-                        <h2 id="audience-eligibility-title">早稲田大学高等学院の生徒及びその保護者</h2>
-                        <p>本イベントの会場参加は、上記の方を対象としています。対象をご確認のうえ、受付開始をお待ちください。</p>
+                        <span className="eligibility-label">{content.eligibilityLabel}</span>
+                        <h2 id="audience-eligibility-title">{content.eligibilityTitle}</h2>
+                        <p>{content.eligibilityDescription}</p>
                     </div>
                 </section>
 
@@ -30,7 +61,7 @@ const AudienceRegistration = () => {
                             <div className="info-icon"><Bell size={24} /></div>
                             <div>
                                 <h3>Be the First to Know</h3>
-                                <p>ニュースレターに登録して、チケット販売開始の通知や、公開前のスピーカー情報をいち早く入手しましょう。</p>
+                                <p>{content.newsletterDescription}</p>
                             </div>
                         </section>
 
@@ -38,7 +69,7 @@ const AudienceRegistration = () => {
                             <div className="info-icon"><Calendar size={24} /></div>
                             <div>
                                 <h3>Upcoming Events</h3>
-                                <p>2026年10月31日（土）14:00〜18:00、早稲田大学高等学院 講堂にて開催します（受付開始13:30）。</p>
+                                <p>{content.eventDescription}</p>
                             </div>
                         </section>
                     </div>
@@ -46,11 +77,11 @@ const AudienceRegistration = () => {
                     <div className="form-side">
                         <div className="registration-card">
                             <span className="registration-status">Coming in September</span>
-                            <h3>参加申込みについて</h3>
-                            <p>申込みは2026年9月開始予定です。開始時にウェブサイトとSNSでご案内します。</p>
+                            <h3>{content.registrationTitle}</h3>
+                            <p>{content.registrationDescription}</p>
                             <div className="registration-audience">
-                                <span>対象</span>
-                                <strong>学院生・保護者</strong>
+                                <span>{content.audienceLabel}</span>
+                                <strong>{content.audienceValue}</strong>
                             </div>
                             <div className="registration-date">2026.09</div>
                         </div>

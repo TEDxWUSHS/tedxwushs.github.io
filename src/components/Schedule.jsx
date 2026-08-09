@@ -1,24 +1,30 @@
 import { motion } from 'framer-motion';
+import { useLanguage } from '../i18n/LanguageContext';
 
 const scheduleData = [
-  { time: "14:00", event: "Doors Open", description: "開場" },
-  { time: "14:30", event: "Opening", description: "開会・オープニング" },
-  { time: "14:40", event: "Talk Section 1", description: "トークセクション1" },
-  { time: "14:45–15:00", event: "Talk 1", description: "トーク1" },
-  { time: "15:00–15:15", event: "Talk 2", description: "トーク2" },
-  { time: "15:15–15:30", event: "Talk 3", description: "トーク3" },
-  { time: "15:30–15:50", event: "Break", description: "休憩" },
-  { time: "15:50", event: "Talk Section 2", description: "トークセクション2" },
-  { time: "16:00–16:10", event: "Talk 4", description: "トーク4" },
-  { time: "16:15–16:25", event: "Talk 5", description: "トーク5" },
-  { time: "16:30–16:45", event: "Talk 6", description: "トーク6" },
-  { time: "16:45–17:00", event: "Talk 7", description: "トーク7" },
-  { time: "17:00", event: "Closing", description: "閉会" },
-  { time: "17:20–17:50", event: "Workshop & Networking", description: "Workshop・交流会" },
-  { time: "18:00頃", event: "Event Ends", description: "終了" }
+  { time: '14:00', event: 'Doors Open', description: { ja: '開場', en: 'Audience entry begins' } },
+  { time: '14:30', event: 'Opening', description: { ja: '開会・オープニング', en: 'Opening remarks' } },
+  { time: '14:40', event: 'Talk Section 1', description: { ja: 'トークセクション1', en: 'First talk session' } },
+  { time: '14:45–15:00', event: 'Talk 1', description: { ja: 'トーク1', en: 'First talk' } },
+  { time: '15:00–15:15', event: 'Talk 2', description: { ja: 'トーク2', en: 'Second talk' } },
+  { time: '15:15–15:30', event: 'Talk 3', description: { ja: 'トーク3', en: 'Third talk' } },
+  { time: '15:30–15:50', event: 'Break', description: { ja: '休憩', en: 'Intermission' } },
+  { time: '15:50', event: 'Talk Section 2', description: { ja: 'トークセクション2', en: 'Second talk session' } },
+  { time: '16:00–16:10', event: 'Talk 4', description: { ja: 'トーク4', en: 'Fourth talk' } },
+  { time: '16:15–16:25', event: 'Talk 5', description: { ja: 'トーク5', en: 'Fifth talk' } },
+  { time: '16:30–16:45', event: 'Talk 6', description: { ja: 'トーク6', en: 'Sixth talk' } },
+  { time: '16:45–17:00', event: 'Talk 7', description: { ja: 'トーク7', en: 'Seventh talk' } },
+  { time: '17:00', event: 'Closing', description: { ja: '閉会', en: 'Closing remarks' } },
+  { time: '17:20–17:50', event: 'Workshop & Networking', description: { ja: 'Workshop・交流会', en: 'Workshop and networking' } },
+  { time: '18:00頃', timeEn: 'Around 18:00', event: 'Event Ends', description: { ja: '終了', en: 'Program concludes' } }
 ];
 
 const Schedule = () => {
+  const { language } = useLanguage();
+  const subtitle = language === 'en'
+    ? 'Scheduled for Saturday, October 31, 2026, from 14:00 to 18:00. Times are subject to change.'
+    : '2026年10月31日（土）14:00〜18:00 開催予定。時間は前後する可能性があります。';
+
   return (
     <section id="schedule" className="schedule section-padding">
       <div className="container">
@@ -29,7 +35,7 @@ const Schedule = () => {
           viewport={{ once: true }}
         >
           <h2 className="section-title">Event <span className="highlight-red">Schedule</span></h2>
-          <p className="section-subtitle">2026年10月31日（土）14:00〜18:00 開催予定。時間は前後する可能性があります。</p>
+          <p className="section-subtitle">{subtitle}</p>
         </motion.div>
 
         <div className="timeline">
@@ -42,10 +48,10 @@ const Schedule = () => {
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
             >
-              <div className="time">{item.time}</div>
+              <div className="time">{language === 'en' && item.timeEn ? item.timeEn : item.time}</div>
               <div className="event-content">
                 <h3>{item.event}</h3>
-                <p>{item.description}</p>
+                <p>{item.description[language]}</p>
               </div>
             </motion.div>
           ))}

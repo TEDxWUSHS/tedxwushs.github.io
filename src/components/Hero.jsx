@@ -2,8 +2,29 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { CalendarDays, Clock3, MapPin } from 'lucide-react';
 import poster from '../assets/poster.png';
+import { useLanguage } from '../i18n/LanguageContext';
+
+const heroCopy = {
+  ja: {
+    description: '早稲田大学高等学院の生徒が独立して企画・運営するTEDxイベント。アイデアには、すべてを変える力がある。その可能性を高等学院から。',
+    eventLabel: '開催情報',
+    date: '2026年10月31日（土）',
+    reception: '受付開始 13:30',
+    venue: '早稲田大学高等学院 講堂'
+  },
+  en: {
+    description: 'TEDxWUSHS Youth is an independently organized TEDx event led by students at Waseda University Senior High School. From our school, we explore the power of ideas to change everything.',
+    eventLabel: 'Event details',
+    date: 'Saturday, October 31, 2026',
+    reception: 'Doors open 1:30 PM',
+    venue: 'Waseda University Senior High School Auditorium'
+  }
+};
 
 const Hero = () => {
+  const { language } = useLanguage();
+  const copy = heroCopy[language];
+
   return (
     <section className="hero">
       <div className="container hero-container">
@@ -25,15 +46,14 @@ const Hero = () => {
             Ideas change <br /> <span className="highlight-red">everything.</span>
           </h1>
           <p className="hero-description">
-            早稲田大学高等学院の生徒が独立して企画・運営するTEDxイベント。
-            アイデアには、すべてを変える力がある。その可能性を高等学院から。
+            {copy.description}
           </p>
-          <div className="hero-event-details" aria-label="開催情報">
+          <div className="hero-event-details" aria-label={copy.eventLabel}>
             <div className="hero-event-detail">
               <CalendarDays size={22} aria-hidden="true" />
               <div>
                 <span>Date</span>
-                <strong>2026年10月31日（土）</strong>
+                <strong>{copy.date}</strong>
               </div>
             </div>
             <div className="hero-event-detail">
@@ -41,14 +61,14 @@ const Hero = () => {
               <div>
                 <span>Time</span>
                 <strong>14:00～18:00</strong>
-                <small>受付開始 13:30</small>
+                <small>{copy.reception}</small>
               </div>
             </div>
             <div className="hero-event-detail">
               <MapPin size={22} aria-hidden="true" />
               <div>
                 <span>Venue</span>
-                <strong>早稲田大学高等学院 講堂</strong>
+                <strong>{copy.venue}</strong>
               </div>
             </div>
           </div>

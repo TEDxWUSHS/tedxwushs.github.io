@@ -2,17 +2,49 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Users, Ticket, ArrowRight, Mail } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useLanguage } from '../i18n/LanguageContext';
+
+const joinCopy = {
+  ja: {
+    sectionSubtitle: 'TEDxWUSHS Youthへの参加方法と最新情報をご案内します。',
+    applicationsUpdate: '2026年開催分のスピーカー募集及び運営チーム募集は終了しました。たくさんのご応募ありがとうございました。',
+    teamDescription: '2026年開催分の運営チーム募集は終了しました。今後の募集はウェブサイトとSNSでお知らせします。',
+    teamAction: '募集状況を見る',
+    audienceDescription: '対象は早稲田大学高等学院の生徒及びその保護者です。参加申込みは2026年9月開始予定です。',
+    audienceAction: '対象・申込情報を見る',
+    subscribed: <>登録完了しました<br />イベントの最新情報をお届けしますのでお楽しみに。</>,
+    newsletter: 'イベントの最新情報や募集のお知らせをメールでお届けします。',
+    emailLabel: 'メールアドレス',
+    contactTitle: 'お問い合わせ',
+    contactDescription: '参加方法や当日の運営についてのご質問は、イベント事務局までご連絡ください。'
+  },
+  en: {
+    sectionSubtitle: 'Explore ways to take part in TEDxWUSHS Youth and receive the latest event updates.',
+    applicationsUpdate: 'Speaker and organizing team applications for the 2026 event are now closed. Thank you to everyone who applied.',
+    teamDescription: 'Recruitment for the 2026 organizing team has closed. Future opportunities will be announced on our website and social media.',
+    teamAction: 'View Recruitment Status',
+    audienceDescription: 'Audience registration is open to students of Waseda University Senior High School and their parents or guardians. Registration is scheduled to begin in September 2026.',
+    audienceAction: 'View Eligibility & Registration',
+    subscribed: <>You are subscribed.<br />We look forward to sharing the latest event updates with you.</>,
+    newsletter: 'Receive event updates and future application announcements by email.',
+    emailLabel: 'Email address',
+    contactTitle: 'Contact Us',
+    contactDescription: 'For questions about attending the event or event-day operations, please contact the TEDxWUSHS Youth team.'
+  }
+};
 
 const JoinUs = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const { language } = useLanguage();
+  const copy = joinCopy[language];
 
   const opportunities = [
     {
       title: 'Join the Team',
       icon: <Users size={32} />,
-      description: '2026年開催分の運営チーム募集は終了しました。今後の募集はウェブサイトとSNSでお知らせします。',
+      description: copy.teamDescription,
       link: '/join-us/team',
-      action: '募集状況を見る',
+      action: copy.teamAction,
       status: 'Recruitment Closed',
       closed: true,
       color: '#fff'
@@ -20,9 +52,9 @@ const JoinUs = () => {
     {
       title: 'Register as Audience',
       icon: <Ticket size={32} />,
-      description: '対象は早稲田大学高等学院の生徒及びその保護者です。参加申込みは2026年9月開始予定です。',
+      description: copy.audienceDescription,
       link: '/join-us/audience',
-      action: '対象・申込情報を見る',
+      action: copy.audienceAction,
       color: '#fff'
     }
   ];
@@ -39,7 +71,7 @@ const JoinUs = () => {
           <span className="join-tagline">Be part of the community</span>
           <h2 className="section-title">Join <span className="highlight-red">Us</span></h2>
           <p className="section-subtitle">
-            TEDxWUSHS Youthへの参加方法と最新情報をご案内します。
+            {copy.sectionSubtitle}
           </p>
         </motion.div>
 
@@ -50,7 +82,7 @@ const JoinUs = () => {
           viewport={{ once: true }}
         >
           <strong>2026 Applications Update</strong>
-          <p>2026年開催分のスピーカー募集及び運営チーム募集は終了しました。たくさんのご応募ありがとうございました。</p>
+          <p>{copy.applicationsUpdate}</p>
         </motion.div>
 
         <div className="opportunities-grid">
@@ -93,11 +125,11 @@ const JoinUs = () => {
             ></iframe>
 
             <div style={{ display: isSubmitted ? 'block' : 'none' }} className="success-message">
-              <p>登録完了しました<br />イベントの最新情報をお届けしますのでお楽しみに。</p>
+              <p>{copy.subscribed}</p>
             </div>
 
             <div style={{ display: isSubmitted ? 'none' : 'block' }}>
-              <p>イベントの最新情報や募集のお知らせをメールでお届けします。</p>
+              <p>{copy.newsletter}</p>
               <form
                 className="newsletter-form"
                 action="https://docs.google.com/forms/d/e/1FAIpQLScvnsbAaQFhyodG3GY4qXmTAj919BFivczNyE9bOt4Z_TxuWw/formResponse"
@@ -110,6 +142,7 @@ const JoinUs = () => {
                 <input
                   type="email"
                   name="entry.269866944"
+                  aria-label={copy.emailLabel}
                   placeholder="Enter your email address"
                   required
                 />
@@ -128,8 +161,8 @@ const JoinUs = () => {
           <Mail size={30} aria-hidden="true" />
           <div>
             <span>Questions about the event?</span>
-            <h3>お問い合わせ</h3>
-            <p>参加方法や当日の運営についてのご質問は、イベント事務局までご連絡ください。</p>
+            <h3>{copy.contactTitle}</h3>
+            <p>{copy.contactDescription}</p>
             <a href="mailto:tedxwushs@gmail.com">tedxwushs@gmail.com</a>
           </div>
         </motion.div>

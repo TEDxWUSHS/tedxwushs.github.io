@@ -1,13 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import logoText from '../assets/logo_red.png';
+import LanguageSwitcher from './LanguageSwitcher';
+import { useLanguage } from '../i18n/LanguageContext';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const { language } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -37,32 +40,43 @@ const Header = () => {
           <img src={logoText} alt="TEDxWUSHS Youth" className="header-logo" />
         </Link>
 
-        <nav className="desktop-nav">
-          <ul>
-            {menuItems.map((item) => (
-              <li key={item.name}>
-                <Link
-                  to={item.href}
-                  className={location.pathname === item.href ? 'active' : ''}
-                >
-                  {item.name}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
+        <div className="header-actions">
+          <nav className="desktop-nav" aria-label="Primary navigation">
+            <ul>
+              {menuItems.map((item) => (
+                <li key={item.name}>
+                  <Link
+                    to={item.href}
+                    className={location.pathname === item.href ? 'active' : ''}
+                  >
+                    {item.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
 
-        <button
-          className="mobile-menu-btn"
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-        >
-          {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
-        </button>
+          <LanguageSwitcher />
+
+          <button
+            type="button"
+            className="mobile-menu-btn"
+            aria-label={isMobileMenuOpen
+              ? (language === 'ja' ? 'メニューを閉じる' : 'Close menu')
+              : (language === 'ja' ? 'メニューを開く' : 'Open menu')}
+            aria-expanded={isMobileMenuOpen}
+            aria-controls="mobile-navigation"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          >
+            {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
+        </div>
       </div>
 
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
+            id="mobile-navigation"
             className="mobile-menu"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -85,7 +99,7 @@ const Header = () => {
         )}
       </AnimatePresence>
 
-      <style jsx>{`
+      <style>{`
         .header {
           position: fixed;
           top: 0;
@@ -115,9 +129,20 @@ const Header = () => {
           object-fit: contain;
         }
 
+        .logo-container {
+          flex-shrink: 0;
+        }
+
+        .header-actions {
+          display: flex;
+          align-items: center;
+          gap: 1.5rem;
+          min-width: 0;
+        }
+
         .desktop-nav ul {
           display: flex;
-          gap: 2.5rem;
+          gap: clamp(1.25rem, 2.4vw, 2.5rem);
         }
 
         .desktop-nav a {
@@ -135,6 +160,12 @@ const Header = () => {
         .mobile-menu-btn {
           display: none;
           color: var(--ted-white);
+        }
+
+        .mobile-menu-btn:focus-visible {
+          outline: 2px solid var(--ted-white);
+          outline-offset: 4px;
+          border-radius: 2px;
         }
 
         .mobile-menu {
@@ -166,12 +197,34 @@ const Header = () => {
           opacity: 1;
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 900px) {
           .desktop-nav {
             display: none;
           }
           .mobile-menu-btn {
             display: block;
+          }
+          .header-actions {
+            gap: 0.8rem;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .header-content {
+            padding-left: 1rem;
+            padding-right: 1rem;
+          }
+          .header-logo {
+            height: 28px;
+          }
+          .header-actions {
+            gap: 0.5rem;
+          }
+        }
+
+        @media (max-width: 360px) {
+          .header-logo {
+            height: 23px;
           }
         }
       `}</style>

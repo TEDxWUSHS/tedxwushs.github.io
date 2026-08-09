@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import { useLanguage } from '../i18n/LanguageContext';
 
 // Placeholder data for the speaker grid that will be enabled after announcements.
 // eslint-disable-next-line no-unused-vars
@@ -24,6 +25,11 @@ const speakers = [
 ];
 
 const Speakers = () => {
+  const { language } = useLanguage();
+  const subtitle = language === 'en'
+    ? 'Speakers from diverse backgrounds will share ideas shaped by their unique perspectives.'
+    : '多様なバックグラウンドを持つスピーカーたちが、独自の視点でアイデアを共有します。';
+
   return (
     <section id="speakers" className="speakers section-padding">
       <div className="container">
@@ -34,7 +40,7 @@ const Speakers = () => {
           viewport={{ once: true }}
         >
           <h2 className="section-title">Featured <span className="highlight-red">Speakers</span></h2>
-          <p className="section-subtitle">多様なバックグラウンドを持つスピーカーたちが、独自の視点でアイデアを共有します。</p>
+          <p className="section-subtitle">{subtitle}</p>
         </motion.div>
 
         <div className="coming-soon">
