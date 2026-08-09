@@ -23,7 +23,7 @@ const SpeakerRecruitment = () => {
         </header>
 
         <section className="detail-section">
-          <h2>Why speak at TEDxWUSHS?</h2>
+          <h2>Why speak at TEDxWUSHS Youth?</h2>
           <div className="benefits-grid">
             <div className="benefit-card">
               <CheckCircle color="#eb0028" size={24} />

@@ -1,13 +1,11 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { Users, Code, PenTool, Layout, ArrowLeft } from 'lucide-react';
+import { Users, Code, Mic, Layout, ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const TeamRecruitment = () => {
     const departments = [
         { title: 'Operations', icon: <Users size={32} />, desc: 'イベントの全体企画、進行、会場設営などを担います。' },
         { title: 'Marketing', icon: <Layout size={32} />, desc: 'SNSやWebサイトを通じた広報活動、ブランディングを担います。' },
-        { title: 'Curation', icon: <PenTool size={32} />, desc: 'スピーカーの選定、スピーチ構成のサポートを担います。' },
+        { title: 'Speaker', icon: <Mic size={32} />, desc: 'スピーカーの選定、スピーチ構成のサポートを担います。' },
         { title: 'Creative', icon: <Code size={32} />, desc: 'デザイン、映像制作、Web開発などを担います。' }
     ];
 
@@ -20,8 +18,9 @@ const TeamRecruitment = () => {
 
                 <header className="recruit-header">
                     <div className="icon-circle"><Users size={48} /></div>
+                    <span className="recruitment-status">2026 Recruitment Closed</span>
                     <h1>Join the <span className="highlight-red">Team</span></h1>
-                    <p className="lead-text">運営、デザイン、広報など、共にイベントを創り上げる仲間を募集しています。</p>
+                    <p className="lead-text">2026年開催分の運営チーム募集は終了しました。たくさんのご応募ありがとうございました。</p>
                 </header>
 
                 <section className="detail-section">
@@ -55,19 +54,20 @@ const TeamRecruitment = () => {
                     </div>
                 </section>
 
-                <div className="cta-box blue-gradient">
-                    <h3>Your Journey Starts Here</h3>
-                    <p>早稲田大学高等学院から、世界を動かすチームになりましょう。</p>
-                    <button className="btn-white-large">Apply to Join the Team</button>
+                <div className="cta-box">
+                    <h3>Recruitment Closed</h3>
+                    <p>次回の募集については、ウェブサイトと公式SNSでお知らせします。</p>
+                    <span className="closed-label">2026 Team Recruitment Closed</span>
                 </div>
             </div>
 
-            <style jsx>{`
+            <style>{`
         .recruit-page { background: var(--ted-black); color: white; padding-bottom: 8rem; }
         .back-link { display: flex; align-items: center; gap: 0.5rem; color: #888; font-weight: 600; margin-bottom: 3rem; }
         .back-link:hover { color: var(--ted-red); }
         .recruit-header { text-align: center; margin-bottom: 6rem; }
         .icon-circle { width: 100px; height: 100px; background: rgba(255, 255, 255, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem; }
+        .recruitment-status { display: inline-block; margin-bottom: 1rem; color: var(--ted-red); font-size: 0.75rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; }
         h1 { font-size: 3.5rem; margin-bottom: 1.5rem; }
         .lead-text { font-size: 1.3rem; color: #aaa; max-width: 650px; margin: 0 auto; }
 
@@ -87,13 +87,13 @@ const TeamRecruitment = () => {
         .cta-box { border-radius: 24px; padding: 5rem; text-align: center; background: #eb0028; }
         .cta-box h3 { font-size: 2.5rem; margin-bottom: 1.2rem; }
         .cta-box p { font-size: 1.2rem; margin-bottom: 3rem; opacity: 0.9; }
-        .btn-white-large { background: white; color: var(--ted-black); padding: 1.5rem 4rem; border-radius: 100px; font-weight: 800; text-transform: uppercase; transition: var(--transition-smooth); }
-        .btn-white-large:hover { transform: scale(1.05); box-shadow: 0 10px 30px rgba(0,0,0,0.4); }
+        .closed-label { display: inline-block; background: white; color: var(--ted-red); padding: 1.3rem 2.5rem; border-radius: 100px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.04em; }
 
         @media (max-width: 768px) {
           .departments-grid, .values-grid { grid-template-columns: 1fr; }
           h1 { font-size: 2.5rem; }
           .cta-box { padding: 3rem 1.5rem; }
+          .closed-label { padding: 1rem 1.25rem; font-size: 0.72rem; }
         }
       `}</style>
         </div>

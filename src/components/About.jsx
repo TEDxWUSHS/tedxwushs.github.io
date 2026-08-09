@@ -14,10 +14,10 @@ const About = () => {
           >
             <h2 className="section-title">What is <span className="highlight-red">TEDx</span>?</h2>
             <p className="english-text">
-              In the spirit of discovering and spreading ideas, TED has created a program called <a href="https://www.ted.com/about/programs-initiatives/tedx-program" target="_blank" rel="noopener" className="highlight-link">TEDx</a>. TEDx is a program of local, self-organized events that bring people together to share a TED-like experience. Our event is called TEDxWUSHS, where x = independently organized TED event. At our TEDxWUSHS event, TED Talks video and live speakers will combine to spark deep discussion and connection in a small group. The TED Conference provides general guidance for the TEDx program, but individual TEDx events, including ours, are self-organized.
+              In the spirit of discovering and spreading ideas, TED has created a program called <a href="https://www.ted.com/about/programs-initiatives/tedx-program" target="_blank" rel="noopener" className="highlight-link">TEDx</a>. TEDx is a program of local, self-organized events that bring people together to share a TED-like experience. Our event is called TEDxWUSHS Youth, where x = independently organized TED event. At our TEDxWUSHS Youth event, TED Talks video and live speakers will combine to spark deep discussion and connection in a small group. Speakers never pay to join a TEDx event. Consideration, speaker coaching and event participation along with attendance are all provided free of charge. The TED Conference provides general guidance for the TEDx program, but individual TEDx events, including ours, are self-organized.
             </p>
             <p className="japanese-text">
-              TEDxは、TEDの精神である「広める価値のあるアイデア」を共有するために、地域の独立した組織によって運営されるイベントです。世界各地で開催され、人々の思考を刺激し、対話を促しています。
+              TEDは「Ideas change everything.」という考えのもと、対話を生み、理解を深め、変化につながるアイデアを世界へ届けています。TEDxは、その精神を地域で実践する、独立運営のイベントです。
             </p>
           </motion.div>
 
@@ -28,9 +28,9 @@ const About = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <h2 className="section-title">TEDx<span className="highlight-red">WUSHS</span></h2>
+            <h2 className="section-title">TEDx<span className="highlight-red">WUSHS Youth</span></h2>
             <p>
-              早稲田大学高等学院の生徒自身が企画・運営するTEDxイベントです。
+              TEDxWUSHS Youthは、早稲田大学高等学院の生徒が独立して企画・運営するTEDxイベントです。
               若者ならではの視点とパッションを武器に、高校生という枠を超えた、社会に響くメッセージを発信します。
               私たちは、対話を通じて互いの可能性を広げ、新しい一歩を踏み出すきっかけを作ります。
             </p>

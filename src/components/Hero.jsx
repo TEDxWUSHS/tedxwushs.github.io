@@ -19,14 +19,14 @@ const Hero = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5 }}
           >
-            Waseda University Senior High School
+            TEDxWUSHS Youth · Waseda University Senior High School
           </motion.span>
           <h1 className="hero-title">
-            Ideas Worth <br /> <span className="highlight-red">Spreading</span>
+            Ideas change <br /> <span className="highlight-red">everything.</span>
           </h1>
           <p className="hero-description">
-            早稲田大学高等学院で開催される、学院生によるTEDxイベント。
-            広める価値のあるアイデアを高等学院から。
+            早稲田大学高等学院の生徒が独立して企画・運営するTEDxイベント。
+            アイデアには、すべてを変える力がある。その可能性を高等学院から。
           </p>
           <div className="hero-event-details" aria-label="開催情報">
             <div className="hero-event-detail">
@@ -101,6 +101,7 @@ const Hero = () => {
           font-size: 5rem;
           line-height: 1.1;
           margin-bottom: 2rem;
+          text-transform: none;
         }
 
         .hero-description {
