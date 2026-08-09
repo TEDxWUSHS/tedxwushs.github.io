@@ -1,42 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://tedxwushs.github.io/</loc>
+    <loc>https://www.tedxwushs.com/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://tedxwushs.github.io/about</loc>
+    <loc>https://www.tedxwushs.com/about</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tedxwushs.github.io/speakers</loc>
+    <loc>https://www.tedxwushs.com/speakers</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://tedxwushs.github.io/join-us</loc>
+    <loc>https://www.tedxwushs.com/join-us</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://tedxwushs.github.io/join-us/speaker</loc>
+    <loc>https://www.tedxwushs.com/join-us/speaker</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://tedxwushs.github.io/join-us/team</loc>
+    <loc>https://www.tedxwushs.com/join-us/team</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://tedxwushs.github.io/join-us/audience</loc>
+    <loc>https://www.tedxwushs.com/join-us/audience</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://tedxwushs.github.io/faq</loc>
+    <loc>https://www.tedxwushs.com/faq</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
