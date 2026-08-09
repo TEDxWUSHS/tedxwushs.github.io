@@ -1,13 +1,43 @@
 import { Mic, CheckCircle, ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useLanguage } from '../i18n/LanguageContext';
+
+const contentByLanguage = {
+  ja: {
+    steps: [
+      { title: 'Application', desc: '2026年開催分の応募受付は終了しました。' },
+      { title: 'Audition', desc: '運営チームとの面談で、アイデアを深掘りします。' },
+      { title: 'Curation', desc: 'TEDxの基準に合わせて、スピーチを磨き上げます。' },
+      { title: 'The Stage', desc: 'TEDxWUSHS Youthのステージで、世界へ発信！' }
+    ],
+    lead: '2026年開催分のスピーカー募集は終了しました。',
+    benefits: [
+      '世界中のTEDコミュニティにあなたのアイデアが届きます。',
+      'プロフェッショナルなコーチングでプレゼンスキルが向上します。',
+      '情熱的な仲間や観客との貴重な出会いがあります。'
+    ],
+    closedMessage: 'たくさんのご応募ありがとうございました。今後の募集については、ウェブサイトとSNSでお知らせします。'
+  },
+  en: {
+    steps: [
+      { title: 'Application', desc: 'Applications for the 2026 event have closed.' },
+      { title: 'Audition', desc: 'Explore your idea in depth during an interview with the organizing team.' },
+      { title: 'Curation', desc: 'Refine your talk in line with TEDx standards.' },
+      { title: 'The Stage', desc: 'Share your idea with the world from the TEDxWUSHS Youth stage!' }
+    ],
+    lead: 'Speaker applications for the 2026 event have closed.',
+    benefits: [
+      'Share your idea with the global TED community.',
+      'Improve your presentation skills through professional coaching.',
+      'Connect with passionate peers and audience members.'
+    ],
+    closedMessage: 'Thank you to everyone who applied. Future opportunities will be announced on this website and our social media channels.'
+  }
+};
 
 const SpeakerRecruitment = () => {
-  const steps = [
-    { title: 'Application', desc: '2026年開催分の応募受付は終了しました。' },
-    { title: 'Audition', desc: '運営チームとの面談で、アイデアを深掘りします。' },
-    { title: 'Curation', desc: 'TEDxの基準に合わせて、スピーチを磨き上げます。' },
-    { title: 'The Stage', desc: 'TEDxWUSHS Youthのステージで、世界へ発信！' }
-  ];
+  const { language } = useLanguage();
+  const content = contentByLanguage[language] ?? contentByLanguage.ja;
 
   return (
     <div className="recruit-page" style={{ paddingTop: '120px' }}>
@@ -19,7 +49,7 @@ const SpeakerRecruitment = () => {
         <header className="recruit-header">
           <div className="icon-circle"><Mic size={48} /></div>
           <h1>Speaker <span className="highlight-red">Applications</span></h1>
-          <p className="lead-text">2026年開催分のスピーカー募集は終了しました。</p>
+          <p className="lead-text">{content.lead}</p>
         </header>
 
         <section className="detail-section">
@@ -27,15 +57,15 @@ const SpeakerRecruitment = () => {
           <div className="benefits-grid">
             <div className="benefit-card">
               <CheckCircle color="#eb0028" size={24} />
-              <p>世界中のTEDコミュニティにあなたのアイデアが届きます。</p>
+              <p>{content.benefits[0]}</p>
             </div>
             <div className="benefit-card">
               <CheckCircle color="#eb0028" size={24} />
-              <p>プロフェッショナルなコーチングでプレゼンスキルが向上します。</p>
+              <p>{content.benefits[1]}</p>
             </div>
             <div className="benefit-card">
               <CheckCircle color="#eb0028" size={24} />
-              <p>情熱的な仲間や観客との貴重な出会いがあります。</p>
+              <p>{content.benefits[2]}</p>
             </div>
           </div>
         </section>
@@ -43,7 +73,7 @@ const SpeakerRecruitment = () => {
         <section className="process-section">
           <h2>Application Process</h2>
           <div className="steps-container">
-            {steps.map((step, i) => (
+            {content.steps.map((step, i) => (
               <div key={i} className="step-item">
                 <div className="step-num">{i + 1}</div>
                 <h3>{step.title}</h3>
@@ -55,7 +85,7 @@ const SpeakerRecruitment = () => {
 
         <div className="cta-box">
           <h3>Applications Closed</h3>
-          <p>たくさんのご応募ありがとうございました。今後の募集については、ウェブサイトとSNSでお知らせします。</p>
+          <p>{content.closedMessage}</p>
           <span className="closed-label">2026 Speaker Applications Closed</span>
         </div>
       </div>

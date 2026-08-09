@@ -1,30 +1,55 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useLanguage } from '../i18n/LanguageContext';
 
-const faqs = [
-  {
-    question: "TEDxWUSHS Youthとは何ですか？",
-    answer: "早稲田大学高等学院の生徒が独立して企画・運営するTEDxイベントです。『Ideas change everything.』という考えのもと、対話と変化につながるアイデアを若者の視点から届けます。"
-  },
-  {
-    question: "参加対象者を教えてください。",
-    answer: "参加対象者は、早稲田大学高等学院の生徒（学院生）とその保護者です。参加申込みは2026年9月開始予定で、詳細はウェブサイトと公式SNSでご案内します。"
-  },
-  {
-    question: "イベントでは何語が使用されますか？",
-    answer: "日本語と英語のバイリンガルイベントを予定しています。日本語・英語のどちらで行われるトークにも、スライド上に字幕を付ける予定です。"
-  },
-  {
-    question: "参加費はかかりますか？",
-    answer: "参加費は無料です。"
-  },
-  {
-    question: "ボランティアとして参加したいのですが、どうすればいいですか？",
-    answer: "2026年開催分の運営チーム募集は終了しました。今後の募集はウェブサイトの『Join Us』ページと公式SNSでお知らせします。"
-  }
-];
+const faqsByLanguage = {
+  ja: [
+    {
+      question: 'TEDxWUSHS Youthとは何ですか？',
+      answer: '早稲田大学高等学院の生徒が独立して企画・運営するTEDxイベントです。『Ideas change everything.』という考えのもと、対話と変化につながるアイデアを若者の視点から届けます。'
+    },
+    {
+      question: '参加対象者を教えてください。',
+      answer: '参加対象者は、早稲田大学高等学院の生徒（学院生）とその保護者です。参加申込みは2026年9月開始予定で、詳細はウェブサイトと公式SNSでご案内します。'
+    },
+    {
+      question: 'イベントでは何語が使用されますか？',
+      answer: '日本語と英語のバイリンガルイベントを予定しています。日本語・英語のどちらで行われるトークにも、スライド上に字幕を付ける予定です。'
+    },
+    {
+      question: '参加費はかかりますか？',
+      answer: '参加費は無料です。'
+    },
+    {
+      question: 'ボランティアとして参加したいのですが、どうすればいいですか？',
+      answer: '2026年開催分の運営チーム募集は終了しました。今後の募集はウェブサイトの『Join Us』ページと公式SNSでお知らせします。'
+    }
+  ],
+  en: [
+    {
+      question: 'What is TEDxWUSHS Youth?',
+      answer: 'TEDxWUSHS Youth is an independently organized TEDx event planned and run by students of Waseda University Senior High School. We believe that “Ideas change everything.” From a youth perspective, we share ideas that can spark dialogue and change.'
+    },
+    {
+      question: 'Who can attend?',
+      answer: 'The event is open to students of Waseda University Senior High School and their parents or guardians. Registration is scheduled to open in September 2026, with details to be announced on this website and our official social media channels.'
+    },
+    {
+      question: 'What languages will be used at the event?',
+      answer: 'The event is planned to be bilingual in Japanese and English. For both Japanese- and English-language talks, we plan to display subtitles on the presentation slides.'
+    },
+    {
+      question: 'Is there an admission fee?',
+      answer: 'The event is free to attend.'
+    },
+    {
+      question: 'How can I participate as a volunteer?',
+      answer: 'Recruitment for the 2026 organizing team has closed. Future opportunities will be announced on the Join Us page and our official social media channels.'
+    }
+  ]
+};
 
-// FAQItem receives data only from the static, local FAQ list above.
+// FAQItem receives data only from the localized FAQ lists above.
 // eslint-disable-next-line react/prop-types
 const FAQItem = ({ question, answer }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -33,7 +58,7 @@ const FAQItem = ({ question, answer }) => {
     <div className="faq-item">
       <button className="faq-question" onClick={() => setIsOpen(!isOpen)} aria-expanded={isOpen}>
         <span>{question}</span>
-        <span className={`icon ${isOpen ? 'open' : ''}`}>+</span>
+        <span className={`icon ${isOpen ? 'open' : ''}`} aria-hidden="true">+</span>
       </button>
       <AnimatePresence>
         {isOpen && (
@@ -53,6 +78,9 @@ const FAQItem = ({ question, answer }) => {
 };
 
 const FAQ = () => {
+  const { language } = useLanguage();
+  const faqs = faqsByLanguage[language] ?? faqsByLanguage.ja;
+
   return (
     <section id="faq" className="faq section-padding">
       <div className="container">

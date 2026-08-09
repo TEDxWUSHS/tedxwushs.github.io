@@ -1,12 +1,48 @@
 import { Users, Code, Mic, Layout, ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { useLanguage } from '../i18n/LanguageContext';
+
+const contentByLanguage = {
+    ja: {
+        departmentDescriptions: [
+            'イベントの全体企画、進行、会場設営などを担います。',
+            'SNSやWebサイトを通じた広報活動、ブランディングを担います。',
+            'スピーカーの選定、スピーチ構成のサポートを担います。',
+            'デザイン、映像制作、Web開発などを担います。'
+        ],
+        lead: '2026年開催分の運営チーム募集は終了しました。たくさんのご応募ありがとうございました。',
+        values: [
+            'アイデアを広めること、新しい価値を創ることに情熱を持っている方。',
+            '多様な視点を尊重し、チームで最高のパフォーマンスを発揮できる方。',
+            '自ら考え、行動し、変化を恐れずに挑戦し続けられる方。'
+        ],
+        closedMessage: '次回の募集については、ウェブサイトと公式SNSでお知らせします。'
+    },
+    en: {
+        departmentDescriptions: [
+            'Oversees overall event planning, program flow, venue setup, and related operations.',
+            'Handles promotion and branding through social media and the website.',
+            'Handles speaker selection and supports the development of talks.',
+            'Handles design, video production, web development, and related creative work.'
+        ],
+        lead: 'Recruitment for the 2026 organizing team has closed. Thank you to everyone who applied.',
+        values: [
+            'Passionate about sharing ideas and creating new value.',
+            'Respects diverse perspectives and brings out the best in the team through collaboration.',
+            'Thinks and acts independently, and continues to take on challenges without fearing change.'
+        ],
+        closedMessage: 'Future recruitment opportunities will be announced on this website and our official social media channels.'
+    }
+};
 
 const TeamRecruitment = () => {
+    const { language } = useLanguage();
+    const content = contentByLanguage[language] ?? contentByLanguage.ja;
     const departments = [
-        { title: 'Operations', icon: <Users size={32} />, desc: 'イベントの全体企画、進行、会場設営などを担います。' },
-        { title: 'Marketing', icon: <Layout size={32} />, desc: 'SNSやWebサイトを通じた広報活動、ブランディングを担います。' },
-        { title: 'Speaker', icon: <Mic size={32} />, desc: 'スピーカーの選定、スピーチ構成のサポートを担います。' },
-        { title: 'Creative', icon: <Code size={32} />, desc: 'デザイン、映像制作、Web開発などを担います。' }
+        { title: 'Operations', icon: <Users size={32} />, desc: content.departmentDescriptions[0] },
+        { title: 'Marketing', icon: <Layout size={32} />, desc: content.departmentDescriptions[1] },
+        { title: 'Speaker', icon: <Mic size={32} />, desc: content.departmentDescriptions[2] },
+        { title: 'Creative', icon: <Code size={32} />, desc: content.departmentDescriptions[3] }
     ];
 
     return (
@@ -20,7 +56,7 @@ const TeamRecruitment = () => {
                     <div className="icon-circle"><Users size={48} /></div>
                     <span className="recruitment-status">2026 Recruitment Closed</span>
                     <h1>Join the <span className="highlight-red">Team</span></h1>
-                    <p className="lead-text">2026年開催分の運営チーム募集は終了しました。たくさんのご応募ありがとうございました。</p>
+                    <p className="lead-text">{content.lead}</p>
                 </header>
 
                 <section className="detail-section">
@@ -41,22 +77,22 @@ const TeamRecruitment = () => {
                     <div className="values-grid">
                         <div className="value-item">
                             <h3>Passion</h3>
-                            <p>アイデアを広めること、新しい価値を創ることに情熱を持っている方。</p>
+                            <p>{content.values[0]}</p>
                         </div>
                         <div className="value-item">
                             <h3>Collaboration</h3>
-                            <p>多様な視点を尊重し、チームで最高のパフォーマンスを発揮できる方。</p>
+                            <p>{content.values[1]}</p>
                         </div>
                         <div className="value-item">
                             <h3>Proactive</h3>
-                            <p>自ら考え、行動し、変化を恐れずに挑戦し続けられる方。</p>
+                            <p>{content.values[2]}</p>
                         </div>
                     </div>
                 </section>
 
                 <div className="cta-box">
                     <h3>Recruitment Closed</h3>
-                    <p>次回の募集については、ウェブサイトと公式SNSでお知らせします。</p>
+                    <p>{content.closedMessage}</p>
                     <span className="closed-label">2026 Team Recruitment Closed</span>
                 </div>
             </div>
