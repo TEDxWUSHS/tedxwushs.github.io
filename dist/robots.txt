@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://tedxwushs.github.io/sitemap.xml
+Sitemap: https://www.tedxwushs.com/sitemap.xml

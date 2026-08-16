@@ -1,12 +1,11 @@
-import React from 'react';
 import Speakers from '../components/Speakers';
 
 const SpeakersPage = () => {
-    return (
-        <div style={{ paddingTop: '80px' }}>
-            <Speakers />
-        </div>
-    );
+  return (
+    <main>
+      <Speakers variant="full" />
+    </main>
+  );
 };
 
 export default SpeakersPage;
