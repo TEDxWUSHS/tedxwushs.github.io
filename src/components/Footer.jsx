@@ -34,6 +34,15 @@ const Footer = () => {
             <div className="social-icons">
               <a href="https://www.instagram.com/tedxwushs/" target="_blank" rel="noopener" aria-label="Instagram"><Instagram size={24} /></a>
               <a href="https://x.com/TEDxWUSHS" target="_blank" rel="noopener" aria-label="Twitter"><Twitter size={24} /></a>
+              <a
+                href="https://note.com/tedx_wushs_youth"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="TEDxWUSHS Youth on note"
+                title="note"
+              >
+                <span className="note-wordmark" aria-hidden="true">note</span>
+              </a>
               {/* <a href="#" aria-label="YouTube"><Youtube size={24} /></a> */}
               <a href="mailto:tedxwushs@gmail.com" aria-label="Email"><Mail size={24} /></a>
             </div>
@@ -106,8 +115,21 @@ const Footer = () => {
         }
 
         .social-icons a {
+          display: inline-flex;
+          min-width: 28px;
+          height: 28px;
+          align-items: center;
+          justify-content: center;
           color: var(--ted-white);
           transition: var(--transition-smooth);
+        }
+
+        .note-wordmark {
+          font-size: 0.72rem;
+          font-weight: 800;
+          letter-spacing: -0.03em;
+          line-height: 1;
+          text-transform: lowercase;
         }
 
         .social-icons a:hover {
