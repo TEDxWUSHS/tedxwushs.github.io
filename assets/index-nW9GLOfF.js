@@ -371,7 +371,7 @@ Error generating stack: `+s.message+`
             height: 23px;
           }
         }
-      `})]})},nT=()=>{const e=new Date().getFullYear();return c.jsxs("footer",{id:"footer",className:"footer",children:[c.jsxs("div",{className:"container footer-content",children:[c.jsxs("div",{className:"footer-top",children:[c.jsxs("div",{className:"footer-brand",children:[c.jsx(Ae,{to:"/",children:c.jsx("img",{src:Kg,alt:"TEDxWUSHS Youth",className:"footer-logo"})}),c.jsx("p",{className:"footer-tagline",children:"This independent TEDx event is operated under license from TED."})]}),c.jsxs("div",{className:"footer-links",children:[c.jsx("h4",{children:"Quick Links"}),c.jsxs("ul",{children:[c.jsx("li",{children:c.jsx(Ae,{to:"/about",children:"About Us"})}),c.jsx("li",{children:c.jsx(Ae,{to:"/speakers",children:"Speakers"})}),c.jsx("li",{children:c.jsx("a",{href:"https://www.waseda.jp/school/shs/",target:"_blank",rel:"noopener",children:"Waseda SHS"})}),c.jsx("li",{children:c.jsx("a",{href:"https://www.ted.com/about/programs-initiatives/tedx-program",target:"_blank",rel:"noopener",children:"TEDx Program"})})]})]}),c.jsxs("div",{className:"footer-social",children:[c.jsx("h4",{children:"Connect"}),c.jsxs("div",{className:"social-icons",children:[c.jsx("a",{href:"https://www.instagram.com/tedxwushs/",target:"_blank",rel:"noopener","aria-label":"Instagram",children:c.jsx(Ug,{size:24})}),c.jsx("a",{href:"https://x.com/TEDxWUSHS",target:"_blank",rel:"noopener","aria-label":"Twitter",children:c.jsx(Yg,{size:24})}),c.jsx("a",{href:"mailto:tedxwushs@gmail.com","aria-label":"Email",children:c.jsx(Wg,{size:24})})]}),c.jsx("p",{className:"footer-handle",children:"@TEDxWUSHS"}),c.jsx("a",{className:"footer-email",href:"mailto:tedxwushs@gmail.com",children:"tedxwushs@gmail.com"})]})]}),c.jsx("div",{className:"footer-bottom",children:c.jsxs("p",{children:["© ",e," TEDxWUSHS Youth. All Rights Reserved."]})})]}),c.jsx("style",{children:`
+      `})]})},nT=()=>{const e=new Date().getFullYear();return c.jsxs("footer",{id:"footer",className:"footer",children:[c.jsxs("div",{className:"container footer-content",children:[c.jsxs("div",{className:"footer-top",children:[c.jsxs("div",{className:"footer-brand",children:[c.jsx(Ae,{to:"/",children:c.jsx("img",{src:Kg,alt:"TEDxWUSHS Youth",className:"footer-logo"})}),c.jsx("p",{className:"footer-tagline",children:"This independent TEDx event is operated under license from TED."})]}),c.jsxs("div",{className:"footer-links",children:[c.jsx("h4",{children:"Quick Links"}),c.jsxs("ul",{children:[c.jsx("li",{children:c.jsx(Ae,{to:"/about",children:"About Us"})}),c.jsx("li",{children:c.jsx(Ae,{to:"/speakers",children:"Speakers"})}),c.jsx("li",{children:c.jsx("a",{href:"https://www.waseda.jp/school/shs/",target:"_blank",rel:"noopener",children:"Waseda SHS"})}),c.jsx("li",{children:c.jsx("a",{href:"https://www.ted.com/about/programs-initiatives/tedx-program",target:"_blank",rel:"noopener",children:"TEDx Program"})})]})]}),c.jsxs("div",{className:"footer-social",children:[c.jsx("h4",{children:"Connect"}),c.jsxs("div",{className:"social-icons",children:[c.jsx("a",{href:"https://www.instagram.com/tedxwushs/",target:"_blank",rel:"noopener","aria-label":"Instagram",children:c.jsx(Ug,{size:24})}),c.jsx("a",{href:"https://x.com/TEDxWUSHS",target:"_blank",rel:"noopener","aria-label":"Twitter",children:c.jsx(Yg,{size:24})}),c.jsx("a",{href:"https://note.com/tedx_wushs_youth",target:"_blank",rel:"noopener noreferrer","aria-label":"TEDxWUSHS Youth on note",title:"note",children:c.jsx("span",{className:"note-wordmark","aria-hidden":"true",children:"note"})}),c.jsx("a",{href:"mailto:tedxwushs@gmail.com","aria-label":"Email",children:c.jsx(Wg,{size:24})})]}),c.jsx("p",{className:"footer-handle",children:"@TEDxWUSHS"}),c.jsx("a",{className:"footer-email",href:"mailto:tedxwushs@gmail.com",children:"tedxwushs@gmail.com"})]})]}),c.jsx("div",{className:"footer-bottom",children:c.jsxs("p",{children:["© ",e," TEDxWUSHS Youth. All Rights Reserved."]})})]}),c.jsx("style",{children:`
         .footer {
           background-color: var(--ted-black);
           padding: 5rem 0 3rem;
@@ -430,8 +430,21 @@ Error generating stack: `+s.message+`
         }
 
         .social-icons a {
+          display: inline-flex;
+          min-width: 28px;
+          height: 28px;
+          align-items: center;
+          justify-content: center;
           color: var(--ted-white);
           transition: var(--transition-smooth);
+        }
+
+        .note-wordmark {
+          font-size: 0.72rem;
+          font-weight: 800;
+          letter-spacing: -0.03em;
+          line-height: 1;
+          text-transform: lowercase;
         }
 
         .social-icons a:hover {
