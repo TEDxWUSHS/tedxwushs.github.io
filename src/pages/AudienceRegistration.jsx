@@ -34,22 +34,26 @@ const AudienceRegistration = () => {
     const content = contentByLanguage[language] ?? contentByLanguage.ja;
 
     return (
-        <div className="recruit-page" style={{ paddingTop: '120px' }}>
+        <main id="main-content" tabIndex={-1} className="recruit-page" style={{ paddingTop: '120px' }}>
             <div className="container">
                 <Link to="/join-us" className="back-link">
-                    <ArrowLeft size={16} /> Back to Opportunities
+                    <ArrowLeft size={16} aria-hidden="true" /> <span lang="en">Back to Opportunities</span>
                 </Link>
 
                 <header className="recruit-header">
-                    <div className="icon-circle"><Ticket size={48} /></div>
-                    <h1>Register as <span className="highlight-red">Audience</span></h1>
+                    <div className="icon-circle" aria-hidden="true"><Ticket size={48} /></div>
+                    <h1 lang="en">Register as <span className="highlight-red">Audience</span></h1>
                     <p className="lead-text">{content.lead}</p>
                 </header>
 
                 <section className="eligibility-panel" aria-labelledby="audience-eligibility-title">
                     <div className="eligibility-icon"><Users size={36} aria-hidden="true" /></div>
                     <div>
-                        <span className="eligibility-label">{content.eligibilityLabel}</span>
+                        <span className="eligibility-label">
+                            {language === 'ja' ? (
+                                <><span lang="en">Audience Eligibility</span> / 参加対象</>
+                            ) : content.eligibilityLabel}
+                        </span>
                         <h2 id="audience-eligibility-title">{content.eligibilityTitle}</h2>
                         <p>{content.eligibilityDescription}</p>
                     </div>
@@ -58,44 +62,44 @@ const AudienceRegistration = () => {
                 <div className="audience-layout">
                     <div className="info-side">
                         <section className="info-block">
-                            <div className="info-icon"><Bell size={24} /></div>
+                            <div className="info-icon" aria-hidden="true"><Bell size={24} /></div>
                             <div>
-                                <h3>Be the First to Know</h3>
+                                <h2 lang="en">Be the First to Know</h2>
                                 <p>{content.newsletterDescription}</p>
                             </div>
                         </section>
 
                         <section className="info-block">
-                            <div className="info-icon"><Calendar size={24} /></div>
+                            <div className="info-icon" aria-hidden="true"><Calendar size={24} /></div>
                             <div>
-                                <h3>Upcoming Events</h3>
+                                <h2 lang="en">Upcoming Events</h2>
                                 <p>{content.eventDescription}</p>
                             </div>
                         </section>
                     </div>
 
                     <div className="form-side">
-                        <div className="registration-card">
-                            <span className="registration-status">Coming in September</span>
-                            <h3>{content.registrationTitle}</h3>
+                        <section className="registration-card" aria-labelledby="registration-information-title">
+                            <span className="registration-status" lang="en">Coming in September</span>
+                            <h2 id="registration-information-title">{content.registrationTitle}</h2>
                             <p>{content.registrationDescription}</p>
                             <div className="registration-audience">
                                 <span>{content.audienceLabel}</span>
                                 <strong>{content.audienceValue}</strong>
                             </div>
-                            <div className="registration-date">2026.09</div>
-                        </div>
+                            <time className="registration-date" dateTime="2026-09">2026.09</time>
+                        </section>
                     </div>
                 </div>
             </div>
 
             <style>{`
         .recruit-page { background: var(--ted-black); color: white; padding-bottom: 8rem; }
-        .back-link { display: flex; align-items: center; gap: 0.5rem; color: #888; font-weight: 600; margin-bottom: 3rem; }
+        .back-link { display: inline-flex; align-items: center; gap: 0.5rem; min-height: 44px; color: #aaa; font-weight: 600; margin-bottom: 3rem; }
         .back-link:hover { color: var(--ted-red); }
         .recruit-header { text-align: center; margin-bottom: 6rem; }
         .icon-circle { width: 100px; height: 100px; background: rgba(235, 0, 40, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem; color: var(--ted-red); }
-        h1 { font-size: 3.5rem; margin-bottom: 1.5rem; }
+        .recruit-header h1 { font-size: clamp(2.4rem, 9vw, 3.5rem); margin-bottom: 1.5rem; text-wrap: balance; }
         .lead-text { font-size: 1.3rem; color: #aaa; max-width: 600px; margin: 0 auto; }
 
         .eligibility-panel { display: grid; grid-template-columns: auto 1fr; gap: 2rem; align-items: center; max-width: 980px; margin: -2rem auto 6rem; padding: 2.5rem 3rem; background: white; color: var(--ted-black); border-left: 8px solid var(--ted-red); border-radius: 16px; box-shadow: 0 24px 60px rgba(0,0,0,0.45); }
@@ -108,23 +112,23 @@ const AudienceRegistration = () => {
         
         .info-block { display: flex; gap: 2rem; margin-bottom: 4rem; }
         .info-icon { width: 48px; height: 48px; min-width: 48px; background: #111; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: var(--ted-red); border: 1px solid rgba(255,255,255,0.05); }
-        .info-block h3 { font-size: 1.5rem; margin-bottom: 0.8rem; }
+        .info-block h2 { font-size: 1.5rem; margin-bottom: 0.8rem; text-align: left; }
         .info-block p { color: #888; line-height: 1.7; }
 
         .registration-card { background: #111; padding: 3rem; border-radius: 20px; border: 1px solid rgba(255,255,255,0.05); box-shadow: 0 20px 50px rgba(0,0,0,0.5); }
-        .registration-card h3 { font-size: 1.8rem; margin-bottom: 0.5rem; }
-        .registration-card p { color: #666; margin-bottom: 2.5rem; }
+        .registration-card h2 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+        .registration-card p { color: #aaa; margin-bottom: 2.5rem; }
 
-        .registration-status { display: inline-block; margin-bottom: 1rem; color: var(--ted-red); font-size: 0.75rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; }
-        .registration-audience { display: flex; justify-content: space-between; align-items: center; gap: 1rem; margin-bottom: 1rem; padding: 0.9rem 1rem; background: rgba(255,255,255,0.05); border-radius: 8px; }
+        .registration-status { display: inline-block; margin-bottom: 1rem; color: var(--ted-red-text); font-size: 0.75rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; }
+        .registration-audience { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 0.5rem 1rem; margin-bottom: 1rem; padding: 0.9rem 1rem; background: rgba(255,255,255,0.05); border-radius: 8px; }
         .registration-audience span { color: #888; font-size: 0.75rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; }
         .registration-audience strong { color: white; }
-        .registration-date { padding: 1rem; border: 1px solid rgba(235,0,40,0.45); border-radius: 8px; color: var(--ted-red); font-family: var(--font-heading); font-size: 2rem; font-weight: 800; text-align: center; }
+        .registration-date { display: block; padding: 1rem; border: 1px solid rgba(235,0,40,0.65); border-radius: 8px; color: var(--ted-red-text); font-family: var(--font-heading); font-size: 2rem; font-weight: 800; text-align: center; }
 
         .form-group { margin-bottom: 1.5rem; }
         .form-group label { display: block; font-size: 0.8rem; font-weight: 700; color: #888; text-transform: uppercase; margin-bottom: 0.5rem; }
         input, select { width: 100%; background: #222; border: 1px solid #333; padding: 1rem; border-radius: 8px; color: white; font-family: inherit; }
-        input:focus, select:focus { outline: none; border-color: var(--ted-red); }
+        .recruit-page input:focus, .recruit-page select:focus { border-color: var(--ted-red); }
 
         .btn-primary-full { 
           width: 100%; 
@@ -144,7 +148,7 @@ const AudienceRegistration = () => {
 
         .form-note {
           margin-top: 1.5rem;
-          color: #666;
+          color: #aaa;
           font-size: 0.85rem;
           text-align: center;
         }
@@ -152,16 +156,24 @@ const AudienceRegistration = () => {
         @media (max-width: 1024px) {
           .audience-layout { grid-template-columns: 1fr; }
           .registration-card { order: -1; }
-          h1 { font-size: 2.5rem; }
+          .recruit-header h1 { font-size: 2.5rem; }
         }
 
         @media (max-width: 640px) {
           .eligibility-panel { grid-template-columns: 1fr; gap: 1.25rem; margin-top: -2.5rem; padding: 2rem 1.5rem; text-align: center; }
           .eligibility-icon { margin: 0 auto; }
           .eligibility-panel h2 { text-align: center; }
+          .registration-card { padding: 2rem 1.25rem; }
+          .registration-audience { align-items: flex-start; flex-direction: column; }
+          .registration-audience strong { overflow-wrap: anywhere; text-align: left; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          .btn-primary-full { transition: none; }
+          .btn-primary-full:hover { transform: none; }
         }
       `}</style>
-        </div>
+        </main>
     );
 };
 

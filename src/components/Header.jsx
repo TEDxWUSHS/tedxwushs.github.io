@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useState, useEffect, useRef } from 'react';
+import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import logoText from '../assets/logo_red.png';
@@ -11,6 +11,13 @@ const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
   const { language } = useLanguage();
+  const shouldReduceMotion = useReducedMotion();
+  const logoLinkRef = useRef(null);
+  const desktopCurrentLinkRef = useRef(null);
+  const toggleButtonRef = useRef(null);
+  const firstMobileLinkRef = useRef(null);
+  const returnFocusOnClose = useRef(false);
+  const focusDesktopAfterClose = useRef(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,10 +26,6 @@ const Header = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [location.pathname]);
 
   const menuItems = [
     { name: 'Home', href: '/' },
@@ -33,21 +36,105 @@ const Header = () => {
     { name: 'FAQ', href: '/faq' },
   ];
 
+  const isCurrentSection = (href) => (
+    href === '/'
+      ? location.pathname === '/'
+      : location.pathname === href || location.pathname.startsWith(`${href}/`)
+  );
+
+  useEffect(() => {
+    returnFocusOnClose.current = false;
+    setIsMobileMenuOpen(false);
+  }, [location.pathname]);
+
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      const focusFrame = window.requestAnimationFrame(() => {
+        firstMobileLinkRef.current?.focus();
+      });
+
+      return () => window.cancelAnimationFrame(focusFrame);
+    }
+
+    if (focusDesktopAfterClose.current) {
+      focusDesktopAfterClose.current = false;
+      (desktopCurrentLinkRef.current ?? logoLinkRef.current)?.focus();
+    } else if (returnFocusOnClose.current) {
+      returnFocusOnClose.current = false;
+      toggleButtonRef.current?.focus();
+    }
+
+    return undefined;
+  }, [isMobileMenuOpen]);
+
+  useEffect(() => {
+    const desktopMedia = window.matchMedia('(min-width: 901px)');
+
+    const closeMenuAtDesktopWidth = (event) => {
+      if (!event.matches || !isMobileMenuOpen) return;
+
+      const mobileNavigation = document.getElementById('mobile-navigation');
+      const activeElement = document.activeElement;
+      focusDesktopAfterClose.current = (
+        mobileNavigation?.contains(activeElement)
+        || toggleButtonRef.current === activeElement
+      );
+      returnFocusOnClose.current = false;
+      setIsMobileMenuOpen(false);
+    };
+
+    closeMenuAtDesktopWidth(desktopMedia);
+    desktopMedia.addEventListener('change', closeMenuAtDesktopWidth);
+    return () => desktopMedia.removeEventListener('change', closeMenuAtDesktopWidth);
+  }, [isMobileMenuOpen]);
+
+  useEffect(() => {
+    if (!isMobileMenuOpen) return undefined;
+
+    const closeOnEscape = (event) => {
+      if (event.key !== 'Escape') return;
+      returnFocusOnClose.current = true;
+      setIsMobileMenuOpen(false);
+    };
+
+    document.addEventListener('keydown', closeOnEscape);
+    return () => document.removeEventListener('keydown', closeOnEscape);
+  }, [isMobileMenuOpen]);
+
+  const toggleMobileMenu = () => {
+    if (isMobileMenuOpen) returnFocusOnClose.current = true;
+    setIsMobileMenuOpen((isOpen) => !isOpen);
+  };
+
+  const closeMobileMenuForNavigation = (href) => {
+    returnFocusOnClose.current = location.pathname === href;
+    setIsMobileMenuOpen(false);
+  };
+
   return (
-    <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
+    <>
+      <a href="#main-content" className="skip-link">
+        {language === 'ja' ? '本文へ移動' : 'Skip to main content'}
+      </a>
+      <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
       <div className="container header-content">
-        <Link to="/" className="logo-container">
+        <Link ref={logoLinkRef} to="/" className="logo-container">
           <img src={logoText} alt="TEDxWUSHS Youth" className="header-logo" />
         </Link>
 
         <div className="header-actions">
-          <nav className="desktop-nav" aria-label="Primary navigation">
-            <ul>
+          <nav
+            className="desktop-nav"
+            aria-label={language === 'ja' ? 'メインナビゲーション' : 'Primary navigation'}
+          >
+            <ul lang="en">
               {menuItems.map((item) => (
                 <li key={item.name}>
                   <Link
                     to={item.href}
-                    className={location.pathname === item.href ? 'active' : ''}
+                    ref={isCurrentSection(item.href) ? desktopCurrentLinkRef : undefined}
+                    className={isCurrentSection(item.href) ? 'active' : ''}
+                    aria-current={location.pathname === item.href ? 'page' : undefined}
                   >
                     {item.name}
                   </Link>
@@ -60,46 +147,76 @@ const Header = () => {
 
           <button
             type="button"
+            ref={toggleButtonRef}
             className="mobile-menu-btn"
             aria-label={isMobileMenuOpen
               ? (language === 'ja' ? 'メニューを閉じる' : 'Close menu')
               : (language === 'ja' ? 'メニューを開く' : 'Open menu')}
             aria-expanded={isMobileMenuOpen}
             aria-controls="mobile-navigation"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            onClick={toggleMobileMenu}
           >
-            {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+            {isMobileMenuOpen
+              ? <X size={28} aria-hidden="true" />
+              : <Menu size={28} aria-hidden="true" />}
           </button>
         </div>
       </div>
 
       <AnimatePresence>
         {isMobileMenuOpen && (
-          <motion.div
+          <motion.nav
             id="mobile-navigation"
             className="mobile-menu"
-            initial={{ opacity: 0, y: -20 }}
+            aria-label={language === 'ja' ? 'モバイルナビゲーション' : 'Mobile navigation'}
+            initial={shouldReduceMotion ? false : { opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -20 }}
+            exit={shouldReduceMotion ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }}
+            transition={shouldReduceMotion ? { duration: 0 } : { duration: 0.2 }}
           >
-            <ul>
-              {menuItems.map((item) => (
+            <ul lang="en">
+              {menuItems.map((item, index) => (
                 <li key={item.name}>
                   <Link
                     to={item.href}
-                    onClick={() => setIsMobileMenuOpen(false)}
-                    className={location.pathname === item.href ? 'active-mobile' : ''}
+                    ref={index === 0 ? firstMobileLinkRef : undefined}
+                    onClick={() => closeMobileMenuForNavigation(item.href)}
+                    className={isCurrentSection(item.href) ? 'active-mobile' : ''}
+                    aria-current={location.pathname === item.href ? 'page' : undefined}
                   >
                     {item.name}
                   </Link>
                 </li>
               ))}
             </ul>
-          </motion.div>
+          </motion.nav>
         )}
       </AnimatePresence>
 
       <style>{`
+        .skip-link {
+          position: fixed;
+          top: 0.5rem;
+          left: 0.5rem;
+          z-index: 2000;
+          display: inline-flex;
+          align-items: center;
+          min-height: 44px;
+          padding: 0.65rem 1rem;
+          border: 2px solid var(--ted-white);
+          border-radius: 4px;
+          background: var(--ted-red);
+          color: var(--ted-white);
+          font-weight: 700;
+          transform: translateY(calc(-100% - 1rem));
+        }
+
+        .skip-link:focus {
+          outline: 2px solid var(--ted-white);
+          outline-offset: 2px;
+          transform: translateY(0);
+        }
+
         .header {
           position: fixed;
           top: 0;
@@ -130,6 +247,9 @@ const Header = () => {
         }
 
         .logo-container {
+          display: inline-flex;
+          align-items: center;
+          min-height: 44px;
           flex-shrink: 0;
         }
 
@@ -153,12 +273,17 @@ const Header = () => {
         }
 
         .desktop-nav a:hover, .desktop-nav a.active {
-          color: var(--ted-red);
+          color: var(--ted-red-text);
           opacity: 1;
         }
 
         .mobile-menu-btn {
           display: none;
+          align-items: center;
+          justify-content: center;
+          width: 44px;
+          min-width: 44px;
+          height: 44px;
           color: var(--ted-white);
         }
 
@@ -174,18 +299,31 @@ const Header = () => {
           left: 0;
           width: 100%;
           background: var(--ted-black);
-          padding: 2rem;
+          max-height: calc(100vh - 92px);
+          max-height: calc(100dvh - 92px);
+          padding: 1rem 2rem 2rem;
           border-bottom: 1px solid var(--ted-red);
+          overflow-y: auto;
+          overscroll-behavior: contain;
         }
 
         .mobile-menu ul {
           display: flex;
           flex-direction: column;
-          gap: 1.5rem;
+          gap: 0.5rem;
           align-items: center;
         }
 
+        .mobile-menu li {
+          width: min(100%, 28rem);
+        }
+
         .mobile-menu a {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          min-height: 44px;
+          padding: 0.65rem 1rem;
           font-size: 1.2rem;
           font-weight: 700;
           text-transform: uppercase;
@@ -193,7 +331,7 @@ const Header = () => {
         }
 
         .mobile-menu a.active-mobile {
-          color: var(--ted-red);
+          color: var(--ted-red-text);
           opacity: 1;
         }
 
@@ -202,7 +340,7 @@ const Header = () => {
             display: none;
           }
           .mobile-menu-btn {
-            display: block;
+            display: flex;
           }
           .header-actions {
             gap: 0.8rem;
@@ -215,7 +353,8 @@ const Header = () => {
             padding-right: 1rem;
           }
           .header-logo {
-            height: 28px;
+            width: min(130px, 34vw);
+            height: auto;
           }
           .header-actions {
             gap: 0.5rem;
@@ -224,11 +363,29 @@ const Header = () => {
 
         @media (max-width: 360px) {
           .header-logo {
-            height: 23px;
+            width: min(110px, 32vw);
+            height: auto;
+          }
+        }
+
+        @media (min-width: 901px) {
+          .mobile-menu {
+            display: none;
+          }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          .skip-link,
+          .header,
+          .desktop-nav a,
+          .mobile-menu a {
+            scroll-behavior: auto;
+            transition-duration: 0.01ms !important;
           }
         }
       `}</style>
-    </header>
+      </header>
+    </>
   );
 };
 

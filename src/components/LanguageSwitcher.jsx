@@ -57,8 +57,8 @@ const LanguageSwitcher = () => {
           display: inline-flex;
           align-items: center;
           justify-content: center;
-          min-width: 2.5rem;
-          min-height: 2.5rem;
+          min-width: 2.75rem;
+          min-height: 2.75rem;
           padding: 0.18rem;
           color: inherit;
           font-size: 0.72rem;
@@ -70,7 +70,7 @@ const LanguageSwitcher = () => {
 
         .language-option:hover,
         .language-option.active {
-          color: var(--ted-red);
+          color: var(--ted-red-text);
           opacity: 1;
         }
 

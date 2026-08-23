@@ -47,10 +47,10 @@ const Speakers = ({ variant = 'preview' }) => {
           viewport={{ once: true }}
           transition={{ duration: shouldReduceMotion ? 0 : 0.6 }}
         >
-          <span className="speakers-section__eyebrow">
+          <span className="speakers-section__eyebrow" lang="en">
             {isFullPage ? 'The 2026 Speaker Lineup' : 'Ideas in Motion'}
           </span>
-          <Heading id="speakers-heading" className="speakers-section__title">
+          <Heading id="speakers-heading" className="speakers-section__title" lang="en">
             {isFullPage ? 'Our ' : 'Featured '}
             <span>Speakers</span>
           </Heading>
@@ -80,7 +80,7 @@ const Speakers = ({ variant = 'preview' }) => {
             <span className="speakers-section__coming-soon-mark" aria-hidden="true">+</span>
             <div>
               <p className="speakers-section__coming-soon-label">{copy.comingSoonLabel}</p>
-              <h2 id="speakers-coming-soon-heading" className="speakers-section__coming-soon-title">
+              <h2 id="speakers-coming-soon-heading" className="speakers-section__coming-soon-title" lang="en">
                 Coming Soon
               </h2>
               <p className="speakers-section__coming-soon-body">{copy.comingSoonBody}</p>
@@ -90,7 +90,7 @@ const Speakers = ({ variant = 'preview' }) => {
 
         {!isFullPage && publishedSpeakers.length > 0 && (
           <div className="speakers-section__cta-wrap">
-            <Link to="/speakers" className="speakers-section__cta">
+            <Link to="/speakers" className="speakers-section__cta" lang="en">
               More Details
               {/* View All Speakers */}
               <ArrowRight size={18} aria-hidden="true" />
@@ -372,7 +372,7 @@ const Speakers = ({ variant = 'preview' }) => {
 
         .speakers-section__empty {
           text-align: center;
-          color: #777;
+          color: #999;
         }
 
         @media (max-width: 800px) {
@@ -441,6 +441,13 @@ const Speakers = ({ variant = 'preview' }) => {
           .speaker-card__image,
           .speakers-section__cta {
             transition: none;
+          }
+
+          .speaker-card--preview:hover,
+          .speaker-card--preview:hover .speaker-card__image,
+          .speakers-section__cta:hover,
+          .speakers-section__cta:focus-visible {
+            transform: none;
           }
         }
       `}</style>

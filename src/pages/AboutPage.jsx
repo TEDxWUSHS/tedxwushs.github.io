@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import { Facebook, Instagram, Linkedin, Twitter, Music2 } from 'lucide-react';
 import { useLanguage } from '../i18n/LanguageContext';
 
@@ -15,14 +15,15 @@ const JA_TED_INITIATIVES = 'Audacious Projectを通じて、TEDは、世界が�
 const AboutPage = () => {
     const { language } = useLanguage();
     const isJapanese = language === 'ja';
+    const shouldReduceMotion = useReducedMotion();
 
     return (
-        <div className="about-page">
+        <main id="main-content" tabIndex={-1} className="about-page">
             <div className="container section-padding">
                 <motion.div
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={shouldReduceMotion ? false : { opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8 }}
+                    transition={{ duration: shouldReduceMotion ? 0 : 0.8 }}
                 >
                     <section className="about-section">
                         <h1 className="page-title">
@@ -80,17 +81,17 @@ const AboutPage = () => {
                         )}
                         <p hidden={isJapanese}>
                             {/* eslint-disable-next-line react/no-unescaped-entities */}
-                            TED began in 1984 as a conference where Technology, Entertainment and Design converged, but today it spans a multitude of worldwide communities and initiatives exploring everything from science and business to education, arts and global issues. In addition to the TED Talks curated from our annual conferences and published on TED.com, we produce original podcasts, short video series, animated educational lessons (TED-Ed) and TV programs that are translated into more than 100 languages and distributed via partnerships around the world. Each year, thousands of independently run TEDx events. Through the Audacious Project, TED has helped catalyze $6.6 billion in funding for projects that support bold solutions to the world's most urgent challenges — working to make the world more beautiful, sustainable and just. In 2020, TED launched Countdown, an initiative to accelerate solutions to the climate crisis and mobilize a movement for a net-zero future, and in 2023 TED launched TED Democracy to spark a new kind of conversation focused on realistic pathways towards a more vibrant and equitable future. <a href="https://www.ted.com/about/programs-initiatives" target="_blank" rel="noopener" className="highlight-link">View a full list of TED’s many programs and initiatives.</a>
+                            TED began in 1984 as a conference where Technology, Entertainment and Design converged, but today it spans a multitude of worldwide communities and initiatives exploring everything from science and business to education, arts and global issues. In addition to the TED Talks curated from our annual conferences and published on TED.com, we produce original podcasts, short video series, animated educational lessons (TED-Ed) and TV programs that are translated into more than 100 languages and distributed via partnerships around the world. Each year, thousands of independently run TEDx events. Through the Audacious Project, TED has helped catalyze $6.6 billion in funding for projects that support bold solutions to the world's most urgent challenges — working to make the world more beautiful, sustainable and just. In 2020, TED launched Countdown, an initiative to accelerate solutions to the climate crisis and mobilize a movement for a net-zero future, and in 2023 TED launched TED Democracy to spark a new kind of conversation focused on realistic pathways towards a more vibrant and equitable future. <a href="https://www.ted.com/about/programs-initiatives" target="_blank" rel="noopener noreferrer" className="highlight-link">View a full list of TED’s many programs and initiatives.</a>
                         </p>
 
                         <div className="ted-social">
                             <p>{isJapanese ? 'TEDの公式アカウント' : 'Follow TED on:'}</p>
                             <div className="social-links">
-                                <a href="https://www.facebook.com/TED" target="_blank" rel="noopener noreferrer" aria-label="TED on Facebook"><Facebook size={24} /></a>
-                                <a href="https://www.instagram.com/ted" target="_blank" rel="noopener noreferrer" aria-label="TED on Instagram"><Instagram size={24} /></a>
-                                <a href="https://www.linkedin.com/company/ted-conferences" target="_blank" rel="noopener noreferrer" aria-label="TED on LinkedIn"><Linkedin size={24} /></a>
-                                <a href="https://twitter.com/TEDTalks" target="_blank" rel="noopener noreferrer" aria-label="TED on X"><Twitter size={24} /></a>
-                                <a href="https://www.tiktok.com/@tedtoks" target="_blank" rel="noopener noreferrer" aria-label="TED on TikTok"><Music2 size={24} /></a>
+                                <a href="https://www.facebook.com/TED" target="_blank" rel="noopener noreferrer" aria-label="TED on Facebook" lang="en"><Facebook size={24} aria-hidden="true" /></a>
+                                <a href="https://www.instagram.com/ted" target="_blank" rel="noopener noreferrer" aria-label="TED on Instagram" lang="en"><Instagram size={24} aria-hidden="true" /></a>
+                                <a href="https://www.linkedin.com/company/ted-conferences" target="_blank" rel="noopener noreferrer" aria-label="TED on LinkedIn" lang="en"><Linkedin size={24} aria-hidden="true" /></a>
+                                <a href="https://twitter.com/TEDTalks" target="_blank" rel="noopener noreferrer" aria-label="TED on X" lang="en"><Twitter size={24} aria-hidden="true" /></a>
+                                <a href="https://www.tiktok.com/@tedtoks" target="_blank" rel="noopener noreferrer" aria-label="TED on TikTok" lang="en"><Music2 size={24} aria-hidden="true" /></a>
                             </div>
                         </div>
                     </section>
@@ -106,9 +107,10 @@ const AboutPage = () => {
                 }
 
                 .page-title {
-                    font-size: 3.5rem;
+                    font-size: clamp(2.4rem, 9vw, 3.5rem);
                     margin-bottom: 3rem;
                     text-align: center;
+                    text-wrap: balance;
                 }
 
                 .about-section {
@@ -118,7 +120,7 @@ const AboutPage = () => {
 
                 .sub-title {
                     font-size: 1.5rem;
-                    color: var(--ted-red);
+                    color: var(--ted-red-text);
                     margin-bottom: 1.5rem;
                 }
 
@@ -127,16 +129,17 @@ const AboutPage = () => {
                     margin-bottom: 2rem;
                 }
 
-                p {
+                .about-section p {
                     font-size: 1.1rem;
                     line-height: 1.8;
                     color: #ccc;
                     margin-bottom: 2rem;
                 }
 
-                .highlight-link {
-                    color: var(--ted-red);
+                .about-page .highlight-link {
+                    color: var(--ted-red-text);
                     text-decoration: underline;
+                    text-underline-offset: 0.18em;
                 }
 
                 .official-guide {
@@ -161,21 +164,57 @@ const AboutPage = () => {
 
                 .social-links {
                     display: flex;
+                    flex-wrap: wrap;
                     justify-content: center;
-                    gap: 2rem;
+                    gap: 0.75rem;
                 }
 
                 .social-links a {
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 44px;
+                    min-width: 44px;
+                    height: 44px;
+                    border-radius: 4px;
                     color: white;
                     transition: var(--transition-smooth);
                 }
 
                 .social-links a:hover {
-                    color: var(--ted-red);
+                    color: var(--ted-red-text);
                     transform: translateY(-5px);
                 }
+
+                @media (max-width: 480px) {
+                    .about-page .section-padding {
+                        padding-top: 3.5rem;
+                    }
+
+                    .page-title {
+                        margin-bottom: 2rem;
+                    }
+
+                    .sub-title {
+                        font-size: 1.3rem;
+                    }
+
+                    .ted-social {
+                        padding: 1.5rem 1rem;
+                    }
+                }
+
+                @media (prefers-reduced-motion: reduce) {
+                    .social-links a {
+                        transition: none;
+                    }
+
+                    .social-links a:hover {
+                        transform: none;
+                    }
+                }
             `}</style>
-        </div>
+        </main>
     );
 };
 

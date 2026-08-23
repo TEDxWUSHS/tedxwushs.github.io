@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import { useLanguage } from '../i18n/LanguageContext';
 
 const aboutCopy = {
@@ -30,6 +30,7 @@ const aboutCopy = {
 
 const About = () => {
   const { language } = useLanguage();
+  const shouldReduceMotion = useReducedMotion();
   const copy = aboutCopy[language];
 
   return (
@@ -38,10 +39,10 @@ const About = () => {
         <div className="about-grid">
           <motion.div
             className="about-item"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={shouldReduceMotion ? false : { opacity: 0, y: 30 }}
+            whileInView={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: shouldReduceMotion ? 0 : 0.6 }}
           >
             <h2 className="section-title">{copy.whatIsTedxTitle}</h2>
             <p className="tedx-description">{copy.whatIsTedx}</p>
@@ -52,30 +53,30 @@ const About = () => {
 
           <motion.div
             className="about-item"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={shouldReduceMotion ? false : { opacity: 0, y: 30 }}
+            whileInView={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            transition={shouldReduceMotion ? { duration: 0 } : { duration: 0.6, delay: 0.2 }}
           >
             <h2 className="section-title">TEDx<span className="highlight-red">WUSHS Youth</span></h2>
             <p>{copy.localDescription}</p>
             <p className="event-info">
-              <strong>Date:</strong> October 31, 2026 (14:00 - 18:00 / Reception 13:30)<br />
-              <strong>Venue:</strong> <a href="https://www.waseda.jp/school/shs/" target="_blank" rel="noopener noreferrer" className="highlight-link">{copy.venue}</a>, Nerima, Tokyo<br />
-              <strong>Theme:</strong> Breakshot
+              <strong lang="en">Date:</strong> <span lang="en">October 31, 2026 (14:00 - 18:00 / Reception 13:30)</span><br />
+              <strong lang="en">Venue:</strong> <a href="https://www.waseda.jp/school/shs/" target="_blank" rel="noopener noreferrer" className="highlight-link">{copy.venue}</a>, <span lang="en">Nerima, Tokyo</span><br />
+              <strong lang="en">Theme:</strong> <span lang="en">Breakshot</span>
             </p>
           </motion.div>
         </div>
 
         <motion.div
           className="mission-box"
-          initial={{ opacity: 0, scale: 0.95 }}
-          whileInView={{ opacity: 1, scale: 1 }}
+          initial={shouldReduceMotion ? false : { opacity: 0, scale: 0.95 }}
+          whileInView={shouldReduceMotion ? undefined : { opacity: 1, scale: 1 }}
           viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: shouldReduceMotion ? 0 : 0.8 }}
         >
-          <h3>Theme</h3>
-          <p className="mission-text">
+          <h3 lang="en">Theme</h3>
+          <p className="mission-text" lang="en">
             Breakshot
           </p>
           <div className="mission-description">
@@ -129,7 +130,7 @@ const About = () => {
         }
 
         .highlight-link {
-          color: var(--ted-red);
+          color: var(--ted-red-text);
           text-decoration: underline;
         }
 
@@ -148,7 +149,7 @@ const About = () => {
         }
 
         .event-info strong {
-          color: var(--ted-red);
+          color: var(--ted-red-text);
           text-transform: uppercase;
         }
 
@@ -166,7 +167,7 @@ const About = () => {
           font-size: 1.2rem;
           letter-spacing: 0.3em;
           margin-bottom: 1.5rem;
-          opacity: 0.8;
+          color: var(--ted-white);
         }
 
         .mission-text {
@@ -183,7 +184,7 @@ const About = () => {
 
         .mission-description p {
           margin-bottom: 1.2rem;
-          color: rgba(255, 255, 255, 0.92);
+          color: var(--ted-white);
           font-size: 1.05rem;
           line-height: 2;
         }
