@@ -57,7 +57,7 @@ const SpeakerRecruitment = () => {
           <ul className="benefits-grid">
             {content.benefits.map((benefit) => (
               <li className="benefit-card" key={benefit}>
-                <CheckCircle color="#ff5a6d" size={24} aria-hidden="true" />
+                <CheckCircle color="var(--ted-red)" size={24} aria-hidden="true" />
                 <p>{benefit}</p>
               </li>
             ))}
@@ -104,7 +104,7 @@ const SpeakerRecruitment = () => {
         .icon-circle {
           width: 100px;
           height: 100px;
-          background: rgba(235, 0, 40, 0.1);
+          background: rgb(var(--ted-red-rgb) / 0.1);
           border-radius: 50%;
           display: flex;
           align-items: center;
@@ -155,7 +155,7 @@ const SpeakerRecruitment = () => {
         }
 
         .cta-box {
-          background: linear-gradient(135deg, var(--ted-red), #900);
+          background: var(--ted-red);
           padding: 5rem;
           border-radius: 24px;
           text-align: center;
@@ -185,6 +185,8 @@ const SpeakerRecruitment = () => {
 
         @media (max-width: 360px) {
           .cta-box { padding-right: 1rem; padding-left: 1rem; }
+          .cta-box h2 { font-size: clamp(1.7rem, 9vw, 2.5rem); line-height: 1.1; }
+          .benefit-card { padding: 2rem 1.25rem; }
           .closed-label { padding-right: 0.75rem; padding-left: 0.75rem; font-size: 0.7rem; }
         }
       `}</style>

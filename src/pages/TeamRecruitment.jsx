@@ -103,7 +103,7 @@ const TeamRecruitment = () => {
         .back-link:hover { color: var(--ted-red); }
         .recruit-header { text-align: center; margin-bottom: 6rem; }
         .icon-circle { width: 100px; height: 100px; background: rgba(255, 255, 255, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem; }
-        .recruitment-status { display: inline-block; margin-bottom: 1rem; color: var(--ted-red-text); font-size: 0.75rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; }
+        .recruitment-status { display: inline-block; margin-bottom: 1rem; color: var(--ted-red); font-size: 0.75rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; }
         .recruit-header h1 { font-size: clamp(2.4rem, 9vw, 3.5rem); margin-bottom: 1.5rem; text-wrap: balance; }
         .lead-text { font-size: 1.3rem; color: #aaa; max-width: 650px; margin: 0 auto; }
 
@@ -117,10 +117,10 @@ const TeamRecruitment = () => {
         .dept-card p { color: #888; line-height: 1.8; }
 
         .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3rem; margin-bottom: 8rem; }
-        .value-item h3 { color: var(--ted-red-text); margin-bottom: 1rem; font-size: 1.4rem; }
+        .value-item h3 { color: var(--ted-red); margin-bottom: 1rem; font-size: 1.4rem; }
         .value-item p { color: #ccc; }
 
-        .cta-box { border-radius: 24px; padding: 5rem; text-align: center; background: #eb0028; }
+        .cta-box { border-radius: 24px; padding: 5rem; text-align: center; background: var(--ted-red); }
         .cta-box h2 { font-size: 2.5rem; margin-bottom: 1.2rem; }
         .cta-box p { color: white; font-size: 1.2rem; margin-bottom: 3rem; }
         .closed-label { display: inline-block; max-width: 100%; background: white; color: var(--ted-red); padding: 1.3rem 2.5rem; border-radius: 100px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.04em; overflow-wrap: anywhere; }
@@ -134,6 +134,9 @@ const TeamRecruitment = () => {
 
         @media (max-width: 360px) {
           .cta-box { padding-right: 1rem; padding-left: 1rem; }
+          .cta-box h2 { font-size: clamp(1.7rem, 9vw, 2.5rem); line-height: 1.1; }
+          .dept-card { padding: 2rem 1.25rem; }
+          .dept-card h3 { font-size: clamp(1.4rem, 8vw, 1.8rem); }
           .closed-label { padding-right: 0.75rem; padding-left: 0.75rem; font-size: 0.68rem; }
         }
 

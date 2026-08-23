@@ -43,7 +43,7 @@ const NotFoundPage = () => {
         }
 
         .not-found-page__code {
-          color: var(--ted-red-text);
+          color: var(--ted-red);
           font-family: var(--font-heading);
           font-size: clamp(4rem, 20vw, 9rem);
           font-weight: 800;

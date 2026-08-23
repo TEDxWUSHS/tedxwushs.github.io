@@ -222,7 +222,7 @@ const JoinUs = ({ hideHeader = false }) => {
         }
 
         .join-tagline {
-          color: #ff4d6a;
+          color: var(--ted-red);
           font-weight: 800;
           letter-spacing: 0.25em;
           text-transform: uppercase;
@@ -247,16 +247,16 @@ const JoinUs = ({ hideHeader = false }) => {
           max-width: 820px;
           margin: -2rem auto 4rem;
           padding: 1.5rem 2rem;
-          border: 1px solid rgba(235, 0, 40, 0.45);
+          border: 1px solid rgb(var(--ted-red-rgb) / 0.45);
           border-radius: 12px;
-          background: rgba(235, 0, 40, 0.08);
+          background: var(--ted-black);
           text-align: center;
         }
 
         .recruitment-closed strong {
           display: block;
           margin-bottom: 0.5rem;
-          color: #ff4d6a;
+          color: var(--ted-red);
           font-family: var(--font-heading);
           letter-spacing: 0.08em;
           text-transform: uppercase;
@@ -297,9 +297,10 @@ const JoinUs = ({ hideHeader = false }) => {
           display: inline-block;
           margin-bottom: 1rem;
           padding: 0.35rem 0.7rem;
-          border: 1px solid rgba(235, 0, 40, 0.55);
+          border: 1px solid rgb(var(--ted-red-rgb) / 0.55);
           border-radius: 999px;
-          color: #ff4d6a;
+          background: var(--ted-black);
+          color: var(--ted-red);
           font-size: 0.7rem;
           font-weight: 800;
           letter-spacing: 0.08em;
@@ -335,8 +336,10 @@ const JoinUs = ({ hideHeader = false }) => {
           align-items: center;
           gap: 0.5rem;
           min-height: 44px;
-          padding: 0.45rem 0;
-          color: #ff4d6a;
+          padding: 0.45rem 0.75rem;
+          border-radius: 999px;
+          background: var(--ted-black);
+          color: var(--ted-red);
           font-weight: 700;
           font-size: 0.9rem;
           text-transform: uppercase;
@@ -418,7 +421,7 @@ const JoinUs = ({ hideHeader = false }) => {
         }
 
         .btn-primary:hover {
-          background: #ff1a40;
+          background: var(--ted-red);
           transform: scale(1.05);
         }
 
@@ -441,12 +444,12 @@ const JoinUs = ({ hideHeader = false }) => {
           margin-top: 3rem;
           padding: 2rem;
           border-radius: 16px;
-          background: var(--ted-dark-gray);
+          background: var(--ted-black);
           border: 1px solid rgba(255, 255, 255, 0.08);
         }
 
         .contact-box > svg {
-          color: #ff4d6a;
+          color: var(--ted-red);
         }
 
         .contact-box span {
@@ -471,7 +474,7 @@ const JoinUs = ({ hideHeader = false }) => {
           display: inline-flex;
           align-items: center;
           min-height: 44px;
-          color: #ff4d6a;
+          color: var(--ted-red);
           font-weight: 700;
         }
 

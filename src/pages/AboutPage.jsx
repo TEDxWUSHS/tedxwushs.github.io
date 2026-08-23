@@ -120,7 +120,7 @@ const AboutPage = () => {
 
                 .sub-title {
                     font-size: 1.5rem;
-                    color: var(--ted-red-text);
+                    color: var(--ted-red);
                     margin-bottom: 1.5rem;
                 }
 
@@ -137,7 +137,7 @@ const AboutPage = () => {
                 }
 
                 .about-page .highlight-link {
-                    color: var(--ted-red-text);
+                    color: var(--ted-red);
                     text-decoration: underline;
                     text-underline-offset: 0.18em;
                 }
@@ -145,7 +145,7 @@ const AboutPage = () => {
                 .official-guide {
                     padding: 1rem 1.25rem;
                     border-left: 3px solid var(--ted-red);
-                    background: var(--ted-dark-gray);
+                    background: var(--ted-black);
                     font-size: 1rem;
                 }
 
@@ -182,7 +182,7 @@ const AboutPage = () => {
                 }
 
                 .social-links a:hover {
-                    color: var(--ted-red-text);
+                    color: var(--ted-red);
                     transform: translateY(-5px);
                 }
 
