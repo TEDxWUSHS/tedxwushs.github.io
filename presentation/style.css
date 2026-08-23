@@ -1,5 +1,5 @@
 :root {
-    --ted-red: #eb0028;
+    --ted-red: #EB0028;
     --ted-black: #000000;
     --ted-white: #ffffff;
     --ted-gray: #f2f2f2;
@@ -144,7 +144,7 @@ body {
 
 /* Mission Slide */
 .mission-slide {
-    background: linear-gradient(135deg, var(--ted-red), #800);
+    background: var(--ted-red);
     text-align: center;
 }
 
@@ -163,7 +163,7 @@ body {
     margin-top: 3rem;
     font-size: 1.2rem;
     letter-spacing: 0.3em;
-    opacity: 0.7;
+    opacity: 1;
 }
 
 /* Controls */
@@ -199,5 +199,5 @@ body {
 #slideIndicator {
     font-family: var(--font-heading);
     font-size: 1rem;
-    opacity: 0.5;
+    opacity: 1;
 }

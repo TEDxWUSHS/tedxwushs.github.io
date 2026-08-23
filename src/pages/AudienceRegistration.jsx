@@ -98,12 +98,12 @@ const AudienceRegistration = () => {
         .back-link { display: inline-flex; align-items: center; gap: 0.5rem; min-height: 44px; color: #aaa; font-weight: 600; margin-bottom: 3rem; }
         .back-link:hover { color: var(--ted-red); }
         .recruit-header { text-align: center; margin-bottom: 6rem; }
-        .icon-circle { width: 100px; height: 100px; background: rgba(235, 0, 40, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem; color: var(--ted-red); }
+        .icon-circle { width: 100px; height: 100px; background: rgb(var(--ted-red-rgb) / 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem; color: var(--ted-red); }
         .recruit-header h1 { font-size: clamp(2.4rem, 9vw, 3.5rem); margin-bottom: 1.5rem; text-wrap: balance; }
         .lead-text { font-size: 1.3rem; color: #aaa; max-width: 600px; margin: 0 auto; }
 
         .eligibility-panel { display: grid; grid-template-columns: auto 1fr; gap: 2rem; align-items: center; max-width: 980px; margin: -2rem auto 6rem; padding: 2.5rem 3rem; background: white; color: var(--ted-black); border-left: 8px solid var(--ted-red); border-radius: 16px; box-shadow: 0 24px 60px rgba(0,0,0,0.45); }
-        .eligibility-icon { width: 72px; height: 72px; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: rgba(235,0,40,0.1); color: var(--ted-red); }
+        .eligibility-icon { width: 72px; height: 72px; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: rgb(var(--ted-red-rgb) / 0.1); color: var(--ted-red); }
         .eligibility-label { display: block; margin-bottom: 0.55rem; color: var(--ted-red); font-size: 0.72rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; }
         .eligibility-panel h2 { margin: 0 0 0.65rem; font-size: clamp(1.55rem, 3vw, 2.35rem); line-height: 1.35; text-align: left; }
         .eligibility-panel p { color: #555; line-height: 1.7; }
@@ -119,11 +119,11 @@ const AudienceRegistration = () => {
         .registration-card h2 { font-size: 1.8rem; margin-bottom: 0.5rem; }
         .registration-card p { color: #aaa; margin-bottom: 2.5rem; }
 
-        .registration-status { display: inline-block; margin-bottom: 1rem; color: var(--ted-red-text); font-size: 0.75rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; }
+        .registration-status { display: inline-block; margin-bottom: 1rem; padding: 0.35rem 0.6rem; border-radius: 999px; background: var(--ted-black); color: var(--ted-red); font-size: 0.75rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; }
         .registration-audience { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 0.5rem 1rem; margin-bottom: 1rem; padding: 0.9rem 1rem; background: rgba(255,255,255,0.05); border-radius: 8px; }
         .registration-audience span { color: #888; font-size: 0.75rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; }
         .registration-audience strong { color: white; }
-        .registration-date { display: block; padding: 1rem; border: 1px solid rgba(235,0,40,0.65); border-radius: 8px; color: var(--ted-red-text); font-family: var(--font-heading); font-size: 2rem; font-weight: 800; text-align: center; }
+        .registration-date { display: block; padding: 1rem; border: 1px solid rgb(var(--ted-red-rgb) / 0.65); border-radius: 8px; color: var(--ted-red); font-family: var(--font-heading); font-size: 2rem; font-weight: 800; text-align: center; }
 
         .form-group { margin-bottom: 1.5rem; }
         .form-group label { display: block; font-size: 0.8rem; font-weight: 700; color: #888; text-transform: uppercase; margin-bottom: 0.5rem; }
@@ -144,7 +144,7 @@ const AudienceRegistration = () => {
           text-align: center;
           text-decoration: none;
         }
-        .btn-primary-full:hover { background: #ff1a40; transform: translateY(-3px); box-shadow: 0 10px 20px rgba(235, 0, 40, 0.3); }
+        .btn-primary-full:hover { background: var(--ted-red); transform: translateY(-3px); box-shadow: 0 10px 20px rgb(var(--ted-red-rgb) / 0.3); }
 
         .form-note {
           margin-top: 1.5rem;

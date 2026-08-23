@@ -90,7 +90,7 @@ const LanguageSwitcher = () => {
 
         .language-option:hover,
         .language-option.active {
-          color: var(--ted-red-text);
+          color: var(--ted-red);
           opacity: 1;
         }
 
@@ -144,7 +144,7 @@ const LanguageSwitcher = () => {
           }
 
           .language-toggle-code.active {
-            color: var(--ted-red-text);
+            color: var(--ted-red);
             opacity: 1;
           }
 

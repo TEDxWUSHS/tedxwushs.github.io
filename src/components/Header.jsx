@@ -240,7 +240,7 @@ const Header = () => {
           background: rgba(0, 0, 0, 0.9);
           backdrop-filter: blur(10px);
           padding: 1rem 0;
-          border-bottom: 1px solid rgba(235, 0, 40, 0.2);
+          border-bottom: 1px solid rgb(var(--ted-red-rgb) / 0.2);
         }
 
         .header-content {
@@ -288,7 +288,7 @@ const Header = () => {
         }
 
         .desktop-nav a:hover, .desktop-nav a.active {
-          color: var(--ted-red-text);
+          color: var(--ted-red);
           opacity: 1;
         }
 
@@ -357,7 +357,7 @@ const Header = () => {
         }
 
         .mobile-menu a.active-mobile {
-          color: var(--ted-red-text);
+          color: var(--ted-red);
           opacity: 1;
         }
 

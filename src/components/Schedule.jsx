@@ -84,7 +84,7 @@ const Schedule = () => {
           transform: translateX(-50%);
           width: 2px;
           height: 100%;
-          background: rgba(235, 0, 40, 0.2);
+          background: rgb(var(--ted-red-rgb) / 0.2);
         }
 
         .timeline-item {
@@ -117,9 +117,9 @@ const Schedule = () => {
 
         .time {
           font-family: var(--font-heading);
-          font-size: clamp(1rem, 2.2vw, 1.5rem);
+          font-size: clamp(1.2rem, 2.2vw, 1.5rem);
           font-weight: 800;
-          color: var(--ted-red-text);
+          color: var(--ted-red);
           position: absolute;
           right: calc(50% + 30px);
           top: -10px;

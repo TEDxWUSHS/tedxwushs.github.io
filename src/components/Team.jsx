@@ -99,12 +99,12 @@ const Team = () => {
         .team-card:hover {
           transform: translateY(-10px) !important;
           border-color: var(--ted-red);
-          box-shadow: 0 20px 40px rgba(235, 0, 40, 0.1);
+          box-shadow: 0 20px 40px rgb(var(--ted-red-rgb) / 0.1);
         }
 
         .main-member {
           background: linear-gradient(145deg, var(--ted-dark-gray), #000);
-          border: 1px solid rgba(235, 0, 40, 0.3);
+          border: 1px solid rgb(var(--ted-red-rgb) / 0.3);
         }
 
         .card-inner {
@@ -116,14 +116,14 @@ const Team = () => {
 
         .member-role {
           font-family: var(--font-heading);
-          color: var(--ted-red-text);
+          color: var(--ted-red);
           font-weight: 800;
           font-size: 0.75rem;
           letter-spacing: 0.2em;
           text-transform: uppercase;
           margin-bottom: 1.5rem;
           padding: 0.4rem 0.8rem;
-          background: rgba(235, 0, 40, 0.1);
+          background: var(--ted-black);
           border-radius: 4px;
         }
 

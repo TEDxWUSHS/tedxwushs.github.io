@@ -38,7 +38,7 @@ const GoogleFormEmbed = ({ formUrl, title, height = '800px' }) => {
           overflow: hidden;
           box-shadow: 
             0 20px 60px rgba(0, 0, 0, 0.5),
-            0 0 0 1px rgba(235, 0, 40, 0.1);
+            0 0 0 1px rgb(var(--ted-red-rgb) / 0.1);
           position: relative;
         }
 
@@ -49,7 +49,7 @@ const GoogleFormEmbed = ({ formUrl, title, height = '800px' }) => {
           left: 0;
           right: 0;
           height: 4px;
-          background: linear-gradient(90deg, var(--ted-red), #ff1a40);
+          background: var(--ted-red);
         }
 
         iframe {

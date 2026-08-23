@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Outfit:wght@400;700&display=swap');
 
 :root {
-  --ted-red: #eb0028;
+  --ted-red: #EB0028;
+  --ted-red-rgb: 235 0 40;
   --ted-black: #000000;
   --ted-white: #ffffff;
   --ted-gray: #f2f2f2;
   --ted-dark-gray: #1a1a1a;
-  --ted-red-text: #ff5a6d;
   --focus-ring: #ffffff;
 
   --font-main: 'Inter', sans-serif;
@@ -123,7 +123,7 @@ button {
 }
 
 .highlight-red {
-  color: var(--ted-red-text);
+  color: var(--ted-red);
 }
 
 @media (max-width: 768px) {

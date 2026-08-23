@@ -102,7 +102,7 @@ const Hero = () => {
           align-items: center;
           padding-top: 100px;
           overflow-x: hidden;
-          background: radial-gradient(circle at 10% 20%, rgba(235, 0, 40, 0.05) 0%, transparent 50%);
+          background: radial-gradient(circle at 10% 20%, rgb(var(--ted-red-rgb) / 0.05) 0%, transparent 50%);
         }
 
         @supports (overflow-x: clip) {
@@ -119,7 +119,7 @@ const Hero = () => {
         }
 
         .hero-tagline {
-          color: var(--ted-red-text);
+          color: var(--ted-red);
           font-weight: 800;
           letter-spacing: 0.2em;
           text-transform: uppercase;
@@ -155,13 +155,14 @@ const Hero = () => {
           gap: 0.9rem;
           align-items: center;
           padding: 0.9rem 1rem;
+          border: 1px solid rgba(255, 255, 255, 0.08);
           border-left: 3px solid var(--ted-red);
-          background: rgba(255, 255, 255, 0.045);
+          background: var(--ted-black);
           text-align: left;
         }
 
         .hero-event-detail > svg {
-          color: var(--ted-red-text);
+          color: var(--ted-red);
         }
 
         .hero-event-detail div {
@@ -174,7 +175,7 @@ const Hero = () => {
 
         .hero-event-detail span {
           min-width: 50px;
-          color: var(--ted-red-text);
+          color: var(--ted-red);
           font-size: 0.68rem;
           font-weight: 800;
           letter-spacing: 0.12em;
@@ -217,9 +218,9 @@ const Hero = () => {
         }
 
         .btn-primary:hover {
-          background-color: #ff1a40;
+          background-color: var(--ted-red);
           transform: translateY(-5px);
-          box-shadow: 0 10px 20px rgba(235, 0, 40, 0.3);
+          box-shadow: 0 10px 20px rgb(var(--ted-red-rgb) / 0.3);
         }
 
         .btn-outline {
@@ -253,7 +254,7 @@ const Hero = () => {
           left: -20%;
           width: 140%;
           height: 140%;
-          background: radial-gradient(circle, rgba(235, 0, 40, 0.4) 0%, rgba(235, 0, 40, 0) 70%);
+          background: radial-gradient(circle, rgb(var(--ted-red-rgb) / 0.4) 0%, rgb(var(--ted-red-rgb) / 0) 70%);
           opacity: 0.6;
           z-index: 1;
           will-change: transform;

@@ -129,8 +129,10 @@ const About = () => {
           color: #aaa !important;
         }
 
-        .highlight-link {
-          color: var(--ted-red-text);
+        .about .highlight-link {
+          color: var(--ted-red);
+          font-size: 1.2rem;
+          font-weight: 700;
           text-decoration: underline;
         }
 
@@ -149,14 +151,15 @@ const About = () => {
         }
 
         .event-info strong {
-          color: var(--ted-red-text);
+          color: var(--ted-red);
+          font-size: 1.2rem;
           text-transform: uppercase;
         }
 
         .mission-box {
           margin-top: 6rem;
           padding: 4rem;
-          background: linear-gradient(135deg, var(--ted-red), #900);
+          background: var(--ted-red);
           text-align: center;
           border-radius: 20px;
           position: relative;

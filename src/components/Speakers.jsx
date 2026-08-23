@@ -101,11 +101,11 @@ const Speakers = ({ variant = 'preview' }) => {
 
       <style>{`
         .speakers-section {
-          --speaker-accent: #ff5a6d;
+          --speaker-accent: var(--ted-red);
           position: relative;
           overflow: hidden;
           background:
-            radial-gradient(circle at 8% 12%, rgba(235, 0, 40, 0.11), transparent 30rem),
+            radial-gradient(circle at 8% 12%, rgb(var(--ted-red-rgb) / 0.11), transparent 30rem),
             var(--ted-black);
         }
 
@@ -176,7 +176,7 @@ const Speakers = ({ variant = 'preview' }) => {
         }
 
         .speaker-card--preview:hover {
-          border-color: rgba(235, 0, 40, 0.72);
+          border-color: rgb(var(--ted-red-rgb) / 0.72);
           transform: translateY(-7px);
         }
 
@@ -212,7 +212,11 @@ const Speakers = ({ variant = 'preview' }) => {
         }
 
         .speaker-card__role {
+          display: inline-flex;
           margin-bottom: 0.55rem;
+          padding: 0.3rem 0.5rem;
+          border-radius: 999px;
+          background: var(--ted-black);
           color: var(--speaker-accent);
           font-size: 0.73rem;
           font-weight: 800;
@@ -245,7 +249,7 @@ const Speakers = ({ variant = 'preview' }) => {
           align-items: center;
           gap: 0.75rem;
           padding: 0.95rem 1.4rem;
-          border: 1px solid rgba(235, 0, 40, 0.65);
+          border: 1px solid rgb(var(--ted-red-rgb) / 0.65);
           border-radius: 999px;
           color: var(--ted-white);
           font-size: 0.8rem;
@@ -340,7 +344,7 @@ const Speakers = ({ variant = 'preview' }) => {
           width: clamp(4.5rem, 10vw, 7rem);
           aspect-ratio: 1;
           place-items: center;
-          border: 1px solid rgba(235, 0, 40, 0.7);
+          border: 1px solid rgb(var(--ted-red-rgb) / 0.7);
           border-radius: 50%;
           color: var(--speaker-accent);
           font-size: clamp(2.5rem, 7vw, 4.5rem);

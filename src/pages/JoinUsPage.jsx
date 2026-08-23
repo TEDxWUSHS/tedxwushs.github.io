@@ -32,7 +32,7 @@ const JoinUsPage = () => {
                 .join-us-page-heading > span {
                     display: block;
                     margin-bottom: 1rem;
-                    color: var(--ted-red-text);
+                    color: var(--ted-red);
                     font-size: 0.75rem;
                     font-weight: 800;
                     letter-spacing: 0.25em;
