@@ -33,8 +33,8 @@ const Hero = () => {
       <div className="container hero-container">
         <motion.div
           className="hero-content"
-          initial={shouldReduceMotion ? false : { opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
+          initial={shouldReduceMotion ? false : { opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: shouldReduceMotion ? 0 : 0.8 }}
         >
           <motion.span
@@ -101,7 +101,14 @@ const Hero = () => {
           display: flex;
           align-items: center;
           padding-top: 100px;
+          overflow-x: hidden;
           background: radial-gradient(circle at 10% 20%, rgba(235, 0, 40, 0.05) 0%, transparent 50%);
+        }
+
+        @supports (overflow-x: clip) {
+          .hero {
+            overflow-x: clip;
+          }
         }
 
         .hero-container {

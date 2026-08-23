@@ -44,8 +44,8 @@ const Schedule = () => {
             <motion.li
               key={`${item.time}-${item.event}`}
               className="timeline-item"
-              initial={shouldReduceMotion ? false : { opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-              whileInView={shouldReduceMotion ? undefined : { opacity: 1, x: 0 }}
+              initial={shouldReduceMotion ? false : { opacity: 0, y: 20 }}
+              whileInView={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={shouldReduceMotion ? { duration: 0 } : { delay: index * 0.1 }}
             >

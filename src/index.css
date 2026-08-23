@@ -21,12 +21,37 @@
   box-sizing: border-box;
 }
 
+html,
+body,
+#root,
+.app {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  overflow-x: hidden;
+}
+
+@supports (overflow-x: clip) {
+  html,
+  body,
+  #root,
+  .app {
+    overflow-x: clip;
+  }
+}
+
 body {
   font-family: var(--font-main);
   background-color: var(--ted-black);
   color: var(--ted-white);
   line-height: 1.6;
-  overflow-x: hidden;
+}
+
+img,
+video,
+canvas,
+iframe {
+  max-width: 100%;
 }
 
 h1,
@@ -81,9 +106,16 @@ button {
 }
 
 .container {
+  width: 100%;
   max-width: 1200px;
+  min-width: 0;
   margin: 0 auto;
   padding: 0 2rem;
+  overflow-wrap: anywhere;
+}
+
+.container > * {
+  min-width: 0;
 }
 
 .section-padding {
@@ -96,8 +128,8 @@ button {
 
 @media (max-width: 768px) {
   .container {
-    padding-right: 1.25rem;
-    padding-left: 1.25rem;
+    padding-right: max(1.25rem, env(safe-area-inset-right));
+    padding-left: max(1.25rem, env(safe-area-inset-left));
   }
 
   .section-padding {

@@ -143,8 +143,6 @@ const Header = () => {
             </ul>
           </nav>
 
-          <LanguageSwitcher />
-
           <button
             type="button"
             ref={toggleButtonRef}
@@ -160,6 +158,8 @@ const Header = () => {
               ? <X size={28} aria-hidden="true" />
               : <Menu size={28} aria-hidden="true" />}
           </button>
+
+          <LanguageSwitcher />
         </div>
       </div>
 
@@ -222,10 +222,18 @@ const Header = () => {
           top: 0;
           left: 0;
           width: 100%;
+          max-width: 100%;
           z-index: 1000;
           padding: 1.5rem 0;
+          overflow-x: hidden;
           transition: var(--transition-smooth);
           will-change: background, padding;
+        }
+
+        @supports (overflow-x: clip) {
+          .header {
+            overflow-x: clip;
+          }
         }
 
         .header.scrolled {
@@ -239,9 +247,13 @@ const Header = () => {
           display: flex;
           justify-content: space-between;
           align-items: center;
+          gap: 0.75rem;
+          min-width: 0;
         }
 
         .header-logo {
+          display: block;
+          max-width: 100%;
           height: 35px;
           object-fit: contain;
         }
@@ -250,6 +262,7 @@ const Header = () => {
           display: inline-flex;
           align-items: center;
           min-height: 44px;
+          max-width: 100%;
           flex-shrink: 0;
         }
 
@@ -258,6 +271,7 @@ const Header = () => {
           display: flex;
           align-items: center;
           gap: 1.5rem;
+          flex: 0 0 auto;
           min-width: 0;
         }
 
@@ -286,6 +300,9 @@ const Header = () => {
           min-width: var(--header-control-size);
           height: var(--header-control-size);
           padding: 0;
+          border: 1px solid rgba(255, 255, 255, 0.25);
+          border-radius: 999px;
+          background: rgba(0, 0, 0, 0.42);
           color: var(--ted-white);
           line-height: 0;
         }
@@ -297,7 +314,7 @@ const Header = () => {
         .mobile-menu-btn:focus-visible {
           outline: 2px solid var(--ted-white);
           outline-offset: 4px;
-          border-radius: 2px;
+          border-radius: 999px;
         }
 
         .mobile-menu {
@@ -305,11 +322,13 @@ const Header = () => {
           top: 100%;
           left: 0;
           width: 100%;
+          max-width: 100%;
           background: var(--ted-black);
-          max-height: calc(100vh - 94px);
-          max-height: calc(100dvh - 94px);
+          max-height: calc(100vh - 92px);
+          max-height: calc(100dvh - 92px);
           padding: 1rem 2rem 2rem;
           border-bottom: 1px solid var(--ted-red);
+          overflow-x: hidden;
           overflow-y: auto;
           overscroll-behavior: contain;
         }
@@ -349,29 +368,32 @@ const Header = () => {
           .mobile-menu-btn {
             display: flex;
           }
-          .header-actions {
-            gap: 0.8rem;
-          }
-        }
-
-        @media (max-width: 480px) {
           .header-content {
-            padding-left: 1rem;
-            padding-right: 1rem;
+            gap: 0.5rem;
+          }
+          .logo-container {
+            flex: 1 1 auto;
+            min-width: 0;
+          }
+          .header-actions {
+            --header-control-size: 44px;
+            gap: 0.5rem;
           }
           .header-logo {
-            width: min(130px, 34vw);
+            width: clamp(105px, 34vw, 180px);
+            max-width: 100%;
             height: auto;
           }
-          .header-actions {
-            gap: 0.5rem;
+          .mobile-menu {
+            padding-right: max(1.25rem, env(safe-area-inset-right));
+            padding-left: max(1.25rem, env(safe-area-inset-left));
           }
         }
 
         @media (max-width: 360px) {
-          .header-logo {
-            width: min(110px, 32vw);
-            height: auto;
+          .header-content,
+          .header-actions {
+            gap: 0.375rem;
           }
         }
 

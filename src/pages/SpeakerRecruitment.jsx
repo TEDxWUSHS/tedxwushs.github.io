@@ -185,6 +185,8 @@ const SpeakerRecruitment = () => {
 
         @media (max-width: 360px) {
           .cta-box { padding-right: 1rem; padding-left: 1rem; }
+          .cta-box h2 { font-size: clamp(1.7rem, 9vw, 2.5rem); line-height: 1.1; }
+          .benefit-card { padding: 2rem 1.25rem; }
           .closed-label { padding-right: 0.75rem; padding-left: 0.75rem; font-size: 0.7rem; }
         }
       `}</style>

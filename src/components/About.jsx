@@ -205,6 +205,21 @@ const About = () => {
             padding: 2.5rem;
           }
         }
+
+        @media (max-width: 480px) {
+          .about .section-title {
+            font-size: clamp(1.75rem, 9vw, 2.1rem);
+            line-height: 1.15;
+          }
+
+          .event-info {
+            padding: 1.25rem 1rem;
+          }
+
+          .mission-box {
+            padding: 2rem 1.25rem;
+          }
+        }
       `}</style>
     </section>
   );
