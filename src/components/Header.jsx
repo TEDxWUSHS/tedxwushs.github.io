@@ -254,6 +254,7 @@ const Header = () => {
         }
 
         .header-actions {
+          --header-control-size: 46px;
           display: flex;
           align-items: center;
           gap: 1.5rem;
@@ -281,10 +282,16 @@ const Header = () => {
           display: none;
           align-items: center;
           justify-content: center;
-          width: 44px;
-          min-width: 44px;
-          height: 44px;
+          width: var(--header-control-size);
+          min-width: var(--header-control-size);
+          height: var(--header-control-size);
+          padding: 0;
           color: var(--ted-white);
+          line-height: 0;
+        }
+
+        .mobile-menu-btn svg {
+          display: block;
         }
 
         .mobile-menu-btn:focus-visible {
@@ -299,8 +306,8 @@ const Header = () => {
           left: 0;
           width: 100%;
           background: var(--ted-black);
-          max-height: calc(100vh - 92px);
-          max-height: calc(100dvh - 92px);
+          max-height: calc(100vh - 94px);
+          max-height: calc(100dvh - 94px);
           padding: 1rem 2rem 2rem;
           border-bottom: 1px solid var(--ted-red);
           overflow-y: auto;
