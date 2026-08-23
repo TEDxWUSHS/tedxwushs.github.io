@@ -43,9 +43,11 @@ const LanguageSwitcher = () => {
         .language-switcher {
           display: inline-flex;
           align-items: center;
+          justify-content: center;
           flex-shrink: 0;
+          height: var(--header-control-size, 46px);
           gap: 0.28rem;
-          padding: 0.12rem 0.3rem;
+          padding: 0 0.3rem;
           border: 1px solid rgba(255, 255, 255, 0.25);
           border-radius: 999px;
           background: rgba(0, 0, 0, 0.42);
@@ -58,8 +60,9 @@ const LanguageSwitcher = () => {
           align-items: center;
           justify-content: center;
           min-width: 2.75rem;
-          min-height: 2.75rem;
-          padding: 0.18rem;
+          height: calc(var(--header-control-size, 46px) - 2px);
+          min-height: calc(var(--header-control-size, 46px) - 2px);
+          padding: 0;
           color: inherit;
           font-size: 0.72rem;
           font-weight: 800;
@@ -81,6 +84,9 @@ const LanguageSwitcher = () => {
         }
 
         .language-divider {
+          display: inline-flex;
+          align-items: center;
+          align-self: stretch;
           color: rgba(255, 255, 255, 0.4);
           font-size: 0.7rem;
           user-select: none;
