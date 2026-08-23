@@ -5,6 +5,7 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import AboutPage from './pages/AboutPage';
 import SpeakersPage from './pages/SpeakersPage';
+import OrganizersPage from './pages/OrganizersPage';
 import JoinUsPage from './pages/JoinUsPage';
 import SpeakerRecruitment from './pages/SpeakerRecruitment';
 import TeamRecruitment from './pages/TeamRecruitment';
@@ -18,6 +19,7 @@ const pageTitles = {
     '/': 'TEDxWUSHS Youth | Ideas change everything',
     '/about': 'TEDxについて | TEDxWUSHS Youth',
     '/speakers': 'スピーカー | TEDxWUSHS Youth',
+    '/organizers': '運営メンバー | TEDxWUSHS Youth',
     '/join-us': '参加する | TEDxWUSHS Youth',
     '/join-us/speaker': 'スピーカー募集 | TEDxWUSHS Youth',
     '/join-us/team': '運営チーム募集 | TEDxWUSHS Youth',
@@ -28,6 +30,7 @@ const pageTitles = {
     '/': 'TEDxWUSHS Youth | Ideas change everything',
     '/about': 'About | TEDxWUSHS Youth',
     '/speakers': 'Speakers | TEDxWUSHS Youth',
+    '/organizers': 'Organizers | TEDxWUSHS Youth',
     '/join-us': 'Join Us | TEDxWUSHS Youth',
     '/join-us/speaker': 'Speaker Applications | TEDxWUSHS Youth',
     '/join-us/team': 'Team Recruitment | TEDxWUSHS Youth',
@@ -83,6 +86,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/speakers" element={<SpeakersPage />} />
+            <Route path="/organizers" element={<OrganizersPage />} />
             <Route path="/join-us" element={<JoinUsPage />} />
             <Route path="/join-us/speaker" element={<SpeakerRecruitment />} />
             <Route path="/join-us/team" element={<TeamRecruitment />} />
