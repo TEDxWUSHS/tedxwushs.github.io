@@ -40,54 +40,48 @@ const SpeakerRecruitment = () => {
   const content = contentByLanguage[language] ?? contentByLanguage.ja;
 
   return (
-    <div className="recruit-page" style={{ paddingTop: '120px' }}>
+    <main id="main-content" tabIndex={-1} className="recruit-page" style={{ paddingTop: '120px' }}>
       <div className="container">
         <Link to="/join-us" className="back-link">
-          <ArrowLeft size={16} /> Back to Opportunities
+          <ArrowLeft size={16} aria-hidden="true" /> <span lang="en">Back to Opportunities</span>
         </Link>
 
         <header className="recruit-header">
-          <div className="icon-circle"><Mic size={48} /></div>
-          <h1>Speaker <span className="highlight-red">Applications</span></h1>
+          <div className="icon-circle" aria-hidden="true"><Mic size={48} /></div>
+          <h1 lang="en">Speaker <span className="highlight-red">Applications</span></h1>
           <p className="lead-text">{content.lead}</p>
         </header>
 
         <section className="detail-section">
-          <h2>Why speak at TEDxWUSHS Youth?</h2>
-          <div className="benefits-grid">
-            <div className="benefit-card">
-              <CheckCircle color="#eb0028" size={24} />
-              <p>{content.benefits[0]}</p>
-            </div>
-            <div className="benefit-card">
-              <CheckCircle color="#eb0028" size={24} />
-              <p>{content.benefits[1]}</p>
-            </div>
-            <div className="benefit-card">
-              <CheckCircle color="#eb0028" size={24} />
-              <p>{content.benefits[2]}</p>
-            </div>
-          </div>
+          <h2 lang="en">Why speak at TEDxWUSHS Youth?</h2>
+          <ul className="benefits-grid">
+            {content.benefits.map((benefit) => (
+              <li className="benefit-card" key={benefit}>
+                <CheckCircle color="#ff5a6d" size={24} aria-hidden="true" />
+                <p>{benefit}</p>
+              </li>
+            ))}
+          </ul>
         </section>
 
         <section className="process-section">
-          <h2>Application Process</h2>
-          <div className="steps-container">
-            {content.steps.map((step, i) => (
-              <div key={i} className="step-item">
-                <div className="step-num">{i + 1}</div>
-                <h3>{step.title}</h3>
+          <h2 lang="en">Application Process</h2>
+          <ol className="steps-container">
+            {content.steps.map((step, index) => (
+              <li key={step.title} className="step-item">
+                <div className="step-num" aria-hidden="true">{index + 1}</div>
+                <h3 lang="en">{step.title}</h3>
                 <p>{step.desc}</p>
-              </div>
+              </li>
             ))}
-          </div>
+          </ol>
         </section>
 
-        <div className="cta-box">
-          <h3>Applications Closed</h3>
+        <section className="cta-box" aria-labelledby="speaker-applications-status">
+          <h2 id="speaker-applications-status" lang="en">Applications Closed</h2>
           <p>{content.closedMessage}</p>
-          <span className="closed-label">2026 Speaker Applications Closed</span>
-        </div>
+          <span className="closed-label" lang="en">2026 Speaker Applications Closed</span>
+        </section>
       </div>
 
       <style>{`
@@ -97,10 +91,11 @@ const SpeakerRecruitment = () => {
           padding-bottom: 8rem;
         }
         .back-link {
-          display: flex;
+          display: inline-flex;
           align-items: center;
           gap: 0.5rem;
-          color: #888;
+          min-height: 44px;
+          color: #aaa;
           font-weight: 600;
           margin-bottom: 3rem;
         }
@@ -117,7 +112,7 @@ const SpeakerRecruitment = () => {
           margin: 0 auto 2rem;
           color: var(--ted-red);
         }
-        h1 { font-size: 3.5rem; margin-bottom: 1.5rem; }
+        .recruit-header h1 { font-size: clamp(2.4rem, 9vw, 3.5rem); margin-bottom: 1.5rem; text-wrap: balance; }
         .lead-text { font-size: 1.5rem; color: #ccc; max-width: 700px; margin: 0 auto; }
         
         .detail-section, .process-section { margin-bottom: 8rem; }
@@ -127,6 +122,7 @@ const SpeakerRecruitment = () => {
           display: grid;
           grid-template-columns: repeat(3, 1fr);
           gap: 2rem;
+          list-style: none;
         }
         .benefit-card {
           background: #111;
@@ -143,6 +139,7 @@ const SpeakerRecruitment = () => {
           display: grid;
           grid-template-columns: repeat(4, 1fr);
           gap: 2rem;
+          list-style: none;
         }
         .step-item { text-align: center; }
         .step-num {
@@ -163,8 +160,8 @@ const SpeakerRecruitment = () => {
           border-radius: 24px;
           text-align: center;
         }
-        .cta-box h3 { font-size: 2.5rem; margin-bottom: 1rem; }
-        .cta-box p { margin-bottom: 3rem; opacity: 0.9; font-size: 1.2rem; }
+        .cta-box h2 { font-size: 2.5rem; margin-bottom: 1rem; }
+        .cta-box p { margin-bottom: 3rem; color: white; font-size: 1.2rem; }
         .closed-label {
           display: inline-block;
           background: white;
@@ -174,17 +171,24 @@ const SpeakerRecruitment = () => {
           font-weight: 800;
           text-transform: uppercase;
           font-size: 0.9rem;
-          white-space: nowrap;
+          max-width: 100%;
+          white-space: normal;
+          overflow-wrap: anywhere;
         }
 
         @media (max-width: 900px) {
           .benefits-grid, .steps-container { grid-template-columns: 1fr; }
-          h1 { font-size: 2.5rem; }
+          .recruit-header h1 { font-size: 2.5rem; }
           .cta-box { padding: 3rem 1.5rem; }
-          .closed-label { padding: 1rem 1.5rem; font-size: 0.75rem; }
+          .closed-label { padding: 1rem 1.25rem; font-size: 0.75rem; }
+        }
+
+        @media (max-width: 360px) {
+          .cta-box { padding-right: 1rem; padding-left: 1rem; }
+          .closed-label { padding-right: 0.75rem; padding-left: 0.75rem; font-size: 0.7rem; }
         }
       `}</style>
-    </div>
+    </main>
   );
 };
 

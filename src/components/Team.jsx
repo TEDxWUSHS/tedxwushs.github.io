@@ -1,7 +1,7 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 
 const Team = () => {
+  const shouldReduceMotion = useReducedMotion();
   const members = [
     {
       role: 'Co-Organizer',
@@ -29,8 +29,8 @@ const Team = () => {
       <div className="container">
         <motion.div
           className="section-header"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={shouldReduceMotion ? false : { opacity: 0, y: 20 }}
+          whileInView={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
           <h2 className="section-title">Our <span className="highlight-red">Team</span></h2>
@@ -42,10 +42,10 @@ const Team = () => {
             <motion.div
               key={member.name}
               className={`team-card ${member.main ? 'main-member' : ''}`}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={shouldReduceMotion ? false : { opacity: 0, y: 30 }}
+              whileInView={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
+              transition={shouldReduceMotion ? { duration: 0 } : { delay: index * 0.1 }}
             >
               <div className="card-inner">
                 <span className="member-role">{member.role}</span>
@@ -60,7 +60,7 @@ const Team = () => {
         </div>
       </div>
 
-      <style jsx>{`
+      <style>{`
         .team {
           background-color: var(--ted-black);
         }
@@ -71,7 +71,7 @@ const Team = () => {
         }
 
         .section-subtitle {
-          color: #666;
+          color: #aaa;
           margin-top: 1rem;
           font-size: 1.1rem;
         }
@@ -116,7 +116,7 @@ const Team = () => {
 
         .member-role {
           font-family: var(--font-heading);
-          color: var(--ted-red);
+          color: var(--ted-red-text);
           font-weight: 800;
           font-size: 0.75rem;
           letter-spacing: 0.2em;
@@ -129,7 +129,7 @@ const Team = () => {
 
         .member-grade {
           display: block;
-          color: #666;
+          color: #aaa;
           font-weight: 600;
           font-size: 0.9rem;
           margin-bottom: 0.5rem;
@@ -141,7 +141,7 @@ const Team = () => {
         }
 
         .member-en-name {
-          color: #888;
+          color: #aaa;
           font-size: 0.9rem;
           font-weight: 500;
           letter-spacing: 0.05em;
@@ -155,6 +155,11 @@ const Team = () => {
             grid-column: span 1;
             max-width: 100%;
           }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          .team-card { transition: none; }
+          .team-card:hover { transform: none !important; }
         }
       `}</style>
     </section>

@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { motion } from 'framer-motion';
+import { useEffect, useRef, useState } from 'react';
+import { motion, useReducedMotion } from 'framer-motion';
 import { Users, Ticket, ArrowRight, Mail } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../i18n/LanguageContext';
@@ -7,6 +7,7 @@ import { useLanguage } from '../i18n/LanguageContext';
 const joinCopy = {
   ja: {
     sectionSubtitle: 'TEDxWUSHS Youthへの参加方法と最新情報をご案内します。',
+    optionsHeading: '参加方法と最新情報',
     applicationsUpdate: '2026年開催分のスピーカー募集及び運営チーム募集は終了しました。たくさんのご応募ありがとうございました。',
     teamDescription: '2026年開催分の運営チーム募集は終了しました。今後の募集はウェブサイトとSNSでお知らせします。',
     teamAction: '募集状況を見る',
@@ -15,11 +16,14 @@ const joinCopy = {
     subscribed: <>登録完了しました<br />イベントの最新情報をお届けしますのでお楽しみに。</>,
     newsletter: 'イベントの最新情報や募集のお知らせをメールでお届けします。',
     emailLabel: 'メールアドレス',
+    emailPlaceholder: 'メールアドレスを入力',
+    subscribeAction: '登録する',
     contactTitle: 'お問い合わせ',
     contactDescription: '参加方法や当日の運営についてのご質問は、イベント事務局までご連絡ください。'
   },
   en: {
     sectionSubtitle: 'Explore ways to take part in TEDxWUSHS Youth and receive the latest event updates.',
+    optionsHeading: 'Ways to Participate and Stay Updated',
     applicationsUpdate: 'Speaker and organizing team applications for the 2026 event are now closed. Thank you to everyone who applied.',
     teamDescription: 'Recruitment for the 2026 organizing team has closed. Future opportunities will be announced on our website and social media.',
     teamAction: 'View Recruitment Status',
@@ -28,20 +32,46 @@ const joinCopy = {
     subscribed: <>You are subscribed.<br />We look forward to sharing the latest event updates with you.</>,
     newsletter: 'Receive event updates and future application announcements by email.',
     emailLabel: 'Email address',
+    emailPlaceholder: 'Enter your email address',
+    subscribeAction: 'Subscribe',
     contactTitle: 'Contact Us',
     contactDescription: 'For questions about attending the event or event-day operations, please contact the TEDxWUSHS Youth team.'
   }
 };
 
-const JoinUs = () => {
+// eslint-disable-next-line react/prop-types
+const JoinUs = ({ hideHeader = false }) => {
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const successMessageRef = useRef(null);
+  const submissionTimerRef = useRef(null);
+  const shouldReduceMotion = useReducedMotion();
   const { language } = useLanguage();
   const copy = joinCopy[language];
+
+  useEffect(() => {
+    if (isSubmitted) {
+      successMessageRef.current?.focus();
+    }
+  }, [isSubmitted]);
+
+  useEffect(() => () => {
+    if (submissionTimerRef.current) {
+      clearTimeout(submissionTimerRef.current);
+    }
+  }, []);
+
+  const handleNewsletterSubmit = () => {
+    if (submissionTimerRef.current) {
+      clearTimeout(submissionTimerRef.current);
+    }
+
+    submissionTimerRef.current = setTimeout(() => setIsSubmitted(true), 300);
+  };
 
   const opportunities = [
     {
       title: 'Join the Team',
-      icon: <Users size={32} />,
+      icon: <Users size={32} aria-hidden="true" focusable="false" />,
       description: copy.teamDescription,
       link: '/join-us/team',
       action: copy.teamAction,
@@ -51,7 +81,7 @@ const JoinUs = () => {
     },
     {
       title: 'Register as Audience',
-      icon: <Ticket size={32} />,
+      icon: <Ticket size={32} aria-hidden="true" focusable="false" />,
       description: copy.audienceDescription,
       link: '/join-us/audience',
       action: copy.audienceAction,
@@ -62,26 +92,30 @@ const JoinUs = () => {
   return (
     <section id="contact" className="join-us section-padding">
       <div className="container">
-        <motion.div
-          className="section-header"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-        >
-          <span className="join-tagline">Be part of the community</span>
-          <h2 className="section-title">Join <span className="highlight-red">Us</span></h2>
-          <p className="section-subtitle">
-            {copy.sectionSubtitle}
-          </p>
-        </motion.div>
+        {hideHeader ? (
+          <h2 className="visually-hidden">{copy.optionsHeading}</h2>
+        ) : (
+          <motion.div
+            className="section-header"
+            initial={shouldReduceMotion ? false : { opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+          >
+            <span className="join-tagline" lang="en">Be part of the community</span>
+            <h2 className="section-title" lang="en">Join <span className="highlight-red">Us</span></h2>
+            <p className="section-subtitle">
+              {copy.sectionSubtitle}
+            </p>
+          </motion.div>
+        )}
 
         <motion.div
           className="recruitment-closed"
-          initial={{ opacity: 0, y: 20 }}
+          initial={shouldReduceMotion ? false : { opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <strong>2026 Applications Update</strong>
+          <strong lang="en">2026 Applications Update</strong>
           <p>{copy.applicationsUpdate}</p>
         </motion.div>
 
@@ -90,19 +124,19 @@ const JoinUs = () => {
             <motion.div
               key={opt.title}
               className={`opt-card${opt.closed ? ' opt-card--closed' : ''}`}
-              initial={{ opacity: 0, y: 30 }}
+              initial={shouldReduceMotion ? false : { opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
+              transition={{ delay: shouldReduceMotion ? 0 : index * 0.1 }}
             >
               <div className="opt-icon">
                 {opt.icon}
               </div>
-              {opt.status && <span className="opt-status">{opt.status}</span>}
-              <h3 className="opt-title">{opt.title}</h3>
+              {opt.status && <span className="opt-status" lang="en">{opt.status}</span>}
+              <h3 className="opt-title" lang="en">{opt.title}</h3>
               <p className="opt-description">{opt.description}</p>
               <Link to={opt.link} className="opt-link">
-                {opt.action} <ArrowRight size={16} />
+                {opt.action} <ArrowRight size={16} aria-hidden="true" focusable="false" />
               </Link>
             </motion.div>
           ))}
@@ -110,12 +144,12 @@ const JoinUs = () => {
 
         <motion.div
           className="newsletter-box"
-          initial={{ opacity: 0, y: 40 }}
+          initial={shouldReduceMotion ? false : { opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
           <div className="newsletter-content">
-            <h3>Stay Updated</h3>
+            <h3 lang="en">Stay Updated</h3>
 
             <iframe
               title="hidden_iframe"
@@ -124,43 +158,56 @@ const JoinUs = () => {
               style={{ display: 'none' }}
             ></iframe>
 
-            <div style={{ display: isSubmitted ? 'block' : 'none' }} className="success-message">
-              <p>{copy.subscribed}</p>
-            </div>
-
-            <div style={{ display: isSubmitted ? 'none' : 'block' }}>
-              <p>{copy.newsletter}</p>
-              <form
-                className="newsletter-form"
-                action="https://docs.google.com/forms/d/e/1FAIpQLScvnsbAaQFhyodG3GY4qXmTAj919BFivczNyE9bOt4Z_TxuWw/formResponse"
-                method="post"
-                target="hidden_iframe"
-                onSubmit={() => {
-                  setTimeout(() => setIsSubmitted(true), 300);
-                }}
+            {isSubmitted ? (
+              <div
+                ref={successMessageRef}
+                className="success-message"
+                role="status"
+                aria-live="polite"
+                aria-atomic="true"
+                tabIndex={-1}
               >
-                <input
-                  type="email"
-                  name="entry.269866944"
-                  aria-label={copy.emailLabel}
-                  placeholder="Enter your email address"
-                  required
-                />
-                <button type="submit" className="btn-primary">Subscribe</button>
-              </form>
-            </div>
+                <p>{copy.subscribed}</p>
+              </div>
+            ) : (
+              <div>
+                <p id="newsletter-description">{copy.newsletter}</p>
+                <form
+                  className="newsletter-form"
+                  action="https://docs.google.com/forms/d/e/1FAIpQLScvnsbAaQFhyodG3GY4qXmTAj919BFivczNyE9bOt4Z_TxuWw/formResponse"
+                  method="post"
+                  target="hidden_iframe"
+                  onSubmit={handleNewsletterSubmit}
+                >
+                  <div className="newsletter-field">
+                    <label htmlFor="newsletter-email">{copy.emailLabel}</label>
+                    <input
+                      id="newsletter-email"
+                      type="email"
+                      name="entry.269866944"
+                      aria-describedby="newsletter-description"
+                      placeholder={copy.emailPlaceholder}
+                      autoComplete="email"
+                      inputMode="email"
+                      required
+                    />
+                  </div>
+                  <button type="submit" className="btn-primary">{copy.subscribeAction}</button>
+                </form>
+              </div>
+            )}
           </div>
         </motion.div>
 
         <motion.div
           className="contact-box"
-          initial={{ opacity: 0, y: 30 }}
+          initial={shouldReduceMotion ? false : { opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <Mail size={30} aria-hidden="true" />
+          <Mail size={30} aria-hidden="true" focusable="false" />
           <div>
-            <span>Questions about the event?</span>
+            <span lang="en">Questions about the event?</span>
             <h3>{copy.contactTitle}</h3>
             <p>{copy.contactDescription}</p>
             <a href="mailto:tedxwushs@gmail.com">tedxwushs@gmail.com</a>
@@ -175,7 +222,7 @@ const JoinUs = () => {
         }
 
         .join-tagline {
-          color: var(--ted-red);
+          color: #ff4d6a;
           font-weight: 800;
           letter-spacing: 0.25em;
           text-transform: uppercase;
@@ -190,7 +237,7 @@ const JoinUs = () => {
         }
 
         .section-subtitle {
-          color: #888;
+          color: #aaa;
           max-width: 600px;
           margin: 1.5rem auto 0;
           font-size: 1.1rem;
@@ -209,7 +256,7 @@ const JoinUs = () => {
         .recruitment-closed strong {
           display: block;
           margin-bottom: 0.5rem;
-          color: var(--ted-red);
+          color: #ff4d6a;
           font-family: var(--font-heading);
           letter-spacing: 0.08em;
           text-transform: uppercase;
@@ -252,7 +299,7 @@ const JoinUs = () => {
           padding: 0.35rem 0.7rem;
           border: 1px solid rgba(235, 0, 40, 0.55);
           border-radius: 999px;
-          color: var(--ted-red);
+          color: #ff4d6a;
           font-size: 0.7rem;
           font-weight: 800;
           letter-spacing: 0.08em;
@@ -287,7 +334,9 @@ const JoinUs = () => {
           display: inline-flex;
           align-items: center;
           gap: 0.5rem;
-          color: var(--ted-red);
+          min-height: 44px;
+          padding: 0.45rem 0;
+          color: #ff4d6a;
           font-weight: 700;
           font-size: 0.9rem;
           text-transform: uppercase;
@@ -314,24 +363,48 @@ const JoinUs = () => {
 
         .newsletter-form {
           display: flex;
+          align-items: flex-end;
           gap: 1rem;
           max-width: 500px;
           margin: 0 auto;
         }
 
-        .newsletter-form input {
+        .newsletter-field {
           flex: 1;
+          min-width: 0;
+          text-align: left;
+        }
+
+        .newsletter-field label {
+          display: block;
+          margin-bottom: 0.5rem;
+          color: #fff;
+          font-size: 0.9rem;
+          font-weight: 700;
+        }
+
+        .newsletter-form input {
+          width: 100%;
           background: #222;
           border: 1px solid #444;
           padding: 1rem 1.5rem;
           border-radius: 8px;
           color: white;
           font-family: inherit;
+          font-size: 1rem;
         }
 
         .newsletter-form input:focus {
-          outline: none;
           border-color: var(--ted-red);
+        }
+
+        .newsletter-form input:focus-visible,
+        .btn-primary:focus-visible,
+        .opt-link:focus-visible,
+        .contact-box a:focus-visible,
+        .success-message:focus-visible {
+          outline: 3px solid #fff;
+          outline-offset: 4px;
         }
 
         .btn-primary {
@@ -373,11 +446,11 @@ const JoinUs = () => {
         }
 
         .contact-box > svg {
-          color: var(--ted-red);
+          color: #ff4d6a;
         }
 
         .contact-box span {
-          color: #777;
+          color: #bbb;
           font-size: 0.75rem;
           font-weight: 800;
           letter-spacing: 0.12em;
@@ -395,7 +468,10 @@ const JoinUs = () => {
         }
 
         .contact-box a {
-          color: var(--ted-red);
+          display: inline-flex;
+          align-items: center;
+          min-height: 44px;
+          color: #ff4d6a;
           font-weight: 700;
         }
 
@@ -409,6 +485,7 @@ const JoinUs = () => {
           }
           .newsletter-form {
             flex-direction: column;
+            align-items: stretch;
           }
           .contact-box {
             grid-template-columns: 1fr;
@@ -416,6 +493,19 @@ const JoinUs = () => {
           }
           .contact-box > svg {
             margin: 0 auto;
+          }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          .opt-card,
+          .opt-icon,
+          .btn-primary {
+            transition: none;
+          }
+
+          .opt-card:hover,
+          .btn-primary:hover {
+            transform: none !important;
           }
         }
       `}</style>

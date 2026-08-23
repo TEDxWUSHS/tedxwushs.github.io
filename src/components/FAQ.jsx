@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 import { useLanguage } from '../i18n/LanguageContext';
 
 const faqsByLanguage = {
@@ -49,25 +49,45 @@ const faqsByLanguage = {
   ]
 };
 
+const listHeadingByLanguage = {
+  ja: '質問と回答',
+  en: 'Questions and Answers',
+};
+
 // FAQItem receives data only from the localized FAQ lists above.
 // eslint-disable-next-line react/prop-types
-const FAQItem = ({ question, answer }) => {
+const FAQItem = ({ question, answer, id }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const shouldReduceMotion = useReducedMotion();
+  const questionId = `${id}-question`;
+  const answerId = `${id}-answer`;
 
   return (
     <div className="faq-item">
-      <button className="faq-question" onClick={() => setIsOpen(!isOpen)} aria-expanded={isOpen}>
-        <span>{question}</span>
-        <span className={`icon ${isOpen ? 'open' : ''}`} aria-hidden="true">+</span>
-      </button>
+      <h3 className="faq-question-heading">
+        <button
+          id={questionId}
+          type="button"
+          className="faq-question"
+          onClick={() => setIsOpen(!isOpen)}
+          aria-expanded={isOpen}
+          aria-controls={answerId}
+        >
+          <span>{question}</span>
+          <span className={`icon ${isOpen ? 'open' : ''}`} aria-hidden="true">+</span>
+        </button>
+      </h3>
       <AnimatePresence>
         {isOpen && (
           <motion.div
             className="faq-answer"
-            initial={{ height: 0, opacity: 0 }}
+            id={answerId}
+            role="region"
+            aria-labelledby={questionId}
+            initial={shouldReduceMotion ? false : { height: 0, opacity: 0 }}
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
-            transition={{ duration: 0.3 }}
+            transition={{ duration: shouldReduceMotion ? 0 : 0.3 }}
           >
             <p>{answer}</p>
           </motion.div>
@@ -77,20 +97,31 @@ const FAQItem = ({ question, answer }) => {
   );
 };
 
-const FAQ = () => {
+// eslint-disable-next-line react/prop-types
+const FAQ = ({ hideHeader = false }) => {
   const { language } = useLanguage();
   const faqs = faqsByLanguage[language] ?? faqsByLanguage.ja;
 
   return (
-    <section id="faq" className="faq section-padding">
+    <section id="faq" className="faq section-padding" aria-labelledby="faq-list-heading">
       <div className="container">
-        <div className="section-header">
-          <h2 className="section-title">Frequently Asked <span className="highlight-red">Questions</span></h2>
-        </div>
+        {hideHeader ? (
+          <h2 id="faq-list-heading" className="visually-hidden">
+            {listHeadingByLanguage[language]}
+          </h2>
+        ) : (
+          <div className="section-header">
+            <h2 id="faq-list-heading" className="section-title" lang="en">
+              Frequently Asked <span className="highlight-red">Questions</span>
+            </h2>
+          </div>
+        )}
         <div className="faq-list">
-          {faqs.map((faq, index) => (
-            <FAQItem key={index} {...faq} />
-          ))}
+          {faqs.map((faq, index) => {
+            const id = `faq-${language}-${index + 1}`;
+
+            return <FAQItem key={id} id={id} {...faq} />;
+          })}
         </div>
       </div>
 
@@ -113,11 +144,18 @@ const FAQ = () => {
           border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
 
+        .faq-question-heading {
+          font-family: inherit;
+          letter-spacing: normal;
+          text-transform: none;
+        }
+
         .faq-question {
           width: 100%;
           display: flex;
           justify-content: space-between;
           align-items: center;
+          gap: 1rem;
           padding: 2rem 0;
           text-align: left;
           font-size: 1.2rem;
@@ -126,11 +164,23 @@ const FAQ = () => {
           transition: color 0.3s;
         }
 
+        .faq-question > span:first-child {
+          min-width: 0;
+          overflow-wrap: anywhere;
+        }
+
         .faq-question:hover {
           color: var(--ted-red);
         }
 
+        .faq-question:focus-visible {
+          outline: 3px solid #fff;
+          outline-offset: 4px;
+          border-radius: 4px;
+        }
+
         .icon {
+          flex-shrink: 0;
           font-size: 1.5rem;
           transition: transform 0.3s;
         }
@@ -146,8 +196,15 @@ const FAQ = () => {
 
         .faq-answer p {
           padding-bottom: 2rem;
-          color: #888;
+          color: #aaa;
           line-height: 1.8;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          .faq-question,
+          .icon {
+            transition: none;
+          }
         }
       `}</style>
     </section>

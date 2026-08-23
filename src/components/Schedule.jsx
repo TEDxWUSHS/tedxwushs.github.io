@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import { useLanguage } from '../i18n/LanguageContext';
 
 const scheduleData = [
@@ -21,6 +21,7 @@ const scheduleData = [
 
 const Schedule = () => {
   const { language } = useLanguage();
+  const shouldReduceMotion = useReducedMotion();
   const subtitle = language === 'en'
     ? 'Scheduled for Saturday, October 31, 2026, from 14:00 to 18:00. Times are subject to change.'
     : '2026年10月31日（土）14:00〜18:00 開催予定。時間は前後する可能性があります。';
@@ -30,32 +31,32 @@ const Schedule = () => {
       <div className="container">
         <motion.div
           className="section-header"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={shouldReduceMotion ? false : { opacity: 0, y: 20 }}
+          whileInView={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <h2 className="section-title">Event <span className="highlight-red">Schedule</span></h2>
+          <h2 className="section-title" lang="en">Event <span className="highlight-red">Schedule</span></h2>
           <p className="section-subtitle">{subtitle}</p>
         </motion.div>
 
-        <div className="timeline">
+        <ol className="timeline">
           {scheduleData.map((item, index) => (
-            <motion.div
-              key={index}
+            <motion.li
+              key={`${item.time}-${item.event}`}
               className="timeline-item"
-              initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={shouldReduceMotion ? false : { opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
+              whileInView={shouldReduceMotion ? undefined : { opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
+              transition={shouldReduceMotion ? { duration: 0 } : { delay: index * 0.1 }}
             >
-              <div className="time">{language === 'en' && item.timeEn ? item.timeEn : item.time}</div>
+              <time className="time">{language === 'en' && item.timeEn ? item.timeEn : item.time}</time>
               <div className="event-content">
-                <h3>{item.event}</h3>
+                <h3 lang="en">{item.event}</h3>
                 <p>{item.description[language]}</p>
               </div>
-            </motion.div>
+            </motion.li>
           ))}
-        </div>
+        </ol>
       </div>
 
       <style>{`
@@ -72,6 +73,8 @@ const Schedule = () => {
           position: relative;
           max-width: 800px;
           margin: 0 auto;
+          padding: 0;
+          list-style: none;
         }
 
         .timeline::before {
@@ -116,7 +119,7 @@ const Schedule = () => {
           font-family: var(--font-heading);
           font-size: clamp(1rem, 2.2vw, 1.5rem);
           font-weight: 800;
-          color: var(--ted-red);
+          color: var(--ted-red-text);
           position: absolute;
           right: calc(50% + 30px);
           top: -10px;
@@ -148,7 +151,7 @@ const Schedule = () => {
         }
 
         .event-content p {
-          color: #888;
+          color: #aaa;
         }
 
         @media (max-width: 768px) {
@@ -156,6 +159,7 @@ const Schedule = () => {
             left: 20px;
           }
           .timeline-item {
+            flex-direction: column;
             justify-content: flex-start;
             padding-left: 50px;
             padding-right: 0;
@@ -175,7 +179,29 @@ const Schedule = () => {
           }
           .event-content {
             width: 100%;
+            padding: 1.5rem;
           }
+        }
+
+        @media (max-width: 360px) {
+          .timeline::before,
+          .timeline-item::after {
+            left: 12px;
+          }
+
+          .timeline-item,
+          .timeline-item:nth-child(even) {
+            padding-left: 36px;
+          }
+
+          .event-content {
+            padding: 1.25rem;
+          }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          .event-content { transition: none; }
+          .event-content:hover { transform: none; }
         }
       `}</style>
     </section>

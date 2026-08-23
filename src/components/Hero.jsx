@@ -1,4 +1,4 @@
-import { motion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { CalendarDays, Clock3, MapPin } from 'lucide-react';
 import poster from '../assets/poster.png';
@@ -10,19 +10,22 @@ const heroCopy = {
     eventLabel: '開催情報',
     date: '2026年10月31日（土）',
     reception: '受付開始 13:30',
-    venue: '早稲田大学高等学院 講堂'
+    venue: '早稲田大学高等学院 講堂',
+    posterAlt: 'TEDxWUSHS Youth「Ideas change everything.」イベントポスター'
   },
   en: {
     description: 'TEDxWUSHS Youth is an independently organized TEDx event led by students at Waseda University Senior High School. From our school, we explore the power of ideas to change everything.',
     eventLabel: 'Event details',
     date: 'Saturday, October 31, 2026',
     reception: 'Doors open 1:30 PM',
-    venue: 'Waseda University Senior High School Auditorium'
+    venue: 'Waseda University Senior High School Auditorium',
+    posterAlt: 'TEDxWUSHS Youth event poster: Ideas change everything.'
   }
 };
 
 const Hero = () => {
   const { language } = useLanguage();
+  const shouldReduceMotion = useReducedMotion();
   const copy = heroCopy[language];
 
   return (
@@ -30,36 +33,37 @@ const Hero = () => {
       <div className="container hero-container">
         <motion.div
           className="hero-content"
-          initial={{ opacity: 0, x: -50 }}
+          initial={shouldReduceMotion ? false : { opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: shouldReduceMotion ? 0 : 0.8 }}
         >
           <motion.span
             className="hero-tagline"
-            initial={{ opacity: 0 }}
+            lang="en"
+            initial={shouldReduceMotion ? false : { opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 0.5 }}
+            transition={shouldReduceMotion ? { duration: 0 } : { delay: 0.5 }}
           >
             TEDxWUSHS Youth · Waseda University Senior High School
           </motion.span>
-          <h1 className="hero-title">
+          <h1 className="hero-title" lang="en">
             Ideas change <br /> <span className="highlight-red">everything.</span>
           </h1>
           <p className="hero-description">
             {copy.description}
           </p>
-          <div className="hero-event-details" aria-label={copy.eventLabel}>
+          <div className="hero-event-details" role="group" aria-label={copy.eventLabel}>
             <div className="hero-event-detail">
               <CalendarDays size={22} aria-hidden="true" />
               <div>
-                <span>Date</span>
-                <strong>{copy.date}</strong>
+                <span lang="en">Date</span>
+                <time dateTime="2026-10-31"><strong>{copy.date}</strong></time>
               </div>
             </div>
             <div className="hero-event-detail">
               <Clock3 size={22} aria-hidden="true" />
               <div>
-                <span>Time</span>
+                <span lang="en">Time</span>
                 <strong>14:00～18:00</strong>
                 <small>{copy.reception}</small>
               </div>
@@ -67,26 +71,26 @@ const Hero = () => {
             <div className="hero-event-detail">
               <MapPin size={22} aria-hidden="true" />
               <div>
-                <span>Venue</span>
+                <span lang="en">Venue</span>
                 <strong>{copy.venue}</strong>
               </div>
             </div>
           </div>
           <div className="hero-cta">
-            <Link to="/about" className="btn btn-primary">Discover More</Link>
-            <Link to="/join-us" className="btn btn-outline">Join Us</Link>
+            <Link to="/about" className="btn btn-primary" lang="en">Discover More</Link>
+            <Link to="/join-us" className="btn btn-outline" lang="en">Join Us</Link>
           </div>
         </motion.div>
 
         <motion.div
           className="hero-visual"
-          initial={{ opacity: 0, scale: 0.8 }}
+          initial={shouldReduceMotion ? false : { opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1, ease: "easeOut" }}
+          transition={{ duration: shouldReduceMotion ? 0 : 1, ease: "easeOut" }}
         >
           <div className="poster-container">
-            <img src={poster} alt="TEDxWUSHS Youth Poster" className="hero-poster" />
-            <div className="poster-glow"></div>
+            <img src={poster} alt={copy.posterAlt} className="hero-poster" />
+            <div className="poster-glow" aria-hidden="true"></div>
           </div>
         </motion.div>
       </div>
@@ -108,7 +112,7 @@ const Hero = () => {
         }
 
         .hero-tagline {
-          color: var(--ted-red);
+          color: var(--ted-red-text);
           font-weight: 800;
           letter-spacing: 0.2em;
           text-transform: uppercase;
@@ -150,7 +154,7 @@ const Hero = () => {
         }
 
         .hero-event-detail > svg {
-          color: var(--ted-red);
+          color: var(--ted-red-text);
         }
 
         .hero-event-detail div {
@@ -158,11 +162,12 @@ const Hero = () => {
           flex-wrap: wrap;
           gap: 0.25rem 0.75rem;
           align-items: baseline;
+          min-width: 0;
         }
 
         .hero-event-detail span {
           min-width: 50px;
-          color: var(--ted-red);
+          color: var(--ted-red-text);
           font-size: 0.68rem;
           font-weight: 800;
           letter-spacing: 0.12em;
@@ -172,6 +177,7 @@ const Hero = () => {
         .hero-event-detail strong {
           color: white;
           font-size: 1rem;
+          overflow-wrap: anywhere;
         }
 
         .hero-event-detail small {
@@ -186,6 +192,10 @@ const Hero = () => {
         }
 
         .btn {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          min-height: 44px;
           padding: 1rem 2.5rem;
           border-radius: 4px;
           font-weight: 700;
@@ -221,6 +231,7 @@ const Hero = () => {
         }
 
         .hero-poster {
+          display: block;
           width: 100%;
           border-radius: 12px;
           box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
@@ -272,6 +283,36 @@ const Hero = () => {
             max-width: 400px;
             margin: 0 auto;
           }
+        }
+
+        @media (max-width: 400px) {
+          .hero-container {
+            gap: 2.5rem;
+          }
+
+          .hero-title {
+            font-size: clamp(2.5rem, 14vw, 3rem);
+          }
+
+          .hero-event-detail {
+            grid-template-columns: 24px minmax(0, 1fr);
+            gap: 0.65rem;
+            padding-right: 0.75rem;
+            padding-left: 0.75rem;
+          }
+
+          .hero-cta {
+            gap: 1rem;
+          }
+
+          .btn {
+            width: 100%;
+          }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+          .btn { transition: none; }
+          .btn:hover { transform: none; }
         }
       `}</style>
     </section>
