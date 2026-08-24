@@ -10,6 +10,8 @@ import SpeakerRecruitment from './pages/SpeakerRecruitment';
 import TeamRecruitment from './pages/TeamRecruitment';
 import AudienceRegistration from './pages/AudienceRegistration';
 import FAQPage from './pages/FAQPage';
+import FormPage from './pages/FormPage';
+import FormCompletePage from './pages/FormCompletePage';
 import NotFoundPage from './pages/NotFoundPage';
 import { LanguageProvider, useLanguage } from './i18n/LanguageContext';
 
@@ -23,6 +25,8 @@ const pageTitles = {
     '/join-us/team': '運営チーム募集 | TEDxWUSHS Youth',
     '/join-us/audience': '参加申込み | TEDxWUSHS Youth',
     '/faq': 'よくある質問 | TEDxWUSHS Youth',
+    '/form': '運営スタッフ募集 | TEDxWUSHS Youth',
+    '/form/complete': '送信完了 | TEDxWUSHS Youth',
   },
   en: {
     '/': 'TEDxWUSHS Youth | Ideas change everything',
@@ -33,6 +37,8 @@ const pageTitles = {
     '/join-us/team': 'Team Recruitment | TEDxWUSHS Youth',
     '/join-us/audience': 'Audience Registration | TEDxWUSHS Youth',
     '/faq': 'Frequently Asked Questions | TEDxWUSHS Youth',
+    '/form': 'Team Application | TEDxWUSHS Youth',
+    '/form/complete': 'Submission Complete | TEDxWUSHS Youth',
   },
 };
 
@@ -88,6 +94,8 @@ function App() {
             <Route path="/join-us/team" element={<TeamRecruitment />} />
             <Route path="/join-us/audience" element={<AudienceRegistration />} />
             <Route path="/faq" element={<FAQPage />} />
+            <Route path="/form" element={<FormPage />} />
+            <Route path="/form/complete" element={<FormCompletePage />} />
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
           <Footer />
