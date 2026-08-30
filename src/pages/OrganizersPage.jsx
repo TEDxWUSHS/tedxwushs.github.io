@@ -59,7 +59,12 @@ const OrganizersPage = () => {
                   ? { duration: 0 }
                   : { duration: 0.4, delay: index * 0.06 }}
               >
-                <h3 className="organizer-name" lang="en">{organizer.name}</h3>
+                <div className="organizer-identity">
+                  <h3 className="organizer-name" lang="en">{organizer.name}</h3>
+                  <span className="organizer-grade">
+                    {organizer.grade[language] ?? organizer.grade.ja}
+                  </span>
+                </div>
                 <div className="organizer-role-block">
                   <span className="organizer-role" lang="en">{organizer.role.en}</span>
                   {language === 'ja' && (
@@ -150,6 +155,20 @@ const OrganizersPage = () => {
           gap: 0.25rem;
           padding-left: 1rem;
           border-left: 3px solid var(--ted-red);
+        }
+
+        .organizer-identity {
+          min-width: 0;
+        }
+
+        .organizer-grade {
+          display: block;
+          margin-top: 0.55rem;
+          color: #aaa;
+          font-size: 0.8rem;
+          font-weight: 700;
+          letter-spacing: 0.04em;
+          line-height: 1.5;
         }
 
         .organizer-role {
