@@ -1,28 +1,23 @@
 import { motion, useReducedMotion } from 'framer-motion';
-import { ExternalLink } from 'lucide-react';
 import { useLanguage } from '../i18n/LanguageContext';
-import { organizers, organizerSourceUrl } from '../data/organizers';
+import { organizers } from '../data/organizers';
 
 const pageCopy = {
   ja: {
     eyebrow: 'Organizing Team',
-    titleLead: '運営する',
+    year: '2026',
+    fullTitle: '2026 運営メンバー',
+    titleLead: '運営',
     titleAccent: 'メンバー',
-    introduction: 'TEDxWUSHS Youthを企画・運営するメンバーです。氏名と役職は、TED公式イベントページの掲載情報に基づいています。',
     memberList: '運営メンバー一覧',
-    officialRole: 'TED公式掲載役職',
-    source: 'TED公式イベントページで確認する',
-    sourceNote: '掲載情報の出典',
   },
   en: {
-    eyebrow: 'Organizing Team',
-    titleLead: 'Our',
-    titleAccent: 'Organizers',
-    introduction: 'Meet the people who organize and operate TEDxWUSHS Youth. Names and roles are based on the official TED event page.',
+    eyebrow: 'TEDxWUSHS Youth',
+    year: '2026',
+    fullTitle: '2026 Organizing Team',
+    titleLead: 'Organizing',
+    titleAccent: 'Team',
     memberList: 'Organizing team members',
-    officialRole: 'Role listed by TED',
-    source: 'View the official event page on TED.com',
-    sourceNote: 'Information source',
   },
 };
 
@@ -42,10 +37,13 @@ const OrganizersPage = () => {
             transition={shouldReduceMotion ? { duration: 0 } : { duration: 0.55 }}
           >
             <p className="organizers-eyebrow" lang="en">{copy.eyebrow}</p>
-            <h1 id="organizers-title">
-              {copy.titleLead} <span className="highlight-red">{copy.titleAccent}</span>
+            <h1 id="organizers-title" aria-label={copy.fullTitle}>
+              <span className="organizers-year" aria-hidden="true">{copy.year}</span>
+              <span className="organizers-title-text" aria-hidden="true">
+                {copy.titleLead}{language === 'en' ? ' ' : null}
+                <span className="highlight-red">{copy.titleAccent}</span>
+              </span>
             </h1>
-            <p className="organizers-introduction">{copy.introduction}</p>
           </motion.div>
 
           <h2 className="visually-hidden">{copy.memberList}</h2>
@@ -61,31 +59,16 @@ const OrganizersPage = () => {
                   ? { duration: 0 }
                   : { duration: 0.4, delay: index * 0.06 }}
               >
+                <h3 className="organizer-name" lang="en">{organizer.name}</h3>
                 <div className="organizer-role-block">
-                  <span className="organizer-role-label">{copy.officialRole}</span>
                   <span className="organizer-role" lang="en">{organizer.role.en}</span>
                   {language === 'ja' && (
                     <span className="organizer-role-ja">{organizer.role.ja}</span>
                   )}
                 </div>
-                <h3 className="organizer-name" lang="en">{organizer.name}</h3>
               </motion.li>
             ))}
           </ul>
-
-          <motion.aside
-            className="organizers-source"
-            aria-label={copy.sourceNote}
-            initial={shouldReduceMotion ? false : { opacity: 0 }}
-            whileInView={shouldReduceMotion ? undefined : { opacity: 1 }}
-            viewport={{ once: true }}
-          >
-            <span>{copy.sourceNote}</span>
-            <a href={organizerSourceUrl} target="_blank" rel="noopener noreferrer">
-              <span>{copy.source}</span>
-              <ExternalLink size={18} aria-hidden="true" />
-            </a>
-          </motion.aside>
         </div>
       </section>
 
@@ -107,7 +90,7 @@ const OrganizersPage = () => {
 
         .organizers-heading {
           max-width: 800px;
-          margin: 0 auto 4rem;
+          margin: 0 auto clamp(3.5rem, 7vw, 5rem);
           text-align: center;
         }
 
@@ -121,129 +104,78 @@ const OrganizersPage = () => {
         }
 
         .organizers-heading h1 {
-          margin-bottom: 1.4rem;
+          margin: 0;
           font-size: clamp(2.5rem, 7vw, 5rem);
           line-height: 1.05;
           text-wrap: balance;
         }
 
-        .organizers-introduction {
-          max-width: 720px;
-          margin: 0 auto;
-          color: #ccc;
-          font-size: clamp(1rem, 2vw, 1.15rem);
-          line-height: 1.85;
-          text-wrap: pretty;
+        .organizers-year {
+          display: block;
+          margin-bottom: 0.65rem;
+          color: var(--ted-white);
+          font-family: var(--font-main);
+          font-size: clamp(0.95rem, 2vw, 1.2rem);
+          font-weight: 800;
+          letter-spacing: 0.18em;
+          line-height: 1;
+        }
+
+        .organizers-title-text {
+          display: block;
         }
 
         .organizers-grid {
-          display: grid;
-          grid-template-columns: repeat(6, minmax(0, 1fr));
-          gap: 1.25rem;
-          width: 100%;
-          margin: 0;
+          display: block;
+          width: min(100%, 960px);
+          margin: 0 auto;
+          border-top: 1px solid rgba(255, 255, 255, 0.18);
         }
 
         .organizer-card {
-          display: flex;
+          display: grid;
+          grid-template-columns: minmax(0, 1.15fr) minmax(14rem, 0.85fr);
+          align-items: center;
+          gap: 1rem 3rem;
           min-width: 0;
-          min-height: 250px;
-          flex-direction: column;
-          justify-content: space-between;
-          padding: 1.75rem;
-          border: 1px solid rgba(255, 255, 255, 0.1);
-          border-top: 3px solid var(--ted-red);
-          border-radius: 12px;
-          background: var(--ted-dark-gray);
-          box-shadow: 0 18px 45px rgba(0, 0, 0, 0.3);
-          transition: border-color 0.25s ease, transform 0.25s ease;
+          padding: clamp(1.75rem, 3.5vw, 2.5rem) 0;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.14);
           overflow-wrap: anywhere;
-          grid-column: span 2;
-        }
-
-        .organizer-card:nth-last-child(2) {
-          grid-column: 2 / span 2;
-        }
-
-        .organizer-card:last-child {
-          grid-column: 4 / span 2;
-        }
-
-        .organizer-card:hover {
-          border-color: rgb(var(--ted-red-rgb) / 0.75);
-          transform: translateY(-4px);
         }
 
         .organizer-role-block {
           display: flex;
           align-items: flex-start;
           flex-direction: column;
-          gap: 0.35rem;
-        }
-
-        .organizer-role-label {
-          color: #aaa;
-          font-size: 0.68rem;
-          font-weight: 700;
-          letter-spacing: 0.1em;
-          text-transform: uppercase;
+          gap: 0.25rem;
+          padding-left: 1rem;
+          border-left: 3px solid var(--ted-red);
         }
 
         .organizer-role {
-          display: inline-flex;
+          display: block;
           max-width: 100%;
-          padding: 0.35rem 0.6rem;
-          border-radius: 999px;
-          background: var(--ted-black);
-          color: var(--ted-red);
+          color: #f4f4f4;
           font-size: 0.78rem;
           font-weight: 800;
-          letter-spacing: 0.06em;
+          letter-spacing: 0.08em;
+          line-height: 1.5;
           text-transform: uppercase;
         }
 
         .organizer-role-ja {
-          color: #ccc;
-          font-size: 0.85rem;
+          color: #aaa;
+          font-size: 0.82rem;
+          line-height: 1.6;
         }
 
         .organizer-name {
-          margin-top: 3rem;
-          font-size: clamp(1.45rem, 3vw, 2rem);
-          line-height: 1.15;
+          max-width: 100%;
+          font-size: clamp(1.55rem, 2.7vw, 2.15rem);
+          line-height: 1.2;
+          letter-spacing: -0.02em;
           text-transform: none;
-        }
-
-        .organizers-source {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          gap: 1rem 2rem;
-          margin-top: 3rem;
-          padding: 1rem 1.25rem;
-          border: 1px solid rgba(255, 255, 255, 0.1);
-          border-radius: 10px;
-          background: var(--ted-dark-gray);
-          color: #aaa;
-          font-size: 0.9rem;
-        }
-
-        .organizers-source a {
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          gap: 0.55rem;
-          min-height: 44px;
-          padding: 0.65rem 0.9rem;
-          border-radius: 6px;
-          background: var(--ted-red);
-          color: var(--ted-white);
-          font-weight: 800;
-          text-align: center;
-        }
-
-        .organizers-source a:hover {
-          transform: translateY(-2px);
+          text-wrap: balance;
         }
 
         @media (max-width: 900px) {
@@ -251,65 +183,28 @@ const OrganizersPage = () => {
             padding-top: 8rem;
           }
 
-          .organizers-grid {
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-          }
-
-          .organizer-card,
-          .organizer-card:nth-last-child(2) {
-            grid-column: auto;
-          }
-
-          .organizer-card:last-child {
-            width: calc(50% - 0.625rem);
-            grid-column: 1 / -1;
-            justify-self: center;
+          .organizer-card {
+            gap: 1rem 2rem;
           }
         }
 
-        @media (max-width: 620px) {
+        @media (max-width: 700px) {
           .organizers-hero {
-            padding: 7.5rem 0 5rem;
+            padding: 7.5rem 0 4.5rem;
           }
 
           .organizers-heading {
-            margin-bottom: 3rem;
-          }
-
-          .organizers-grid {
-            grid-template-columns: minmax(0, 1fr);
+            margin-bottom: 2.75rem;
           }
 
           .organizer-card {
-            min-height: 220px;
-            padding: 1.4rem;
+            grid-template-columns: minmax(0, 1fr);
+            gap: 0.85rem;
+            padding: 1.5rem 0;
           }
 
-          .organizer-card:last-child {
-            width: 100%;
-            grid-column: auto;
-          }
-
-          .organizers-source {
-            align-items: stretch;
-            flex-direction: column;
-            text-align: center;
-          }
-
-          .organizers-source a {
-            width: 100%;
-          }
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-          .organizer-card,
-          .organizers-source a {
-            transition: none;
-          }
-
-          .organizer-card:hover,
-          .organizers-source a:hover {
-            transform: none;
+          .organizer-role-block {
+            padding-left: 0.75rem;
           }
         }
       `}</style>

@@ -22,24 +22,56 @@ export const organizers = [
     id: 'hironori-sakai',
     name: 'Hironori SAKAI',
     role: {
-      ja: '運営',
-      en: 'Operations',
+      ja: '運営・スピーカー',
+      en: 'Operation/Speaker',
     },
   },
   {
     id: 'tatsuaki-matsuda',
     name: 'Tatsuaki Matsuda',
     role: {
-      ja: '運営',
-      en: 'Operations',
+      ja: '運営・スピーカー',
+      en: 'Operation/Speaker',
     },
   },
   {
     id: 'yasuhiro-nanjo',
     name: 'Yasuhiro Nanjo',
     role: {
-      ja: '広報・コミュニケーション',
-      en: 'Marketing/Communications',
+      ja: 'テクノロジー・広報',
+      en: 'Technology/Marketing',
+    },
+  },
+  {
+    id: 'lyu-noguchi',
+    name: 'Lyu Noguchi',
+    role: {
+      ja: 'スピーカー',
+      en: 'Speaker',
+    },
+  },
+  {
+    id: 'yunosuke-sato',
+    name: 'Yunosuke Sato',
+    role: {
+      ja: '財務',
+      en: 'Finance',
+    },
+  },
+  {
+    id: 'taisei-moriwaki',
+    name: 'Taisei Moriwaki',
+    role: {
+      ja: '広報',
+      en: 'Marketing',
+    },
+  },
+  {
+    id: 'keisuke-horikoshi',
+    name: 'Keisuke Horikoshi',
+    role: {
+      ja: '監査',
+      en: 'Audit',
     },
   },
 ];
