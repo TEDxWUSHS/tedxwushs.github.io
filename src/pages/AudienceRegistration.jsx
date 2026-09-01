@@ -4,26 +4,30 @@ import { useLanguage } from '../i18n/LanguageContext';
 
 const contentByLanguage = {
     ja: {
-        lead: '参加申込みは2026年9月開始予定です。受付開始まで今しばらくお待ちください。',
+        lead: '参加申込みは2学期開始時点に受付を始める予定です。受付開始まで今しばらくお待ちください。',
         eligibilityLabel: 'Audience Eligibility / 参加対象',
         eligibilityTitle: '早稲田大学高等学院の生徒及びその保護者',
         eligibilityDescription: '本イベントの会場参加は、上記の方を対象としています。対象をご確認のうえ、受付開始をお待ちください。',
         newsletterDescription: 'ニュースレターに登録して、チケット販売開始の通知や、公開前のスピーカー情報をいち早く入手しましょう。',
         eventDescription: '2026年10月31日（土）14:00〜18:00、早稲田大学高等学院 講堂にて開催します（受付開始13:30）。',
         registrationTitle: '参加申込みについて',
-        registrationDescription: '申込みは2026年9月開始予定です。開始時にウェブサイトとSNSでご案内します。',
+        registrationDescription: '申込みは2学期開始時点に受付を始める予定です。開始時にウェブサイトとSNSでご案内します。',
+        registrationStatus: '2学期開始時に受付開始',
+        registrationTiming: '2学期開始時点',
         audienceLabel: '対象',
         audienceValue: '学院生・保護者'
     },
     en: {
-        lead: 'Registration is scheduled to open in September 2026. Please check back when registration begins.',
+        lead: 'Registration is scheduled to open at the start of the second school term. Please check back when registration begins.',
         eligibilityLabel: 'Audience Eligibility',
         eligibilityTitle: 'Students of Waseda University Senior High School and Their Parents or Guardians',
         eligibilityDescription: 'In-person attendance is limited to the group listed above. Please confirm your eligibility and check back when registration opens.',
         newsletterDescription: 'Sign up for the newsletter to be among the first to receive registration updates and speaker announcements.',
         eventDescription: 'The event will be held on Saturday, October 31, 2026, from 2:00 p.m. to 6:00 p.m. at the auditorium of Waseda University Senior High School (doors open at 1:30 p.m.).',
         registrationTitle: 'Registration Information',
-        registrationDescription: 'Registration is scheduled to open in September 2026. We will announce the opening on this website and our social media channels.',
+        registrationDescription: 'Registration is scheduled to open at the start of the second school term. We will announce the opening on this website and our social media channels.',
+        registrationStatus: 'Opening at the Start of Term 2',
+        registrationTiming: 'Start of Term 2',
         audienceLabel: 'Eligible Attendees',
         audienceValue: 'Students & Parents/Guardians'
     }
@@ -80,14 +84,14 @@ const AudienceRegistration = () => {
 
                     <div className="form-side">
                         <section className="registration-card" aria-labelledby="registration-information-title">
-                            <span className="registration-status" lang="en">Coming in September</span>
+                            <span className="registration-status">{content.registrationStatus}</span>
                             <h2 id="registration-information-title">{content.registrationTitle}</h2>
                             <p>{content.registrationDescription}</p>
                             <div className="registration-audience">
                                 <span>{content.audienceLabel}</span>
                                 <strong>{content.audienceValue}</strong>
                             </div>
-                            <time className="registration-date" dateTime="2026-09">2026.09</time>
+                            <span className="registration-timing">{content.registrationTiming}</span>
                         </section>
                     </div>
                 </div>
@@ -123,7 +127,7 @@ const AudienceRegistration = () => {
         .registration-audience { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 0.5rem 1rem; margin-bottom: 1rem; padding: 0.9rem 1rem; background: rgba(255,255,255,0.05); border-radius: 8px; }
         .registration-audience span { color: #888; font-size: 0.75rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; }
         .registration-audience strong { color: white; }
-        .registration-date { display: block; padding: 1rem; border: 1px solid rgb(var(--ted-red-rgb) / 0.65); border-radius: 8px; color: var(--ted-red); font-family: var(--font-heading); font-size: 2rem; font-weight: 800; text-align: center; }
+        .registration-timing { display: block; padding: 1rem; border: 1px solid rgb(var(--ted-red-rgb) / 0.65); border-radius: 8px; color: var(--ted-red); font-family: var(--font-heading); font-size: clamp(1.25rem, 4vw, 2rem); font-weight: 800; line-height: 1.3; text-align: center; }
 
         .form-group { margin-bottom: 1.5rem; }
         .form-group label { display: block; font-size: 0.8rem; font-weight: 700; color: #888; text-transform: uppercase; margin-bottom: 0.5rem; }
