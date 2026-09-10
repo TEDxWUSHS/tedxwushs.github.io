@@ -2,6 +2,11 @@ import { motion, useReducedMotion } from 'framer-motion';
 import { useLanguage } from '../i18n/LanguageContext';
 import { organizers } from '../data/organizers';
 
+const formatOrganizerName = (name) => name
+  .trim()
+  .toLocaleLowerCase('en-US')
+  .replace(/(^|[\s'-])[a-z]/g, (segment) => segment.toLocaleUpperCase('en-US'));
+
 const pageCopy = {
   ja: {
     eyebrow: 'Organizing Team',
@@ -60,7 +65,9 @@ const OrganizersPage = () => {
                   : { duration: 0.4, delay: index * 0.06 }}
               >
                 <div className="organizer-identity">
-                  <h3 className="organizer-name" lang="en">{organizer.name}</h3>
+                  <h3 className="organizer-name" lang="en">
+                    {formatOrganizerName(organizer.name)}
+                  </h3>
                   <span className="organizer-grade">
                     {organizer.grade[language] ?? organizer.grade.ja}
                   </span>

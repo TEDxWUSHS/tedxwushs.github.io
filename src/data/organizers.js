@@ -10,7 +10,7 @@ const gradeLabels = {
 export const organizers = [
   {
     id: 'haruki-kawamata',
-    name: 'Haruki KAWAMATA',
+    name: 'Haruki Kawamata',
     grade: gradeLabels.year3,
     role: {
       ja: 'オーガナイザー',
@@ -28,7 +28,7 @@ export const organizers = [
   },
   {
     id: 'hironori-sakai',
-    name: 'Hironori SAKAI',
+    name: 'Hironori Sakai',
     grade: gradeLabels.year2,
     role: {
       ja: '運営・スピーカーチーム',
