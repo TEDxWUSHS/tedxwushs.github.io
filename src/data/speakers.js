@@ -143,24 +143,24 @@ export const speakers = [
       en: 'Mamoru Takezawa',
     },
     role: {
-      ja: '元早稲田大学高等学院学院長',
+      ja: '早稲田大学高等学院前学院長',
       en: 'Former Headmaster of Waseda University Senior High School',
     },
     shortBio: {
-      ja: '長年、早稲田大学高等学院で数学と情報を教え、最後の4年間は学院長を務めた。',
-      en: 'A longtime mathematics and computer science educator who served as Headmaster of Waseda University Senior High School for four years.',
+      ja: '長く早稲田大学高等学院の教員を務め、数学・情報科の指導に携わる。特に最後の4年間は学院長を務めた。',
+      en: 'A longtime mathematics and information studies educator at Waseda University Senior High School who served as Headmaster for the final four years of his tenure.',
     },
     bio: {
       ja: [
-        '元早稲田大学高等学院学院長。長く早稲田大学高等学院の教員を務め、数学と情報を教えていました。そして最後の4年間は学院長でした。',
+        '早稲田大学高等学院前学院長。長く早稲田大学高等学院の教員を務め、数学・情報科の指導に携わる。特に最後の4年間は学院長を務めた。',
       ],
       en: [
-        'He taught mathematics and computer science at Waseda University Senior High School for many years and served as Headmaster for his final four years.',
+        'Former Headmaster of Waseda University Senior High School. He served for many years as a teacher at the school, teaching mathematics and information studies. He was Headmaster for the final four years of his tenure.',
       ],
     },
     talkDescription: {
-      ja: 'これらの教育経験に基づき、TEDxWUSHS Youthのテーマ「Breakshot」に沿って、AI・デジタル時代の予測不可能な未来に向けて、私たちが身につけるべき資質と能力について議論する予定です。',
-      en: 'Drawing on these educational experiences and the TEDxWUSHS Youth theme “Breakshot,” he will discuss the essential qualities and capabilities we must cultivate to thrive in the unpredictable AI and digital era. When rapid technological shifts disrupt our established foundations, what critical choices must we make? Let’s explore together how to navigate this uncertain future.',
+      ja: 'これまでの教育経験をもとに、TEDxWUSHS Youthのテーマ「Breakshot」に沿って、AI・デジタル時代の予測不可能な未来に向けて、私たちが身につけるべき資質と能力について議論する。',
+      en: 'Drawing on his experience in education and in keeping with the TEDxWUSHS Youth theme “Breakshot,” he will discuss the qualities and capabilities we should develop as we face an unpredictable future in the age of AI and digital technology.',
     },
   },
 ];
