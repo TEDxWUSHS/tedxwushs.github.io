@@ -27,9 +27,9 @@ const AboutPage = () => {
                 >
                     <section className="about-section">
                         <h1 className="page-title">
-                            {isJapanese ? <><span className="highlight-red">TEDx</span>について</> : <>About <span className="highlight-red">TEDx</span></>}
+                            {isJapanese ? <><span className="highlight-red brand-name">TEDx</span>について</> : <>About <span className="highlight-red brand-name">TEDx</span></>}
                         </h1>
-                        <h2 className="sub-title">
+                        <h2 className="sub-title brand-name">
                             {isJapanese
                                 ? 'TEDxについて — x = independently organized event（独立して運営されるイベント）'
                                 : 'TEDx, x = independently organized event'}

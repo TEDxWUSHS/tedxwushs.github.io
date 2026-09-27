@@ -126,6 +126,10 @@ button {
   color: var(--ted-red);
 }
 
+.brand-name {
+  text-transform: none !important;
+}
+
 @media (max-width: 768px) {
   .container {
     padding-right: max(1.25rem, env(safe-area-inset-right));

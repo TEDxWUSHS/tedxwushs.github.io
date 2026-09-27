@@ -41,7 +41,7 @@ const OrganizersPage = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={shouldReduceMotion ? { duration: 0 } : { duration: 0.55 }}
           >
-            <p className="organizers-eyebrow" lang="en">{copy.eyebrow}</p>
+            <p className="organizers-eyebrow brand-name" lang="en">{copy.eyebrow}</p>
             <h1 id="organizers-title" aria-label={copy.fullTitle}>
               <span className="organizers-year" aria-hidden="true">{copy.year}</span>
               <span className="organizers-title-text" aria-hidden="true">

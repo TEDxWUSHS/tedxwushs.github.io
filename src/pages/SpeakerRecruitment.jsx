@@ -53,7 +53,7 @@ const SpeakerRecruitment = () => {
         </header>
 
         <section className="detail-section">
-          <h2 lang="en">Why speak at TEDxWUSHS Youth?</h2>
+          <h2 lang="en">Why speak at <span className="brand-name">TEDxWUSHS Youth</span>?</h2>
           <ul className="benefits-grid">
             {content.benefits.map((benefit) => (
               <li className="benefit-card" key={benefit}>

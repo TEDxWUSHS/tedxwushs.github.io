@@ -44,7 +44,7 @@ const Hero = () => {
             animate={{ opacity: 1 }}
             transition={shouldReduceMotion ? { duration: 0 } : { delay: 0.5 }}
           >
-            TEDxWUSHS Youth · Waseda University Senior High School
+            <span className="brand-name">TEDxWUSHS Youth</span> · Waseda University Senior High School
           </motion.span>
           <h1 className="hero-title" lang="en">
             Ideas change <br /> <span className="highlight-red">everything.</span>

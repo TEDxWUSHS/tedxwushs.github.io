@@ -1,5 +1,6 @@
 import { motion, useReducedMotion } from 'framer-motion';
 import { useLanguage } from '../i18n/LanguageContext';
+import logoRed from '../assets/logo_red.png';
 
 const aboutCopy = {
   ja: {
@@ -44,7 +45,7 @@ const About = () => {
             viewport={{ once: true }}
             transition={{ duration: shouldReduceMotion ? 0 : 0.6 }}
           >
-            <h2 className="section-title">{copy.whatIsTedxTitle}</h2>
+            <h2 className="section-title brand-name">{copy.whatIsTedxTitle}</h2>
             <p className="tedx-description">{copy.whatIsTedx}</p>
             <a href="https://www.ted.com/about/programs-initiatives/tedx-program" target="_blank" rel="noopener noreferrer" className="highlight-link program-link">
               {copy.programLink} ↗
@@ -58,7 +59,9 @@ const About = () => {
             viewport={{ once: true }}
             transition={shouldReduceMotion ? { duration: 0 } : { duration: 0.6, delay: 0.2 }}
           >
-            <h2 className="section-title">TEDx<span className="highlight-red">WUSHS Youth</span></h2>
+            <h2 className="about-logo-heading">
+              <img src={logoRed} alt="TEDxWUSHS Youth" className="about-logo" />
+            </h2>
             <p>{copy.localDescription}</p>
             <p className="event-info">
               <strong lang="en">Date:</strong> <span lang="en">October 31, 2026 (14:00 - 18:00 / Reception 13:30)</span><br />
@@ -115,6 +118,17 @@ const About = () => {
         .section-title {
           font-size: 2.5rem;
           margin-bottom: 2rem;
+        }
+
+        .about-logo-heading {
+          margin: 0 0 2rem;
+          line-height: 0;
+        }
+
+        .about-logo {
+          display: block;
+          width: min(100%, 420px);
+          height: auto;
         }
 
         .about-item p {
