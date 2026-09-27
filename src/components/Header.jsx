@@ -18,9 +18,14 @@ const Header = () => {
   const firstMobileLinkRef = useRef(null);
   const returnFocusOnClose = useRef(false);
   const focusDesktopAfterClose = useRef(false);
+  const locationPathRef = useRef(location.pathname);
+  const isScrollLockedRef = useRef(false);
+
+  locationPathRef.current = location.pathname;
 
   useEffect(() => {
     const handleScroll = () => {
+      if (isScrollLockedRef.current) return;
       setIsScrolled(window.scrollY > 50);
     };
     window.addEventListener('scroll', handleScroll);
@@ -51,7 +56,7 @@ const Header = () => {
   useEffect(() => {
     if (isMobileMenuOpen) {
       const focusFrame = window.requestAnimationFrame(() => {
-        firstMobileLinkRef.current?.focus();
+        firstMobileLinkRef.current?.focus({ preventScroll: true });
       });
 
       return () => window.cancelAnimationFrame(focusFrame);
@@ -67,6 +72,49 @@ const Header = () => {
 
     return undefined;
   }, [isMobileMenuOpen]);
+
+  useEffect(() => {
+    if (!isMobileMenuOpen) return undefined;
+
+    const body = document.body;
+    const documentElement = document.documentElement;
+    const pathWhenLocked = location.pathname;
+    const scrollY = window.scrollY;
+    const bodyStyles = {
+      position: body.style.position,
+      top: body.style.top,
+      left: body.style.left,
+      width: body.style.width,
+      overflow: body.style.overflow,
+    };
+    const documentOverflow = documentElement.style.overflow;
+
+    isScrollLockedRef.current = true;
+    documentElement.style.overflow = 'hidden';
+    body.style.position = 'fixed';
+    body.style.top = `-${scrollY}px`;
+    body.style.left = '0';
+    body.style.width = '100%';
+    body.style.overflow = 'hidden';
+
+    return () => {
+      documentElement.style.overflow = documentOverflow;
+      body.style.position = bodyStyles.position;
+      body.style.top = bodyStyles.top;
+      body.style.left = bodyStyles.left;
+      body.style.width = bodyStyles.width;
+      body.style.overflow = bodyStyles.overflow;
+      isScrollLockedRef.current = false;
+
+      if (locationPathRef.current === pathWhenLocked) {
+        window.scrollTo({ top: scrollY, left: 0, behavior: 'auto' });
+        setIsScrolled(scrollY > 50);
+      } else {
+        window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+        setIsScrolled(false);
+      }
+    };
+  }, [isMobileMenuOpen, location.pathname]);
 
   useEffect(() => {
     const desktopMedia = window.matchMedia('(min-width: 901px)');
@@ -85,8 +133,13 @@ const Header = () => {
     };
 
     closeMenuAtDesktopWidth(desktopMedia);
-    desktopMedia.addEventListener('change', closeMenuAtDesktopWidth);
-    return () => desktopMedia.removeEventListener('change', closeMenuAtDesktopWidth);
+    if (typeof desktopMedia.addEventListener === 'function') {
+      desktopMedia.addEventListener('change', closeMenuAtDesktopWidth);
+      return () => desktopMedia.removeEventListener('change', closeMenuAtDesktopWidth);
+    }
+
+    desktopMedia.addListener(closeMenuAtDesktopWidth);
+    return () => desktopMedia.removeListener(closeMenuAtDesktopWidth);
   }, [isMobileMenuOpen]);
 
   useEffect(() => {
@@ -226,15 +279,9 @@ const Header = () => {
           max-width: 100%;
           z-index: 1000;
           padding: 1.5rem 0;
-          overflow-x: hidden;
+          overflow: visible;
           transition: var(--transition-smooth);
           will-change: background, padding;
-        }
-
-        @supports (overflow-x: clip) {
-          .header {
-            overflow-x: clip;
-          }
         }
 
         .header.scrolled {
@@ -306,6 +353,8 @@ const Header = () => {
           background: rgba(0, 0, 0, 0.42);
           color: var(--ted-white);
           line-height: 0;
+          touch-action: manipulation;
+          -webkit-tap-highlight-color: transparent;
         }
 
         .mobile-menu-btn svg {
@@ -326,12 +375,15 @@ const Header = () => {
           max-width: 100%;
           background: var(--ted-black);
           max-height: calc(100vh - 92px);
+          max-height: calc(100svh - 92px);
           max-height: calc(100dvh - 92px);
-          padding: 1rem 2rem 2rem;
+          padding: 1rem 2rem max(2rem, calc(1rem + env(safe-area-inset-bottom)));
           border-bottom: 1px solid var(--ted-red);
           overflow-x: hidden;
           overflow-y: auto;
-          overscroll-behavior: contain;
+          overscroll-behavior-y: contain;
+          -webkit-overflow-scrolling: touch;
+          touch-action: pan-y;
         }
 
         .mobile-menu ul {
