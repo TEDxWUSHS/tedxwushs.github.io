@@ -9,8 +9,8 @@ const SpeakerCard = ({ speaker, language, variant, index }) => {
   const name = speaker.name[language] ?? speaker.name.ja;
   const role = speaker.role[language] ?? speaker.role.ja;
   const shortBio = speaker.shortBio[language] ?? speaker.shortBio.ja;
-  const bio = speaker.bio[language] ?? speaker.bio.ja;
-  const talkDescription = speaker.talkDescription?.[language];
+  const intro = speaker.intro[language] ?? speaker.intro.ja;
+  const speechInfo = speaker.speechInfo?.[language] ?? speaker.speechInfo?.ja;
   const alt = language === 'en' ? `Portrait of ${name}` : `${name}のプロフィール写真`;
 
   return (
@@ -40,12 +40,12 @@ const SpeakerCard = ({ speaker, language, variant, index }) => {
 
         {isDetailed ? (
           <div className="speaker-card__bio">
-            {bio.map((paragraph, paragraphIndex) => (
-              <p key={`${speaker.id}-bio-${paragraphIndex}`}>{paragraph}</p>
+            {intro.map((paragraph, paragraphIndex) => (
+              <p key={`${speaker.id}-intro-${paragraphIndex}`}>{paragraph}</p>
             ))}
 
-            {talkDescription && (
-              <p>{talkDescription}</p>
+            {speechInfo && (
+              <p>{speechInfo}</p>
             )}
           </div>
         ) : (
