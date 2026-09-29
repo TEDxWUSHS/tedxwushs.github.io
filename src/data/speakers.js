@@ -1,5 +1,6 @@
 import enomotoImage from '../assets/speakers/enomoto-takayuki.jpg';
 import hasegawaImage from '../assets/speakers/hasegawa-keisuke.jpg';
+import hirumaImage from '../assets/speakers/reon-hiruma.jpg';
 import horiseImage from '../assets/speakers/horise-yoshito.jpg';
 import kogureImage from '../assets/speakers/kogure-masahisa.jpg';
 import kurokiImage from '../assets/speakers/kuroki-yuto.jpg';
@@ -192,6 +193,34 @@ export const speakers = [
     speechInfo: {
       ja: 'これまでの教育経験をもとに、TEDxWUSHS Youthのテーマ「Breakshot」に沿って、AI・デジタル時代の予測不可能な未来に向けて、私たちが身につけるべき資質と能力について議論する。',
       en: 'Drawing on his experience in education and in keeping with the TEDxWUSHS Youth theme “Breakshot,” he will discuss the qualities and capabilities we should develop as we face an unpredictable future in the age of AI and digital technology.',
+    },
+  },
+  {
+    id: 'reon-hiruma',
+    displayOrder: 70,
+    published: true,
+    featured: true,
+    image: hirumaImage,
+    imagePosition: '50% 42%',
+    name: {
+      ja: 'Reon Hiruma',
+      en: 'Reon Hiruma',
+    },
+    role: {
+      ja: 'ベンチャーキャピタリスト',
+      en: 'Venture Capitalist',
+    },
+    shortBio: {
+      ja: 'ヘルスケア、産業技術、安全保障領域のディープテックに投資し、防衛技術コミュニティJDTIも運営している。',
+      en: 'A venture capitalist investing in deep tech across healthcare, industrial technology, and security, and the operator of the JDTI defense technology community.',
+    },
+    intro: {
+      ja: [
+        'ヘルスケア、産業技術、安全保障領域のディープテックに投資するベンチャーキャピタリスト。早稲田大学在学中の2018年にPotentialist Globalを共同創業し、欧米の技術系企業20社以上の日本・アジア進出を支援。2026年より国内大手VCで投資を担当する。投資の傍ら、防衛技術コミュニティJDTIを運営し、技術系スタートアップが安全保障に果たしうる役割を議論する場づくりに取り組む。オランダ人と日本人の両親をもち、四言語に堪能。',
+      ],
+      en: [
+        'Reon Hiruma is a venture capitalist investing in deep tech across healthcare, industrial technology, and security. While at Waseda University, he co-founded Potentialist Global in 2018 and helped over 20 US and European technology companies enter Japan and Asia. In 2026, he joined a leading Japanese venture capital firm. Alongside his work as an investor, Reon runs JDTI, a defense technology community that brings people together to discuss the role startups can play in national security. Born to Dutch and Japanese parents, he speaks four languages.',
+      ],
     },
   },
 ];
