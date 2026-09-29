@@ -1,5 +1,24 @@
 export const siteUpdates = [
   {
+    id: 'official-note-launched',
+    publishedAt: '2026-09-29',
+    category: 'note',
+    href: 'https://note.com/tedx_wushs_youth/n/n01e4f29a9fca',
+    external: true,
+    copy: {
+      ja: {
+        title: '公式noteを更新しました',
+        summary: '公式noteで「TEDxWUSHS Youth 公式note始めました！」を公開しました。今後、活動やイベントに関する情報を発信していきます。',
+        action: 'noteの記事を読む',
+      },
+      en: {
+        title: 'Official note updated',
+        summary: 'We published “TEDxWUSHS Youth 公式note始めました！” and will share more updates about our activities and the event.',
+        action: 'Read on note',
+      },
+    },
+  },
+  {
     id: 'full-speaker-lineup-announced',
     publishedAt: '2026-09-29',
     category: 'Speakers',

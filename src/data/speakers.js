@@ -53,8 +53,8 @@ export const speakers = [
       en: 'Keisuke Hasegawa',
     },
     role: {
-      ja: 'TEDxWUSHS Youth Speaker',
-      en: 'TEDxWUSHS Youth Speaker',
+      ja: '早稲田大学高等学院 1年',
+      en: 'First-year Student, Waseda University Senior High School',
     },
     shortBio: {
       ja: '中学時代に「ビオトープ管理委員会」を立ち上げ、環境保全活動を牽引。環境・文芸の両分野で多数の受賞実績を持つ。',
@@ -83,8 +83,8 @@ export const speakers = [
       en: 'Yoshito Horise',
     },
     role: {
-      ja: 'TEDxWUSHS Youth Speaker',
-      en: 'TEDxWUSHS Youth Speaker',
+      ja: '早稲田大学高等学院 2年',
+      en: 'Second-year Student, Waseda University Senior High School',
     },
     shortBio: {
       ja: '早稲田大学高等学院2年。7度の転校と多文化経験を持ち、AI姿勢認識を活用した語学ツール「KATA」を開発。',
@@ -92,16 +92,12 @@ export const speakers = [
     },
     intro: {
       ja: [
-        '早稲田大学高等学院2年。日本・台湾・香港で7度の転校を経験し、カナダ・オーストラリア・フランス・トロント大学での国際経験を積む。',
-        '日本語・中国語を母語とし、英語・フランス語・韓国語を学習中。国際HANAシンポジウム2年連続登壇、AI時代における人間の主体性を研究。',
-        '東大AIハッカソン優秀賞受賞。AI姿勢認識を活用した語学ツール「KATA」を開発。',
-        '現在は、Stanford e-Japanに挑戦し、国際分野での活動を目指す。',
+        '早稲田大学高等学院2年。日本・台湾・香港で7度の転校を経験し、カナダ・オーストラリア・フランス・トロント大学での国際経験を積む。日本語・中国語を母語とし、英語・フランス語・韓国語を学習中。国際HANAシンポジウム2年連続登壇、AI時代における人間の主体性を研究。',
+        '東大AIハッカソン優秀賞受賞。AI姿勢認識を活用した語学ツール「KATA」を開発。現在は、Stanford e-Japanに挑戦し、国際分野での活動を目指す。',
       ],
       en: [
-        'A sophomore at Waseda University Senior High School. He has changed schools seven times in Japan, Taiwan, and Hong Kong, and has gained international experience in Canada, Australia, France, and at the University of Toronto.',
-        'Japanese and Chinese are his native languages, and he is currently studying English, French, and Korean. He has spoken at the International HANA Symposium for two consecutive years and is researching human agency in the age of AI.',
-        'He received the Excellence Award at the University of Tokyo AI Hackathon. He developed “KATA,” a language-learning tool that utilizes AI-based posture recognition.',
-        'He is currently participating in the Stanford e-Japan program and aims to pursue activities in the international arena.',
+        'A sophomore at Waseda University Senior High School. He has changed schools seven times in Japan, Taiwan, and Hong Kong, and has gained international experience in Canada, Australia, France, and at the University of Toronto. Japanese and Chinese are his native languages, and he is currently studying English, French, and Korean. He has spoken at the International HANA Symposium for two consecutive years and is researching human agency in the age of AI.',
+        'He received the Excellence Award at the University of Tokyo AI Hackathon and developed “KATA,” a language-learning tool that utilizes AI-based posture recognition. He is currently participating in the Stanford e-Japan program and aims to pursue activities in the international arena.',
       ],
     },
   },
@@ -147,8 +143,8 @@ export const speakers = [
       en: 'Masahisa Kogure',
     },
     role: {
-      ja: 'TABLE FOR TWO 創設者',
-      en: 'Founder, TABLE FOR TWO',
+      ja: '社会起業家',
+      en: 'Social Entrepreneur',
     },
     shortBio: {
       ja: 'TABLE FOR TWOを創設し、約800の企業・団体を巻き込む社会運動へ成長させた。現在も医療・AIなど多領域で挑戦を続けている。',
@@ -175,7 +171,7 @@ export const speakers = [
       en: 'Mamoru Takezawa',
     },
     role: {
-      ja: '早稲田大学高等学院前学院長',
+      ja: '早稲田大学高等学院 前学院長',
       en: 'Former Headmaster of Waseda University Senior High School',
     },
     shortBio: {
@@ -203,7 +199,7 @@ export const speakers = [
     image: hirumaImage,
     imagePosition: '50% 42%',
     name: {
-      ja: 'Reon Hiruma',
+      ja: '比留間 礼音',
       en: 'Reon Hiruma',
     },
     role: {

@@ -1,5 +1,5 @@
 import { motion, useReducedMotion } from 'framer-motion';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, ExternalLink } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../i18n/LanguageContext';
 import { siteUpdates } from '../data/updates';
@@ -53,6 +53,18 @@ const Updates = () => {
         <ol className="updates-list" aria-label={copy.listLabel}>
           {updates.map((update, index) => {
             const itemCopy = update.copy[language] ?? update.copy.ja;
+            const UpdateLink = update.external ? 'a' : Link;
+            const updateLinkProps = update.external
+              ? {
+                href: update.href,
+                target: '_blank',
+                rel: 'noopener noreferrer',
+              }
+              : { to: update.href };
+            const UpdateIcon = update.external ? ExternalLink : ArrowRight;
+            const externalLabel = language === 'en'
+              ? ' (opens in a new tab)'
+              : '（新しいタブで開きます）';
 
             return (
               <motion.li
@@ -65,10 +77,10 @@ const Updates = () => {
                   delay: shouldReduceMotion ? 0 : index * 0.08,
                 }}
               >
-                <Link
+                <UpdateLink
                   className="updates-item"
-                  to={update.href}
-                  aria-label={`${itemCopy.action}: ${itemCopy.title}`}
+                  aria-label={`${itemCopy.action}: ${itemCopy.title}${update.external ? externalLabel : ''}`}
+                  {...updateLinkProps}
                 >
                   <div className="updates-item-body">
                     <div className="updates-meta">
@@ -82,9 +94,9 @@ const Updates = () => {
                     <span className="updates-action">{itemCopy.action}</span>
                   </div>
                   <span className="updates-arrow" aria-hidden="true">
-                    <ArrowRight size={22} />
+                    <UpdateIcon size={22} />
                   </span>
-                </Link>
+                </UpdateLink>
               </motion.li>
             );
           })}
