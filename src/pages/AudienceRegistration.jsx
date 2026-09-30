@@ -1,33 +1,36 @@
-import { Ticket, Bell, Calendar, ArrowLeft, Users } from 'lucide-react';
+import { Ticket, Bell, Calendar, ArrowLeft, Users, ExternalLink } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../i18n/LanguageContext';
+import { audienceRegistrationUrl } from '../data/registration';
 
 const contentByLanguage = {
     ja: {
-        lead: '参加申込みは2026年10月から受付を開始する予定です。受付開始まで今しばらくお待ちください。',
+        lead: '参加申込みを受け付けています。対象をご確認のうえ、申込フォームからお申し込みください。',
         eligibilityLabel: 'Audience Eligibility / 参加対象',
         eligibilityTitle: '早稲田大学高等学院の生徒及びその保護者',
-        eligibilityDescription: '本イベントの会場参加は、上記の方を対象としています。対象をご確認のうえ、受付開始をお待ちください。',
-        newsletterDescription: 'ニュースレターに登録して、チケット販売開始の通知や、公開前のスピーカー情報をいち早く入手しましょう。',
+        eligibilityDescription: '本イベントの会場参加は、上記の方を対象としています。対象をご確認のうえ、申込フォームからお申し込みください。',
+        newsletterDescription: 'ニュースレターに登録すると、イベントに関する最新情報をメールで受け取れます。',
         eventDescription: '2026年10月31日（土）14:00〜18:00、早稲田大学高等学院 講堂にて開催します（受付開始13:30）。',
         registrationTitle: '参加申込みについて',
-        registrationDescription: '参加申込みは2026年10月から受付を開始する予定です。開始時にウェブサイトとSNSでご案内します。',
-        registrationStatus: '2026年10月から受付開始',
-        registrationTiming: '2026年10月',
+        registrationDescription: '参加費は無料です。Googleフォームに必要事項を入力してお申し込みください。',
+        registrationStatus: '受付中',
+        registrationAction: '参加を申し込む',
+        registrationNote: '申込フォームは新しいタブで開きます。',
         audienceLabel: '対象',
         audienceValue: '学院生・保護者'
     },
     en: {
-        lead: 'Registration is scheduled to open in October 2026. Please check back when registration begins.',
+        lead: 'Audience registration is now open. Please confirm your eligibility and apply using the registration form.',
         eligibilityLabel: 'Audience Eligibility',
         eligibilityTitle: 'Students of Waseda University Senior High School and Their Parents or Guardians',
-        eligibilityDescription: 'In-person attendance is limited to the group listed above. Please confirm your eligibility and check back when registration opens.',
-        newsletterDescription: 'Sign up for the newsletter to be among the first to receive registration updates and speaker announcements.',
+        eligibilityDescription: 'In-person attendance is limited to the group listed above. Please confirm your eligibility and apply using the registration form.',
+        newsletterDescription: 'Subscribe to receive the latest event updates by email.',
         eventDescription: 'The event will be held on Saturday, October 31, 2026, from 2:00 p.m. to 6:00 p.m. at the auditorium of Waseda University Senior High School (doors open at 1:30 p.m.).',
         registrationTitle: 'Registration Information',
-        registrationDescription: 'Registration is scheduled to open in October 2026. We will announce the opening on this website and our social media channels.',
-        registrationStatus: 'Opening in October 2026',
-        registrationTiming: 'October 2026',
+        registrationDescription: 'Admission is free. Complete the Google Form to apply to attend.',
+        registrationStatus: 'Registration Open',
+        registrationAction: 'Apply to attend',
+        registrationNote: 'The registration form opens in a new tab.',
         audienceLabel: 'Eligible Attendees',
         audienceValue: 'Students & Parents/Guardians'
     }
@@ -91,7 +94,16 @@ const AudienceRegistration = () => {
                                 <span>{content.audienceLabel}</span>
                                 <strong>{content.audienceValue}</strong>
                             </div>
-                            <span className="registration-timing">{content.registrationTiming}</span>
+                            <a
+                                className="btn-primary-full"
+                                href={audienceRegistrationUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <span>{content.registrationAction}</span>
+                                <ExternalLink size={18} strokeWidth={2.5} aria-hidden="true" />
+                            </a>
+                            <p className="form-note">{content.registrationNote}</p>
                         </section>
                     </div>
                 </div>
@@ -127,8 +139,6 @@ const AudienceRegistration = () => {
         .registration-audience { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 0.5rem 1rem; margin-bottom: 1rem; padding: 0.9rem 1rem; background: rgba(255,255,255,0.05); border-radius: 8px; }
         .registration-audience span { color: #888; font-size: 0.75rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; }
         .registration-audience strong { color: white; }
-        .registration-timing { display: block; padding: 1rem; border: 1px solid rgb(var(--ted-red-rgb) / 0.65); border-radius: 8px; color: var(--ted-red); font-family: var(--font-heading); font-size: clamp(1.25rem, 4vw, 2rem); font-weight: 800; line-height: 1.3; text-align: center; }
-
         .form-group { margin-bottom: 1.5rem; }
         .form-group label { display: block; font-size: 0.8rem; font-weight: 700; color: #888; text-transform: uppercase; margin-bottom: 0.5rem; }
         input, select { width: 100%; background: #222; border: 1px solid #333; padding: 1rem; border-radius: 8px; color: white; font-family: inherit; }
@@ -138,20 +148,24 @@ const AudienceRegistration = () => {
           width: 100%; 
           background: var(--ted-red); 
           color: white; 
-          padding: 1.2rem; 
+          min-height: 48px;
+          padding: 1rem;
           border-radius: 8px; 
           font-weight: 800; 
           text-transform: uppercase; 
           margin-top: 1rem; 
           transition: var(--transition-smooth);
-          display: block;
-          text-align: center;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          gap: 0.6rem;
           text-decoration: none;
         }
         .btn-primary-full:hover { background: var(--ted-red); transform: translateY(-3px); box-shadow: 0 10px 20px rgb(var(--ted-red-rgb) / 0.3); }
+        .btn-primary-full:focus-visible { outline: 3px solid #fff; outline-offset: 4px; }
 
-        .form-note {
-          margin-top: 1.5rem;
+        .registration-card .form-note {
+          margin: 1rem 0 0;
           color: #aaa;
           font-size: 0.85rem;
           text-align: center;

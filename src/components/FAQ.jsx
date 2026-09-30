@@ -10,7 +10,7 @@ const faqsByLanguage = {
     },
     {
       question: '参加対象者を教えてください。',
-      answer: '参加対象者は、早稲田大学高等学院の生徒（学院生）とその保護者です。参加申込みは2026年10月から受付を開始する予定で、詳細はウェブサイトと公式SNSでご案内します。'
+      answer: '参加対象者は、早稲田大学高等学院の生徒（学院生）とその保護者です。参加申込みを現在受け付けています。対象をご確認のうえ、「Join Us」のAudience Registrationページからお申し込みください。'
     },
     {
       question: 'イベントでは何語が使用されますか？',
@@ -32,7 +32,7 @@ const faqsByLanguage = {
     },
     {
       question: 'Who can attend?',
-      answer: 'The event is open to students of Waseda University Senior High School and their parents or guardians. Registration is scheduled to open in October 2026, with details to be announced on this website and our official social media channels.'
+      answer: 'The event is open to students of Waseda University Senior High School and their parents or guardians. Registration is now open. Please confirm your eligibility and apply from the Audience Registration page under Join Us.'
     },
     {
       question: 'What languages will be used at the event?',

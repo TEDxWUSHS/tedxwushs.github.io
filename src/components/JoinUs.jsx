@@ -8,11 +8,12 @@ const joinCopy = {
   ja: {
     sectionSubtitle: 'TEDxWUSHS Youthへの参加方法と最新情報をご案内します。',
     optionsHeading: '参加方法と最新情報',
-    applicationsUpdate: '2026年開催分のスピーカー募集及び運営チーム募集は終了しました。たくさんのご応募ありがとうございました。',
+    applicationsUpdate: '2026年開催分のスピーカー募集及び運営チーム募集は終了しました。たくさんのご応募ありがとうございました。オーディエンスの参加申込みは現在受け付けています。',
     teamDescription: '2026年開催分の運営チーム募集は終了しました。今後の募集はウェブサイトとSNSでお知らせします。',
     teamAction: '募集状況を見る',
-    audienceDescription: '対象は早稲田大学高等学院の生徒及びその保護者です。参加申込みは2026年10月から受付を開始する予定です。',
-    audienceAction: '対象・申込情報を見る',
+    audienceDescription: '対象は早稲田大学高等学院の生徒及びその保護者です。参加申込みを現在受け付けています。',
+    audienceAction: '対象・申込みを見る',
+    audienceStatus: '受付中',
     subscribed: <>登録完了しました<br />イベントの最新情報をお届けしますのでお楽しみに。</>,
     newsletter: 'イベントの最新情報や募集のお知らせをメールでお届けします。',
     emailLabel: 'メールアドレス',
@@ -24,11 +25,12 @@ const joinCopy = {
   en: {
     sectionSubtitle: 'Explore ways to take part in TEDxWUSHS Youth and receive the latest event updates.',
     optionsHeading: 'Ways to Participate and Stay Updated',
-    applicationsUpdate: 'Speaker and organizing team applications for the 2026 event are now closed. Thank you to everyone who applied.',
+    applicationsUpdate: 'Speaker and organizing team applications for the 2026 event are now closed. Thank you to everyone who applied. Audience registration is now open.',
     teamDescription: 'Recruitment for the 2026 organizing team has closed. Future opportunities will be announced on our website and social media.',
     teamAction: 'View Recruitment Status',
-    audienceDescription: 'Audience registration is open to students of Waseda University Senior High School and their parents or guardians. Registration is scheduled to open in October 2026.',
-    audienceAction: 'View Eligibility & Registration',
+    audienceDescription: 'Audience registration is now open to students of Waseda University Senior High School and their parents or guardians.',
+    audienceAction: 'View eligibility and registration',
+    audienceStatus: 'Registration Open',
     subscribed: <>You are subscribed.<br />We look forward to sharing the latest event updates with you.</>,
     newsletter: 'Receive event updates and future application announcements by email.',
     emailLabel: 'Email address',
@@ -85,6 +87,8 @@ const JoinUs = ({ hideHeader = false }) => {
       description: copy.audienceDescription,
       link: '/join-us/audience',
       action: copy.audienceAction,
+      status: copy.audienceStatus,
+      statusLanguage: language,
       color: '#fff'
     }
   ];
@@ -132,7 +136,7 @@ const JoinUs = ({ hideHeader = false }) => {
               <div className="opt-icon">
                 {opt.icon}
               </div>
-              {opt.status && <span className="opt-status" lang="en">{opt.status}</span>}
+              {opt.status && <span className="opt-status" lang={opt.statusLanguage ?? 'en'}>{opt.status}</span>}
               <h3 className="opt-title" lang="en">{opt.title}</h3>
               <p className="opt-description">{opt.description}</p>
               <Link to={opt.link} className="opt-link">

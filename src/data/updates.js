@@ -1,6 +1,26 @@
 import gakuinsaiImage from '../assets/updates/gakuinsai.png';
+import { audienceRegistrationUrl } from './registration';
 
 export const siteUpdates = [
+  {
+    id: 'audience-registration-open',
+    publishedAt: '2026-10-01',
+    category: 'Registration',
+    href: audienceRegistrationUrl,
+    external: true,
+    copy: {
+      ja: {
+        title: 'オーディエンス募集を開始しました',
+        summary: 'TEDxWUSHS Youth 2026のオーディエンス募集を開始しました。対象は早稲田大学高等学院の生徒及びその保護者です。',
+        action: '参加を申し込む',
+      },
+      en: {
+        title: 'Audience registration is now open',
+        summary: 'Audience registration for TEDxWUSHS Youth 2026 is now open to students of Waseda University Senior High School and their parents or guardians.',
+        action: 'Apply to attend',
+      },
+    },
+  },
   {
     id: 'gakuinsai-2026-program',
     publishedAt: '2026-09-30',
