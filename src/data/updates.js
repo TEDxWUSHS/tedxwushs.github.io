@@ -1,7 +1,33 @@
+import gakuinsaiImage from '../assets/updates/gakuinsai.png';
+
 export const siteUpdates = [
   {
+    id: 'gakuinsai-2026-program',
+    publishedAt: '2026-09-30',
+    category: 'Event',
+    href: gakuinsaiImage,
+    external: true,
+    image: gakuinsaiImage,
+    imageAlt: {
+      ja: 'TEDxWUSHS Youth学院祭企画「English Debate」のポスター',
+      en: 'Poster for the TEDxWUSHS Youth English Debate program at Gakuinsai 2026',
+    },
+    copy: {
+      ja: {
+        title: '学院祭で英語ディベート企画を実施します',
+        summary: '10月10日（土）・11日（日）、学院祭のゼミ室2でTEDxWUSHS Youthの団体紹介を行います。頌栄女子学院高等学校・慶應義塾高等学校・早稲田大学本庄高等学院ESSと、社会奉仕・所得税・友情と恋愛を論題に英語で議論します。',
+        action: 'ポスターを拡大して見る',
+      },
+      en: {
+        title: 'English debates at Gakuinsai 2026',
+        summary: 'On October 10 and 11 in Seminar Room 2, we will introduce TEDxWUSHS Youth and hold philosophical English debates with Shoei Girls’ Senior High School, Keio Senior High School, and Waseda University Honjo Senior High School ESS on community service, income tax, and friendship versus romantic relationships.',
+        action: 'View the full poster',
+      },
+    },
+  },
+  {
     id: 'official-note-launched',
-    publishedAt: '2026-09-29',
+    publishedAt: '2026-09-30',
     category: 'note',
     href: 'https://note.com/tedx_wushs_youth/n/n01e4f29a9fca',
     external: true,

@@ -53,6 +53,7 @@ const Updates = () => {
         <ol className="updates-list" aria-label={copy.listLabel}>
           {updates.map((update, index) => {
             const itemCopy = update.copy[language] ?? update.copy.ja;
+            const imageAlt = update.imageAlt?.[language] ?? update.imageAlt?.ja ?? '';
             const UpdateLink = update.external ? 'a' : Link;
             const updateLinkProps = update.external
               ? {
@@ -78,10 +79,20 @@ const Updates = () => {
                 }}
               >
                 <UpdateLink
-                  className="updates-item"
+                  className={`updates-item${update.image ? ' updates-item--with-image' : ''}`}
                   aria-label={`${itemCopy.action}: ${itemCopy.title}${update.external ? externalLabel : ''}`}
                   {...updateLinkProps}
                 >
+                  {update.image && (
+                    <span className="updates-item-media">
+                      <img
+                        src={update.image}
+                        alt={imageAlt}
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </span>
+                  )}
                   <div className="updates-item-body">
                     <div className="updates-meta">
                       <time dateTime={update.publishedAt} lang="en">
@@ -156,6 +167,28 @@ const Updates = () => {
 
         .updates-item:hover {
           background: rgba(255, 255, 255, 0.045);
+        }
+
+        .updates-item--with-image {
+          grid-template-columns: 8.5rem minmax(0, 1fr) 3rem;
+          align-items: start;
+        }
+
+        .updates-item-media {
+          display: block;
+          aspect-ratio: 4 / 5;
+          overflow: hidden;
+          border-radius: 6px;
+          outline: 1px solid rgba(255, 255, 255, 0.12);
+          outline-offset: -1px;
+          background: #111;
+        }
+
+        .updates-item-media img {
+          display: block;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
         }
 
         .updates-item-body {
@@ -237,6 +270,15 @@ const Updates = () => {
             grid-template-columns: minmax(0, 1fr) 2.75rem;
             gap: 1rem;
             padding: 1.5rem 0.25rem;
+          }
+
+          .updates-item--with-image {
+            grid-template-columns: minmax(0, 1fr) 2.75rem;
+          }
+
+          .updates-item-media {
+            grid-column: 1 / -1;
+            width: min(100%, 20rem);
           }
 
           .updates-arrow {
