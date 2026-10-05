@@ -223,8 +223,7 @@ git restore --worktree -- dist
 2. JA表示では、`/about`とHomeの「What is TEDx?」を日本語にし、その他の既存英語見出しやブランド表現は維持する。
 3. `Ideas change everything.`などの重要なブランド文言は翻訳・改変しない。
 4. 新しい表示文言には、原則として同じ変更内で`ja`と`en`の両方を用意する。
-5. `/about`にあるTED公式の「Your event website」ガイドへのリンクを削除しない。
-6. PCとモバイルの両方でJA/ENを切り替え、全公開ルートを確認する。
+5. PCとモバイルの両方でJA/ENを切り替え、全公開ルートを確認する。
 
 メタ説明を変更する場合は、`src/i18n/LanguageContext.jsx`のJA/EN両方と、JavaScript実行前の初期値であるルートの`index.html`も確認します。
 

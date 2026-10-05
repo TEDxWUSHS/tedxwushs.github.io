@@ -2,8 +2,6 @@ import { motion, useReducedMotion } from 'framer-motion';
 import { Facebook, Instagram, Linkedin, Twitter, Music2 } from 'lucide-react';
 import { useLanguage } from '../i18n/LanguageContext';
 
-const OFFICIAL_GUIDE_URL = 'https://www.ted.com/participate/organize-a-local-tedx-event/tedx-organizer-guide/branding-promotions/your-event-website#h3--about-page';
-
 const JA_TEDX_DESCRIPTION = 'アイデアを発見し広める精神のもと、TEDxは、地域で自主的に運営されるイベントを通じて、人々がTEDのような体験を共有するためのプログラムです。TEDxイベントでは、TED Talksの映像とライブスピーカーが組み合わさり、深い議論とつながりを生み出します。これらの地域で自主運営されるイベントはTEDxと呼ばれ、xは independently organized TED event（独立して運営されるTEDイベント）を表します。TED ConferenceはTEDxプログラムに一般的な指針を提供しますが、各TEDxイベントは自主的に運営されています（所定のルールおよび規定に従います）。';
 
 const JA_TED_INTRO = 'TEDは、対話を生み出し、理解を深め、意義ある変化を促すアイデアを発見し、議論し、広めることに取り組む、非営利・無党派の組織です。TEDは、特定の主張を掲げることなく、好奇心、理性、驚き、そして知識の探究に力を注いでいます。世界をより深く理解し、他者とのつながりを求める、あらゆる分野と文化の人々を歓迎します。そして、誰もがアイデアに触れ、それを自分たちのコミュニティで行動へと移すことを呼びかけています。';
@@ -40,19 +38,6 @@ const AboutPage = () => {
                             In the spirit of discovering and spreading ideas, TEDx is a program of local, self-organized events that bring people together to share a TED-like experience. At a TEDx event, TED Talks video and live speakers combine to spark deep discussion and connection. These local, self-organized events are branded TEDx, where x = independently organized TED event. The TED Conference provides general guidance for the TEDx program, but individual TEDx events are self-organized. (Subject to certain rules and regulations.)
                                 </>
                             )}
-                        </p>
-                        <p className="official-guide">
-                            {isJapanese ? '掲載内容の基準：' : 'Source for this page: '}
-                            <a
-                                href={OFFICIAL_GUIDE_URL}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="highlight-link"
-                            >
-                                {isJapanese
-                                    ? 'TED公式ガイド「Your event website」'
-                                    : 'TED official guide: Your event website'}
-                            </a>
                         </p>
                     </section>
 
@@ -140,13 +125,6 @@ const AboutPage = () => {
                     color: var(--ted-red);
                     text-decoration: underline;
                     text-underline-offset: 0.18em;
-                }
-
-                .official-guide {
-                    padding: 1rem 1.25rem;
-                    border-left: 3px solid var(--ted-red);
-                    background: var(--ted-black);
-                    font-size: 1rem;
                 }
 
                 .ted-social {
