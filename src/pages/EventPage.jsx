@@ -8,9 +8,9 @@ import { speakers } from '../data/speakers';
 const contentByLanguage = {
   ja: {
     intro: '開催概要、登壇者、当日のタイムテーブルを一つのページにまとめました。',
-    themeLabel: 'Event theme',
+    themeLabel: 'Program theme',
     themeDescription: '予測できない変化を前に、常識の枠を越えて新しい方向を切り拓くアイデアを共有します。',
-    detailsLabel: 'イベント開催概要',
+    detailsLabel: 'プログラム概要',
     details: [
       { label: '開催日', value: '2026年10月31日（土）' },
       { label: '時間', value: '受付開始 13:30／開催 14:00〜18:00' },
@@ -25,18 +25,18 @@ const contentByLanguage = {
     speakerTitle: 'Speaker Lineup',
     speakerDescription: 'TEDxWUSHS Youth 2026に登壇する7名です。詳しい紹介文はSpeakersページでご覧いただけます。',
     speakerAction: 'スピーカー詳細を見る',
-    scheduleTitle: 'Event Schedule',
+    scheduleTitle: 'Program Schedule',
     scheduleDescription: '当日の進行予定です。時間は前後する可能性があります。',
     scheduleLabel: 'TEDxWUSHS Youth 2026 当日タイムテーブル',
   },
   en: {
-    intro: 'Find the event essentials, speaker lineup, and full program in one place.',
-    themeLabel: 'Event theme',
+    intro: 'Find the program essentials, speaker lineup, and full schedule in one place.',
+    themeLabel: 'Program theme',
     themeDescription: 'Ideas that break beyond familiar boundaries and open new directions in an unpredictable world.',
-    detailsLabel: 'Event details',
+    detailsLabel: 'Program details',
     details: [
       { label: 'Date', value: 'Saturday, October 31, 2026' },
-      { label: 'Time', value: 'Doors open 1:30 PM / Event 2:00–6:00 PM' },
+      { label: 'Time', value: 'Doors open 1:30 PM / Program 2:00–6:00 PM' },
       { label: 'Venue', value: 'Waseda University Senior High School Auditorium' },
       { label: 'Audience', value: 'Students of Waseda University Senior High School and their parents or guardians' },
       { label: 'Admission', value: 'Free' },
@@ -48,13 +48,13 @@ const contentByLanguage = {
     speakerTitle: 'Speaker Lineup',
     speakerDescription: 'Meet the seven speakers joining TEDxWUSHS Youth 2026. Full profiles are available on the Speakers page.',
     speakerAction: 'View speaker profiles',
-    scheduleTitle: 'Event Schedule',
+    scheduleTitle: 'Program Schedule',
     scheduleDescription: 'The program is subject to minor timing changes.',
-    scheduleLabel: 'TEDxWUSHS Youth 2026 event schedule',
+    scheduleLabel: 'TEDxWUSHS Youth 2026 program schedule',
   },
 };
 
-const EventPage = () => {
+const ProgramPage = () => {
   const { language } = useLanguage();
   const copy = contentByLanguage[language] ?? contentByLanguage.ja;
   const publishedSpeakers = [...speakers]
@@ -69,7 +69,7 @@ const EventPage = () => {
             <header className="event-hero__header">
               <p className="event-eyebrow" lang="en">TEDxWUSHS Youth 2026</p>
               <h1 id="event-page-title" className="event-hero__title" lang="en">
-                Event <span>Information</span>
+                Program <span>Information</span>
               </h1>
               <p className="event-hero__intro">{copy.intro}</p>
               <div className="event-hero__actions">
@@ -583,4 +583,4 @@ const EventPage = () => {
   );
 };
 
-export default EventPage;
+export default ProgramPage;

@@ -21,10 +21,10 @@ const Footer = () => {
           <nav className="footer-links" aria-labelledby="footer-quick-links-heading">
             <h4 id="footer-quick-links-heading">Quick Links</h4>
             <ul>
-              <li><Link to="/about">About Us</Link></li>
-              <li><Link to="/event">Event</Link></li>
+              <li><Link to="/program">Program</Link></li>
               <li><Link to="/speakers">Speakers</Link></li>
               <li><Link to="/team">Team</Link></li>
+              <li><Link to="/about">About Us</Link></li>
               <li><a href="https://www.waseda.jp/school/shs/" target="_blank" rel="noopener noreferrer">Waseda SHS</a></li>
               <li><a href="https://www.ted.com/about/programs-initiatives/tedx-program" target="_blank" rel="noopener noreferrer">TEDx Program</a></li>
             </ul>

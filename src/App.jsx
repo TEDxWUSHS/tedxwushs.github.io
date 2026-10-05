@@ -12,14 +12,15 @@ import TeamRecruitment from './pages/TeamRecruitment';
 import AudienceRegistration from './pages/AudienceRegistration';
 import FAQPage from './pages/FAQPage';
 import NotFoundPage from './pages/NotFoundPage';
-import EventPage from './pages/EventPage';
+import ProgramPage from './pages/EventPage';
 import { LanguageProvider, useLanguage } from './i18n/LanguageContext';
 
 const pageTitles = {
   ja: {
     '/': 'TEDxWUSHS Youth | Ideas change everything',
     '/about': 'TEDxについて | TEDxWUSHS Youth',
-    '/event': 'イベント情報 | TEDxWUSHS Youth',
+    '/program': 'プログラム | TEDxWUSHS Youth',
+    '/event': 'プログラム | TEDxWUSHS Youth',
     '/speakers': 'スピーカー | TEDxWUSHS Youth',
     '/team': 'チーム | TEDxWUSHS Youth',
     '/organizers': 'チーム | TEDxWUSHS Youth',
@@ -32,7 +33,8 @@ const pageTitles = {
   en: {
     '/': 'TEDxWUSHS Youth | Ideas change everything',
     '/about': 'About | TEDxWUSHS Youth',
-    '/event': 'Event | TEDxWUSHS Youth',
+    '/program': 'Program | TEDxWUSHS Youth',
+    '/event': 'Program | TEDxWUSHS Youth',
     '/speakers': 'Speakers | TEDxWUSHS Youth',
     '/team': 'Team | TEDxWUSHS Youth',
     '/organizers': 'Team | TEDxWUSHS Youth',
@@ -90,7 +92,8 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<AboutPage />} />
-            <Route path="/event" element={<EventPage />} />
+            <Route path="/program" element={<ProgramPage />} />
+            <Route path="/event" element={<Navigate to="/program" replace />} />
             <Route path="/speakers" element={<SpeakersPage />} />
             <Route path="/team" element={<TeamPage />} />
             <Route path="/organizers" element={<Navigate to="/team" replace />} />

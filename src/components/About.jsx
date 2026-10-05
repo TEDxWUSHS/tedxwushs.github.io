@@ -4,28 +4,22 @@ import logoRed from '../assets/logo_red.png';
 
 const aboutCopy = {
   ja: {
-    whatIsTedxTitle: 'TEDxとは？',
-    whatIsTedx: 'アイデアを発見し広める精神のもと、TEDはTEDxというプログラムを創設しました。TEDxは、地域で自主的に運営されるイベントを通じて、人々がTEDのような体験を共有するためのプログラムです。私たちのイベントはTEDxWUSHS Youthといい、xは「independently organized TED event（独立して運営されるTEDイベント）」を表します。TEDxWUSHS Youthでは、TED Talksの映像とライブスピーカーが組み合わさり、少人数の中で深い議論とつながりを生み出します。スピーカーがTEDxイベントへの参加費を支払うことはありません。選考、スピーカーコーチング、イベントへの出演および来場はすべて無料です。TED ConferenceはTEDxプログラムに一般的な指針を提供しますが、TEDxWUSHS Youthを含む各TEDxイベントは自主的に運営されています。',
     programLink: 'TEDxプログラムについて詳しく見る',
-    localDescription: 'TEDxWUSHS Youthは、早稲田大学高等学院の生徒が独立して企画・運営するTEDxイベントです。若者ならではの視点とパッションを武器に、高校生という枠を超えた、社会に響くメッセージを発信します。私たちは、対話を通じて互いの可能性を広げ、新しい一歩を踏み出すきっかけを作ります。',
+    descriptions: [
+      'TEDxWUSHS Youthは、早稲田大学高等学院の生徒が独立して企画・運営するTEDxイベントです。若者ならではの視点とパッションを武器に、高校生という枠を超えた、社会に響くメッセージを発信します。私たちは、対話を通じて互いの可能性を広げ、新しい一歩を踏み出すきっかけを作ります。',
+      'TEDxは、地域で自主的に運営されるイベントを通じて、人々がTEDのような体験を共有するためのプログラムです。TEDxWUSHS Youthでは、TED Talksの映像と7名のライブスピーカーによるトークを組み合わせ、対話とつながりを生み出します。',
+      '2026年のテーマは「Breakshot」。人生の軌道を変えた一打をテーマに、7名のスピーカーがそれぞれのアイデアを共有します。',
+    ],
     venue: '早稲田大学高等学院 講堂',
-    theme: [
-      '人生は予測不能なショットの連続である。しかし、自分の軌道を決めるのは運ではない。',
-      '工夫と情熱を込めたその一打が、閉ざされた未来を「無限の可能性」へと変える。決断を恐れず、life-changingな最高のBreakshotを放て。',
-      '今回は七人のスピーカーに、人生の「軌道」を変えたBreakshotについて語ってもらいます。オーディエンスの皆さんの人生を変える機会となることを願っています。'
-    ]
   },
   en: {
-    whatIsTedxTitle: 'What is TEDx?',
-    whatIsTedx: 'In the spirit of discovering and spreading ideas, TED has created a program called TEDx. TEDx is a program of local, self-organized events that bring people together to share a TED-like experience. Our event is called TEDxWUSHS Youth, where x = independently organized TED event. At TEDxWUSHS Youth, TED Talks video and live speakers combine to spark deep discussion and connection in a small group. Speakers never pay to join a TEDx event. Speaker consideration, coaching, event participation and attendance are all provided free of charge. The TED Conference provides general guidance for the TEDx program, but individual TEDx events, including ours, are self-organized.',
     programLink: 'Learn more about the TEDx program',
-    localDescription: 'TEDxWUSHS Youth is an independently organized TEDx event conceived and produced by students at Waseda University Senior High School. Drawing on the perspectives and passion unique to young people, we share messages that reach beyond the boundaries of high school. Through dialogue, we aim to expand one another’s possibilities and inspire a first step toward change.',
+    descriptions: [
+      'TEDxWUSHS Youth is an independently organized TEDx event conceived and produced by students at Waseda University Senior High School. Drawing on the perspectives and passion unique to young people, we share messages that reach beyond the boundaries of high school. Through dialogue, we aim to expand one another’s possibilities and inspire a first step toward change.',
+      'TEDx is a program of local, self-organized events that bring people together to share a TED-like experience. TEDxWUSHS Youth combines TED Talks video with talks from seven live speakers to spark discussion and connection.',
+      'Our 2026 theme is “Breakshot.” Seven speakers will share the ideas and defining moments that changed the course of their lives.',
+    ],
     venue: 'Waseda University Senior High School Auditorium',
-    theme: [
-      'Life is a succession of unpredictable shots. Yet luck does not determine our trajectory.',
-      'A single shot shaped by ingenuity and passion can turn a closed future into infinite possibility. Do not fear the decision—take the life-changing Breakshot.',
-      'Seven speakers will share the Breakshots that changed the course of their lives. We hope their ideas become an opportunity to change yours.'
-    ]
   }
 };
 
@@ -39,53 +33,27 @@ const About = () => {
       <div className="container">
         <div className="about-grid">
           <motion.div
-            className="about-item"
+            className="about-item about-item--combined"
             initial={shouldReduceMotion ? false : { opacity: 0, y: 30 }}
             whileInView={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: shouldReduceMotion ? 0 : 0.6 }}
           >
-            <h2 className="section-title brand-name">{copy.whatIsTedxTitle}</h2>
-            <p className="tedx-description">{copy.whatIsTedx}</p>
-            <a href="https://www.ted.com/about/programs-initiatives/tedx-program" target="_blank" rel="noopener noreferrer" className="highlight-link program-link">
-              {copy.programLink} ↗
-            </a>
-          </motion.div>
-
-          <motion.div
-            className="about-item"
-            initial={shouldReduceMotion ? false : { opacity: 0, y: 30 }}
-            whileInView={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={shouldReduceMotion ? { duration: 0 } : { duration: 0.6, delay: 0.2 }}
-          >
             <h2 className="about-logo-heading">
               <img src={logoRed} alt="TEDxWUSHS Youth" className="about-logo" />
             </h2>
-            <p>{copy.localDescription}</p>
+            <div className="about-description">
+              {copy.descriptions.map((description) => <p key={description}>{description}</p>)}
+            </div>
+            <a href="https://www.ted.com/about/programs-initiatives/tedx-program" target="_blank" rel="noopener noreferrer" className="highlight-link program-link">
+              {copy.programLink} ↗
+            </a>
             <p className="event-info">
               <strong lang="en">Date:</strong> <span lang="en">October 31, 2026 (14:00 - 18:00 / Reception 13:30)</span><br />
-              <strong lang="en">Venue:</strong> <a href="https://www.waseda.jp/school/shs/" target="_blank" rel="noopener noreferrer" className="highlight-link">{copy.venue}</a>, <span lang="en">Nerima, Tokyo</span><br />
-              <strong lang="en">Theme:</strong> <span lang="en">Breakshot</span>
+              <strong lang="en">Venue:</strong> <a href="https://www.waseda.jp/school/shs/" target="_blank" rel="noopener noreferrer" className="highlight-link">{copy.venue}</a>, <span lang="en">Nerima, Tokyo</span>
             </p>
           </motion.div>
         </div>
-
-        <motion.div
-          className="mission-box"
-          initial={shouldReduceMotion ? false : { opacity: 0, scale: 0.95 }}
-          whileInView={shouldReduceMotion ? undefined : { opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: shouldReduceMotion ? 0 : 0.8 }}
-        >
-          <h3 lang="en">Theme</h3>
-          <p className="mission-text" lang="en">
-            Breakshot
-          </p>
-          <div className="mission-description">
-            {copy.theme.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
-          </div>
-        </motion.div>
       </div>
 
       <style>{`
@@ -108,16 +76,12 @@ const About = () => {
         }
 
         .about-grid {
-          display: grid;
-          grid-template-columns: 1fr 1fr;
-          gap: 6rem;
           position: relative;
           z-index: 1;
         }
 
-        .section-title {
-          font-size: 2.5rem;
-          margin-bottom: 2rem;
+        .about-item--combined {
+          max-width: 900px;
         }
 
         .about-logo-heading {
@@ -138,9 +102,8 @@ const About = () => {
           margin-bottom: 1.5rem;
         }
 
-        .tedx-description {
-          font-size: 1rem !important;
-          color: #aaa !important;
+        .about-description p:last-child {
+          margin-bottom: 0;
         }
 
         .about .highlight-link {
@@ -152,7 +115,7 @@ const About = () => {
 
         .program-link {
           display: inline-block;
-          margin-top: -0.5rem;
+          margin-top: 1rem;
           font-weight: 700;
         }
 
@@ -170,71 +133,9 @@ const About = () => {
           text-transform: uppercase;
         }
 
-        .mission-box {
-          margin-top: 6rem;
-          padding: 4rem;
-          background: var(--ted-red);
-          text-align: center;
-          border-radius: 20px;
-          position: relative;
-          z-index: 1;
-        }
-
-        .mission-box h3 {
-          font-size: 1.2rem;
-          letter-spacing: 0.3em;
-          margin-bottom: 1.5rem;
-          color: var(--ted-white);
-        }
-
-        .mission-text {
-          font-size: 2.5rem;
-          font-weight: 800;
-          font-family: var(--font-heading);
-          margin-bottom: 2rem;
-        }
-
-        .mission-description {
-          max-width: 850px;
-          margin: 0 auto;
-        }
-
-        .mission-description p {
-          margin-bottom: 1.2rem;
-          color: var(--ted-white);
-          font-size: 1.05rem;
-          line-height: 2;
-        }
-
-        .mission-description p:last-child {
-          margin-bottom: 0;
-        }
-
-        @media (max-width: 900px) {
-          .about-grid {
-            grid-template-columns: 1fr;
-            gap: 4rem;
-          }
-          .mission-text {
-            font-size: 1.8rem;
-          }
-          .mission-box {
-            padding: 2.5rem;
-          }
-        }
-
         @media (max-width: 480px) {
-          .about .section-title {
-            font-size: clamp(1.75rem, 9vw, 2.1rem);
-            line-height: 1.15;
-          }
-
           .event-info {
             padding: 1.25rem 1rem;
-          }
-
-          .mission-box {
-            padding: 2rem 1.25rem;
           }
         }
       `}</style>

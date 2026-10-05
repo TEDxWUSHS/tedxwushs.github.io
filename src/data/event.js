@@ -13,5 +13,5 @@ export const eventSchedule = [
   { time: '16:45–17:00', event: 'Talk 7', description: { ja: 'トーク7', en: 'Seventh talk' } },
   { time: '17:00', event: 'Closing', description: { ja: '閉会', en: 'Closing remarks' } },
   { time: '17:20–17:50', event: 'Workshop & Networking', description: { ja: 'ワークショップ・交流会', en: 'Workshop and networking' } },
-  { time: '18:00頃', timeEn: 'Around 18:00', event: 'Event Ends', description: { ja: '終了', en: 'Program concludes' } },
+  { time: '18:00頃', timeEn: 'Around 18:00', event: 'Program Ends', description: { ja: '終了', en: 'Program concludes' } },
 ];

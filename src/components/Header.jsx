@@ -34,9 +34,10 @@ const Header = () => {
 
   const menuItems = [
     { name: 'Home', href: '/' },
-    { name: 'About', href: '/about' },
+    { name: 'Program', href: '/program' },
     { name: 'Speakers', href: '/speakers' },
     { name: 'Team', href: '/team' },
+    { name: 'About', href: '/about' },
     { name: 'Join Us', href: '/join-us' },
     { name: 'FAQ', href: '/faq' },
   ];

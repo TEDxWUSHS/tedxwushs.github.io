@@ -18,7 +18,7 @@ const Schedule = () => {
           whileInView={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <h2 className="section-title" lang="en">Event <span className="highlight-red">Schedule</span></h2>
+          <h2 className="section-title" lang="en">Program <span className="highlight-red">Schedule</span></h2>
           <p className="section-subtitle">{subtitle}</p>
         </motion.div>
 

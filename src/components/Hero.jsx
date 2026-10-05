@@ -15,7 +15,7 @@ const heroCopy = {
   },
   en: {
     description: 'TEDxWUSHS Youth is an independently organized TEDx event led by students at Waseda University Senior High School. From our school, we explore the power of ideas to change everything.',
-    eventLabel: 'Event details',
+    eventLabel: 'Program details',
     date: 'Saturday, October 31, 2026',
     reception: 'Doors open 1:30 PM',
     venue: 'Waseda University Senior High School Auditorium',
@@ -77,7 +77,7 @@ const Hero = () => {
             </div>
           </div>
           <div className="hero-cta">
-            <Link to="/event" className="btn btn-primary" lang="en">Discover More</Link>
+            <Link to="/program" className="btn btn-primary" lang="en">Discover More</Link>
             <Link to="/join-us" className="btn btn-outline" lang="en">Join Us</Link>
           </div>
         </motion.div>
