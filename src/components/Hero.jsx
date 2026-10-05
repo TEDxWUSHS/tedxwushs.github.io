@@ -77,7 +77,7 @@ const Hero = () => {
             </div>
           </div>
           <div className="hero-cta">
-            <Link to="/about" className="btn btn-primary" lang="en">Discover More</Link>
+            <Link to="/event" className="btn btn-primary" lang="en">Discover More</Link>
             <Link to="/join-us" className="btn btn-outline" lang="en">Join Us</Link>
           </div>
         </motion.div>

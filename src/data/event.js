@@ -1,0 +1,17 @@
+export const eventSchedule = [
+  { time: '14:00', event: 'Doors Open', description: { ja: '開場', en: 'Audience entry begins' } },
+  { time: '14:30', event: 'Opening', description: { ja: '開会・オープニング', en: 'Opening remarks' } },
+  { time: '14:40', event: 'Talk Section 1', description: { ja: 'トークセクション1', en: 'First talk session' } },
+  { time: '14:45–15:00', event: 'Talk 1', description: { ja: 'トーク1', en: 'First talk' } },
+  { time: '15:00–15:15', event: 'Talk 2', description: { ja: 'トーク2', en: 'Second talk' } },
+  { time: '15:15–15:30', event: 'Talk 3', description: { ja: 'トーク3', en: 'Third talk' } },
+  { time: '15:30–15:50', event: 'Break', description: { ja: '休憩', en: 'Intermission' } },
+  { time: '15:50', event: 'Talk Section 2', description: { ja: 'トークセクション2', en: 'Second talk session' } },
+  { time: '16:00–16:10', event: 'Talk 4', description: { ja: 'トーク4', en: 'Fourth talk' } },
+  { time: '16:15–16:25', event: 'Talk 5', description: { ja: 'トーク5', en: 'Fifth talk' } },
+  { time: '16:30–16:45', event: 'Talk 6', description: { ja: 'トーク6', en: 'Sixth talk' } },
+  { time: '16:45–17:00', event: 'Talk 7', description: { ja: 'トーク7', en: 'Seventh talk' } },
+  { time: '17:00', event: 'Closing', description: { ja: '閉会', en: 'Closing remarks' } },
+  { time: '17:20–17:50', event: 'Workshop & Networking', description: { ja: 'ワークショップ・交流会', en: 'Workshop and networking' } },
+  { time: '18:00頃', timeEn: 'Around 18:00', event: 'Event Ends', description: { ja: '終了', en: 'Program concludes' } },
+];

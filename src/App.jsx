@@ -12,12 +12,14 @@ import TeamRecruitment from './pages/TeamRecruitment';
 import AudienceRegistration from './pages/AudienceRegistration';
 import FAQPage from './pages/FAQPage';
 import NotFoundPage from './pages/NotFoundPage';
+import EventPage from './pages/EventPage';
 import { LanguageProvider, useLanguage } from './i18n/LanguageContext';
 
 const pageTitles = {
   ja: {
     '/': 'TEDxWUSHS Youth | Ideas change everything',
     '/about': 'TEDxについて | TEDxWUSHS Youth',
+    '/event': 'イベント情報 | TEDxWUSHS Youth',
     '/speakers': 'スピーカー | TEDxWUSHS Youth',
     '/organizers': '運営メンバー | TEDxWUSHS Youth',
     '/join-us': '参加する | TEDxWUSHS Youth',
@@ -29,6 +31,7 @@ const pageTitles = {
   en: {
     '/': 'TEDxWUSHS Youth | Ideas change everything',
     '/about': 'About | TEDxWUSHS Youth',
+    '/event': 'Event | TEDxWUSHS Youth',
     '/speakers': 'Speakers | TEDxWUSHS Youth',
     '/organizers': 'Organizers | TEDxWUSHS Youth',
     '/join-us': 'Join Us | TEDxWUSHS Youth',
@@ -85,6 +88,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<AboutPage />} />
+            <Route path="/event" element={<EventPage />} />
             <Route path="/speakers" element={<SpeakersPage />} />
             <Route path="/organizers" element={<OrganizersPage />} />
             <Route path="/join-us" element={<JoinUsPage />} />
