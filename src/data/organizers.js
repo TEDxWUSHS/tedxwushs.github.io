@@ -6,15 +6,16 @@ const gradeLabels = {
   faculty: { ja: '教員', en: 'Faculty' },
 };
 
-// Keep names and English role labels aligned with the official TED event page.
+// Names are based on the official TED event page. Role labels also include
+// the current internal assignments provided by the TEDxWUSHS Youth team.
 export const organizers = [
   {
     id: 'haruki-kawamata',
     name: 'Haruki Kawamata',
     grade: gradeLabels.year3,
     role: {
-      ja: 'オーガナイザー',
-      en: 'Organizer',
+      ja: 'ボードメンバー・オーガナイザー',
+      en: 'Board Member / Organizer',
     },
   },
   {
@@ -31,8 +32,8 @@ export const organizers = [
     name: 'Hironori Sakai',
     grade: gradeLabels.year2,
     role: {
-      ja: '運営・スピーカーチーム',
-      en: 'Operation/Speaker Team',
+      ja: 'ボードメンバー・運営・スピーカーチーム',
+      en: 'Board Member / Operation / Speaker Team',
     },
   },
   {
@@ -40,8 +41,8 @@ export const organizers = [
     name: 'Tatsuaki Matsuda',
     grade: gradeLabels.year3,
     role: {
-      ja: '運営・スピーカーチーム',
-      en: 'Operation/Speaker Team',
+      ja: 'ボードメンバー・テクノロジー・運営・スピーカーチーム',
+      en: 'Board Member / Technology / Operation / Speaker Team',
     },
   },
   {
@@ -49,8 +50,8 @@ export const organizers = [
     name: 'Yasuhiro Nanjo',
     grade: gradeLabels.year2,
     role: {
-      ja: 'テクノロジー・広報',
-      en: 'Technology/Marketing',
+      ja: 'テクノロジー・広報・運営・マネジメント',
+      en: 'Technology / Marketing / Operation / Management',
     },
   },
   {
@@ -67,8 +68,8 @@ export const organizers = [
     name: 'Yunosuke Sato',
     grade: gradeLabels.year3,
     role: {
-      ja: '財務',
-      en: 'Finance',
+      ja: 'マネジメント・財務',
+      en: 'Management / Finance',
     },
   },
   {
@@ -76,8 +77,8 @@ export const organizers = [
     name: 'Taisei Moriwaki',
     grade: gradeLabels.year3,
     role: {
-      ja: '広報',
-      en: 'Marketing',
+      ja: '広報・運営',
+      en: 'Marketing / Operation',
     },
   },
   {

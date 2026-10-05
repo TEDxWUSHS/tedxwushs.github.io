@@ -9,20 +9,20 @@ const formatOrganizerName = (name) => name
 
 const pageCopy = {
   ja: {
-    eyebrow: 'Organizing Team',
+    eyebrow: 'TEDxWUSHS Youth',
     year: '2026',
-    fullTitle: '2026 運営メンバー',
-    titleLead: '運営',
-    titleAccent: 'メンバー',
-    memberList: '運営メンバー一覧',
+    fullTitle: '2026 Team',
+    titleLead: 'Our',
+    titleAccent: 'Team',
+    memberList: '2026年チームメンバー一覧',
   },
   en: {
     eyebrow: 'TEDxWUSHS Youth',
     year: '2026',
-    fullTitle: '2026 Organizing Team',
-    titleLead: 'Organizing',
+    fullTitle: '2026 Team',
+    titleLead: 'Our',
     titleAccent: 'Team',
-    memberList: 'Organizing team members',
+    memberList: '2026 team members',
   },
 };
 
@@ -45,7 +45,7 @@ const OrganizersPage = () => {
             <h1 id="organizers-title" aria-label={copy.fullTitle}>
               <span className="organizers-year" aria-hidden="true">{copy.year}</span>
               <span className="organizers-title-text" aria-hidden="true">
-                {copy.titleLead}{language === 'en' ? ' ' : null}
+                {copy.titleLead}{' '}
                 <span className="highlight-red">{copy.titleAccent}</span>
               </span>
             </h1>

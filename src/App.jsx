@@ -1,11 +1,11 @@
 import { useEffect, useRef } from 'react';
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Navigate, Routes, Route, useLocation } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Home from './pages/Home';
 import AboutPage from './pages/AboutPage';
 import SpeakersPage from './pages/SpeakersPage';
-import OrganizersPage from './pages/OrganizersPage';
+import TeamPage from './pages/TeamPage';
 import JoinUsPage from './pages/JoinUsPage';
 import SpeakerRecruitment from './pages/SpeakerRecruitment';
 import TeamRecruitment from './pages/TeamRecruitment';
@@ -21,7 +21,8 @@ const pageTitles = {
     '/about': 'TEDxについて | TEDxWUSHS Youth',
     '/event': 'イベント情報 | TEDxWUSHS Youth',
     '/speakers': 'スピーカー | TEDxWUSHS Youth',
-    '/organizers': '運営メンバー | TEDxWUSHS Youth',
+    '/team': 'チーム | TEDxWUSHS Youth',
+    '/organizers': 'チーム | TEDxWUSHS Youth',
     '/join-us': '参加する | TEDxWUSHS Youth',
     '/join-us/speaker': 'スピーカー募集 | TEDxWUSHS Youth',
     '/join-us/team': '運営チーム募集 | TEDxWUSHS Youth',
@@ -33,7 +34,8 @@ const pageTitles = {
     '/about': 'About | TEDxWUSHS Youth',
     '/event': 'Event | TEDxWUSHS Youth',
     '/speakers': 'Speakers | TEDxWUSHS Youth',
-    '/organizers': 'Organizers | TEDxWUSHS Youth',
+    '/team': 'Team | TEDxWUSHS Youth',
+    '/organizers': 'Team | TEDxWUSHS Youth',
     '/join-us': 'Join Us | TEDxWUSHS Youth',
     '/join-us/speaker': 'Speaker Applications | TEDxWUSHS Youth',
     '/join-us/team': 'Team Recruitment | TEDxWUSHS Youth',
@@ -90,7 +92,8 @@ function App() {
             <Route path="/about" element={<AboutPage />} />
             <Route path="/event" element={<EventPage />} />
             <Route path="/speakers" element={<SpeakersPage />} />
-            <Route path="/organizers" element={<OrganizersPage />} />
+            <Route path="/team" element={<TeamPage />} />
+            <Route path="/organizers" element={<Navigate to="/team" replace />} />
             <Route path="/join-us" element={<JoinUsPage />} />
             <Route path="/join-us/speaker" element={<SpeakerRecruitment />} />
             <Route path="/join-us/team" element={<TeamRecruitment />} />
