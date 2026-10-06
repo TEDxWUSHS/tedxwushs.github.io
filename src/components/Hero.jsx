@@ -11,7 +11,9 @@ const heroCopy = {
     date: '2026年10月31日（土）',
     reception: '受付開始 13:30',
     venue: '早稲田大学高等学院 講堂',
-    posterAlt: 'TEDxWUSHS Youth「Ideas change everything.」イベントポスター'
+    posterAlt: 'TEDxWUSHS Youth「Ideas change everything.」イベントポスター',
+    programAction: 'イベント詳細',
+    applicationAction: '応募フォーム'
   },
   en: {
     description: 'TEDxWUSHS Youth is an independently organized TEDx event led by students at Waseda University Senior High School. From our school, we explore the power of ideas to change everything.',
@@ -19,7 +21,9 @@ const heroCopy = {
     date: 'Saturday, October 31, 2026',
     reception: 'Doors open 1:30 PM',
     venue: 'Waseda University Senior High School Auditorium',
-    posterAlt: 'TEDxWUSHS Youth event poster: Ideas change everything.'
+    posterAlt: 'TEDxWUSHS Youth event poster: Ideas change everything.',
+    programAction: 'Event Details',
+    applicationAction: 'Application Form'
   }
 };
 
@@ -77,8 +81,8 @@ const Hero = () => {
             </div>
           </div>
           <div className="hero-cta">
-            <Link to="/program" className="btn btn-primary" lang="en">Discover More</Link>
-            <Link to="/join-us" className="btn btn-outline" lang="en">Join Us</Link>
+            <Link to="/program" className="btn btn-primary">{copy.programAction}</Link>
+            <Link to="/join-us/audience" className="btn btn-outline">{copy.applicationAction}</Link>
           </div>
         </motion.div>
 
