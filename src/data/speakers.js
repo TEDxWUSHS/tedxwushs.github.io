@@ -10,10 +10,28 @@ import takezawaImage from '../assets/speakers/takezawa-mamoru.jpg';
 // picture/ -> optimized copies in src/assets/speakers/, intro/ -> intro,
 // speech-info/ -> optional speechInfo. Add future speakers here so the Home
 // preview and the full /speakers page stay in sync.
+export const groupSpeakersForDisplay = (speakerEntries) => {
+  const rows = [];
+  let offset = 0;
+
+  [2, 2].forEach((rowSize) => {
+    if (offset >= speakerEntries.length) return;
+    rows.push(speakerEntries.slice(offset, offset + rowSize));
+    offset += rowSize;
+  });
+
+  while (offset < speakerEntries.length) {
+    rows.push(speakerEntries.slice(offset, offset + 3));
+    offset += 3;
+  }
+
+  return rows;
+};
+
 export const speakers = [
   {
     id: 'enomoto-takayuki',
-    displayOrder: 10,
+    displayOrder: 30,
     published: true,
     featured: true,
     image: enomotoImage,
@@ -43,7 +61,7 @@ export const speakers = [
   },
   {
     id: 'hasegawa-keisuke',
-    displayOrder: 40,
+    displayOrder: 70,
     published: true,
     featured: true,
     image: hasegawaImage,
@@ -73,7 +91,7 @@ export const speakers = [
   },
   {
     id: 'horise-yoshito',
-    displayOrder: 50,
+    displayOrder: 60,
     published: true,
     featured: true,
     image: horiseImage,
@@ -103,7 +121,7 @@ export const speakers = [
   },
   {
     id: 'kuroki-yuto',
-    displayOrder: 20,
+    displayOrder: 50,
     published: true,
     featured: true,
     image: kurokiImage,
@@ -133,7 +151,7 @@ export const speakers = [
   },
   {
     id: 'kogure-masahisa',
-    displayOrder: 60,
+    displayOrder: 10,
     published: true,
     featured: true,
     image: kogureImage,
@@ -161,7 +179,7 @@ export const speakers = [
   },
   {
     id: 'takezawa-mamoru',
-    displayOrder: 30,
+    displayOrder: 40,
     published: true,
     featured: true,
     image: takezawaImage,
@@ -193,7 +211,7 @@ export const speakers = [
   },
   {
     id: 'reon-hiruma',
-    displayOrder: 70,
+    displayOrder: 20,
     published: true,
     featured: true,
     image: hirumaImage,

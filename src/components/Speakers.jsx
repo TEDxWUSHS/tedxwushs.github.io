@@ -2,7 +2,7 @@ import { motion, useReducedMotion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../i18n/LanguageContext';
-import { speakers } from '../data/speakers';
+import { groupSpeakersForDisplay, speakers } from '../data/speakers';
 import SpeakerCard from './SpeakerCard';
 
 const sectionCopy = {
@@ -32,6 +32,7 @@ const Speakers = ({ variant = 'preview' }) => {
   const publishedSpeakers = [...speakers]
     .filter((speaker) => speaker.published && (isFullPage || speaker.featured))
     .sort((first, second) => first.displayOrder - second.displayOrder);
+  const speakerRows = groupSpeakersForDisplay(publishedSpeakers);
 
   return (
     <section
@@ -60,17 +61,35 @@ const Speakers = ({ variant = 'preview' }) => {
         </motion.header>
 
         {publishedSpeakers.length > 0 ? (
-          <div className={isFullPage ? 'speakers-section__list' : 'speakers-section__grid'}>
-            {publishedSpeakers.map((speaker, index) => (
-              <SpeakerCard
-                key={speaker.id}
-                speaker={speaker}
-                language={language}
-                variant={isFullPage ? 'detail' : 'preview'}
-                index={index}
-              />
-            ))}
-          </div>
+          isFullPage ? (
+            <div className="speakers-section__list">
+              {publishedSpeakers.map((speaker, index) => (
+                <SpeakerCard
+                  key={speaker.id}
+                  speaker={speaker}
+                  language={language}
+                  variant="detail"
+                  index={index}
+                />
+              ))}
+            </div>
+          ) : (
+            <div className="speakers-section__grid">
+              {speakerRows.map((row, rowIndex) => (
+                <div className="speakers-section__row" key={`speaker-row-${rowIndex + 1}`}>
+                  {row.map((speaker) => (
+                    <SpeakerCard
+                      key={speaker.id}
+                      speaker={speaker}
+                      language={language}
+                      variant="preview"
+                      index={publishedSpeakers.findIndex((entry) => entry.id === speaker.id)}
+                    />
+                  ))}
+                </div>
+              ))}
+            </div>
+          )
         ) : (
           <p className="speakers-section__empty">{copy.empty}</p>
         )}
@@ -154,6 +173,12 @@ const Speakers = ({ variant = 'preview' }) => {
         }
 
         .speakers-section__grid {
+          display: flex;
+          flex-direction: column;
+          gap: 2rem;
+        }
+
+        .speakers-section__row {
           display: flex;
           flex-wrap: wrap;
           justify-content: center;
@@ -419,6 +444,10 @@ const Speakers = ({ variant = 'preview' }) => {
           }
 
           .speakers-section__grid {
+            gap: 1.5rem;
+          }
+
+          .speakers-section__row {
             gap: 1.5rem;
           }
 

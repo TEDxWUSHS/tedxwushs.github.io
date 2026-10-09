@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useLanguage } from '../i18n/LanguageContext';
 import { audienceRegistrationUrl } from '../data/registration';
 import { eventSchedule } from '../data/event';
-import { speakers } from '../data/speakers';
+import { groupSpeakersForDisplay, speakers } from '../data/speakers';
 
 const contentByLanguage = {
   ja: {
@@ -60,6 +60,7 @@ const ProgramPage = () => {
   const publishedSpeakers = [...speakers]
     .filter((speaker) => speaker.published)
     .sort((first, second) => first.displayOrder - second.displayOrder);
+  const speakerRows = groupSpeakersForDisplay(publishedSpeakers);
 
   return (
     <main id="main-content" tabIndex={-1} className="event-page">
@@ -118,23 +119,27 @@ const ProgramPage = () => {
             <p>{copy.speakerDescription}</p>
           </header>
 
-          <ul className="event-speakers__list">
-            {publishedSpeakers.map((speaker) => (
-              <li className="event-speaker" key={speaker.id}>
-                <img
-                  src={speaker.image}
-                  alt=""
-                  loading="lazy"
-                  decoding="async"
-                  style={{ '--event-speaker-position': speaker.imagePosition }}
-                />
-                <div>
-                  <h3>{speaker.name[language] ?? speaker.name.ja}</h3>
-                  <p>{speaker.role[language] ?? speaker.role.ja}</p>
-                </div>
-              </li>
+          <div className="event-speakers__list">
+            {speakerRows.map((row, rowIndex) => (
+              <ul className="event-speakers__row" key={`event-speaker-row-${rowIndex + 1}`}>
+                {row.map((speaker) => (
+                  <li className="event-speaker" key={speaker.id}>
+                    <img
+                      src={speaker.image}
+                      alt=""
+                      loading="lazy"
+                      decoding="async"
+                      style={{ '--event-speaker-position': speaker.imagePosition }}
+                    />
+                    <div>
+                      <h3>{speaker.name[language] ?? speaker.name.ja}</h3>
+                      <p>{speaker.role[language] ?? speaker.role.ja}</p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
             ))}
-          </ul>
+          </div>
 
           <Link className="event-text-link" to="/speakers">
             {copy.speakerAction}
@@ -359,12 +364,21 @@ const ProgramPage = () => {
         }
 
         .event-speakers__list {
-          display: grid;
-          grid-template-columns: repeat(4, minmax(0, 1fr));
+          display: flex;
+          flex-direction: column;
+          gap: 2rem;
+        }
+
+        .event-speakers__row {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
           gap: 2rem;
         }
 
         .event-speaker {
+          flex: 1 1 240px;
+          max-width: 360px;
           min-width: 0;
         }
 
@@ -484,9 +498,6 @@ const ProgramPage = () => {
             border-bottom: 0;
           }
 
-          .event-speakers__list {
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-          }
         }
 
         @media (max-width: 640px) {
@@ -535,7 +546,10 @@ const ProgramPage = () => {
           }
 
           .event-speakers__list {
-            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 1.5rem;
+          }
+
+          .event-speakers__row {
             gap: 1.5rem 1rem;
           }
 
@@ -552,11 +566,9 @@ const ProgramPage = () => {
         }
 
         @media (max-width: 400px) {
-          .event-speakers__list {
-            grid-template-columns: 1fr;
-          }
-
           .event-speaker {
+            flex-basis: 100%;
+            max-width: none;
             display: grid;
             grid-template-columns: 112px minmax(0, 1fr);
             gap: 1rem;
