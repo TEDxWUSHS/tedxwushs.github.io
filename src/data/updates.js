@@ -9,13 +9,13 @@ export const siteUpdates = [
     href: '/school-fest-2026',
     copy: {
       ja: {
-        title: '学院祭英語ディベート特集を公開しました',
-        summary: '学院祭で実施した3校との英語ディベートを、対戦記録、TEDxがディベートを行う理由、今回の工夫と課題の3章で紹介します。',
+        title: '学院祭英語ディベート特集を公開',
+        summary: '学院祭で実施した3校との英語ディベートを、対戦記録、TED/TEDxの理念、オーディエンスを取り込んだ今回の工夫とともに紹介します。',
         action: '特集記事を読む',
       },
       en: {
-        title: 'Gakuinsai English Debate feature published',
-        summary: 'Read about our three interschool English debates, why debate matters to TEDx, and what we learned from the format.',
+        title: 'Gakuinsai English Debate feature',
+        summary: 'Explore our three interschool debates through the match records, the ideas behind TED and TEDx, and the audience-inclusive format we developed.',
         action: 'Read the feature',
       },
     },
