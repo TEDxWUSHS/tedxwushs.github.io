@@ -13,6 +13,7 @@ import AudienceRegistration from './pages/AudienceRegistration';
 import FAQPage from './pages/FAQPage';
 import NotFoundPage from './pages/NotFoundPage';
 import ProgramPage from './pages/EventPage';
+import SchoolFest2026Page from './pages/SchoolFest2026Page';
 import { LanguageProvider, useLanguage } from './i18n/LanguageContext';
 
 const pageTitles = {
@@ -29,6 +30,7 @@ const pageTitles = {
     '/join-us/team': '運営チーム募集 | TEDxWUSHS Youth',
     '/join-us/audience': '参加申込み | TEDxWUSHS Youth',
     '/faq': 'よくある質問 | TEDxWUSHS Youth',
+    '/school-fest-2026': '学院祭英語ディベート特集 | TEDxWUSHS Youth',
   },
   en: {
     '/': 'TEDxWUSHS Youth | Ideas change everything',
@@ -43,6 +45,7 @@ const pageTitles = {
     '/join-us/team': 'Team Recruitment | TEDxWUSHS Youth',
     '/join-us/audience': 'Audience Registration | TEDxWUSHS Youth',
     '/faq': 'Frequently Asked Questions | TEDxWUSHS Youth',
+    '/school-fest-2026': 'Gakuinsai English Debate Feature | TEDxWUSHS Youth',
   },
 };
 
@@ -102,6 +105,7 @@ function App() {
             <Route path="/join-us/team" element={<TeamRecruitment />} />
             <Route path="/join-us/audience" element={<AudienceRegistration />} />
             <Route path="/faq" element={<FAQPage />} />
+            <Route path="/school-fest-2026" element={<SchoolFest2026Page />} />
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
           <Footer />

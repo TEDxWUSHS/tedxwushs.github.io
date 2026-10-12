@@ -3,6 +3,43 @@ import { audienceRegistrationUrl } from './registration';
 
 export const siteUpdates = [
   {
+    id: 'school-fest-2026-feature',
+    publishedAt: '2026-10-12',
+    category: 'Feature',
+    href: '/school-fest-2026',
+    copy: {
+      ja: {
+        title: '学院祭英語ディベート特集を公開しました',
+        summary: '学院祭で実施した3校との英語ディベートを、対戦記録、TEDxがディベートを行う理由、今回の工夫と課題の3章で紹介します。',
+        action: '特集記事を読む',
+      },
+      en: {
+        title: 'Gakuinsai English Debate feature published',
+        summary: 'Read about our three interschool English debates, why debate matters to TEDx, and what we learned from the format.',
+        action: 'Read the feature',
+      },
+    },
+  },
+  {
+    id: 'waseda-shs-official-announcement',
+    publishedAt: '2026-10-09',
+    category: 'Announcement',
+    href: 'https://www.waseda.jp/school/shs/news/2026/10/09/11248/',
+    external: true,
+    copy: {
+      ja: {
+        title: '高等学院公式サイトに開催案内が掲載されました',
+        summary: '早稲田大学高等学院の公式サイトで、10月31日（土）開催のTEDxWUSHS Youth 2026「Breakshot」が紹介されました。',
+        action: '高等学院の掲載記事を読む',
+      },
+      en: {
+        title: 'Event announcement published by Waseda University Senior High School',
+        summary: 'Waseda University Senior High School has published an official announcement for TEDxWUSHS Youth 2026 “Breakshot,” taking place on Saturday, October 31.',
+        action: 'Read the official announcement',
+      },
+    },
+  },
+  {
     id: 'audience-registration-open',
     publishedAt: '2026-10-01',
     category: 'Registration',
