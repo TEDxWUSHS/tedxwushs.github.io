@@ -11,8 +11,8 @@ const contentByLanguage = {
     schools: ['頌栄女子学院高等学校', '慶應義塾高等学校', '早稲田大学本庄高等学院 ESS'],
     partnerLabel: 'Special Thanks',
     partnerTitle: 'TEDxTeikyoU',
-    partnerDescription: 'ロゴモニュメントをお貸しいただき、またスピーカーコーチングにご協力いただきました。心より感謝申し上げます。',
-    contributions: ['ロゴモニュメントの貸し出し', 'スピーカーコーチングへの協力'],
+    partnerDescription: 'スピーカーコーチングにご協力いただきました。心より感謝申し上げます。',
+    contributions: ['スピーカーコーチングへの協力'],
   },
   en: {
     eyebrow: 'Acknowledgements',
@@ -24,8 +24,8 @@ const contentByLanguage = {
     schools: ['Shoei Girls’ Senior High School', 'Keio Senior High School', 'Waseda University Honjo Senior High School ESS'],
     partnerLabel: 'Special Thanks',
     partnerTitle: 'TEDxTeikyoU',
-    partnerDescription: 'We sincerely thank TEDxTeikyoU for lending us its logo monument and supporting our speaker coaching.',
-    contributions: ['Logo monument loan', 'Speaker coaching support'],
+    partnerDescription: 'We sincerely thank TEDxTeikyoU for supporting our speaker coaching.',
+    contributions: ['Speaker coaching support'],
   },
 };
 
