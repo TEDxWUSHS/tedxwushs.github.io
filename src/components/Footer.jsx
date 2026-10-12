@@ -25,6 +25,7 @@ const Footer = () => {
               <li><Link to="/speakers">Speakers</Link></li>
               <li><Link to="/team">Team</Link></li>
               <li><Link to="/about">About Us</Link></li>
+              <li><Link to="/join-us">Join Us</Link></li>
               <li><a href="https://www.waseda.jp/school/shs/" target="_blank" rel="noopener noreferrer">Waseda SHS</a></li>
               <li><a href="https://www.ted.com/about/programs-initiatives/tedx-program" target="_blank" rel="noopener noreferrer">TEDx Program</a></li>
             </ul>

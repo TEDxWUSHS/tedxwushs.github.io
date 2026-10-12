@@ -6,7 +6,7 @@ const faqsByLanguage = {
   ja: [
     {
       question: 'TEDxWUSHS Youthとは何ですか？',
-      answer: '早稲田大学高等学院の生徒が独立して企画・運営するTEDxイベントです。『Ideas change everything.』という考えのもと、対話と変化につながるアイデアを若者の視点から届けます。'
+      answer: '早稲田大学高等学院の生徒が独立して企画・運営するTEDxイベントです。『Ideas change everything.（アイデアは世界を変える）』という考えのもと、対話と変化につながるアイデアを若者の視点から届けます。'
     },
     {
       question: '参加対象者を教えてください。',

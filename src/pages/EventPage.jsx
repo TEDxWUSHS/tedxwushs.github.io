@@ -1,4 +1,4 @@
-import { ArrowRight, ExternalLink } from 'lucide-react';
+import { ArrowRight, ExternalLink, Mail } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../i18n/LanguageContext';
 import { audienceRegistrationUrl } from '../data/registration';
@@ -28,6 +28,10 @@ const contentByLanguage = {
     scheduleTitle: 'Program Schedule',
     scheduleDescription: '当日の進行予定です。時間は前後する可能性があります。',
     scheduleLabel: 'TEDxWUSHS Youth 2026 当日タイムテーブル',
+    contactEyebrow: 'Contact',
+    contactTitle: 'お問い合わせ',
+    contactDescription: '参加方法や当日の運営についてのご質問は、イベント事務局までご連絡ください。',
+    contactEmailLabel: 'イベント事務局へメールする',
   },
   en: {
     intro: 'Find the program essentials, speaker lineup, and full schedule in one place.',
@@ -51,6 +55,10 @@ const contentByLanguage = {
     scheduleTitle: 'Program Schedule',
     scheduleDescription: 'The program is subject to minor timing changes.',
     scheduleLabel: 'TEDxWUSHS Youth 2026 program schedule',
+    contactEyebrow: 'Contact',
+    contactTitle: 'Questions about the event?',
+    contactDescription: 'For questions about attending the event or event-day operations, please contact the TEDxWUSHS Youth team.',
+    contactEmailLabel: 'Email the event team',
   },
 };
 
@@ -170,6 +178,20 @@ const ProgramPage = () => {
         </div>
       </section>
 
+      <section className="event-section event-contact" aria-labelledby="event-contact-title">
+        <div className="container event-contact__layout">
+          <Mail size={34} strokeWidth={1.8} aria-hidden="true" />
+          <div>
+            <p className="event-eyebrow" lang="en">{copy.contactEyebrow}</p>
+            <h2 id="event-contact-title">{copy.contactTitle}</h2>
+            <p>{copy.contactDescription}</p>
+            <a href="mailto:tedxwushs@gmail.com" aria-label={copy.contactEmailLabel}>
+              tedxwushs@gmail.com
+            </a>
+          </div>
+        </div>
+      </section>
+
       <style>{`
         .event-page {
           background: var(--ted-black);
@@ -257,7 +279,8 @@ const ProgramPage = () => {
         }
 
         .event-button:focus-visible,
-        .event-text-link:focus-visible {
+        .event-text-link:focus-visible,
+        .event-contact a:focus-visible {
           outline: 3px solid var(--ted-white);
           outline-offset: 4px;
         }
@@ -468,6 +491,49 @@ const ProgramPage = () => {
           line-height: 1.6;
         }
 
+        .event-contact {
+          background: #0b0b0b;
+        }
+
+        .event-contact__layout {
+          display: grid;
+          grid-template-columns: 56px minmax(0, 1fr);
+          gap: 1.5rem;
+          align-items: start;
+          padding-top: 2.25rem;
+          border-top: 1px solid rgba(255, 255, 255, 0.16);
+        }
+
+        .event-contact__layout > svg {
+          color: var(--ted-red);
+        }
+
+        .event-contact h2 {
+          font-size: clamp(2rem, 5vw, 3.5rem);
+          line-height: 1;
+        }
+
+        .event-contact h2 + p {
+          max-width: 62ch;
+          margin-top: 1rem;
+          color: #aaa;
+          line-height: 1.75;
+        }
+
+        .event-contact a {
+          display: inline-flex;
+          align-items: center;
+          min-height: 48px;
+          margin-top: 0.8rem;
+          color: var(--ted-red);
+          font-weight: 800;
+          overflow-wrap: anywhere;
+        }
+
+        .event-contact a:hover {
+          color: var(--ted-white);
+        }
+
         @media (max-width: 900px) {
           .event-hero__layout {
             grid-template-columns: 1fr;
@@ -561,6 +627,11 @@ const ProgramPage = () => {
 
           .event-schedule__item > div {
             grid-template-columns: minmax(130px, 0.45fr) minmax(0, 1fr);
+            gap: 1rem;
+          }
+
+          .event-contact__layout {
+            grid-template-columns: 1fr;
             gap: 1rem;
           }
         }

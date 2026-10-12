@@ -38,7 +38,7 @@ const Header = () => {
     { name: 'Speakers', href: '/speakers' },
     { name: 'Team', href: '/team' },
     { name: 'About', href: '/about' },
-    { name: 'Join Us', href: '/join-us' },
+    { name: 'Acknowledgements', href: '/acknowledgements' },
     { name: 'FAQ', href: '/faq' },
   ];
 

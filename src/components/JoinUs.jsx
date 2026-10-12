@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
-import { Users, Ticket, ArrowRight, Mail } from 'lucide-react';
+import { Users, Ticket, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../i18n/LanguageContext';
 
@@ -18,9 +18,7 @@ const joinCopy = {
     newsletter: 'イベントの最新情報や募集のお知らせをメールでお届けします。',
     emailLabel: 'メールアドレス',
     emailPlaceholder: 'メールアドレスを入力',
-    subscribeAction: '登録する',
-    contactTitle: 'お問い合わせ',
-    contactDescription: '参加方法や当日の運営についてのご質問は、イベント事務局までご連絡ください。'
+    subscribeAction: '登録する'
   },
   en: {
     sectionSubtitle: 'Explore ways to take part in TEDxWUSHS Youth and receive the latest event updates.',
@@ -35,9 +33,7 @@ const joinCopy = {
     newsletter: 'Receive event updates and future application announcements by email.',
     emailLabel: 'Email address',
     emailPlaceholder: 'Enter your email address',
-    subscribeAction: 'Subscribe',
-    contactTitle: 'Contact Us',
-    contactDescription: 'For questions about attending the event or event-day operations, please contact the TEDxWUSHS Youth team.'
+    subscribeAction: 'Subscribe'
   }
 };
 
@@ -203,20 +199,6 @@ const JoinUs = ({ hideHeader = false }) => {
           </div>
         </motion.div>
 
-        <motion.div
-          className="contact-box"
-          initial={shouldReduceMotion ? false : { opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-        >
-          <Mail size={30} aria-hidden="true" focusable="false" />
-          <div>
-            <span lang="en">Questions about the event?</span>
-            <h3>{copy.contactTitle}</h3>
-            <p>{copy.contactDescription}</p>
-            <a href="mailto:tedxwushs@gmail.com">tedxwushs@gmail.com</a>
-          </div>
-        </motion.div>
       </div>
 
       <style>{`
@@ -408,7 +390,6 @@ const JoinUs = ({ hideHeader = false }) => {
         .newsletter-form input:focus-visible,
         .btn-primary:focus-visible,
         .opt-link:focus-visible,
-        .contact-box a:focus-visible,
         .success-message:focus-visible {
           outline: 3px solid #fff;
           outline-offset: 4px;
@@ -440,48 +421,6 @@ const JoinUs = ({ hideHeader = false }) => {
           line-height: 1.6;
         }
 
-        .contact-box {
-          display: grid;
-          grid-template-columns: auto 1fr;
-          gap: 1.5rem;
-          align-items: start;
-          margin-top: 3rem;
-          padding: 2rem;
-          border-radius: 16px;
-          background: var(--ted-black);
-          border: 1px solid rgba(255, 255, 255, 0.08);
-        }
-
-        .contact-box > svg {
-          color: var(--ted-red);
-        }
-
-        .contact-box span {
-          color: #bbb;
-          font-size: 0.75rem;
-          font-weight: 800;
-          letter-spacing: 0.12em;
-          text-transform: uppercase;
-        }
-
-        .contact-box h3 {
-          margin: 0.25rem 0 0.6rem;
-          font-size: 1.5rem;
-        }
-
-        .contact-box p {
-          margin-bottom: 0.7rem;
-          color: #aaa;
-        }
-
-        .contact-box a {
-          display: inline-flex;
-          align-items: center;
-          min-height: 44px;
-          color: var(--ted-red);
-          font-weight: 700;
-        }
-
         @media (max-width: 1024px) {
           .opportunities-grid {
             grid-template-columns: 1fr;
@@ -493,13 +432,6 @@ const JoinUs = ({ hideHeader = false }) => {
           .newsletter-form {
             flex-direction: column;
             align-items: stretch;
-          }
-          .contact-box {
-            grid-template-columns: 1fr;
-            text-align: center;
-          }
-          .contact-box > svg {
-            margin: 0 auto;
           }
         }
 
