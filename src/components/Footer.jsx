@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import logoRed from '../assets/logo_red.png';
-import { Instagram, Twitter, Mail } from 'lucide-react';
+import { Instagram, Twitter, Youtube, Mail } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -45,7 +45,14 @@ const Footer = () => {
               >
                 <span className="note-wordmark" aria-hidden="true">note</span>
               </a>
-              {/* <a href="#" aria-label="YouTube"><Youtube size={24} /></a> */}
+              <a
+                href="https://www.youtube.com/@TEDxWUSHSYouth"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="TEDxWUSHS Youth on YouTube"
+              >
+                <Youtube size={24} aria-hidden="true" />
+              </a>
               <a href="mailto:tedxwushs@gmail.com" aria-label="Email"><Mail size={24} aria-hidden="true" /></a>
             </div>
             <p className="footer-handle">@TEDxWUSHS</p>
