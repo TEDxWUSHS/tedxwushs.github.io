@@ -30,7 +30,7 @@ const contentByLanguage = {
     scheduleLabel: 'TEDxWUSHS Youth 2026 当日タイムテーブル',
     contactEyebrow: 'Contact',
     contactTitle: 'お問い合わせ',
-    contactDescription: '参加方法や当日の運営についてのご質問は、イベント事務局までご連絡ください。',
+    contactDescription: 'イベント参加のお申し込みや参加方法、当日の運営についてのご質問は、イベント事務局までご連絡ください。',
     contactEmailLabel: 'イベント事務局へメールする',
   },
   en: {
@@ -57,7 +57,7 @@ const contentByLanguage = {
     scheduleLabel: 'TEDxWUSHS Youth 2026 program schedule',
     contactEyebrow: 'Contact',
     contactTitle: 'Questions about the event?',
-    contactDescription: 'For questions about attending the event or event-day operations, please contact the TEDxWUSHS Youth team.',
+    contactDescription: 'For questions about event registration, attending the event, or event-day operations, please contact the TEDxWUSHS Youth team.',
     contactEmailLabel: 'Email the event team',
   },
 };

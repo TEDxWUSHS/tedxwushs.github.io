@@ -32,8 +32,8 @@ export const organizers = [
     name: 'Hironori Sakai',
     grade: gradeLabels.year2,
     role: {
-      ja: 'ボードメンバー・運営・スピーカーチーム',
-      en: 'Board Member / Operation / Speaker Team',
+      ja: 'ボードメンバー・運営（リーダー）・スピーカーチーム',
+      en: 'Board Member / Operation (Leader) / Speaker Team',
     },
   },
   {
@@ -50,8 +50,8 @@ export const organizers = [
     name: 'Yasuhiro Nanjo',
     grade: gradeLabels.year2,
     role: {
-      ja: 'テクノロジー・広報・運営・マネジメント',
-      en: 'Technology / Marketing / Operation / Management',
+      ja: 'テクノロジー（リーダー）・広報・運営・マネジメント・スピーカーチーム',
+      en: 'Technology (Leader) / Marketing / Operation / Management / Speaker Team',
     },
   },
   {
@@ -59,8 +59,8 @@ export const organizers = [
     name: 'Lyu Noguchi',
     grade: gradeLabels.year3,
     role: {
-      ja: 'スピーカーチーム',
-      en: 'Speaker Team',
+      ja: 'スピーカーチーム（リーダー）',
+      en: 'Speaker Team (Leader)',
     },
   },
   {
@@ -68,8 +68,8 @@ export const organizers = [
     name: 'Yunosuke Sato',
     grade: gradeLabels.year3,
     role: {
-      ja: 'マネジメント・財務',
-      en: 'Management / Finance',
+      ja: 'マネジメント・財務（リーダー）',
+      en: 'Management / Finance (Leader)',
     },
   },
   {
@@ -77,8 +77,8 @@ export const organizers = [
     name: 'Taisei Moriwaki',
     grade: gradeLabels.year3,
     role: {
-      ja: '広報・運営',
-      en: 'Marketing / Operation',
+      ja: '広報（リーダー）・運営',
+      en: 'Marketing (Leader) / Operation',
     },
   },
   {

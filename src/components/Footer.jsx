@@ -56,7 +56,13 @@ const Footer = () => {
               <a href="mailto:tedxwushs@gmail.com" aria-label="Email"><Mail size={24} aria-hidden="true" /></a>
             </div>
             <p className="footer-handle">@TEDxWUSHS</p>
-            <a className="footer-email" href="mailto:tedxwushs@gmail.com">tedxwushs@gmail.com</a>
+            <div className="footer-contact">
+              <p className="footer-contact-label">Contact</p>
+              <a className="footer-email" href="mailto:tedxwushs@gmail.com">tedxwushs@gmail.com</a>
+              <p className="footer-contact-note" lang="ja">
+                イベント参加のお申し込みに関するご質問・お問い合わせ
+              </p>
+            </div>
           </div>
         </div>
 
@@ -175,10 +181,30 @@ const Footer = () => {
         .footer-email {
           display: inline-block;
           max-width: 100%;
-          margin-top: 0.5rem;
           color: #aaa;
           font-size: 0.9rem;
           overflow-wrap: anywhere;
+        }
+
+        .footer-contact {
+          margin-top: 1.25rem;
+        }
+
+        .footer-contact-label {
+          margin-bottom: 0.35rem;
+          color: var(--ted-white);
+          font-size: 0.78rem;
+          font-weight: 800;
+          letter-spacing: 0.12em;
+          text-transform: uppercase;
+        }
+
+        .footer-contact-note {
+          max-width: 26rem;
+          margin-top: 0.45rem;
+          color: #888;
+          font-size: 0.78rem;
+          line-height: 1.6;
         }
 
         .footer-email:hover {
@@ -211,6 +237,10 @@ const Footer = () => {
             display: flex;
             flex-direction: column;
             align-items: center;
+          }
+          .footer-contact-note {
+            margin-right: auto;
+            margin-left: auto;
           }
           .footer-links ul {
             align-items: center;
