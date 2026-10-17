@@ -9,7 +9,7 @@ const heroCopy = {
     description: '早稲田大学高等学院の生徒が独立して企画・運営するTEDxイベント。アイデアは世界を変える。その可能性を高等学院から。',
     eventLabel: '開催情報',
     date: '2026年10月31日（土）',
-    reception: '受付開始 13:30',
+    reception: '開場 13:30',
     venue: '早稲田大学高等学院 講堂',
     posterAlt: 'TEDxWUSHS Youth「Ideas change everything.」イベントポスター',
     programAction: 'イベント詳細',
@@ -68,7 +68,7 @@ const Hero = () => {
               <Clock3 size={22} aria-hidden="true" />
               <div>
                 <span lang="en">Time</span>
-                <strong>14:00～18:00</strong>
+                <strong>13:30～17:30</strong>
                 <small>{copy.reception}</small>
               </div>
             </div>

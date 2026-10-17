@@ -49,7 +49,7 @@ const About = () => {
               {copy.programLink} ↗
             </a>
             <p className="event-info">
-              <strong lang="en">Date:</strong> <span lang="en">October 31, 2026 (14:00 - 18:00 / Reception 13:30)</span><br />
+              <strong lang="en">Date:</strong> <span lang="en">October 31, 2026 (13:30 - 17:30 / Doors open 13:30)</span><br />
               <strong lang="en">Venue:</strong> <a href="https://www.waseda.jp/school/shs/" target="_blank" rel="noopener noreferrer" className="highlight-link">{copy.venue}</a>, <span lang="en">Nerima, Tokyo</span>
             </p>
           </motion.div>
