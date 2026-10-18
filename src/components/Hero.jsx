@@ -1,6 +1,6 @@
 import { motion, useReducedMotion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { CalendarDays, Clock3, MapPin } from 'lucide-react';
+import { CalendarDays, Clock3, MapPin, UsersRound } from 'lucide-react';
 import poster from '../assets/poster.png';
 import { audienceRegistrationUrl } from '../data/registration';
 import { useLanguage } from '../i18n/LanguageContext';
@@ -12,6 +12,7 @@ const heroCopy = {
     date: '2026年10月31日（土）',
     reception: '開場 13:30',
     venue: '早稲田大学高等学院 講堂',
+    audience: '高等学院・中学部の生徒及びその保護者',
     posterAlt: 'TEDxWUSHS Youth「Ideas change everything.」イベントポスター',
     programAction: 'イベント詳細',
     applicationAction: '応募フォーム'
@@ -22,6 +23,7 @@ const heroCopy = {
     date: 'Saturday, October 31, 2026',
     reception: 'Doors open 1:30 PM',
     venue: 'Waseda University Senior High School Auditorium',
+    audience: 'Senior High School and Junior High School students and their parents or guardians',
     posterAlt: 'TEDxWUSHS Youth event poster: Ideas change everything.',
     programAction: 'Event Details',
     applicationAction: 'Application Form'
@@ -78,6 +80,13 @@ const Hero = () => {
               <div>
                 <span lang="en">Venue</span>
                 <strong>{copy.venue}</strong>
+              </div>
+            </div>
+            <div className="hero-event-detail">
+              <UsersRound size={22} aria-hidden="true" />
+              <div>
+                <span lang="en">Audience</span>
+                <strong>{copy.audience}</strong>
               </div>
             </div>
           </div>
