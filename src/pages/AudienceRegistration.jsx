@@ -7,7 +7,7 @@ const contentByLanguage = {
     ja: {
         lead: '参加申込みを受け付けています。対象をご確認のうえ、申込フォームからお申し込みください。',
         eligibilityLabel: 'Audience Eligibility / 参加対象',
-        eligibilityTitle: '早稲田大学高等学院の生徒及びその保護者',
+        eligibilityTitle: '高等学院・中学部の生徒及びその保護者',
         eligibilityDescription: '本イベントの会場参加は、上記の方を対象としています。対象をご確認のうえ、申込フォームからお申し込みください。',
         newsletterDescription: 'ニュースレターに登録すると、イベントに関する最新情報をメールで受け取れます。',
         eventDescription: '2026年10月31日（土）13:30〜17:30、早稲田大学高等学院 講堂にて開催します（開場13:30）。',
@@ -17,12 +17,12 @@ const contentByLanguage = {
         registrationAction: '参加を申し込む',
         registrationNote: '申込フォームは新しいタブで開きます。',
         audienceLabel: '対象',
-        audienceValue: '学院生・保護者'
+        audienceValue: '高等学院・中学部の生徒及びその保護者'
     },
     en: {
         lead: 'Audience registration is now open. Please confirm your eligibility and apply using the registration form.',
         eligibilityLabel: 'Audience Eligibility',
-        eligibilityTitle: 'Students of Waseda University Senior High School and Their Parents or Guardians',
+        eligibilityTitle: 'Senior High School and Junior High School Students and Their Parents or Guardians',
         eligibilityDescription: 'In-person attendance is limited to the group listed above. Please confirm your eligibility and apply using the registration form.',
         newsletterDescription: 'Subscribe to receive the latest event updates by email.',
         eventDescription: 'The event will be held on Saturday, October 31, 2026, from 1:30 p.m. to 5:30 p.m. at the auditorium of Waseda University Senior High School (doors open at 1:30 p.m.).',
@@ -32,7 +32,7 @@ const contentByLanguage = {
         registrationAction: 'Apply to attend',
         registrationNote: 'The registration form opens in a new tab.',
         audienceLabel: 'Eligible Attendees',
-        audienceValue: 'Students & Parents/Guardians'
+        audienceValue: 'Senior High & Junior High Students and Parents/Guardians'
     }
 };
 

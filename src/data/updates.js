@@ -3,6 +3,25 @@ import { audienceRegistrationUrl } from './registration';
 
 export const siteUpdates = [
   {
+    id: 'audience-eligibility-expanded',
+    publishedAt: '2026-10-18',
+    category: 'Registration',
+    href: audienceRegistrationUrl,
+    external: true,
+    copy: {
+      ja: {
+        title: '中学部の生徒・保護者もお申し込みいただけます',
+        summary: 'TEDx WUSHS Youth 2026の参加対象は、高等学院の生徒およびその保護者に加え、高等学院中学部の生徒およびその保護者もお申し込みいただけます。以前までの文章は分かりにくい案内となっていましたことをお詫び申し上げます。',
+        action: '参加を申し込む',
+      },
+      en: {
+        title: 'Audience eligibility has expanded',
+        summary: 'We apologize that our previous information did not clearly explain audience eligibility. Senior High School and Junior High School students, as well as their parents or guardians, may apply to attend TEDxWUSHS Youth 2026.',
+        action: 'Apply to attend',
+      },
+    },
+  },
+  {
     id: 'school-fest-2026-feature',
     publishedAt: '2026-10-12',
     category: 'Feature',
@@ -48,12 +67,12 @@ export const siteUpdates = [
     copy: {
       ja: {
         title: 'オーディエンス募集を開始しました',
-        summary: 'TEDxWUSHS Youth 2026のオーディエンス募集を開始しました。対象は早稲田大学高等学院の生徒及びその保護者です。',
+        summary: 'TEDxWUSHS Youth 2026のオーディエンス募集を開始しました。対象は早稲田大学高等学院の生徒及びその保護者と、高等学院中学部の生徒及びその保護者です。',
         action: '参加を申し込む',
       },
       en: {
         title: 'Audience registration is now open',
-        summary: 'Audience registration for TEDxWUSHS Youth 2026 is now open to students of Waseda University Senior High School and their parents or guardians.',
+        summary: 'Audience registration for TEDxWUSHS Youth 2026 is open to Senior High School and Junior High School students, as well as their parents or guardians.',
         action: 'Apply to attend',
       },
     },

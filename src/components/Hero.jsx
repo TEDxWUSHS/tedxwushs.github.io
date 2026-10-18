@@ -2,6 +2,7 @@ import { motion, useReducedMotion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { CalendarDays, Clock3, MapPin } from 'lucide-react';
 import poster from '../assets/poster.png';
+import { audienceRegistrationUrl } from '../data/registration';
 import { useLanguage } from '../i18n/LanguageContext';
 
 const heroCopy = {
@@ -82,7 +83,14 @@ const Hero = () => {
           </div>
           <div className="hero-cta">
             <Link to="/program" className="btn btn-primary">{copy.programAction}</Link>
-            <Link to="/join-us/audience" className="btn btn-outline">{copy.applicationAction}</Link>
+            <a
+              href={audienceRegistrationUrl}
+              className="btn btn-outline"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              {copy.applicationAction}
+            </a>
           </div>
         </motion.div>
 
