@@ -71,7 +71,7 @@ const Hero = () => {
               <Clock3 size={22} aria-hidden="true" />
               <div>
                 <span lang="en">Time</span>
-                <strong>13:30～17:30</strong>
+                <strong>14:00～17:30</strong>
                 <small>{copy.reception}</small>
               </div>
             </div>
