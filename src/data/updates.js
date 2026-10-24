@@ -3,6 +3,44 @@ import { audienceRegistrationUrl } from './registration';
 
 export const siteUpdates = [
   {
+    id: 'audience-registration-deadline-extended',
+    publishedAt: '2026-10-25',
+    category: 'Registration',
+    href: audienceRegistrationUrl,
+    external: true,
+    copy: {
+      ja: {
+        title: '参加申込み締切を10月29日まで延長しました',
+        summary: 'TEDxWUSHS Youth 2026の参加申込み締切を、2026年10月29日（木）まで延長しました。参加をご希望の方は、申込フォームからお申し込みください。',
+        action: '参加を申し込む',
+      },
+      en: {
+        title: 'Registration deadline extended to October 29',
+        summary: 'The audience registration deadline for TEDxWUSHS Youth 2026 has been extended to Thursday, October 29, 2026. Please apply using the registration form.',
+        action: 'Apply to attend',
+      },
+    },
+  },
+  {
+    id: 'alumni-added-to-audience-eligibility',
+    publishedAt: '2026-10-24',
+    category: 'Registration',
+    href: audienceRegistrationUrl,
+    external: true,
+    copy: {
+      ja: {
+        title: 'OBも参加申込みの対象となりました',
+        summary: 'TEDxWUSHS Youth 2026の参加対象に、早稲田大学高等学院のOBを追加しました。高等学院・高等学院中学部の生徒及びその保護者に加え、OBの皆さまもお申し込みいただけます。',
+        action: '参加を申し込む',
+      },
+      en: {
+        title: 'Audience eligibility now includes alumni',
+        summary: 'Alumni of Waseda University Senior High School are now eligible to attend TEDxWUSHS Youth 2026, alongside Senior High School and Junior High School students and their parents or guardians.',
+        action: 'Apply to attend',
+      },
+    },
+  },
+  {
     id: 'audience-eligibility-expanded',
     publishedAt: '2026-10-18',
     category: 'Registration',

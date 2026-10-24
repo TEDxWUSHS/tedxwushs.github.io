@@ -12,7 +12,7 @@ const heroCopy = {
     date: '2026年10月31日（土）',
     reception: '開場 13:30',
     venue: '早稲田大学高等学院 講堂',
-    audience: '高等学院・中学部の生徒及びその保護者',
+    audience: '高等学院・中学部の生徒及びその保護者、高等学院OB',
     posterAlt: 'TEDxWUSHS Youth「Ideas change everything.」イベントポスター',
     programAction: 'イベント詳細',
     applicationAction: '応募フォーム'
@@ -23,7 +23,7 @@ const heroCopy = {
     date: 'Saturday, October 31, 2026',
     reception: 'Doors open 1:30 PM',
     venue: 'Waseda University Senior High School Auditorium',
-    audience: 'Senior High School and Junior High School students and their parents or guardians',
+    audience: 'Senior High School and Junior High School students, their parents or guardians, and alumni',
     posterAlt: 'TEDxWUSHS Youth event poster: Ideas change everything.',
     programAction: 'Event Details',
     applicationAction: 'Application Form'
