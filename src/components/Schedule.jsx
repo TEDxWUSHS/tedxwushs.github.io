@@ -6,8 +6,8 @@ const Schedule = () => {
   const { language } = useLanguage();
   const shouldReduceMotion = useReducedMotion();
   const subtitle = language === 'en'
-    ? 'Scheduled for Saturday, October 31, 2026, from 14:00 to around 17:30. Doors open at 13:30. Times are subject to change.'
-    : '2026年10月31日（土）14:00〜17:30頃 開催予定（13:30開場）。時間は前後する可能性があります。';
+    ? 'Scheduled for Saturday, October 31, 2026, from 14:00 to 18:00. Doors open at 13:30. Times are subject to change.'
+    : '2026年10月31日（土）14:00〜18:00 開催予定（13:30開場）。時間は前後する可能性があります。';
 
   return (
     <section id="schedule" className="schedule section-padding">

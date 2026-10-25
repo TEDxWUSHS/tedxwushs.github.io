@@ -1,6 +1,6 @@
 import { motion, useReducedMotion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { CalendarDays, Clock3, MapPin, UsersRound } from 'lucide-react';
+import { ArrowUpRight, CalendarDays, Clock3, MapPin, UsersRound } from 'lucide-react';
 import poster from '../assets/poster.png';
 import { audienceRegistrationUrl } from '../data/registration';
 import { useLanguage } from '../i18n/LanguageContext';
@@ -8,6 +8,8 @@ import { useLanguage } from '../i18n/LanguageContext';
 const heroCopy = {
   ja: {
     description: '早稲田大学高等学院の生徒が独立して企画・運営するTEDxイベント。アイデアは世界を変える。その可能性を高等学院から。',
+    deadlineLabel: '申込締切を延長しました',
+    deadlineDate: '10月29日（木）まで',
     eventLabel: '開催情報',
     date: '2026年10月31日（土）',
     reception: '開場 13:30',
@@ -19,6 +21,8 @@ const heroCopy = {
   },
   en: {
     description: 'TEDxWUSHS Youth is an independently organized TEDx event led by students at Waseda University Senior High School. From our school, we explore the power of ideas to change everything.',
+    deadlineLabel: 'Registration deadline extended',
+    deadlineDate: 'Apply by Thursday, October 29',
     eventLabel: 'Program details',
     date: 'Saturday, October 31, 2026',
     reception: 'Doors open 1:30 PM',
@@ -44,6 +48,19 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: shouldReduceMotion ? 0 : 0.8 }}
         >
+          <a
+            className="hero-deadline-notice"
+            href={audienceRegistrationUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`${copy.deadlineLabel}: ${copy.deadlineDate}`}
+          >
+            <span className="hero-deadline-copy">
+              <span>{copy.deadlineLabel}</span>
+              <strong>{copy.deadlineDate}</strong>
+            </span>
+            <ArrowUpRight size={20} strokeWidth={2.5} aria-hidden="true" />
+          </a>
           <motion.span
             className="hero-tagline"
             lang="en"
@@ -71,7 +88,7 @@ const Hero = () => {
               <Clock3 size={22} aria-hidden="true" />
               <div>
                 <span lang="en">Time</span>
-                <strong>14:00～17:30</strong>
+                <strong>14:00～18:00</strong>
                 <small>{copy.reception}</small>
               </div>
             </div>
@@ -147,6 +164,57 @@ const Hero = () => {
           font-size: 0.8rem;
           margin-bottom: 1rem;
           display: block;
+        }
+
+        .hero-deadline-notice {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          gap: 1rem;
+          max-width: 580px;
+          min-height: 52px;
+          margin-bottom: 1.25rem;
+          padding: 0.8rem 1rem;
+          border: 1px solid rgb(var(--ted-red-rgb) / 0.5);
+          border-left: 4px solid var(--ted-red);
+          background: rgb(var(--ted-red-rgb) / 0.12);
+          color: var(--ted-white);
+          transition: var(--transition-smooth);
+        }
+
+        .hero-deadline-notice:hover {
+          background: rgb(var(--ted-red-rgb) / 0.2);
+          border-color: var(--ted-red);
+        }
+
+        .hero-deadline-notice:focus-visible {
+          outline: 3px solid var(--ted-white);
+          outline-offset: 3px;
+        }
+
+        .hero-deadline-copy {
+          display: grid;
+          gap: 0.15rem;
+          min-width: 0;
+        }
+
+        .hero-deadline-copy span {
+          color: #ddd;
+          font-size: 0.72rem;
+          font-weight: 800;
+          letter-spacing: 0.1em;
+          text-transform: uppercase;
+        }
+
+        .hero-deadline-copy strong {
+          color: var(--ted-white);
+          font-size: 1rem;
+          line-height: 1.35;
+        }
+
+        .hero-deadline-notice > svg {
+          flex: 0 0 auto;
+          color: var(--ted-red);
         }
 
         .hero-title {

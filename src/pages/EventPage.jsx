@@ -13,7 +13,7 @@ const contentByLanguage = {
     detailsLabel: 'プログラム概要',
     details: [
       { label: '開催日', value: '2026年10月31日（土）' },
-      { label: '時間', value: '開場 13:30／開会 14:00／終了 17:30頃' },
+      { label: '時間', value: '開場 13:30／開催 14:00〜18:00' },
       { label: '会場', value: '早稲田大学高等学院 講堂' },
       { label: '参加対象', value: '早稲田大学高等学院・高等学院中学部の生徒及びその保護者、早稲田大学高等学院のOB' },
       { label: '参加費', value: '無料' },
@@ -40,7 +40,7 @@ const contentByLanguage = {
     detailsLabel: 'Program details',
     details: [
       { label: 'Date', value: 'Saturday, October 31, 2026' },
-      { label: 'Time', value: 'Doors open 1:30 PM / Opening 2:00 PM / Ends around 5:30 PM' },
+      { label: 'Time', value: 'Doors open 1:30 PM / Event 2:00–6:00 PM' },
       { label: 'Venue', value: 'Waseda University Senior High School Auditorium' },
       { label: 'Audience', value: 'Senior High School and Junior High School students, their parents or guardians, and alumni of Waseda University Senior High School' },
       { label: 'Admission', value: 'Free' },
