@@ -3,6 +3,25 @@ import { audienceRegistrationUrl } from './registration';
 
 export const siteUpdates = [
   {
+    id: 'youtube-live-stream-announced',
+    publishedAt: '2026-10-26',
+    category: 'Live',
+    href: 'https://www.youtube.com/live/gkV3lfWCSIE',
+    external: true,
+    copy: {
+      ja: {
+        title: 'ライブ配信のリンクができました',
+        summary: '10月31日（土）開催のTEDxWUSHS Youth 2026をYouTubeでライブ配信します。会場外からもリアルタイムでご覧いただけます。',
+        action: 'ライブ配信ページを開く',
+      },
+      en: {
+        title: 'Live stream link now available',
+        summary: 'TEDxWUSHS Youth 2026 will be streamed live on YouTube on Saturday, October 31. You can watch the event live from outside the venue.',
+        action: 'Open the live stream',
+      },
+    },
+  },
+  {
     id: 'audience-registration-deadline-extended',
     publishedAt: '2026-10-25',
     category: 'Registration',
