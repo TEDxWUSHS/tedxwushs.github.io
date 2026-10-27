@@ -1,0 +1,835 @@
+[
+  {
+    "id": "sl/y90nupkv",
+    "index": 0,
+    "title": "当日の開催報告、サロン等の定期的なイベント情報、来年度に向けた運営メンバー募集等は公式ホームページ/Instagram等で発信します。",
+    "elements": [
+      {
+        "id": "im/1w7mxkj2",
+        "kind": "image",
+        "name": "図 48",
+        "position": {
+          "left": 372,
+          "top": 966,
+          "width": 100,
+          "height": 100
+        }
+      },
+      {
+        "id": "im/a1kfad8b",
+        "kind": "image",
+        "name": "図 50",
+        "position": {
+          "left": 500,
+          "top": 966,
+          "width": 100,
+          "height": 100
+        }
+      },
+      {
+        "id": "im/w32xcnq1",
+        "kind": "image",
+        "name": "図 52",
+        "position": {
+          "left": 628,
+          "top": 966,
+          "width": 100,
+          "height": 100
+        }
+      },
+      {
+        "id": "sh/buh0nqtg",
+        "kind": "textbox",
+        "name": "QR section description",
+        "text": "当日の開催報告、サロン等の定期的なイベント情報、来年度に向けた運営メンバー募集等は公式ホームページ/Instagram等で発信します。",
+        "position": {
+          "left": 380,
+          "top": 932,
+          "width": 383,
+          "height": 28
+        },
+        "style": {
+          "fontSize": 10.51,
+          "typeface": "Noto Sans JP",
+          "color": "#171717",
+          "bold": true,
+          "alignment": "left"
+        }
+      },
+      {
+        "id": "im/7mp0jixo",
+        "kind": "image",
+        "name": "図 8",
+        "position": {
+          "left": 14.36,
+          "top": -217.51,
+          "width": 795.64,
+          "height": 594.34
+        }
+      },
+      {
+        "id": "im/s7a1obih",
+        "kind": "image",
+        "name": "図 38",
+        "position": {
+          "left": -1.64,
+          "top": -233.51,
+          "width": 795.64,
+          "height": 594.34
+        }
+      },
+      {
+        "id": "sh/zadcv2p8",
+        "kind": "shape",
+        "name": "八角形 21",
+        "position": {
+          "left": 34,
+          "top": 944,
+          "width": 294,
+          "height": 126
+        }
+      },
+      {
+        "id": "sh/k3yl0zql",
+        "kind": "textbox",
+        "name": "Ideas change",
+        "text": "Ideas change",
+        "position": {
+          "left": 52,
+          "top": 68,
+          "width": 515,
+          "height": 66
+        },
+        "style": {
+          "fontSize": 52,
+          "typeface": "Arial Black",
+          "color": "#242124",
+          "bold": true,
+          "alignment": "left"
+        }
+      },
+      {
+        "id": "sh/7qp4be9c",
+        "kind": "textbox",
+        "name": "everything",
+        "text": "everything.",
+        "position": {
+          "left": 92.98,
+          "top": 132.76,
+          "width": 470,
+          "height": 72
+        },
+        "style": {
+          "fontSize": 58,
+          "typeface": "Arial Black",
+          "color": "#E62B34",
+          "bold": true,
+          "alignment": "left"
+        }
+      },
+      {
+        "id": "sh/65g3298r",
+        "kind": "textbox",
+        "name": "正方形/長方形 4",
+        "text": "ア\nイ\nデ\nア\nに\nは\n",
+        "position": {
+          "left": 702.6,
+          "top": 80.33,
+          "width": 32,
+          "height": 123.67
+        },
+        "style": {
+          "fontSize": 20,
+          "typeface": "Noto Sans JP",
+          "color": "#242124",
+          "bold": true,
+          "alignment": "center"
+        }
+      },
+      {
+        "id": "sh/ts7md4r2",
+        "kind": "textbox",
+        "name": "正方形/長方形 5",
+        "text": "世界\nを\n変\nえ\nる\n力\nが\nあ\nる\n",
+        "position": {
+          "left": 657.6,
+          "top": 125.2,
+          "width": 33.4,
+          "height": 211.3
+        },
+        "style": {
+          "fontSize": 20,
+          "typeface": "Noto Sans JP",
+          "color": "#242124",
+          "bold": true,
+          "alignment": "center"
+        }
+      },
+      {
+        "id": "sh/sryl4zqx",
+        "kind": "textbox",
+        "name": "正方形/長方形 6",
+        "text": "TEDxWUSHS Youth とは",
+        "position": {
+          "left": 61.6,
+          "top": 268,
+          "width": 470,
+          "height": 38
+        },
+        "style": {
+          "fontSize": 28,
+          "typeface": "Arial Black",
+          "color": "#E62B34",
+          "bold": true,
+          "alignment": "left"
+        }
+      },
+      {
+        "id": "sh/fu94fe98",
+        "kind": "textbox",
+        "name": "正方形/長方形 7",
+        "text": "TEDx WUSHS Youth は、早稲田大学高等学院の生徒が主体となり、独立して企画・運営するTEDxイベントです。学院入学前、在学中、あるいは卒業後にユニークな経験を積んできたスピーカーを招き、その経験から得られた知見やアイデアを共有していただきます。本イベントは、主に現役の学院生をオーディエンスとして、普段の学校生活では得られないような新しい発見や視点に触れる機会、交流の場を提供することを目指しています。\nまた、「WUSHS」はWaseda University Senior High Schoolの略称であり、早稲田大学の附属高校としてのコミュニティを表しています。",
+        "position": {
+          "left": 52,
+          "top": 319,
+          "width": 594,
+          "height": 224
+        },
+        "style": {
+          "fontSize": 14.4,
+          "typeface": "Noto Sans JP",
+          "color": "#2F2B2D",
+          "bold": true,
+          "alignment": "left"
+        }
+      },
+      {
+        "id": "sh/hofulsf2",
+        "kind": "textbox",
+        "name": "正方形/長方形 10",
+        "text": "TEDxWUSHS Youth 2026",
+        "position": {
+          "left": 61.6,
+          "top": 460.98,
+          "width": 369,
+          "height": 35
+        },
+        "style": {
+          "fontSize": 26.67,
+          "typeface": "Arial Black",
+          "color": "#E62B34",
+          "bold": true,
+          "alignment": "left"
+        }
+      },
+      {
+        "id": "sh/vmdcj2xw",
+        "kind": "textbox",
+        "name": "正方形/長方形 12",
+        "text": "2026年度は、さまざまな分野で活躍する高等学院の在校生・卒業生（OB）・教員をスピーカーとして迎え、2026年10月31日（土） に開催しています。各スピーカーのトークについては、後日TEDのYouTube公式上でアップロードされます。その連絡や当日の様子等を含めてSNSで発信していきます。",
+        "position": {
+          "left": 52,
+          "top": 494.13,
+          "width": 701.6,
+          "height": 65.29
+        },
+        "style": {
+          "fontSize": 14,
+          "typeface": "Noto Sans JP",
+          "color": "#242124",
+          "bold": true,
+          "alignment": "left"
+        }
+      },
+      {
+        "id": "sh/e94v2hon",
+        "kind": "textbox",
+        "name": "正方形/長方形 22",
+        "text": "ブースについて",
+        "position": {
+          "left": 47,
+          "top": 906,
+          "width": 220,
+          "height": 28
+        },
+        "style": {
+          "fontSize": 18,
+          "typeface": "Noto Sans JP",
+          "color": "#E62B34",
+          "bold": true,
+          "alignment": "left"
+        }
+      },
+      {
+        "id": "im/zidgfixg",
+        "kind": "image",
+        "name": "図 24",
+        "position": {
+          "left": 0.98,
+          "top": 1092.23,
+          "width": 184,
+          "height": 29
+        }
+      },
+      {
+        "id": "sh/h072l4jy",
+        "kind": "textbox",
+        "name": "正方形/長方形 32",
+        "text": "本展示&配信は早稲田大学高等学院で10/31に開催されているトークイベント,TEDxWUSHS　Youthに関連するものです。",
+        "position": {
+          "left": 54,
+          "top": 968,
+          "width": 254,
+          "height": 66
+        },
+        "style": {
+          "fontSize": 12.28,
+          "typeface": "Noto Sans JP",
+          "color": "#242124",
+          "bold": true,
+          "alignment": "center"
+        }
+      },
+      {
+        "id": "sh/nqxgjqtk",
+        "kind": "shape",
+        "name": "Lower section divider",
+        "position": {
+          "left": 34,
+          "top": 893,
+          "width": 725,
+          "height": 2
+        }
+      },
+      {
+        "id": "sh/mpozalcz",
+        "kind": "shape",
+        "name": "Booth heading accent",
+        "position": {
+          "left": 34,
+          "top": 910,
+          "width": 5,
+          "height": 20
+        }
+      },
+      {
+        "id": "sh/9sfylgbq",
+        "kind": "shape",
+        "name": "QR heading accent",
+        "position": {
+          "left": 367,
+          "top": 910,
+          "width": 5,
+          "height": 20
+        }
+      },
+      {
+        "id": "sh/or6hcvu5",
+        "kind": "textbox",
+        "name": "QR section heading",
+        "text": "QRコード  フォーム・SNS・公式サイトはこちら。",
+        "position": {
+          "left": 380,
+          "top": 906,
+          "width": 260,
+          "height": 28
+        },
+        "style": {
+          "fontSize": 16.74,
+          "typeface": "Noto Sans JP",
+          "color": "#E62B34",
+          "bold": true,
+          "alignment": "left"
+        }
+      },
+      {
+        "id": "sh/8zqx4vq9",
+        "kind": "textbox",
+        "name": "Google form QR label",
+        "text": "X",
+        "position": {
+          "left": 368,
+          "top": 1060,
+          "width": 108,
+          "height": 20
+        },
+        "style": {
+          "fontSize": 12,
+          "typeface": "Noto Sans JP",
+          "color": "#242124",
+          "bold": true,
+          "alignment": "center"
+        }
+      },
+      {
+        "id": "sh/6x8f2583",
+        "kind": "textbox",
+        "name": "Instagram QR label",
+        "text": "Instagram",
+        "position": {
+          "left": 496,
+          "top": 1060,
+          "width": 108,
+          "height": 20
+        },
+        "style": {
+          "fontSize": 12,
+          "typeface": "Noto Sans JP",
+          "color": "#242124",
+          "bold": true,
+          "alignment": "center"
+        }
+      },
+      {
+        "id": "sh/kvqx0vqd",
+        "kind": "textbox",
+        "name": "Official website QR label",
+        "text": "公式サイト",
+        "position": {
+          "left": 624,
+          "top": 1060,
+          "width": 108,
+          "height": 20
+        },
+        "style": {
+          "fontSize": 12,
+          "typeface": "Noto Sans JP",
+          "color": "#242124",
+          "bold": true,
+          "alignment": "center"
+        }
+      },
+      {
+        "id": "sh/lwzy90ry",
+        "kind": "textbox",
+        "name": "Slide one footer detail",
+        "text": "10.31  |  WASEDA UNIVERSITY SENIOR HIGH SCHOOL",
+        "position": {
+          "left": 410.8,
+          "top": 1097.73,
+          "width": 365,
+          "height": 18
+        },
+        "style": {
+          "fontSize": 9.51,
+          "typeface": "Noto Sans JP",
+          "color": "#625B5E",
+          "alignment": "right"
+        }
+      },
+      {
+        "id": "im/58vy9s7y",
+        "kind": "image",
+        "position": {
+          "left": 60,
+          "top": 566,
+          "width": 154,
+          "height": 95
+        }
+      },
+      {
+        "id": "sh/juhg7q9s",
+        "kind": "shape",
+        "name": "Speaker accent - kogure-masahisa",
+        "position": {
+          "left": 60,
+          "top": 667,
+          "width": 4,
+          "height": 17
+        }
+      },
+      {
+        "id": "sh/wr6xwbq1",
+        "kind": "textbox",
+        "name": "Speaker name - kogure-masahisa",
+        "text": "小暮 真久 氏",
+        "position": {
+          "left": 68,
+          "top": 665,
+          "width": 146,
+          "height": 21
+        },
+        "style": {
+          "fontSize": 14,
+          "typeface": "Noto Sans JP",
+          "color": "#242124",
+          "bold": true,
+          "alignment": "left"
+        }
+      },
+      {
+        "id": "sh/xsfy5grm",
+        "kind": "textbox",
+        "name": "Speaker role - kogure-masahisa",
+        "text": "社会起業家",
+        "position": {
+          "left": 68,
+          "top": 686,
+          "width": 146,
+          "height": 28
+        },
+        "style": {
+          "fontSize": 9.51,
+          "typeface": "Noto Sans JP",
+          "color": "#242124",
+          "bold": true,
+          "alignment": "left"
+        }
+      },
+      {
+        "id": "im/2poza1sb",
+        "kind": "image",
+        "position": {
+          "left": 232,
+          "top": 566,
+          "width": 154,
+          "height": 95
+        }
+      },
+      {
+        "id": "sh/cby5k3yt",
+        "kind": "shape",
+        "name": "Speaker accent - reon-hiruma",
+        "position": {
+          "left": 232,
+          "top": 667,
+          "width": 4,
+          "height": 17
+        }
+      },
+      {
+        "id": "sh/ra54bix8",
+        "kind": "textbox",
+        "name": "Speaker name - reon-hiruma",
+        "text": "比留間 礼音 氏",
+        "position": {
+          "left": 240,
+          "top": 665,
+          "width": 146,
+          "height": 21
+        },
+        "style": {
+          "fontSize": 14,
+          "typeface": "Noto Sans JP",
+          "color": "#242124",
+          "bold": true,
+          "alignment": "left"
+        }
+      },
+      {
+        "id": "sh/q9wnidgn",
+        "kind": "textbox",
+        "name": "Speaker role - reon-hiruma",
+        "text": "ベンチャーキャピタリスト",
+        "position": {
+          "left": 240,
+          "top": 686,
+          "width": 146,
+          "height": 28
+        },
+        "style": {
+          "fontSize": 9.51,
+          "typeface": "Noto Sans JP",
+          "color": "#242124",
+          "bold": true,
+          "alignment": "left"
+        }
+      },
+      {
+        "id": "im/e1oz61sf",
+        "kind": "image",
+        "position": {
+          "left": 404,
+          "top": 566,
+          "width": 154,
+          "height": 95
+        }
+      },
+      {
+        "id": "sh/4ne5g3yh",
+        "kind": "shape",
+        "name": "Speaker accent - takezawa-mamoru",
+        "position": {
+          "left": 404,
+          "top": 667,
+          "width": 4,
+          "height": 17
+        }
+      },
+      {
+        "id": "sh/3m547yxw",
+        "kind": "textbox",
+        "name": "Speaker name - takezawa-mamoru",
+        "text": "武沢 護 氏",
+        "position": {
+          "left": 412,
+          "top": 665,
+          "width": 146,
+          "height": 21
+        },
+        "style": {
+          "fontSize": 14,
+          "typeface": "Noto Sans JP",
+          "color": "#242124",
+          "bold": true,
+          "alignment": "left"
+        }
+      },
+      {
+        "id": "sh/ilw3etgr",
+        "kind": "textbox",
+        "name": "Speaker role - takezawa-mamoru",
+        "text": "早稲田大学高等学院 前学院長",
+        "position": {
+          "left": 412,
+          "top": 686,
+          "width": 146,
+          "height": 28
+        },
+        "style": {
+          "fontSize": 9.51,
+          "typeface": "Noto Sans JP",
+          "color": "#242124",
+          "bold": true,
+          "alignment": "left"
+        }
+      },
+      {
+        "id": "im/6x4z2hsj",
+        "kind": "image",
+        "position": {
+          "left": 576,
+          "top": 566,
+          "width": 154,
+          "height": 95
+        }
+      },
+      {
+        "id": "sh/oji5sne1",
+        "kind": "shape",
+        "name": "Speaker accent - enomoto-takayuki",
+        "position": {
+          "left": 576,
+          "top": 667,
+          "width": 4,
+          "height": 17
+        }
+      },
+      {
+        "id": "sh/6psjmpwj",
+        "kind": "textbox",
+        "name": "Speaker name - enomoto-takayuki",
+        "text": "榎本 隆之 氏",
+        "position": {
+          "left": 584,
+          "top": 665,
+          "width": 146,
+          "height": 21
+        },
+        "style": {
+          "fontSize": 14,
+          "typeface": "Noto Sans JP",
+          "color": "#242124",
+          "bold": true,
+          "alignment": "left"
+        }
+      },
+      {
+        "id": "sh/7q1kfudo",
+        "kind": "textbox",
+        "name": "Speaker role - enomoto-takayuki",
+        "text": "早稲田大学高等学院 国語科教員",
+        "position": {
+          "left": 584,
+          "top": 686,
+          "width": 146,
+          "height": 28
+        },
+        "style": {
+          "fontSize": 9.51,
+          "typeface": "Noto Sans JP",
+          "color": "#242124",
+          "bold": true,
+          "alignment": "left"
+        }
+      },
+      {
+        "id": "im/nqlkzutg",
+        "kind": "image",
+        "position": {
+          "left": 146,
+          "top": 721,
+          "width": 154,
+          "height": 95
+        }
+      },
+      {
+        "id": "sh/ts32h4vu",
+        "kind": "shape",
+        "name": "Speaker accent - kuroki-yuto",
+        "position": {
+          "left": 146,
+          "top": 822,
+          "width": 4,
+          "height": 17
+        }
+      },
+      {
+        "id": "sh/ylsjipw7",
+        "kind": "textbox",
+        "name": "Speaker name - kuroki-yuto",
+        "text": "黒木 勇人 氏",
+        "position": {
+          "left": 154,
+          "top": 820,
+          "width": 146,
+          "height": 21
+        },
+        "style": {
+          "fontSize": 14,
+          "typeface": "Noto Sans JP",
+          "color": "#242124",
+          "bold": true,
+          "alignment": "left"
+        }
+      },
+      {
+        "id": "sh/jm1kbuds",
+        "kind": "textbox",
+        "name": "Speaker role - kuroki-yuto",
+        "text": "早稲田大学 情報理工学科2年",
+        "position": {
+          "left": 154,
+          "top": 841,
+          "width": 146,
+          "height": 28
+        },
+        "style": {
+          "fontSize": 9.51,
+          "typeface": "Noto Sans JP",
+          "color": "#242124",
+          "bold": true,
+          "alignment": "left"
+        }
+      },
+      {
+        "id": "im/zm1kvat4",
+        "kind": "image",
+        "position": {
+          "left": 320,
+          "top": 721,
+          "width": 154,
+          "height": 95
+        }
+      },
+      {
+        "id": "sh/loj2dkvy",
+        "kind": "shape",
+        "name": "Speaker accent - horise-yoshito",
+        "position": {
+          "left": 320,
+          "top": 822,
+          "width": 4,
+          "height": 17
+        }
+      },
+      {
+        "id": "sh/ihc3u9cr",
+        "kind": "textbox",
+        "name": "Speaker name - horise-yoshito",
+        "text": "堀瀬 善仁 氏",
+        "position": {
+          "left": 328,
+          "top": 820,
+          "width": 146,
+          "height": 21
+        },
+        "style": {
+          "fontSize": 14,
+          "typeface": "Noto Sans JP",
+          "color": "#242124",
+          "bold": true,
+          "alignment": "left"
+        }
+      },
+      {
+        "id": "sh/3ilknedw",
+        "kind": "textbox",
+        "name": "Speaker role - horise-yoshito",
+        "text": "早稲田大学高等学院 2年",
+        "position": {
+          "left": 328,
+          "top": 841,
+          "width": 146,
+          "height": 28
+        },
+        "style": {
+          "fontSize": 9.51,
+          "typeface": "Noto Sans JP",
+          "color": "#242124",
+          "bold": true,
+          "alignment": "left"
+        }
+      },
+      {
+        "id": "im/oz2pcb61",
+        "kind": "image",
+        "position": {
+          "left": 494,
+          "top": 721,
+          "width": 154,
+          "height": 95
+        }
+      },
+      {
+        "id": "sh/qd8jy94v",
+        "kind": "shape",
+        "name": "Speaker accent - hasegawa-keisuke",
+        "position": {
+          "left": 494,
+          "top": 822,
+          "width": 4,
+          "height": 17
+        }
+      },
+      {
+        "id": "sh/d0j29on6",
+        "kind": "textbox",
+        "name": "Speaker name - hasegawa-keisuke",
+        "text": "長谷川 慶佑 氏",
+        "position": {
+          "left": 502,
+          "top": 820,
+          "width": 146,
+          "height": 21
+        },
+        "style": {
+          "fontSize": 14,
+          "typeface": "Noto Sans JP",
+          "color": "#242124",
+          "bold": true,
+          "alignment": "left"
+        }
+      },
+      {
+        "id": "sh/cfa10jml",
+        "kind": "textbox",
+        "name": "Speaker role - hasegawa-keisuke",
+        "text": "早稲田大学高等学院 1年",
+        "position": {
+          "left": 502,
+          "top": 841,
+          "width": 146,
+          "height": 28
+        },
+        "style": {
+          "fontSize": 9.51,
+          "typeface": "Noto Sans JP",
+          "color": "#242124",
+          "bold": true,
+          "alignment": "left"
+        }
+      }
+    ]
+  }
+]

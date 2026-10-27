@@ -1,6 +1,6 @@
 import { motion, useReducedMotion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { useLanguage } from '../i18n/LanguageContext';
 import { groupSpeakersForDisplay, speakers } from '../data/speakers';
 import SpeakerCard from './SpeakerCard';
@@ -25,6 +25,7 @@ const sectionCopy = {
 // eslint-disable-next-line react/prop-types
 const Speakers = ({ variant = 'preview' }) => {
   const { language } = useLanguage();
+  const { hash } = useLocation();
   const shouldReduceMotion = useReducedMotion();
   const copy = sectionCopy[language] ?? sectionCopy.ja;
   const isFullPage = variant === 'full';
@@ -70,6 +71,7 @@ const Speakers = ({ variant = 'preview' }) => {
                   language={language}
                   variant="detail"
                   index={index}
+                  initiallyExpanded={hash === `#speaker-${speaker.id}`}
                 />
               ))}
             </div>
@@ -263,6 +265,30 @@ const Speakers = ({ variant = 'preview' }) => {
           line-height: 1.75;
         }
 
+        .speaker-card__details-link {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.45rem;
+          min-height: 3rem;
+          margin-top: 1.25rem;
+          color: var(--speaker-accent);
+          font-size: 0.88rem;
+          font-weight: 800;
+          text-decoration: underline;
+          text-decoration-color: transparent;
+          text-underline-offset: 0.3em;
+        }
+
+        .speaker-card__details-link:hover,
+        .speaker-card__details-link:focus-visible {
+          text-decoration-color: currentColor;
+        }
+
+        .speaker-card__details-link:focus-visible {
+          outline: 2px solid var(--ted-white);
+          outline-offset: 4px;
+        }
+
         .speakers-section__cta-wrap {
           display: flex;
           justify-content: center;
@@ -308,6 +334,7 @@ const Speakers = ({ variant = 'preview' }) => {
           grid-template-columns: minmax(260px, 0.82fr) minmax(0, 1.18fr);
           align-items: stretch;
           border-radius: 20px;
+          scroll-margin-top: 7.5rem;
         }
 
         .speaker-card--detail .speaker-card__image-frame {
@@ -346,10 +373,66 @@ const Speakers = ({ variant = 'preview' }) => {
           gap: 1.15rem;
         }
 
+        .speaker-card__details {
+          display: flex;
+          flex-direction: column;
+          gap: 2rem;
+        }
+
         .speaker-card__bio > p {
           color: #b5b5b5;
           font-size: 1rem;
           line-height: 1.9;
+        }
+
+        .speaker-card__detail-label {
+          color: var(--speaker-accent) !important;
+          font-size: 0.75rem !important;
+          font-weight: 800;
+          letter-spacing: 0.12em;
+          line-height: 1.5 !important;
+          text-transform: uppercase;
+        }
+
+        .speaker-card__talk {
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+          padding-top: 2rem;
+          border-top: 1px solid rgba(255, 255, 255, 0.14);
+        }
+
+        .speaker-card__talk-meta {
+          display: flex;
+          flex-wrap: wrap;
+          align-items: baseline;
+          justify-content: space-between;
+          gap: 0.75rem 1.25rem;
+        }
+
+        .speaker-card__talk-language {
+          color: #a9a9a9;
+          font-size: 0.82rem;
+          font-weight: 700;
+          letter-spacing: 0.04em;
+        }
+
+        .speaker-card__talk-title {
+          color: var(--ted-white);
+          font-size: clamp(1.35rem, 2.5vw, 1.9rem);
+          line-height: 1.35;
+          letter-spacing: -0.02em;
+          text-transform: none;
+        }
+
+        .speaker-card__talk-description {
+          color: #c0c0c0;
+          font-size: 1rem;
+          line-height: 1.9;
+        }
+
+        .speaker-card__mobile-toggle {
+          display: none;
         }
 
         .speakers-section__coming-soon {
@@ -404,7 +487,7 @@ const Speakers = ({ variant = 'preview' }) => {
           color: #999;
         }
 
-        @media (max-width: 800px) {
+        @media (max-width: 900px) {
           .speakers-section--full {
             padding-top: 8rem;
           }
@@ -436,6 +519,51 @@ const Speakers = ({ variant = 'preview' }) => {
             aspect-ratio: 4 / 5;
             max-height: 620px;
           }
+
+          .speaker-card__mobile-toggle {
+            display: flex;
+            width: 100%;
+            min-height: 3rem;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            padding: 0.75rem 0;
+            border: 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.14);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+            background: transparent;
+            color: var(--ted-white);
+            font: inherit;
+            font-size: 1rem;
+            font-weight: 700;
+            text-align: left;
+            cursor: pointer;
+            user-select: none;
+          }
+
+          .speaker-card__mobile-toggle:focus-visible {
+            outline: 2px solid var(--ted-red);
+            outline-offset: 4px;
+          }
+
+          .speaker-card__mobile-toggle-icon {
+            flex: 0 0 auto;
+            color: var(--speaker-accent);
+            transition: transform 0.25s ease;
+          }
+
+          .speaker-card__mobile-toggle[aria-expanded='true'] .speaker-card__mobile-toggle-icon {
+            transform: rotate(180deg);
+          }
+
+          .speaker-card__details {
+            display: none;
+            padding-top: 1.75rem;
+          }
+
+          .speaker-card__details--expanded {
+            display: flex;
+          }
         }
 
         @media (max-width: 480px) {
@@ -459,6 +587,10 @@ const Speakers = ({ variant = 'preview' }) => {
             padding: 1.7rem 1.4rem 2rem;
           }
 
+          .speaker-card__talk-title {
+            font-size: 1.35rem;
+          }
+
           .speakers-section__coming-soon {
             grid-template-columns: 1fr;
             gap: 1.25rem;
@@ -472,6 +604,7 @@ const Speakers = ({ variant = 'preview' }) => {
         @media (prefers-reduced-motion: reduce) {
           .speaker-card,
           .speaker-card__image,
+          .speaker-card__mobile-toggle-icon,
           .speakers-section__cta {
             transition: none;
           }

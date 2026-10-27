@@ -1,0 +1,243 @@
+[
+  {
+    "id": "sl/y90nupkv",
+    "index": 0,
+    "title": "Ideas change",
+    "elements": [
+      {
+        "id": "im/32lkna14",
+        "kind": "image",
+        "name": "図 42",
+        "position": {
+          "left": 6.1,
+          "top": 535.4,
+          "width": 720.44,
+          "height": 336.6
+        }
+      },
+      {
+        "id": "im/s7a1obih",
+        "kind": "image",
+        "name": "図 38",
+        "position": {
+          "left": -1.64,
+          "top": -233.51,
+          "width": 795.64,
+          "height": 594.34
+        }
+      },
+      {
+        "id": "sh/zadcv2p8",
+        "kind": "shape",
+        "name": "八角形 21",
+        "position": {
+          "left": 33.98,
+          "top": 928.06,
+          "width": 294,
+          "height": 158.86
+        }
+      },
+      {
+        "id": "sh/k3yl0zql",
+        "kind": "textbox",
+        "name": "Ideas change",
+        "text": "Ideas change",
+        "position": {
+          "left": 52,
+          "top": 68,
+          "width": 515,
+          "height": 66
+        },
+        "style": {
+          "fontSize": 52,
+          "typeface": "Arial Black",
+          "color": "#242124",
+          "bold": true,
+          "alignment": "left"
+        }
+      },
+      {
+        "id": "sh/7qp4be9c",
+        "kind": "textbox",
+        "name": "everything",
+        "text": "everything.",
+        "position": {
+          "left": 92.98,
+          "top": 132.76,
+          "width": 470,
+          "height": 72
+        },
+        "style": {
+          "fontSize": 58,
+          "typeface": "Arial Black",
+          "color": "#E62B34",
+          "bold": true,
+          "alignment": "left"
+        }
+      },
+      {
+        "id": "sh/65g3298r",
+        "kind": "textbox",
+        "name": "正方形/長方形 4",
+        "text": "ア\nイ\nデ\nア\nに\nは\n",
+        "position": {
+          "left": 702.6,
+          "top": 80.33,
+          "width": 32,
+          "height": 123.67
+        },
+        "style": {
+          "fontSize": 20,
+          "typeface": "Noto Sans JP",
+          "color": "#242124",
+          "bold": true,
+          "alignment": "center"
+        }
+      },
+      {
+        "id": "sh/ts7md4r2",
+        "kind": "textbox",
+        "name": "正方形/長方形 5",
+        "text": "世界\nを\n変\nえ\nる\n力\nが\nあ\nる\n",
+        "position": {
+          "left": 657.6,
+          "top": 125.2,
+          "width": 33.4,
+          "height": 211.3
+        },
+        "style": {
+          "fontSize": 20,
+          "typeface": "Noto Sans JP",
+          "color": "#242124",
+          "bold": true,
+          "alignment": "center"
+        }
+      },
+      {
+        "id": "sh/sryl4zqx",
+        "kind": "textbox",
+        "name": "正方形/長方形 6",
+        "text": "TEDxWUSHS Youth とは",
+        "position": {
+          "left": 61.6,
+          "top": 268,
+          "width": 470,
+          "height": 38
+        },
+        "style": {
+          "fontSize": 28,
+          "typeface": "Arial Black",
+          "color": "#E62B34",
+          "bold": true,
+          "alignment": "left"
+        }
+      },
+      {
+        "id": "sh/fu94fe98",
+        "kind": "textbox",
+        "name": "正方形/長方形 7",
+        "text": "TEDx WUSHS Youth は、早稲田大学高等学院の生徒が主体となり、独立して企画・運営するTEDxイベントです。学院入学前、在学中、あるいは卒業後にユニークな経験を積んできたスピーカーを招き、その経験から得られた知見やアイデアを共有していただきます。本イベントは、主に現役の学院生をオーディエンスとして、普段の学校生活では得られないような新しい発見や視点に触れる機会、交流の場を提供することを目指しています。\nまた、「WUSHS」はWaseda University Senior High Schoolの略称であり、早稲田大学の附属高校としてのコミュニティを表しています。",
+        "position": {
+          "left": 52,
+          "top": 311,
+          "width": 594,
+          "height": 224
+        },
+        "style": {
+          "fontSize": 14.4,
+          "typeface": "Noto Sans JP",
+          "color": "#2F2B2D",
+          "bold": true,
+          "alignment": "left"
+        }
+      },
+      {
+        "id": "sh/hofulsf2",
+        "kind": "textbox",
+        "name": "正方形/長方形 10",
+        "text": "TEDxWUSHS Youth 2026",
+        "position": {
+          "left": 61.6,
+          "top": 441.78,
+          "width": 369,
+          "height": 35
+        },
+        "style": {
+          "fontSize": 26.67,
+          "typeface": "Arial Black",
+          "color": "#E62B34",
+          "bold": true,
+          "alignment": "left"
+        }
+      },
+      {
+        "id": "sh/vmdcj2xw",
+        "kind": "textbox",
+        "name": "正方形/長方形 12",
+        "text": "2026年度は、さまざまな分野で活躍する高等学院の在校生・卒業生（OB）・教員をスピーカーとして迎え、2026年10月31日（土） に開催しています。各スピーカーのトークについては、後日TEDのYouTube公式上でアップロードされます。その連絡や当日の様子等を含めてSNSで発信していきます。",
+        "position": {
+          "left": 52,
+          "top": 479.34,
+          "width": 701.6,
+          "height": 65.29
+        },
+        "style": {
+          "fontSize": 14,
+          "typeface": "Noto Sans JP",
+          "color": "#242124",
+          "bold": true,
+          "alignment": "left"
+        }
+      },
+      {
+        "id": "sh/e94v2hon",
+        "kind": "textbox",
+        "name": "正方形/長方形 22",
+        "text": "ブースについて",
+        "position": {
+          "left": 61.6,
+          "top": 914.06,
+          "width": 198,
+          "height": 28
+        },
+        "style": {
+          "fontSize": 18,
+          "typeface": "Noto Sans JP",
+          "color": "#E62B34",
+          "bold": true,
+          "alignment": "center"
+        }
+      },
+      {
+        "id": "im/zidgfixg",
+        "kind": "image",
+        "name": "図 24",
+        "position": {
+          "left": -4.35,
+          "top": 1094.1,
+          "width": 198.91,
+          "height": 31.46
+        }
+      },
+      {
+        "id": "sh/h072l4jy",
+        "kind": "textbox",
+        "name": "正方形/長方形 32",
+        "text": "本展示&配信は早稲田大学高等学院で10/31に開催されているTEDxWUSHS Youthに関連するものです。",
+        "position": {
+          "left": 21.6,
+          "top": 962.13,
+          "width": 242,
+          "height": 57
+        },
+        "style": {
+          "fontSize": 13.95,
+          "typeface": "Noto Sans JP",
+          "color": "#242124",
+          "bold": true,
+          "alignment": "center"
+        }
+      }
+    ]
+  }
+]

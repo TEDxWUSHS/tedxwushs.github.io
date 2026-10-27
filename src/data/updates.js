@@ -3,6 +3,24 @@ import { audienceRegistrationUrl } from './registration';
 
 export const siteUpdates = [
   {
+    id: 'all-speaker-talk-details-published',
+    publishedAt: '2026-10-27',
+    category: 'Speakers',
+    href: '/speakers',
+    copy: {
+      ja: {
+        title: '全スピーカーのトーク紹介を公開しました',
+        summary: 'TEDxWUSHS Youth 2026に登壇する全7名について、トーク題名、使用言語、トーク紹介を公開しました。',
+        action: 'トーク紹介を見る',
+      },
+      en: {
+        title: 'Talk details published for all speakers',
+        summary: 'Talk titles, presentation languages, and talk introductions are now available for all seven TEDxWUSHS Youth 2026 speakers.',
+        action: 'View talk details',
+      },
+    },
+  },
+  {
     id: 'youtube-live-stream-announced',
     publishedAt: '2026-10-26',
     category: 'Live',
@@ -25,6 +43,7 @@ export const siteUpdates = [
     id: 'audience-registration-deadline-extended',
     publishedAt: '2026-10-25',
     category: 'Registration',
+    featured: true,
     href: audienceRegistrationUrl,
     external: true,
     copy: {
@@ -44,6 +63,7 @@ export const siteUpdates = [
     id: 'alumni-added-to-audience-eligibility',
     publishedAt: '2026-10-24',
     category: 'Registration',
+    featured: true,
     href: audienceRegistrationUrl,
     external: true,
     copy: {
@@ -63,6 +83,7 @@ export const siteUpdates = [
     id: 'audience-eligibility-expanded',
     publishedAt: '2026-10-18',
     category: 'Registration',
+    featured: true,
     href: audienceRegistrationUrl,
     external: true,
     copy: {

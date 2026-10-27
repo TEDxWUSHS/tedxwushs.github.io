@@ -1,0 +1,1700 @@
+{
+  "schema": "openai.presentation.layout/v5",
+  "unit": "px",
+  "slide": {
+    "id": "sl/y90nupkv",
+    "index": 0,
+    "layout": {
+      "id": "ly/14ra9krq",
+      "name": "Blank"
+    },
+    "masterLayoutId": "ly/atofqts7",
+    "masterLayoutName": "Master",
+    "backgroundColor": "rgba(255,255,255,1)",
+    "position": {
+      "left": 0,
+      "top": 0,
+      "width": 794,
+      "height": 1123
+    }
+  },
+  "inheritedLayers": [
+    {
+      "scope": "layout",
+      "id": "ly/14ra9krq",
+      "name": "Blank",
+      "type": "blank",
+      "parentLayoutId": "ly/atofqts7",
+      "elements": []
+    },
+    {
+      "scope": "master",
+      "id": "ly/atofqts7",
+      "name": "Master",
+      "type": "master",
+      "elements": []
+    }
+  ],
+  "elements": [
+    {
+      "order": 1,
+      "kind": "image",
+      "scope": "slide",
+      "id": "im/32lkna14",
+      "editable": true,
+      "name": "図 42",
+      "position": {
+        "left": 6.1,
+        "top": 535.4,
+        "width": 720.44,
+        "height": 336.6
+      },
+      "contentType": "image/jpeg",
+      "crop": {
+        "left": 0,
+        "top": 0.4412,
+        "right": 0,
+        "bottom": 0.22835
+      },
+      "asset": {
+        "contentType": "image/jpeg",
+        "byteLength": 189199
+      },
+      "fillImage": {
+        "contentType": "image/jpeg",
+        "byteLength": 189199
+      }
+    },
+    {
+      "order": 2,
+      "kind": "image",
+      "scope": "slide",
+      "id": "im/s7a1obih",
+      "editable": true,
+      "name": "図 38",
+      "position": {
+        "left": -1.64,
+        "top": -233.51,
+        "width": 795.64,
+        "height": 594.34
+      },
+      "contentType": "image/jpeg",
+      "crop": {
+        "left": 0,
+        "top": 0,
+        "right": 0,
+        "bottom": 0.004
+      },
+      "asset": {
+        "contentType": "image/jpeg",
+        "byteLength": 809719
+      },
+      "fillImage": {
+        "contentType": "image/jpeg",
+        "byteLength": 809719
+      }
+    },
+    {
+      "order": 3,
+      "kind": "shape",
+      "scope": "slide",
+      "id": "sh/zadcv2p8",
+      "editable": true,
+      "name": "八角形 21",
+      "position": {
+        "left": 33.98,
+        "top": 928.06,
+        "width": 294,
+        "height": 158.86
+      },
+      "geometry": "octagon",
+      "lineWidth": 0
+    },
+    {
+      "order": 4,
+      "kind": "textbox",
+      "scope": "slide",
+      "id": "sh/k3yl0zql",
+      "editable": true,
+      "name": "Ideas change",
+      "position": {
+        "left": 52,
+        "top": 68,
+        "width": 515,
+        "height": 66
+      },
+      "geometry": "rect",
+      "lineWidth": 0,
+      "text": "Ideas change",
+      "style": {
+        "fontSize": 52,
+        "typeface": "Arial Black",
+        "color": "#242124",
+        "bold": true,
+        "italic": false,
+        "alignment": "left",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "Ideas change",
+          "lineSpacingPercent": 95000,
+          "style": {
+            "fontSize": 52,
+            "typeface": "Arial Black",
+            "color": "#242124",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "Ideas change",
+              "fontSize": 52,
+              "typeface": "Arial Black",
+              "color": "#242124",
+              "bold": true,
+              "wrap": "square",
+              "autoFit": "shrinkText",
+              "insets": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              }
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 5,
+      "kind": "textbox",
+      "scope": "slide",
+      "id": "sh/7qp4be9c",
+      "editable": true,
+      "name": "everything",
+      "position": {
+        "left": 92.98,
+        "top": 132.76,
+        "width": 470,
+        "height": 72
+      },
+      "geometry": "rect",
+      "lineWidth": 0,
+      "text": "everything.",
+      "style": {
+        "fontSize": 58,
+        "typeface": "Arial Black",
+        "color": "#E62B34",
+        "bold": true,
+        "italic": false,
+        "alignment": "left",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "everything.",
+          "lineSpacingPercent": 95000,
+          "style": {
+            "fontSize": 58,
+            "typeface": "Arial Black",
+            "color": "#E62B34",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "everything.",
+              "fontSize": 58,
+              "typeface": "Arial Black",
+              "color": "#E62B34",
+              "bold": true,
+              "wrap": "square",
+              "autoFit": "shrinkText",
+              "insets": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              }
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 6,
+      "kind": "textbox",
+      "scope": "slide",
+      "id": "sh/65g3298r",
+      "editable": true,
+      "name": "正方形/長方形 4",
+      "position": {
+        "left": 702.6,
+        "top": 80.33,
+        "width": 32,
+        "height": 123.67
+      },
+      "geometry": "rect",
+      "fillColor": "#FFFFFF",
+      "lineWidth": 0,
+      "text": "ア\nイ\nデ\nア\nに\nは\n",
+      "style": {
+        "fontSize": 20,
+        "typeface": "Noto Sans JP",
+        "color": "#242124",
+        "bold": true,
+        "italic": false,
+        "alignment": "center",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "insets": {
+          "top": 7.56,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "ア",
+          "lineSpacingPercent": 78000,
+          "style": {
+            "fontSize": 20,
+            "typeface": "Noto Sans JP",
+            "color": "#242124",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "ア",
+              "fontSize": 20,
+              "typeface": "Noto Sans JP",
+              "color": "#242124",
+              "bold": true,
+              "alignment": "center",
+              "wrap": "square",
+              "autoFit": "shrinkText",
+              "insets": {
+                "top": 7.56,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              }
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "イ",
+          "lineSpacingPercent": 78000,
+          "style": {
+            "fontSize": 20,
+            "typeface": "Noto Sans JP",
+            "color": "#242124",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "イ",
+              "fontSize": 20,
+              "typeface": "Noto Sans JP",
+              "color": "#242124",
+              "bold": true,
+              "alignment": "center",
+              "wrap": "square",
+              "autoFit": "shrinkText",
+              "insets": {
+                "top": 7.56,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              }
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 3,
+          "text": "デ",
+          "lineSpacingPercent": 78000,
+          "style": {
+            "fontSize": 20,
+            "typeface": "Noto Sans JP",
+            "color": "#242124",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "デ",
+              "fontSize": 20,
+              "typeface": "Noto Sans JP",
+              "color": "#242124",
+              "bold": true,
+              "alignment": "center",
+              "wrap": "square",
+              "autoFit": "shrinkText",
+              "insets": {
+                "top": 7.56,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              }
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 4,
+          "text": "ア",
+          "lineSpacingPercent": 78000,
+          "style": {
+            "fontSize": 20,
+            "typeface": "Noto Sans JP",
+            "color": "#242124",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "ア",
+              "fontSize": 20,
+              "typeface": "Noto Sans JP",
+              "color": "#242124",
+              "bold": true,
+              "alignment": "center",
+              "wrap": "square",
+              "autoFit": "shrinkText",
+              "insets": {
+                "top": 7.56,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              }
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 5,
+          "text": "に",
+          "lineSpacingPercent": 78000,
+          "style": {
+            "fontSize": 20,
+            "typeface": "Noto Sans JP",
+            "color": "#242124",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "に",
+              "fontSize": 20,
+              "typeface": "Noto Sans JP",
+              "color": "#242124",
+              "bold": true,
+              "alignment": "center",
+              "wrap": "square",
+              "autoFit": "shrinkText",
+              "insets": {
+                "top": 7.56,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              }
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 6,
+          "text": "は",
+          "lineSpacingPercent": 78000,
+          "style": {
+            "fontSize": 20,
+            "typeface": "Noto Sans JP",
+            "color": "#242124",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "は",
+              "fontSize": 20,
+              "typeface": "Noto Sans JP",
+              "color": "#242124",
+              "bold": true,
+              "alignment": "center",
+              "wrap": "square",
+              "autoFit": "shrinkText",
+              "insets": {
+                "top": 7.56,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              }
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 7,
+      "kind": "textbox",
+      "scope": "slide",
+      "id": "sh/ts7md4r2",
+      "editable": true,
+      "name": "正方形/長方形 5",
+      "position": {
+        "left": 657.6,
+        "top": 125.2,
+        "width": 33.4,
+        "height": 211.3
+      },
+      "geometry": "rect",
+      "fillColor": "#FFFFFF",
+      "lineWidth": 0,
+      "text": "世界\nを\n変\nえ\nる\n力\nが\nあ\nる\n",
+      "style": {
+        "fontSize": 20,
+        "typeface": "Noto Sans JP",
+        "color": "#242124",
+        "bold": true,
+        "italic": false,
+        "alignment": "center",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "insets": {
+          "top": 11.34,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "世界",
+          "lineSpacingPercent": 78000,
+          "style": {
+            "fontSize": 20,
+            "typeface": "Noto Sans JP",
+            "color": "#242124",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "世界",
+              "fontSize": 20,
+              "typeface": "Noto Sans JP",
+              "color": "#242124",
+              "bold": true,
+              "alignment": "center",
+              "wrap": "square",
+              "autoFit": "shrinkText",
+              "insets": {
+                "top": 11.34,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              }
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "を",
+          "lineSpacingPercent": 78000,
+          "style": {
+            "fontSize": 20,
+            "typeface": "Noto Sans JP",
+            "color": "#242124",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "を",
+              "fontSize": 20,
+              "typeface": "Noto Sans JP",
+              "color": "#242124",
+              "bold": true,
+              "alignment": "center",
+              "wrap": "square",
+              "autoFit": "shrinkText",
+              "insets": {
+                "top": 11.34,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              }
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 3,
+          "text": "変",
+          "lineSpacingPercent": 78000,
+          "style": {
+            "fontSize": 20,
+            "typeface": "Noto Sans JP",
+            "color": "#242124",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "変",
+              "fontSize": 20,
+              "typeface": "Noto Sans JP",
+              "color": "#242124",
+              "bold": true,
+              "alignment": "center",
+              "wrap": "square",
+              "autoFit": "shrinkText",
+              "insets": {
+                "top": 11.34,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              }
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 4,
+          "text": "え",
+          "lineSpacingPercent": 78000,
+          "style": {
+            "fontSize": 20,
+            "typeface": "Noto Sans JP",
+            "color": "#242124",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "え",
+              "fontSize": 20,
+              "typeface": "Noto Sans JP",
+              "color": "#242124",
+              "bold": true,
+              "alignment": "center",
+              "wrap": "square",
+              "autoFit": "shrinkText",
+              "insets": {
+                "top": 11.34,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              }
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 5,
+          "text": "る",
+          "lineSpacingPercent": 78000,
+          "style": {
+            "fontSize": 20,
+            "typeface": "Noto Sans JP",
+            "color": "#242124",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "る",
+              "fontSize": 20,
+              "typeface": "Noto Sans JP",
+              "color": "#242124",
+              "bold": true,
+              "alignment": "center",
+              "wrap": "square",
+              "autoFit": "shrinkText",
+              "insets": {
+                "top": 11.34,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              }
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 6,
+          "text": "力",
+          "lineSpacingPercent": 78000,
+          "style": {
+            "fontSize": 20,
+            "typeface": "Noto Sans JP",
+            "color": "#242124",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "力",
+              "fontSize": 20,
+              "typeface": "Noto Sans JP",
+              "color": "#242124",
+              "bold": true,
+              "alignment": "center",
+              "wrap": "square",
+              "autoFit": "shrinkText",
+              "insets": {
+                "top": 11.34,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              }
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 7,
+          "text": "が",
+          "lineSpacingPercent": 78000,
+          "style": {
+            "fontSize": 20,
+            "typeface": "Noto Sans JP",
+            "color": "#242124",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "が",
+              "fontSize": 20,
+              "typeface": "Noto Sans JP",
+              "color": "#242124",
+              "bold": true,
+              "alignment": "center",
+              "wrap": "square",
+              "autoFit": "shrinkText",
+              "insets": {
+                "top": 11.34,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              }
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 8,
+          "text": "あ",
+          "lineSpacingPercent": 78000,
+          "style": {
+            "fontSize": 20,
+            "typeface": "Noto Sans JP",
+            "color": "#242124",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "あ",
+              "fontSize": 20,
+              "typeface": "Noto Sans JP",
+              "color": "#242124",
+              "bold": true,
+              "alignment": "center",
+              "wrap": "square",
+              "autoFit": "shrinkText",
+              "insets": {
+                "top": 11.34,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              }
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 9,
+          "text": "る",
+          "lineSpacingPercent": 78000,
+          "style": {
+            "fontSize": 20,
+            "typeface": "Noto Sans JP",
+            "color": "#242124",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "る",
+              "fontSize": 20,
+              "typeface": "Noto Sans JP",
+              "color": "#242124",
+              "bold": true,
+              "alignment": "center",
+              "wrap": "square",
+              "autoFit": "shrinkText",
+              "insets": {
+                "top": 11.34,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              }
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 8,
+      "kind": "textbox",
+      "scope": "slide",
+      "id": "sh/sryl4zqx",
+      "editable": true,
+      "name": "正方形/長方形 6",
+      "position": {
+        "left": 61.6,
+        "top": 268,
+        "width": 470,
+        "height": 38
+      },
+      "geometry": "rect",
+      "lineWidth": 0,
+      "text": "TEDxWUSHS Youth とは",
+      "style": {
+        "fontSize": 28,
+        "typeface": "Arial Black",
+        "color": "#E62B34",
+        "bold": true,
+        "italic": false,
+        "alignment": "left",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "TEDxWUSHS Youth とは",
+          "style": {
+            "fontSize": 28,
+            "typeface": "Noto Sans JP",
+            "color": "#E62B34",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "TEDxWUSHS",
+              "fontSize": 28,
+              "typeface": "Arial Black",
+              "color": "#E62B34",
+              "bold": true,
+              "wrap": "square",
+              "autoFit": "shrinkText",
+              "insets": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              }
+            },
+            {
+              "index": 2,
+              "text": " Youth ",
+              "fontSize": 28,
+              "typeface": "Arial Black",
+              "color": "#E62B34",
+              "bold": true,
+              "wrap": "square",
+              "autoFit": "shrinkText",
+              "insets": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              }
+            },
+            {
+              "index": 3,
+              "text": "とは",
+              "fontSize": 28,
+              "typeface": "Arial Black",
+              "color": "#E62B34",
+              "bold": true,
+              "wrap": "square",
+              "autoFit": "shrinkText",
+              "insets": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              }
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 9,
+      "kind": "textbox",
+      "scope": "slide",
+      "id": "sh/fu94fe98",
+      "editable": true,
+      "name": "正方形/長方形 7",
+      "position": {
+        "left": 52,
+        "top": 311,
+        "width": 594,
+        "height": 224
+      },
+      "geometry": "rect",
+      "lineWidth": 0,
+      "text": "TEDx WUSHS Youth は、早稲田大学高等学院の生徒が主体となり、独立して企画・運営するTEDxイベントです。学院入学前、在学中、あるいは卒業後にユニークな経験を積んできたスピーカーを招き、その経験から得られた知見やアイデアを共有していただきます。本イベントは、主に現役の学院生をオーディエンスとして、普段の学校生活では得られないような新しい発見や視点に触れる機会、交流の場を提供することを目指しています。\nまた、「WUSHS」はWaseda University Senior High Schoolの略称であり、早稲田大学の附属高校としてのコミュニティを表しています。",
+      "style": {
+        "fontSize": 14.4,
+        "typeface": "Noto Sans JP",
+        "color": "#2F2B2D",
+        "bold": true,
+        "italic": false,
+        "alignment": "left",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "TEDx WUSHS Youth は、早稲田大学高等学院の生徒が主体となり、独立して企画・運営するTEDxイベントです。学院入学前、在学中、あるいは卒業後にユニークな経験を積んできたスピーカーを招き、その経験から得られた知見やアイデアを共有していただきます。本イベントは、主に現役の学院生をオーディエンスとして、普段の学校生活では得られないような新しい発見や視点に触れる機会、交流の場を提供することを目指しています。",
+          "runs": [
+            {
+              "index": 1,
+              "text": "TEDx ",
+              "fontSize": 14.4,
+              "typeface": "Noto Sans JP",
+              "color": "#2F2B2D",
+              "bold": true,
+              "wrap": "square",
+              "autoFit": "shrinkText",
+              "insets": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              }
+            },
+            {
+              "index": 2,
+              "text": "WUSHS",
+              "fontSize": 14.4,
+              "typeface": "Noto Sans JP",
+              "color": "#2F2B2D",
+              "bold": true,
+              "wrap": "square",
+              "autoFit": "shrinkText",
+              "insets": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              }
+            },
+            {
+              "index": 3,
+              "text": " Youth ",
+              "fontSize": 14.4,
+              "typeface": "Noto Sans JP",
+              "color": "#2F2B2D",
+              "bold": true,
+              "wrap": "square",
+              "autoFit": "shrinkText",
+              "insets": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              }
+            },
+            {
+              "index": 4,
+              "text": "は、早稲田大学高等学院の生徒が主体となり、独立して企画・運営する",
+              "fontSize": 14.4,
+              "typeface": "Noto Sans JP",
+              "color": "#2F2B2D",
+              "bold": true,
+              "wrap": "square",
+              "autoFit": "shrinkText",
+              "insets": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              }
+            },
+            {
+              "index": 5,
+              "text": "TEDx",
+              "fontSize": 14.4,
+              "typeface": "Noto Sans JP",
+              "color": "#2F2B2D",
+              "bold": true,
+              "wrap": "square",
+              "autoFit": "shrinkText",
+              "insets": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              }
+            },
+            {
+              "index": 6,
+              "text": "イベントです。学院入学前、在学中、あるいは卒業後にユニークな経験を積んできたスピーカーを招き、その経験から得られた知見やアイデアを共有していただきます。本イベントは、主に現役の学院生をオーディエンスとして、普段の学校生活では得られないような新しい発見や視点に触れる機会、交流の場を提供することを目指しています。",
+              "fontSize": 14.4,
+              "typeface": "Noto Sans JP",
+              "color": "#2F2B2D",
+              "bold": true,
+              "wrap": "square",
+              "autoFit": "shrinkText",
+              "insets": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              }
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        },
+        {
+          "index": 2,
+          "text": "また、「WUSHS」はWaseda University Senior High Schoolの略称であり、早稲田大学の附属高校としてのコミュニティを表しています。",
+          "runs": [
+            {
+              "index": 1,
+              "text": "また、「",
+              "fontSize": 14.4,
+              "typeface": "Noto Sans JP",
+              "color": "#2F2B2D",
+              "bold": true,
+              "wrap": "square",
+              "autoFit": "shrinkText",
+              "insets": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              }
+            },
+            {
+              "index": 2,
+              "text": "WUSHS",
+              "fontSize": 14.4,
+              "typeface": "Noto Sans JP",
+              "color": "#2F2B2D",
+              "bold": true,
+              "wrap": "square",
+              "autoFit": "shrinkText",
+              "insets": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              }
+            },
+            {
+              "index": 3,
+              "text": "」は",
+              "fontSize": 14.4,
+              "typeface": "Noto Sans JP",
+              "color": "#2F2B2D",
+              "bold": true,
+              "wrap": "square",
+              "autoFit": "shrinkText",
+              "insets": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              }
+            },
+            {
+              "index": 4,
+              "text": "Waseda University Senior High School",
+              "fontSize": 14.4,
+              "typeface": "Noto Sans JP",
+              "color": "#2F2B2D",
+              "bold": true,
+              "wrap": "square",
+              "autoFit": "shrinkText",
+              "insets": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              }
+            },
+            {
+              "index": 5,
+              "text": "の略称であり、早稲田大学の附属高校としてのコミュニティを表しています。",
+              "fontSize": 14.4,
+              "typeface": "Noto Sans JP",
+              "color": "#2F2B2D",
+              "bold": true,
+              "wrap": "square",
+              "autoFit": "shrinkText",
+              "insets": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              }
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 10,
+      "kind": "textbox",
+      "scope": "slide",
+      "id": "sh/hofulsf2",
+      "editable": true,
+      "name": "正方形/長方形 10",
+      "position": {
+        "left": 61.6,
+        "top": 441.78,
+        "width": 369,
+        "height": 35
+      },
+      "geometry": "rect",
+      "lineWidth": 0,
+      "text": "TEDxWUSHS Youth 2026",
+      "style": {
+        "fontSize": 26.67,
+        "typeface": "Arial Black",
+        "color": "#E62B34",
+        "bold": true,
+        "italic": false,
+        "alignment": "left",
+        "wrap": "square",
+        "autoFit": "none",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "TEDxWUSHS Youth 2026",
+          "style": {
+            "fontSize": 21,
+            "typeface": "Noto Sans JP",
+            "color": "#E62B34",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "TEDxWUSHS",
+              "fontSize": 26.67,
+              "typeface": "Arial Black",
+              "color": "#E62B34",
+              "bold": true,
+              "wrap": "square",
+              "autoFit": "none",
+              "insets": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              }
+            },
+            {
+              "index": 2,
+              "text": " Youth 2026",
+              "fontSize": 26.67,
+              "typeface": "Arial Black",
+              "color": "#E62B34",
+              "bold": true,
+              "wrap": "square",
+              "autoFit": "none",
+              "insets": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              }
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 11,
+      "kind": "textbox",
+      "scope": "slide",
+      "id": "sh/vmdcj2xw",
+      "editable": true,
+      "name": "正方形/長方形 12",
+      "position": {
+        "left": 52,
+        "top": 479.34,
+        "width": 701.6,
+        "height": 65.29
+      },
+      "geometry": "rect",
+      "lineWidth": 0,
+      "text": "2026年度は、さまざまな分野で活躍する高等学院の在校生・卒業生（OB）・教員をスピーカーとして迎え、2026年10月31日（土） に開催しています。各スピーカーのトークについては、後日TEDのYouTube公式上でアップロードされます。その連絡や当日の様子等を含めてSNSで発信していきます。",
+      "style": {
+        "fontSize": 14,
+        "typeface": "Noto Sans JP",
+        "color": "#242124",
+        "bold": true,
+        "italic": false,
+        "alignment": "left",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "2026年度は、さまざまな分野で活躍する高等学院の在校生・卒業生（OB）・教員をスピーカーとして迎え、2026年10月31日（土） に開催しています。各スピーカーのトークについては、後日TEDのYouTube公式上でアップロードされます。その連絡や当日の様子等を含めてSNSで発信していきます。",
+          "lineSpacingPercent": 122000,
+          "style": {
+            "fontSize": 11.2,
+            "typeface": "Noto Sans JP",
+            "color": "#242124",
+            "bold": true
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "2026年度は、さまざまな分野で活躍する高等学院の在校生・卒業生（OB）・教員をスピーカーとして迎え、2026年10月31日（土） に開催し",
+              "fontSize": 14,
+              "typeface": "Noto Sans JP",
+              "color": "#242124",
+              "bold": true,
+              "wrap": "square",
+              "autoFit": "shrinkText",
+              "insets": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              }
+            },
+            {
+              "index": 2,
+              "text": "ています。各スピーカーのトークについては、後日",
+              "fontSize": 14,
+              "typeface": "Noto Sans JP",
+              "color": "#242124",
+              "bold": true,
+              "wrap": "square",
+              "autoFit": "shrinkText",
+              "insets": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              }
+            },
+            {
+              "index": 3,
+              "text": "TED",
+              "fontSize": 14,
+              "typeface": "Noto Sans JP",
+              "color": "#242124",
+              "bold": true,
+              "wrap": "square",
+              "autoFit": "shrinkText",
+              "insets": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              }
+            },
+            {
+              "index": 4,
+              "text": "の",
+              "fontSize": 14,
+              "typeface": "Noto Sans JP",
+              "color": "#242124",
+              "bold": true,
+              "wrap": "square",
+              "autoFit": "shrinkText",
+              "insets": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              }
+            },
+            {
+              "index": 5,
+              "text": "YouTube",
+              "fontSize": 14,
+              "typeface": "Noto Sans JP",
+              "color": "#242124",
+              "bold": true,
+              "wrap": "square",
+              "autoFit": "shrinkText",
+              "insets": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              }
+            },
+            {
+              "index": 6,
+              "text": "公式上でアップロードされます。その連絡や当日の様子等を含めて",
+              "fontSize": 14,
+              "typeface": "Noto Sans JP",
+              "color": "#242124",
+              "bold": true,
+              "wrap": "square",
+              "autoFit": "shrinkText",
+              "insets": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              }
+            },
+            {
+              "index": 7,
+              "text": "SNS",
+              "fontSize": 14,
+              "typeface": "Noto Sans JP",
+              "color": "#242124",
+              "bold": true,
+              "wrap": "square",
+              "autoFit": "shrinkText",
+              "insets": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              }
+            },
+            {
+              "index": 8,
+              "text": "で発信していきます。",
+              "fontSize": 14,
+              "typeface": "Noto Sans JP",
+              "color": "#242124",
+              "bold": true,
+              "wrap": "square",
+              "autoFit": "shrinkText",
+              "insets": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              }
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 12,
+      "kind": "textbox",
+      "scope": "slide",
+      "id": "sh/e94v2hon",
+      "editable": true,
+      "name": "正方形/長方形 22",
+      "position": {
+        "left": 61.6,
+        "top": 914.06,
+        "width": 198,
+        "height": 28
+      },
+      "geometry": "rect",
+      "lineWidth": 0,
+      "text": "ブースについて",
+      "style": {
+        "fontSize": 18,
+        "typeface": "Noto Sans JP",
+        "color": "#E62B34",
+        "bold": true,
+        "italic": false,
+        "alignment": "center",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "ブースについて",
+          "style": {
+            "fontSize": 18,
+            "typeface": "Noto Sans JP",
+            "color": "#E62B34",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "ブースについて",
+              "fontSize": 18,
+              "typeface": "Noto Sans JP",
+              "color": "#E62B34",
+              "bold": true,
+              "alignment": "center",
+              "wrap": "square",
+              "autoFit": "shrinkText",
+              "insets": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              }
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    },
+    {
+      "order": 13,
+      "kind": "image",
+      "scope": "slide",
+      "id": "im/zidgfixg",
+      "editable": true,
+      "name": "図 24",
+      "position": {
+        "left": -4.35,
+        "top": 1094.1,
+        "width": 198.91,
+        "height": 31.46
+      },
+      "contentType": "image/png",
+      "asset": {
+        "contentType": "image/png",
+        "byteLength": 70203
+      },
+      "fillImage": {
+        "contentType": "image/png",
+        "byteLength": 70203
+      }
+    },
+    {
+      "order": 14,
+      "kind": "textbox",
+      "scope": "slide",
+      "id": "sh/h072l4jy",
+      "editable": true,
+      "name": "正方形/長方形 32",
+      "position": {
+        "left": 21.6,
+        "top": 962.13,
+        "width": 242,
+        "height": 57
+      },
+      "geometry": "rect",
+      "lineWidth": 0,
+      "text": "本展示&配信は早稲田大学高等学院で10/31に開催されているTEDxWUSHS Youthに関連するものです。",
+      "style": {
+        "fontSize": 13.95,
+        "typeface": "Noto Sans JP",
+        "color": "#242124",
+        "bold": true,
+        "italic": false,
+        "alignment": "center",
+        "wrap": "square",
+        "autoFit": "shrinkText",
+        "autoFitScale": 0.93,
+        "insets": {
+          "top": 0,
+          "right": 0,
+          "bottom": 0,
+          "left": 0
+        }
+      },
+      "paragraphs": [
+        {
+          "index": 1,
+          "text": "本展示&配信は早稲田大学高等学院で10/31に開催されているTEDxWUSHS Youthに関連するものです。",
+          "lineSpacingPercent": 120000,
+          "style": {
+            "fontSize": 15,
+            "typeface": "Noto Sans JP",
+            "color": "#242124",
+            "bold": true,
+            "alignment": "center"
+          },
+          "runs": [
+            {
+              "index": 1,
+              "text": "本展示",
+              "fontSize": 15,
+              "typeface": "Noto Sans JP",
+              "color": "#242124",
+              "bold": true,
+              "alignment": "center",
+              "wrap": "square",
+              "autoFit": "shrinkText",
+              "autoFitScale": 0.93,
+              "insets": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              }
+            },
+            {
+              "index": 2,
+              "text": "&",
+              "fontSize": 15,
+              "typeface": "Noto Sans JP",
+              "color": "#242124",
+              "bold": true,
+              "alignment": "center",
+              "wrap": "square",
+              "autoFit": "shrinkText",
+              "autoFitScale": 0.93,
+              "insets": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              }
+            },
+            {
+              "index": 3,
+              "text": "配信は早稲田大学高等学院",
+              "fontSize": 15,
+              "typeface": "Noto Sans JP",
+              "color": "#242124",
+              "bold": true,
+              "alignment": "center",
+              "wrap": "square",
+              "autoFit": "shrinkText",
+              "autoFitScale": 0.93,
+              "insets": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              }
+            },
+            {
+              "index": 4,
+              "text": "で",
+              "fontSize": 15,
+              "typeface": "Noto Sans JP",
+              "color": "#242124",
+              "bold": true,
+              "alignment": "center",
+              "wrap": "square",
+              "autoFit": "shrinkText",
+              "autoFitScale": 0.93,
+              "insets": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              }
+            },
+            {
+              "index": 5,
+              "text": "10/31",
+              "fontSize": 15,
+              "typeface": "Noto Sans JP",
+              "color": "#242124",
+              "bold": true,
+              "alignment": "center",
+              "wrap": "square",
+              "autoFit": "shrinkText",
+              "autoFitScale": 0.93,
+              "insets": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              }
+            },
+            {
+              "index": 6,
+              "text": "に開催されている",
+              "fontSize": 15,
+              "typeface": "Noto Sans JP",
+              "color": "#242124",
+              "bold": true,
+              "alignment": "center",
+              "wrap": "square",
+              "autoFit": "shrinkText",
+              "autoFitScale": 0.93,
+              "insets": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              }
+            },
+            {
+              "index": 7,
+              "text": "TEDxWUSHS",
+              "fontSize": 15,
+              "typeface": "Noto Sans JP",
+              "color": "#242124",
+              "bold": true,
+              "alignment": "center",
+              "wrap": "square",
+              "autoFit": "shrinkText",
+              "autoFitScale": 0.93,
+              "insets": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              }
+            },
+            {
+              "index": 8,
+              "text": " Youth",
+              "fontSize": 15,
+              "typeface": "Noto Sans JP",
+              "color": "#242124",
+              "bold": true,
+              "alignment": "center",
+              "wrap": "square",
+              "autoFit": "shrinkText",
+              "autoFitScale": 0.93,
+              "insets": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              }
+            },
+            {
+              "index": 9,
+              "text": "に関連するものです。",
+              "fontSize": 15,
+              "typeface": "Noto Sans JP",
+              "color": "#242124",
+              "bold": true,
+              "alignment": "center",
+              "wrap": "square",
+              "autoFit": "shrinkText",
+              "autoFitScale": 0.93,
+              "insets": {
+                "top": 0,
+                "right": 0,
+                "bottom": 0,
+                "left": 0
+              }
+            }
+          ],
+          "bulletCharacter": "",
+          "marginLeft": 0
+        }
+      ]
+    }
+  ]
+}

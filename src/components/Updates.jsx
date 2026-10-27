@@ -12,6 +12,7 @@ const sectionCopy = {
     titleAccent: 'Updates',
     description: 'TEDxWUSHS Youthの開催準備や登壇者に関する最新情報をお知らせします。',
     listLabel: 'TEDxWUSHS Youthの更新情報',
+    featured: 'Featured',
     showMore: 'もっと見る',
     showLess: '表示を戻す',
   },
@@ -21,24 +22,32 @@ const sectionCopy = {
     titleAccent: 'Updates',
     description: 'The latest announcements about TEDxWUSHS Youth, our speakers, and event preparations.',
     listLabel: 'TEDxWUSHS Youth updates',
+    featured: 'Featured',
     showMore: 'Show more',
     showLess: 'Show fewer',
   },
 };
 
 const formatDate = (date) => date.replaceAll('-', '.');
-const INITIAL_UPDATE_COUNT = 4;
+const INITIAL_REGULAR_UPDATE_COUNT = 1;
 
 const Updates = () => {
   const [isExpanded, setIsExpanded] = useState(false);
   const { language } = useLanguage();
   const shouldReduceMotion = useReducedMotion();
   const copy = sectionCopy[language] ?? sectionCopy.ja;
-  const updates = [...siteUpdates].sort((first, second) => (
+  const sortedUpdates = [...siteUpdates].sort((first, second) => (
     second.publishedAt.localeCompare(first.publishedAt)
   ));
-  const hasAdditionalUpdates = updates.length > INITIAL_UPDATE_COUNT;
-  const visibleUpdates = isExpanded ? updates : updates.slice(0, INITIAL_UPDATE_COUNT);
+  const featuredUpdates = sortedUpdates.filter((update) => update.featured);
+  const regularUpdates = sortedUpdates.filter((update) => !update.featured);
+  const updates = [...featuredUpdates, ...regularUpdates];
+  const collapsedUpdates = [
+    ...featuredUpdates,
+    ...regularUpdates.slice(0, INITIAL_REGULAR_UPDATE_COUNT),
+  ];
+  const hasAdditionalUpdates = regularUpdates.length > INITIAL_REGULAR_UPDATE_COUNT;
+  const visibleUpdates = isExpanded ? updates : collapsedUpdates;
   const ToggleIcon = isExpanded ? ChevronUp : ChevronDown;
 
   return (
@@ -89,7 +98,7 @@ const Updates = () => {
                 }}
               >
                 <UpdateLink
-                  className={`updates-item${update.image ? ' updates-item--with-image' : ''}`}
+                  className={`updates-item${update.featured ? ' updates-item--featured' : ''}${update.image ? ' updates-item--with-image' : ''}`}
                   aria-label={`${itemCopy.action}: ${itemCopy.title}${update.external ? externalLabel : ''}`}
                   {...updateLinkProps}
                 >
@@ -105,6 +114,9 @@ const Updates = () => {
                   )}
                   <div className="updates-item-body">
                     <div className="updates-meta">
+                      {update.featured && (
+                        <span className="updates-featured" lang="en">{copy.featured}</span>
+                      )}
                       <time dateTime={update.publishedAt} lang="en">
                         {formatDate(update.publishedAt)}
                       </time>
@@ -194,6 +206,15 @@ const Updates = () => {
           background: rgba(255, 255, 255, 0.045);
         }
 
+        .updates-item--featured {
+          border-left: 3px solid var(--ted-red);
+          background: rgb(var(--ted-red-rgb) / 0.07);
+        }
+
+        .updates-item--featured:hover {
+          background: rgb(var(--ted-red-rgb) / 0.12);
+        }
+
         .updates-item--with-image {
           grid-template-columns: 8.5rem minmax(0, 1fr) 3rem;
           align-items: start;
@@ -234,6 +255,15 @@ const Updates = () => {
 
         .updates-meta span {
           color: var(--ted-red);
+        }
+
+        .updates-featured {
+          padding: 0.25rem 0.45rem;
+          border: 1px solid rgb(var(--ted-red-rgb) / 0.7);
+          border-radius: 3px;
+          color: var(--ted-white) !important;
+          font-size: 0.75rem;
+          letter-spacing: 0.1em;
         }
 
         .updates-item h3 {
@@ -330,6 +360,10 @@ const Updates = () => {
             grid-template-columns: minmax(0, 1fr) 2.75rem;
             gap: 1rem;
             padding: 1.5rem 0.25rem;
+          }
+
+          .updates-item--featured {
+            padding-left: 0.85rem;
           }
 
           .updates-item--with-image {

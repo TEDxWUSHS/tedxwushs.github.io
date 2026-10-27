@@ -53,7 +53,7 @@ const pageTitles = {
 };
 
 const RouteAccessibility = () => {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
   const { language } = useLanguage();
   const previousPath = useRef(pathname);
 
@@ -74,16 +74,28 @@ const RouteAccessibility = () => {
 
     if (!main) return undefined;
 
-    window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+    if (!hash) {
+      window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+    }
 
-    if (!routeChanged) return undefined;
+    const focusFrame = routeChanged
+      ? window.requestAnimationFrame(() => {
+        main.focus({ preventScroll: true });
+      })
+      : null;
 
-    const focusFrame = window.requestAnimationFrame(() => {
-      main.focus({ preventScroll: true });
+    const hashFrame = window.requestAnimationFrame(() => {
+      if (!hash) return;
+
+      const target = document.getElementById(decodeURIComponent(hash.slice(1)));
+      target?.scrollIntoView({ block: 'start', behavior: 'auto' });
     });
 
-    return () => window.cancelAnimationFrame(focusFrame);
-  }, [pathname]);
+    return () => {
+      if (focusFrame !== null) window.cancelAnimationFrame(focusFrame);
+      window.cancelAnimationFrame(hashFrame);
+    };
+  }, [hash, pathname]);
 
   return null;
 };
