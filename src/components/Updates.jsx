@@ -1,5 +1,6 @@
+import { useState } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
-import { ArrowRight, ExternalLink } from 'lucide-react';
+import { ArrowRight, ChevronDown, ChevronUp, ExternalLink } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../i18n/LanguageContext';
 import { siteUpdates } from '../data/updates';
@@ -11,6 +12,8 @@ const sectionCopy = {
     titleAccent: 'Updates',
     description: 'TEDxWUSHS Youthの開催準備や登壇者に関する最新情報をお知らせします。',
     listLabel: 'TEDxWUSHS Youthの更新情報',
+    showMore: 'もっと見る',
+    showLess: '表示を戻す',
   },
   en: {
     eyebrow: 'Newsroom',
@@ -18,18 +21,25 @@ const sectionCopy = {
     titleAccent: 'Updates',
     description: 'The latest announcements about TEDxWUSHS Youth, our speakers, and event preparations.',
     listLabel: 'TEDxWUSHS Youth updates',
+    showMore: 'Show more',
+    showLess: 'Show fewer',
   },
 };
 
 const formatDate = (date) => date.replaceAll('-', '.');
+const INITIAL_UPDATE_COUNT = 4;
 
 const Updates = () => {
+  const [isExpanded, setIsExpanded] = useState(false);
   const { language } = useLanguage();
   const shouldReduceMotion = useReducedMotion();
   const copy = sectionCopy[language] ?? sectionCopy.ja;
   const updates = [...siteUpdates].sort((first, second) => (
     second.publishedAt.localeCompare(first.publishedAt)
   ));
+  const hasAdditionalUpdates = updates.length > INITIAL_UPDATE_COUNT;
+  const visibleUpdates = isExpanded ? updates : updates.slice(0, INITIAL_UPDATE_COUNT);
+  const ToggleIcon = isExpanded ? ChevronUp : ChevronDown;
 
   return (
     <section className="updates section-padding" aria-labelledby="updates-heading">
@@ -50,8 +60,8 @@ const Updates = () => {
           <p className="updates-description">{copy.description}</p>
         </motion.header>
 
-        <ol className="updates-list" aria-label={copy.listLabel}>
-          {updates.map((update, index) => {
+        <ol id="updates-list" className="updates-list" aria-label={copy.listLabel}>
+          {visibleUpdates.map((update, index) => {
             const itemCopy = update.copy[language] ?? update.copy.ja;
             const imageAlt = update.imageAlt?.[language] ?? update.imageAlt?.ja ?? '';
             const UpdateLink = update.external ? 'a' : Link;
@@ -112,6 +122,21 @@ const Updates = () => {
             );
           })}
         </ol>
+
+        {hasAdditionalUpdates && (
+          <div className="updates-toggle-wrap">
+            <button
+              type="button"
+              className="updates-toggle"
+              aria-expanded={isExpanded}
+              aria-controls="updates-list"
+              onClick={() => setIsExpanded((current) => !current)}
+            >
+              <span>{isExpanded ? copy.showLess : copy.showMore}</span>
+              <ToggleIcon size={20} strokeWidth={2.5} aria-hidden="true" />
+            </button>
+          </div>
+        )}
       </div>
 
       <style>{`
@@ -255,6 +280,41 @@ const Updates = () => {
           background: var(--ted-red);
         }
 
+        .updates-toggle-wrap {
+          display: flex;
+          justify-content: center;
+          padding-top: 2rem;
+        }
+
+        .updates-toggle {
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          gap: 0.65rem;
+          min-width: 12rem;
+          min-height: 48px;
+          padding: 0.8rem 1.1rem;
+          border: 1px solid rgba(255, 255, 255, 0.42);
+          border-radius: 4px;
+          background: transparent;
+          color: var(--ted-white);
+          font: inherit;
+          font-weight: 700;
+          cursor: pointer;
+          user-select: none;
+          transition: border-color 0.25s ease, background-color 0.25s ease;
+        }
+
+        .updates-toggle:hover {
+          border-color: var(--ted-red);
+          background: rgb(var(--ted-red-rgb) / 0.12);
+        }
+
+        .updates-toggle:focus-visible {
+          outline: 3px solid var(--ted-white);
+          outline-offset: 3px;
+        }
+
         @media (max-width: 768px) {
           .updates-header {
             grid-template-columns: 1fr;
@@ -289,10 +349,15 @@ const Updates = () => {
           .updates-action {
             font-size: 1rem;
           }
+
+          .updates-toggle {
+            width: 100%;
+          }
         }
 
         @media (prefers-reduced-motion: reduce) {
-          .updates-arrow {
+          .updates-arrow,
+          .updates-toggle {
             transition: none;
           }
         }
