@@ -1,3 +1,4 @@
+import RecruitmentNotice from './RecruitmentNotice';
 import { motion, useReducedMotion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
@@ -8,17 +9,17 @@ import SpeakerCard from './SpeakerCard';
 const sectionCopy = {
   ja: {
     previewSubtitle: '多様な経験と専門性を持つスピーカーたちが、それぞれのBreakshotから生まれたアイデアを共有します。',
-    fullSubtitle: 'TEDxWUSHS Youth 2026に登壇するスピーカーと、その背景にある経験やアイデアをご紹介します。',
+    fullSubtitle: 'TEDxWUSHS Youth 2026に登壇したスピーカーと、その背景にある経験やアイデアをご紹介します。',
     empty: 'スピーカー情報は近日公開予定です。',
     comingSoonLabel: '追加情報',
-    comingSoonBody: 'スピーカーや講演内容に関する追加情報を、今後このページでお知らせします。',
+    comingSoonBody: 'メインイベント当日の報告は、イベントアーカイブで近日公開予定です。',
   },
   en: {
     previewSubtitle: 'Speakers with diverse experiences and expertise share ideas shaped by their own Breakshots.',
     fullSubtitle: 'Meet the TEDxWUSHS Youth 2026 speakers and discover the experiences and ideas behind their talks.',
     empty: 'Speaker information will be announced soon.',
     comingSoonLabel: 'More to come',
-    comingSoonBody: 'More speaker and talk information will be announced on this page.',
+    comingSoonBody: 'Our main event report is coming soon in Event Archives.',
   },
 };
 
@@ -53,13 +54,14 @@ const Speakers = ({ variant = 'preview' }) => {
             {isFullPage ? 'The 2026 Speaker Lineup' : 'Ideas in Motion'}
           </span>
           <Heading id="speakers-heading" className="speakers-section__title" lang="en">
-            {isFullPage ? 'Our ' : 'Featured '}
+            {isFullPage ? '2026 ' : '2026 Featured '}
             <span>Speakers</span>
           </Heading>
           <p className="speakers-section__subtitle">
             {isFullPage ? copy.fullSubtitle : copy.previewSubtitle}
           </p>
         </motion.header>
+        <RecruitmentNotice />
 
         {publishedSpeakers.length > 0 ? (
           isFullPage ? (

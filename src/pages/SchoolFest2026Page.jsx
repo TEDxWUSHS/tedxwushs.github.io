@@ -89,7 +89,7 @@ const contentByLanguage = {
         '試合中に質問時間を設け、状況に応じて日本語での質問も受け付ける。',
       ],
     },
-    programAction: 'TEDxWUSHS Youth 2026のプログラムを見る',
+    programAction: 'イベントアーカイブに戻る',
     references: {
       eyebrow: 'Sources',
       title: '参考資料',
@@ -187,7 +187,7 @@ const contentByLanguage = {
         'Question time was built into the matches, with Japanese questions accepted when appropriate.',
       ],
     },
-    programAction: 'View the TEDxWUSHS Youth 2026 program',
+    programAction: 'Back to Event Archives',
     references: {
       eyebrow: 'Sources',
       title: 'References',
@@ -477,7 +477,7 @@ const SchoolFest2026Page = () => {
               </section>
             </div>
 
-            <Link className="school-fest-program-link" to="/program">
+            <Link className="school-fest-program-link" to="/archives">
               {copy.programAction}
               <ArrowRight size={20} strokeWidth={2.5} aria-hidden="true" />
             </Link>

@@ -11,7 +11,7 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://www.tedxwushs.com/program</loc>
+    <loc>https://www.tedxwushs.com/archives</loc>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -50,4 +50,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
+  <url><loc>https://www.tedxwushs.com/archives/2026/school-fest</loc><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://www.tedxwushs.com/archives/2026/main-event</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.tedxwushs.com/acknowledgements</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
 </urlset>

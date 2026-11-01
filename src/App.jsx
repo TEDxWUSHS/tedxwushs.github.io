@@ -10,6 +10,7 @@ import JoinUsPage from './pages/JoinUsPage';
 import SpeakerRecruitment from './pages/SpeakerRecruitment';
 import TeamRecruitment from './pages/TeamRecruitment';
 import AudienceRegistration from './pages/AudienceRegistration';
+import EventArchivesPage from './pages/EventArchivesPage';
 import FAQPage from './pages/FAQPage';
 import NotFoundPage from './pages/NotFoundPage';
 import ProgramPage from './pages/EventPage';
@@ -21,10 +22,13 @@ const pageTitles = {
   ja: {
     '/': 'TEDxWUSHS Youth | Ideas change everything',
     '/about': 'TEDxについて | TEDxWUSHS Youth',
-    '/program': 'プログラム | TEDxWUSHS Youth',
+    '/archives': 'イベントアーカイブ | TEDxWUSHS Youth',
+    '/archives/2026/main-event': '2026 メインイベント | TEDxWUSHS Youth',
+    '/archives/2026/school-fest': '2026 学院祭 | TEDxWUSHS Youth',
+    '/program': '2026 メインイベント | TEDxWUSHS Youth',
     '/event': 'プログラム | TEDxWUSHS Youth',
-    '/speakers': 'スピーカー | TEDxWUSHS Youth',
-    '/team': 'チーム | TEDxWUSHS Youth',
+    '/speakers': '2026 スピーカー | TEDxWUSHS Youth',
+    '/team': '2026 チーム | TEDxWUSHS Youth',
     '/organizers': 'チーム | TEDxWUSHS Youth',
     '/join-us': '参加する | TEDxWUSHS Youth',
     '/join-us/speaker': 'スピーカー募集 | TEDxWUSHS Youth',
@@ -37,10 +41,13 @@ const pageTitles = {
   en: {
     '/': 'TEDxWUSHS Youth | Ideas change everything',
     '/about': 'About | TEDxWUSHS Youth',
-    '/program': 'Program | TEDxWUSHS Youth',
+    '/archives': 'Event Archives | TEDxWUSHS Youth',
+    '/archives/2026/main-event': '2026 Main Event | TEDxWUSHS Youth',
+    '/archives/2026/school-fest': '2026 Gakuinsai | TEDxWUSHS Youth',
+    '/program': '2026 Main Event | TEDxWUSHS Youth',
     '/event': 'Program | TEDxWUSHS Youth',
-    '/speakers': 'Speakers | TEDxWUSHS Youth',
-    '/team': 'Team | TEDxWUSHS Youth',
+    '/speakers': '2026 Speakers | TEDxWUSHS Youth',
+    '/team': '2026 Team | TEDxWUSHS Youth',
     '/organizers': 'Team | TEDxWUSHS Youth',
     '/join-us': 'Join Us | TEDxWUSHS Youth',
     '/join-us/speaker': 'Speaker Applications | TEDxWUSHS Youth',
@@ -110,7 +117,10 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<AboutPage />} />
-            <Route path="/program" element={<ProgramPage />} />
+            <Route path="/archives" element={<EventArchivesPage />} />
+            <Route path="/archives/2026/main-event" element={<ProgramPage />} />
+            <Route path="/archives/2026/school-fest" element={<SchoolFest2026Page />} />
+            <Route path="/program" element={<Navigate to="/archives/2026/main-event" replace />} />
             <Route path="/event" element={<Navigate to="/program" replace />} />
             <Route path="/speakers" element={<SpeakersPage />} />
             <Route path="/team" element={<TeamPage />} />
@@ -120,7 +130,7 @@ function App() {
             <Route path="/join-us/team" element={<TeamRecruitment />} />
             <Route path="/join-us/audience" element={<AudienceRegistration />} />
             <Route path="/faq" element={<FAQPage />} />
-            <Route path="/school-fest-2026" element={<SchoolFest2026Page />} />
+            <Route path="/school-fest-2026" element={<Navigate to="/archives/2026/school-fest" replace />} />
             <Route path="/acknowledgements" element={<AcknowledgementsPage />} />
             <Route path="*" element={<NotFoundPage />} />
           </Routes>

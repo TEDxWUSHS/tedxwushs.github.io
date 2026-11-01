@@ -1,3 +1,4 @@
+import RecruitmentNotice from '../components/RecruitmentNotice';
 import { motion, useReducedMotion } from 'framer-motion';
 import { useLanguage } from '../i18n/LanguageContext';
 import { organizers } from '../data/organizers';
@@ -51,6 +52,7 @@ const OrganizersPage = () => {
             </h1>
           </motion.div>
 
+          <RecruitmentNotice />
           <h2 className="visually-hidden">{copy.memberList}</h2>
           <ul className="organizers-grid">
             {organizers.map((organizer, index) => (

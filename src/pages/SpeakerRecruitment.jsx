@@ -1,3 +1,4 @@
+import RecruitmentNotice from '../components/RecruitmentNotice';
 import { Mic, CheckCircle, ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../i18n/LanguageContext';
@@ -16,7 +17,7 @@ const contentByLanguage = {
       'プロフェッショナルなコーチングでプレゼンスキルが向上します。',
       '情熱的な仲間や観客との貴重な出会いがあります。'
     ],
-    closedMessage: 'たくさんのご応募ありがとうございました。今後の募集については、ウェブサイトとSNSでお知らせします。'
+    closedMessage: 'たくさんのご応募ありがとうございました。来年度（2027年）のスピーカー募集は公式SNSで行います。'
   },
   en: {
     steps: [
@@ -31,7 +32,7 @@ const contentByLanguage = {
       'Improve your presentation skills through professional coaching.',
       'Connect with passionate peers and audience members.'
     ],
-    closedMessage: 'Thank you to everyone who applied. Future opportunities will be announced on this website and our social media channels.'
+    closedMessage: 'Thank you to everyone who applied. Recruitment for 2027 speakers will take place on our official social media channels.'
   }
 };
 
@@ -52,6 +53,7 @@ const SpeakerRecruitment = () => {
           <p className="lead-text">{content.lead}</p>
         </header>
 
+        <RecruitmentNotice />
         <section className="detail-section">
           <h2 lang="en">Why speak at <span className="brand-name">TEDxWUSHS Youth</span>?</h2>
           <ul className="benefits-grid">

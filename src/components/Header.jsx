@@ -34,7 +34,7 @@ const Header = () => {
 
   const menuItems = [
     { name: 'Home', href: '/' },
-    { name: 'Program', href: '/program' },
+    { name: 'Event Archives', href: '/archives' },
     { name: 'Speakers', href: '/speakers' },
     { name: 'Team', href: '/team' },
     { name: 'About', href: '/about' },
@@ -117,7 +117,7 @@ const Header = () => {
   }, [isMobileMenuOpen, location.pathname]);
 
   useEffect(() => {
-    const desktopMedia = window.matchMedia('(min-width: 901px)');
+    const desktopMedia = window.matchMedia('(min-width: 1101px)');
 
     const closeMenuAtDesktopWidth = (event) => {
       if (!event.matches || !isMobileMenuOpen) return;
@@ -329,6 +329,7 @@ const Header = () => {
         }
 
         .desktop-nav a {
+          white-space: nowrap;
           font-weight: 600;
           font-size: 0.9rem;
           text-transform: uppercase;
@@ -414,7 +415,7 @@ const Header = () => {
           opacity: 1;
         }
 
-        @media (max-width: 900px) {
+        @media (max-width: 1100px) {
           .desktop-nav {
             display: none;
           }
@@ -450,7 +451,7 @@ const Header = () => {
           }
         }
 
-        @media (min-width: 901px) {
+        @media (min-width: 1101px) {
           .mobile-menu {
             display: none;
           }

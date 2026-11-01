@@ -1,3 +1,4 @@
+import RecruitmentNotice from './RecruitmentNotice';
 import { useEffect, useRef, useState } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
 import { Users, Ticket, ArrowRight } from 'lucide-react';
@@ -8,12 +9,12 @@ const joinCopy = {
   ja: {
     sectionSubtitle: 'TEDxWUSHS Youthへの参加方法と最新情報をご案内します。',
     optionsHeading: '参加方法と最新情報',
-    applicationsUpdate: '2026年開催分のスピーカー募集及び運営チーム募集は終了しました。たくさんのご応募ありがとうございました。オーディエンスの参加申込みは現在受け付けています。',
-    teamDescription: '2026年開催分の運営チーム募集は終了しました。今後の募集はウェブサイトとSNSでお知らせします。',
+    applicationsUpdate: '2026年のイベントは終了しました。ご参加・ご協力ありがとうございました。',
+    teamDescription: '来年度（2027年）の運営チームメンバー募集は公式SNSで行います。',
     teamAction: '募集状況を見る',
-    audienceDescription: '対象は早稲田大学高等学院・高等学院中学部の生徒及びその保護者と、早稲田大学高等学院のOBです。参加申込みは2026年10月29日（木）まで受け付けています。',
-    audienceAction: '対象・申込みを見る',
-    audienceStatus: '受付中',
+    audienceDescription: '2026年のイベントは終了しました。当日の報告は近日公開予定です。',
+    audienceAction: 'イベントの記録を見る',
+    audienceStatus: '開催終了',
     subscribed: <>登録完了しました<br />イベントの最新情報をお届けしますのでお楽しみに。</>,
     newsletter: 'イベントの最新情報や募集のお知らせをメールでお届けします。',
     emailLabel: 'メールアドレス',
@@ -23,12 +24,12 @@ const joinCopy = {
   en: {
     sectionSubtitle: 'Explore ways to take part in TEDxWUSHS Youth and receive the latest event updates.',
     optionsHeading: 'Ways to Participate and Stay Updated',
-    applicationsUpdate: 'Speaker and organizing team applications for the 2026 event are now closed. Thank you to everyone who applied. Audience registration is now open.',
-    teamDescription: 'Recruitment for the 2026 organizing team has closed. Future opportunities will be announced on our website and social media.',
+    applicationsUpdate: 'TEDxWUSHS Youth 2026 — Thank you for joining us. The event has concluded.',
+    teamDescription: '2027 recruitment will take place on our official social media channels.',
     teamAction: 'View Recruitment Status',
-    audienceDescription: 'Audience registration is open through Thursday, October 29, 2026, to Senior High School and Junior High School students, their parents or guardians, and alumni of Waseda University Senior High School.',
-    audienceAction: 'View eligibility and registration',
-    audienceStatus: 'Registration Open',
+    audienceDescription: 'Our 2026 event has concluded. The event report is coming soon.',
+    audienceAction: 'Explore event archives',
+    audienceStatus: 'Event concluded',
     subscribed: <>You are subscribed.<br />We look forward to sharing the latest event updates with you.</>,
     newsletter: 'Receive event updates and future application announcements by email.',
     emailLabel: 'Email address',
@@ -78,10 +79,10 @@ const JoinUs = ({ hideHeader = false }) => {
       color: '#fff'
     },
     {
-      title: 'Register as Audience',
+      title: 'Event Archives',
       icon: <Ticket size={32} aria-hidden="true" focusable="false" />,
       description: copy.audienceDescription,
-      link: '/join-us/audience',
+      link: '/archives',
       action: copy.audienceAction,
       status: copy.audienceStatus,
       statusLanguage: language,
@@ -119,6 +120,7 @@ const JoinUs = ({ hideHeader = false }) => {
           <p>{copy.applicationsUpdate}</p>
         </motion.div>
 
+        <RecruitmentNotice />
         <div className="opportunities-grid">
           {opportunities.map((opt, index) => (
             <motion.div

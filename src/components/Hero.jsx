@@ -2,35 +2,32 @@ import { motion, useReducedMotion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { ArrowUpRight, CalendarDays, Clock3, MapPin, UsersRound } from 'lucide-react';
 import poster from '../assets/poster.png';
-import { audienceRegistrationUrl } from '../data/registration';
 import { useLanguage } from '../i18n/LanguageContext';
 
 const heroCopy = {
   ja: {
     description: '早稲田大学高等学院の生徒が独立して企画・運営するTEDxイベント。アイデアは世界を変える。その可能性を高等学院から。',
-    deadlineLabel: '申込締切を延長しました',
-    deadlineDate: '10月29日（木）まで',
+    deadlineLabel: '2026年のイベントは終了しました',
+    deadlineDate: 'ご参加・ご協力ありがとうございました',
     eventLabel: '開催情報',
     date: '2026年10月31日（土）',
     reception: '開場 13:30',
     venue: '早稲田大学高等学院 講堂',
     audience: '高等学院・中学部の生徒及びその保護者、高等学院OB',
     posterAlt: 'TEDxWUSHS Youth「Ideas change everything.」イベントポスター',
-    programAction: 'イベント詳細',
-    applicationAction: '応募フォーム'
+    programAction: 'イベントアーカイブ',
   },
   en: {
     description: 'TEDxWUSHS Youth is an independently organized TEDx event led by students at Waseda University Senior High School. From our school, we explore the power of ideas to change everything.',
-    deadlineLabel: 'Registration deadline extended',
-    deadlineDate: 'Apply by Thursday, October 29',
+    deadlineLabel: 'Our 2026 event has concluded',
+    deadlineDate: 'Thank you for joining and supporting us',
     eventLabel: 'Program details',
     date: 'Saturday, October 31, 2026',
     reception: 'Doors open 1:30 PM',
     venue: 'Waseda University Senior High School Auditorium',
     audience: 'Senior High School and Junior High School students, their parents or guardians, and alumni',
     posterAlt: 'TEDxWUSHS Youth event poster: Ideas change everything.',
-    programAction: 'Event Details',
-    applicationAction: 'Application Form'
+    programAction: 'Event Archives',
   }
 };
 
@@ -48,19 +45,10 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: shouldReduceMotion ? 0 : 0.8 }}
         >
-          <a
-            className="hero-deadline-notice"
-            href={audienceRegistrationUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label={`${copy.deadlineLabel}: ${copy.deadlineDate}`}
-          >
-            <span className="hero-deadline-copy">
-              <span>{copy.deadlineLabel}</span>
-              <strong>{copy.deadlineDate}</strong>
-            </span>
-            <ArrowUpRight size={20} strokeWidth={2.5} aria-hidden="true" />
-          </a>
+          <Link className="hero-deadline-notice" to="/archives/2026/main-event">
+            <span className="hero-deadline-copy"><span>{copy.deadlineLabel}</span><strong>{copy.deadlineDate}</strong></span>
+            <ArrowUpRight size={20} aria-hidden="true" />
+          </Link>
           <motion.span
             className="hero-tagline"
             lang="en"
@@ -108,15 +96,7 @@ const Hero = () => {
             </div>
           </div>
           <div className="hero-cta">
-            <Link to="/program" className="btn btn-primary">{copy.programAction}</Link>
-            <a
-              href={audienceRegistrationUrl}
-              className="btn btn-outline"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              {copy.applicationAction}
-            </a>
+            <Link to="/archives" className="btn btn-primary">{copy.programAction}</Link>
           </div>
         </motion.div>
 

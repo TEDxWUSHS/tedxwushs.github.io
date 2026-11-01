@@ -21,7 +21,7 @@ const Footer = () => {
           <nav className="footer-links" aria-labelledby="footer-quick-links-heading">
             <h4 id="footer-quick-links-heading">Quick Links</h4>
             <ul>
-              <li><Link to="/program">Program</Link></li>
+              <li><Link to="/archives">Event Archives</Link></li>
               <li><Link to="/speakers">Speakers</Link></li>
               <li><Link to="/team">Team</Link></li>
               <li><Link to="/about">About Us</Link></li>
@@ -60,7 +60,7 @@ const Footer = () => {
               <p className="footer-contact-label">Contact</p>
               <a className="footer-email" href="mailto:tedxwushs@gmail.com">tedxwushs@gmail.com</a>
               <p className="footer-contact-note" lang="ja">
-                イベント参加のお申し込みに関するご質問・お問い合わせ
+                イベントに関するご質問・お問い合わせ
               </p>
             </div>
           </div>

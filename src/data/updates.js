@@ -1,7 +1,7 @@
 import gakuinsaiImage from '../assets/updates/gakuinsai.png';
-import { audienceRegistrationUrl } from './registration';
 
-export const siteUpdates = [
+
+const pastUpdates = [
   {
     id: 'all-speaker-talk-details-published',
     publishedAt: '2026-10-27',
@@ -44,7 +44,7 @@ export const siteUpdates = [
     publishedAt: '2026-10-25',
     category: 'Registration',
     featured: true,
-    href: audienceRegistrationUrl,
+    href: '/join-us/audience',
     external: true,
     copy: {
       ja: {
@@ -64,7 +64,7 @@ export const siteUpdates = [
     publishedAt: '2026-10-24',
     category: 'Registration',
     featured: true,
-    href: audienceRegistrationUrl,
+    href: '/join-us/audience',
     external: true,
     copy: {
       ja: {
@@ -84,7 +84,7 @@ export const siteUpdates = [
     publishedAt: '2026-10-18',
     category: 'Registration',
     featured: true,
-    href: audienceRegistrationUrl,
+    href: '/join-us/audience',
     external: true,
     copy: {
       ja: {
@@ -140,7 +140,7 @@ export const siteUpdates = [
     id: 'audience-registration-open',
     publishedAt: '2026-10-01',
     category: 'Registration',
-    href: audienceRegistrationUrl,
+    href: '/join-us/audience',
     external: true,
     copy: {
       ja: {
@@ -234,4 +234,17 @@ export const siteUpdates = [
       },
     },
   },
+];
+
+
+export const siteUpdates = [
+  {
+    id: 'event-2026-concluded', publishedAt: '2026-11-02', category: 'Event Archives', featured: true,
+    href: '/archives/2026/main-event',
+    copy: {
+      ja: { title: 'TEDxWUSHS Youth 2026は終了しました', summary: 'ご参加・ご協力ありがとうございました。メインイベント当日の報告は近日公開予定です。開催概要と当日のプログラムをアーカイブでご覧いただけます。', action: 'イベントアーカイブを見る' },
+      en: { title: 'TEDxWUSHS Youth 2026 has concluded', summary: 'Thank you for joining and supporting us. Our main event report is coming soon. Event details and the program are available in the archive.', action: 'Explore the event archive' },
+    },
+  },
+  ...pastUpdates.filter(update => update.category !== 'Registration' && update.category !== 'Live'),
 ];

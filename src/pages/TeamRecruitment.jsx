@@ -1,3 +1,4 @@
+import RecruitmentNotice from '../components/RecruitmentNotice';
 import { Users, Code, Mic, Layout, ArrowLeft } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../i18n/LanguageContext';
@@ -16,7 +17,7 @@ const contentByLanguage = {
             '多様な視点を尊重し、チームで最高のパフォーマンスを発揮できる方。',
             '自ら考え、行動し、変化を恐れずに挑戦し続けられる方。'
         ],
-        closedMessage: '次回の募集については、ウェブサイトと公式SNSでお知らせします。'
+        closedMessage: '来年度（2027年）の運営チームメンバー募集は公式SNSで行います。'
     },
     en: {
         departmentDescriptions: [
@@ -31,7 +32,7 @@ const contentByLanguage = {
             'Respects diverse perspectives and brings out the best in the team through collaboration.',
             'Thinks and acts independently, and continues to take on challenges without fearing change.'
         ],
-        closedMessage: 'Future recruitment opportunities will be announced on this website and our official social media channels.'
+        closedMessage: 'Recruitment for the 2027 organizing team will take place on our official social media channels.'
     }
 };
 
@@ -58,6 +59,7 @@ const TeamRecruitment = () => {
                     <h1 lang="en">Join the <span className="highlight-red">Team</span></h1>
                     <p className="lead-text">{content.lead}</p>
                 </header>
+                <RecruitmentNotice />
 
                 <section className="detail-section">
                     <h2 lang="en">Departments</h2>

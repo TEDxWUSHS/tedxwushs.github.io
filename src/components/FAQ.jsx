@@ -10,7 +10,7 @@ const faqsByLanguage = {
     },
     {
       question: '参加対象者を教えてください。',
-      answer: '参加対象者は、早稲田大学高等学院の生徒（学院生）及びその保護者、高等学院中学部の生徒及びその保護者、早稲田大学高等学院のOBです。参加申込みは2026年10月29日（木）まで受け付けています。対象をご確認のうえ、「Join Us」のAudience Registrationページからお申し込みください。'
+      answer: '2026年のイベントは終了し、参加申込みの受付も終了しました。当日の報告はイベントアーカイブで近日公開予定です。'
     },
     {
       question: 'イベントでは何語が使用されますか？',
@@ -22,7 +22,7 @@ const faqsByLanguage = {
     },
     {
       question: 'ボランティアとして参加したいのですが、どうすればいいですか？',
-      answer: '2026年開催分の運営チーム募集は終了しました。今後の募集はウェブサイトの『Join Us』ページと公式SNSでお知らせします。'
+      answer: '2026年開催分の運営チーム募集は終了しました。来年度（2027年）のスピーカー・運営チームメンバー募集は公式SNSで行います。'
     }
   ],
   en: [
@@ -32,7 +32,7 @@ const faqsByLanguage = {
     },
     {
       question: 'Who can attend?',
-      answer: 'The event is open to Senior High School and Junior High School students, their parents or guardians, and alumni of Waseda University Senior High School. Registration is open through Thursday, October 29, 2026. Please confirm your eligibility and apply from the Audience Registration page under Join Us.'
+      answer: 'The 2026 event has concluded and audience registration is closed. The event report is coming soon in Event Archives.'
     },
     {
       question: 'What languages will be used at the event?',
@@ -44,7 +44,7 @@ const faqsByLanguage = {
     },
     {
       question: 'How can I participate as a volunteer?',
-      answer: 'Recruitment for the 2026 organizing team has closed. Future opportunities will be announced on the Join Us page and our official social media channels.'
+      answer: 'Recruitment for the 2026 organizing team has closed. Recruitment for 2027 speakers and organizing team members will take place on our official social media channels.'
     }
   ]
 };

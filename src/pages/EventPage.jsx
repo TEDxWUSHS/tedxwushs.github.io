@@ -1,13 +1,12 @@
-import { ArrowRight, ExternalLink, Mail } from 'lucide-react';
+import { ArrowRight, Mail } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../i18n/LanguageContext';
-import { audienceRegistrationUrl } from '../data/registration';
 import { eventSchedule } from '../data/event';
 import { groupSpeakersForDisplay, speakers } from '../data/speakers';
 
 const contentByLanguage = {
   ja: {
-    intro: '開催概要、登壇者、当日のタイムテーブルを一つのページにまとめました。',
+    intro: '2026年10月31日のイベントは終了しました。ご参加・ご協力ありがとうございました。当日の報告は近日公開予定です。開催概要、登壇者、当日のプログラムを記録として掲載しています。',
     themeLabel: 'Program theme',
     themeDescription: '予測できない変化を前に、常識の枠を越えて新しい方向を切り拓くアイデアを共有します。',
     detailsLabel: 'プログラム概要',
@@ -17,24 +16,22 @@ const contentByLanguage = {
       { label: '会場', value: '早稲田大学高等学院 講堂' },
       { label: '参加対象', value: '早稲田大学高等学院・高等学院中学部の生徒及びその保護者、早稲田大学高等学院のOB' },
       { label: '参加費', value: '無料' },
-      { label: '言語', value: '日本語・英語（スライド字幕対応予定）' },
+      { label: '言語', value: '日本語・英語' },
     ],
-    applyAction: '参加を申し込む',
-    applyNote: '申込みは2026年10月29日（木）まで。Googleフォームが新しいタブで開きます。',
     scheduleAction: 'タイムテーブルを見る',
     speakerTitle: 'Speaker Lineup',
-    speakerDescription: 'TEDxWUSHS Youth 2026に登壇する7名です。詳しい紹介文はSpeakersページでご覧いただけます。',
+    speakerDescription: 'TEDxWUSHS Youth 2026に登壇した7名です。詳しい紹介文はSpeakersページでご覧いただけます。',
     speakerAction: 'スピーカー詳細を見る',
     scheduleTitle: 'Program Schedule',
-    scheduleDescription: '各Speechに登壇者名を記載しています。時間は前後する可能性があります。',
+    scheduleDescription: '当日のプログラムとして案内したタイムテーブルです。',
     scheduleLabel: 'TEDxWUSHS Youth 2026 当日タイムテーブル',
     contactEyebrow: 'Contact',
     contactTitle: 'お問い合わせ',
-    contactDescription: 'イベント参加のお申し込みや参加方法、当日の運営についてのご質問は、イベント事務局までご連絡ください。',
+    contactDescription: 'イベントやアーカイブについてのご質問は、イベント事務局までご連絡ください。',
     contactEmailLabel: 'イベント事務局へメールする',
   },
   en: {
-    intro: 'Find the program essentials, speaker lineup, and full schedule in one place.',
+    intro: 'Our October 31, 2026 event has concluded. Thank you for joining and supporting us. The event report is coming soon. Explore the event details, speakers, and program below.',
     themeLabel: 'Program theme',
     themeDescription: 'Ideas that break beyond familiar boundaries and open new directions in an unpredictable world.',
     detailsLabel: 'Program details',
@@ -44,20 +41,18 @@ const contentByLanguage = {
       { label: 'Venue', value: 'Waseda University Senior High School Auditorium' },
       { label: 'Audience', value: 'Senior High School and Junior High School students, their parents or guardians, and alumni of Waseda University Senior High School' },
       { label: 'Admission', value: 'Free' },
-      { label: 'Languages', value: 'Japanese and English, with slide subtitles planned' },
+      { label: 'Languages', value: 'Japanese and English' },
     ],
-    applyAction: 'Apply to attend',
-    applyNote: 'Apply by Thursday, October 29, 2026. The Google Form opens in a new tab.',
     scheduleAction: 'View the schedule',
     speakerTitle: 'Speaker Lineup',
-    speakerDescription: 'Meet the seven speakers joining TEDxWUSHS Youth 2026. Full profiles are available on the Speakers page.',
+    speakerDescription: 'Meet the seven speakers from TEDxWUSHS Youth 2026. Full profiles are available on the Speakers page.',
     speakerAction: 'View speaker profiles',
     scheduleTitle: 'Program Schedule',
-    scheduleDescription: 'Each speech lists its scheduled speaker. Times are subject to minor changes.',
+    scheduleDescription: 'The timetable published for the event is preserved below.',
     scheduleLabel: 'TEDxWUSHS Youth 2026 program schedule',
     contactEyebrow: 'Contact',
     contactTitle: 'Questions about the event?',
-    contactDescription: 'For questions about event registration, attending the event, or event-day operations, please contact the TEDxWUSHS Youth team.',
+    contactDescription: 'For questions about the event or archives, please contact the TEDxWUSHS Youth team.',
     contactEmailLabel: 'Email the event team',
   },
 };
@@ -78,26 +73,17 @@ const ProgramPage = () => {
             <header className="event-hero__header">
               <p className="event-eyebrow" lang="en">TEDxWUSHS Youth 2026</p>
               <h1 id="event-page-title" className="event-hero__title" lang="en">
-                Program <span>Information</span>
+                2026 <span>Main Event</span>
               </h1>
               <p className="event-hero__intro">{copy.intro}</p>
               <div className="event-hero__actions">
-                <a
-                  className="event-button event-button--primary"
-                  href={audienceRegistrationUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`${copy.applyAction} — ${copy.applyNote}`}
-                >
-                  {copy.applyAction}
-                  <ExternalLink size={18} strokeWidth={2.5} aria-hidden="true" />
-                </a>
                 <a className="event-button event-button--secondary" href="#event-schedule">
                   {copy.scheduleAction}
                   <ArrowRight size={18} strokeWidth={2.5} aria-hidden="true" />
                 </a>
               </div>
-              <p className="event-hero__note">{copy.applyNote}</p>
+              <p className="event-hero__note">{language === 'ja' ? '当日の報告：近日公開' : 'Event report coming soon'}</p>
+              <Link className="event-text-link" to="/archives">← Event Archives</Link>
             </header>
 
             <aside className="event-theme" aria-labelledby="event-theme-heading">
