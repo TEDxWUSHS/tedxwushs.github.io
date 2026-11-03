@@ -239,7 +239,15 @@ const pastUpdates = [
 
 export const siteUpdates = [
   {
-    id: 'event-2026-concluded', publishedAt: '2026-11-02', category: 'Event Archives', featured: true,
+    id: 'main-event-2026-photo-archive', publishedAt: '2026-11-03', category: 'Event Archives', featured: true,
+    href: '/archives/2026/main-event',
+    copy: {
+      ja: { title: 'メインイベントの写真・配布資料を掲載しました', summary: '10月31日の「Breakshot」を、当日の写真と配布パンフレットで振り返るアーカイブを追加しました。登壇者とプログラムもご覧いただけます。', action: '当日のアーカイブを見る' },
+      en: { title: 'Main event photos and pamphlet now available', summary: 'Revisit “Breakshot” on October 31 through photographs and the event pamphlet, alongside the speakers and program.', action: 'Explore the event archive' },
+    },
+  },
+  {
+    id: 'event-2026-concluded', publishedAt: '2026-11-02', category: 'Event Archives',
     href: '/archives/2026/main-event',
     copy: {
       ja: { title: 'TEDxWUSHS Youth 2026は終了しました', summary: 'ご参加・ご協力ありがとうございました。メインイベント当日の報告は近日公開予定です。開催概要と当日のプログラムをアーカイブでご覧いただけます。', action: 'イベントアーカイブを見る' },

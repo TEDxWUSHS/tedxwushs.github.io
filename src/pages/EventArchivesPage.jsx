@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 import { useLanguage } from '../i18n/LanguageContext';
 import festivalImage from '../assets/updates/school-fest-2026-booth.jpg';
-import poster from '../assets/poster.png';
+import { mainEventCover } from '../data/mainEventArchive';
 
 const EventArchivesPage = () => {
   const { language } = useLanguage();
@@ -17,10 +17,10 @@ const EventArchivesPage = () => {
     },
     {
       title: 'TEDxWUSHS Youth — Breakshot',
-      description: isJapanese ? 'メインイベントは終了しました。ご参加・ご協力ありがとうございました。当日の報告は近日公開予定です。開催概要、登壇者、当日のプログラムをご覧いただけます。' : 'Our main event has concluded. Thank you to everyone who participated and supported us. The event report is coming soon; explore the event details, speakers, and program in the meantime.',
-      image: poster,
+      description: isJapanese ? '2026年10月31日のメインイベントを、会場の写真と配布パンフレットで振り返ります。登壇者と当日のプログラムもご覧いただけます。' : 'Revisit our October 31, 2026 main event through photographs and the event pamphlet, alongside the speakers and program.',
+      image: mainEventCover.src,
       href: '/archives/2026/main-event',
-      status: isJapanese ? '当日の報告：近日公開' : 'Event report coming soon',
+      status: isJapanese ? '当日の写真・配布資料' : 'Photos & event pamphlet',
     },
   ];
   return (
@@ -36,13 +36,15 @@ const EventArchivesPage = () => {
           <div className="archive-grid">
             {events.map((event) => (
               <article className="archive-card" key={event.href}>
+                <Link className="archive-card__link" to={event.href} aria-labelledby={`archive-${event.href.split('/').pop()}-title`}>
                 <img src={event.image} alt="" loading="lazy" />
                 <div className="archive-card__body">
                   <p className="archive-eyebrow">{event.status}</p>
-                  <h3>{event.title}</h3>
+                  <h3 id={`archive-${event.href.split('/').pop()}-title`}>{event.title}</h3>
                   <p>{event.description}</p>
-                  <Link to={event.href}>{isJapanese ? '記録を見る' : 'Explore the archive'} <ArrowRight size={18} aria-hidden="true" /></Link>
+                  <span className="archive-card__action">{isJapanese ? '記録を見る' : 'Explore the archive'} <ArrowRight size={18} aria-hidden="true" /></span>
                 </div>
+                </Link>
               </article>
             ))}
           </div>

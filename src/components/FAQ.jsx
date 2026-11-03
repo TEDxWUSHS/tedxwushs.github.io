@@ -10,7 +10,7 @@ const faqsByLanguage = {
     },
     {
       question: '参加対象者を教えてください。',
-      answer: '2026年のイベントは終了し、参加申込みの受付も終了しました。当日の報告はイベントアーカイブで近日公開予定です。'
+      answer: '2026年のイベントは終了し、参加申込みの受付も終了しました。当日の写真と配布パンフレットをイベントアーカイブでご覧いただけます。'
     },
     {
       question: 'イベントでは何語が使用されますか？',
@@ -32,7 +32,7 @@ const faqsByLanguage = {
     },
     {
       question: 'Who can attend?',
-      answer: 'The 2026 event has concluded and audience registration is closed. The event report is coming soon in Event Archives.'
+      answer: 'The 2026 event has concluded and audience registration is closed. Explore photographs and the event pamphlet in Event Archives.'
     },
     {
       question: 'What languages will be used at the event?',

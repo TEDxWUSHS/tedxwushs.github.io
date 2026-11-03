@@ -1,0 +1,26 @@
+.main-event-report { padding: 5rem 0; background: #0b0b0b; scroll-margin-top: 100px; }
+.main-event-report h2 { font-size: clamp(2rem, 4.5vw, 3.8rem); line-height: 1.2; text-transform: none; letter-spacing: -.03em; }
+.main-event-report figure { margin: 0; }
+.main-event-report img { display: block; width: 100%; height: auto; }
+.main-event-report figcaption { padding: .8rem 0; font-size: .85rem; color: #aaa; line-height: 1.65; }
+.main-event-report a { color: var(--ted-red); }
+.main-event-documents a { display: inline-flex; align-items: center; gap: .5rem; min-height: 44px; font-weight: 700; }
+.main-event-report a:focus-visible { outline: 3px solid white; outline-offset: 5px; }
+.main-event-report__heading { margin-bottom: 2.5rem; }
+.main-event-report__heading > p:last-child { color: #aaa; margin-top: 1rem; line-height: 1.8; }
+.main-event-gallery { columns: 2; column-gap: 2rem; }
+.main-event-gallery figure { break-inside: avoid; margin-bottom: 2rem; }
+.main-event-gallery a { display: block; }
+.main-event-gallery img { border-radius: 6px; }
+.main-event-report--documents { background: var(--ted-dark-gray); }
+.main-event-documents { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+.main-event-documents article { border: 1px solid #3b3b3b; border-radius: 8px; overflow: hidden; background: #111; }
+.main-event-documents article > div { padding: 1.75rem; }
+.main-event-documents h3 { font-size: 1.35rem; text-transform: none; }
+.main-event-documents p { color: #aaa; line-height: 1.8; margin: 1rem 0; }
+@media (max-width: 760px) {
+  .main-event-report { padding: 3.5rem 0; }
+  .main-event-documents { grid-template-columns: 1fr; }
+  .main-event-gallery { columns: 1; }
+  .main-event-documents article > div { padding: 1.25rem; }
+}

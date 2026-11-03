@@ -13,7 +13,7 @@ import AudienceRegistration from './pages/AudienceRegistration';
 import EventArchivesPage from './pages/EventArchivesPage';
 import FAQPage from './pages/FAQPage';
 import NotFoundPage from './pages/NotFoundPage';
-import ProgramPage from './pages/EventPage';
+import ProgramPage from './pages/MainEventArchivePage';
 import SchoolFest2026Page from './pages/SchoolFest2026Page';
 import AcknowledgementsPage from './pages/AcknowledgementsPage';
 import { LanguageProvider, useLanguage } from './i18n/LanguageContext';

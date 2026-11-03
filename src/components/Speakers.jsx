@@ -12,14 +12,14 @@ const sectionCopy = {
     fullSubtitle: 'TEDxWUSHS Youth 2026に登壇したスピーカーと、その背景にある経験やアイデアをご紹介します。',
     empty: 'スピーカー情報は近日公開予定です。',
     comingSoonLabel: '追加情報',
-    comingSoonBody: 'メインイベント当日の報告は、イベントアーカイブで近日公開予定です。',
+    comingSoonBody: 'メインイベント当日の写真と配布パンフレットを、イベントアーカイブでご覧いただけます。',
   },
   en: {
     previewSubtitle: 'Speakers with diverse experiences and expertise share ideas shaped by their own Breakshots.',
     fullSubtitle: 'Meet the TEDxWUSHS Youth 2026 speakers and discover the experiences and ideas behind their talks.',
     empty: 'Speaker information will be announced soon.',
     comingSoonLabel: 'More to come',
-    comingSoonBody: 'Our main event report is coming soon in Event Archives.',
+    comingSoonBody: 'Explore photographs and the event pamphlet in Event Archives.',
   },
 };
 
