@@ -94,6 +94,14 @@ const MainEventArchivePage = () => {
         <p className="main-event-eyebrow" lang="en">03 / Seven perspectives</p>
         <h2 id="event-talks-title" lang="en">Talks</h2>
         <p className="main-event-lead">{ja ? '当日のプログラム順に、7つのトークの題名と紹介を掲載しています。' : 'Titles and introductions for the seven talks, in program order.'}</p>
+        <aside className="main-event-talks-notice" aria-labelledby="event-talks-release-title">
+          <h3 id="event-talks-release-title">{ja ? 'トーク動画の公開について' : 'Talk video updates'}</h3>
+          <p>{ja ? 'トーク動画がTED公式YouTubeチャンネルで公開されるまでには、もう少し時間がかかります。公開まで今しばらくお待ちください。公開されましたら公式SNSでお知らせしますので、引き続きフォローしてお待ちいただけますと幸いです。' : 'It will take a little more time for the talk videos to be published on TED’s official YouTube channel. Thank you for your patience. We will announce their release on our official social media channels, so please keep following us for updates.'}</p>
+          <div>
+            <a href="https://www.instagram.com/tedxwushs/" target="_blank" rel="noopener noreferrer">Instagram ↗</a>
+            <a href="https://x.com/TEDxWUSHS" target="_blank" rel="noopener noreferrer">X ↗</a>
+          </div>
+        </aside>
         <ol className="main-event-talks">{mainEventSpeakers.map((speaker, index) => (
           <li id={`talk-${speaker.id}`} key={speaker.id}>
             <span className="main-event-talk-number" aria-hidden="true">0{index + 1}</span>

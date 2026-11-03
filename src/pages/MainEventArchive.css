@@ -48,6 +48,11 @@
 .main-event-speakers .main-event-role { color: #ddd; font-size: .85rem; }
 .main-event-speakers a { display: flex; align-items: center; min-height: 44px; margin-top: .5rem; font-weight: 700; }
 .main-event-talks { list-style: none; }
+.main-event-talks-notice { margin-bottom: 2.5rem; padding: 1.5rem; border: 1px solid #444; border-left: 3px solid var(--ted-red); background: #141414; border-radius: 6px; }
+.main-event-talks-notice h3 { font-size: 1.25rem; text-transform: none; }
+.main-event-talks-notice p { color: #bbb; line-height: 1.9; margin-top: .75rem; }
+.main-event-talks-notice > div { display: flex; flex-wrap: wrap; gap: 1.5rem; margin-top: .75rem; }
+.main-event-talks-notice a { display: inline-flex; align-items: center; min-height: 44px; font-weight: 700; }
 .main-event-talks > li { display: grid; grid-template-columns: 60px minmax(0, 1fr); gap: 2rem; padding: 2.5rem 0; border-top: 1px solid #444; scroll-margin-top: 110px; }
 .main-event-talk-number { color: var(--ted-red); font-size: 2.5rem; font-weight: 800; line-height: 1; }
 .main-event-talks h3 { font-size: clamp(1.4rem, 3vw, 2rem); text-transform: none; line-height: 1.5; overflow-wrap: anywhere; }
