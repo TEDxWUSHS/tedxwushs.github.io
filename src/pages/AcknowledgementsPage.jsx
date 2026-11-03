@@ -1,4 +1,5 @@
 import { useLanguage } from '../i18n/LanguageContext';
+import { speakers } from '../data/speakers';
 
 const contentByLanguage = {
   ja: {
@@ -11,8 +12,11 @@ const contentByLanguage = {
     schools: ['頌栄女子学院高等学校', '慶應義塾高等学校', '早稲田大学本庄高等学院 ESS'],
     partnerLabel: 'Special Thanks',
     partnerTitle: 'TEDxTeikyoU',
-    partnerDescription: 'スピーカーコーチングにご協力いただきました。心より感謝申し上げます。',
-    contributions: ['スピーカーコーチングへの協力'],
+    partnerDescription: 'スピーカーコーチングとTEDxロゴの貸し出しにご協力いただきました。心より感謝申し上げます。',
+    contributions: ['スピーカーコーチングへの協力', 'TEDxロゴの貸し出し'],
+    speakersLabel: '2026 Speakers',
+    speakersTitle: '登壇者の皆さま',
+    speakersDescription: 'TEDxWUSHS Youth 2026にご登壇いただき、貴重なアイデアを共有してくださった皆さまに、心より感謝申し上げます。',
   },
   en: {
     eyebrow: 'Acknowledgements',
@@ -24,14 +28,20 @@ const contentByLanguage = {
     schools: ['Shoei Girls’ Senior High School', 'Keio Senior High School', 'Waseda University Honjo Senior High School ESS'],
     partnerLabel: 'Special Thanks',
     partnerTitle: 'TEDxTeikyoU',
-    partnerDescription: 'We sincerely thank TEDxTeikyoU for supporting our speaker coaching.',
-    contributions: ['Speaker coaching support'],
+    partnerDescription: 'We sincerely thank TEDxTeikyoU for supporting our speaker coaching and lending us the TEDx logo.',
+    contributions: ['Speaker coaching support', 'Loan of the TEDx logo'],
+    speakersLabel: '2026 Speakers',
+    speakersTitle: 'Our Speakers',
+    speakersDescription: 'We sincerely thank the speakers who shared their valuable ideas at TEDxWUSHS Youth 2026.',
   },
 };
 
 const AcknowledgementsPage = () => {
   const { language } = useLanguage();
   const copy = contentByLanguage[language] ?? contentByLanguage.ja;
+  const acknowledgedSpeakers = speakers
+    .filter((speaker) => speaker.published)
+    .sort((first, second) => first.displayOrder - second.displayOrder);
 
   return (
     <main id="main-content" tabIndex={-1} className="acknowledgements-page">
@@ -43,19 +53,6 @@ const AcknowledgementsPage = () => {
         </div>
       </header>
 
-      <section className="acknowledgements-section" aria-labelledby="acknowledgements-schools-title">
-        <div className="container acknowledgements-section__layout">
-          <header>
-            <p className="acknowledgements-eyebrow" lang="en">{copy.schoolsLabel}</p>
-            <h2 id="acknowledgements-schools-title">{copy.schoolsTitle}</h2>
-            <p>{copy.schoolsDescription}</p>
-          </header>
-          <ul className="acknowledgements-list">
-            {copy.schools.map((school) => <li key={school}>{school}</li>)}
-          </ul>
-        </div>
-      </section>
-
       <section className="acknowledgements-section acknowledgements-section--partner" aria-labelledby="acknowledgements-partner-title">
         <div className="container acknowledgements-section__layout">
           <header>
@@ -65,6 +62,34 @@ const AcknowledgementsPage = () => {
           </header>
           <ul className="acknowledgements-list acknowledgements-list--accent">
             {copy.contributions.map((contribution) => <li key={contribution}>{contribution}</li>)}
+          </ul>
+        </div>
+      </section>
+
+      <section className="acknowledgements-section" aria-labelledby="acknowledgements-speakers-title">
+        <div className="container acknowledgements-section__layout">
+          <header>
+            <p className="acknowledgements-eyebrow" lang="en">{copy.speakersLabel}</p>
+            <h2 id="acknowledgements-speakers-title">{copy.speakersTitle}</h2>
+            <p>{copy.speakersDescription}</p>
+          </header>
+          <ul className="acknowledgements-list">
+            {acknowledgedSpeakers.map((speaker) => (
+              <li key={speaker.id}>{speaker.name[language] ?? speaker.name.ja}</li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <section className="acknowledgements-section acknowledgements-section--partner" aria-labelledby="acknowledgements-schools-title">
+        <div className="container acknowledgements-section__layout">
+          <header>
+            <p className="acknowledgements-eyebrow" lang="en">{copy.schoolsLabel}</p>
+            <h2 id="acknowledgements-schools-title">{copy.schoolsTitle}</h2>
+            <p>{copy.schoolsDescription}</p>
+          </header>
+          <ul className="acknowledgements-list">
+            {copy.schools.map((school) => <li key={school}>{school}</li>)}
           </ul>
         </div>
       </section>
