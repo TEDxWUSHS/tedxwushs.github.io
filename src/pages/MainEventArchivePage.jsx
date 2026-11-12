@@ -10,8 +10,7 @@ import './MainEventArchive.css';
 const chapters = [
   ['event-introduction', 'Introduction', { ja: '開催年・テーマ、このアーカイブの紹介と代表写真', en: 'Event year, theme, introduction to the archive, and cover photo' }],
   ['event-overview', 'Overview', { ja: '開催概要、オープニングムービー、当日のタイムテーブル、配布パンフレット', en: 'Event details, opening movie, timetable, and the event pamphlet' }],
-  ['event-speakers', 'Speakers', { ja: '登壇者7名の紹介ビジュアルとプロフィール', en: 'Introduction posters and profiles of our seven speakers' }],
-  ['event-talks', 'Talks', { ja: 'プログラム順に読む講演タイトル・使用言語・トーク紹介', en: 'Talk titles, languages, and introductions in program order' }],
+  ['event-speakers', 'Speakers & Talks', { ja: '登壇者7名のプロフィールと講演タイトル・使用言語・トーク紹介', en: 'Seven speaker profiles, talk titles, languages, and introductions' }],
   ['event-gallery', 'Gallery', { ja: '登壇中のステージ、客席、会場のロゴなど当日の写真', en: 'Photographs of talks, the audience, and the TEDx letters' }],
   ['event-team', 'Team', { ja: '2026年の運営メンバーと担当、ご協力いただいた皆さまへのリンク', en: 'The 2026 organizing team, their roles, and acknowledgements' }],
 ];
@@ -20,10 +19,12 @@ const MainEventArchivePage = () => {
   const { language } = useLanguage();
   const ja = language === 'ja';
   const facts = ja ? [
-    ['開催日', '2026年10月31日（土）'], ['会場', '早稲田大学高等学院 講堂'],
+    ['開催日', '2026年10月31日（土）'], ['時間', '開場 13:30／開催 14:00〜18:00'], ['会場', '早稲田大学高等学院 講堂'],
+    ['参加対象', '高等学院・中学部の生徒及びその保護者、高等学院OB'], ['参加費', '無料'],
     ['プログラム', '7名のトーク、ワークショップ・交流会'], ['言語', '日本語・英語'],
   ] : [
-    ['Date', 'October 31, 2026'], ['Venue', 'Waseda University Senior High School Auditorium'],
+    ['Date', 'October 31, 2026'], ['Time', 'Doors open 1:30 PM / Event 2:00–6:00 PM'], ['Venue', 'Waseda University Senior High School Auditorium'],
+    ['Audience', 'Senior High and Junior High students, their parents or guardians, and Senior High alumni'], ['Admission', 'Free'],
     ['Program', 'Seven talks, workshop and networking'], ['Languages', 'Japanese and English'],
   ];
   return (
@@ -32,12 +33,12 @@ const MainEventArchivePage = () => {
         <div>
           <Link className="main-event-back" to="/archives">← Event Archives</Link>
           <p className="main-event-eyebrow" lang="en">2026 / TEDxWUSHS Youth</p>
-          <h1 lang="en">Breakshot<span>Event Archive</span></h1>
+          <h1 lang="en">TEDx WUSHS Youth<br />2026 MAIN EVENT</h1>
           <p>{ja ? '2026年10月31日、早稲田大学高等学院 講堂で開催した「Breakshot」。当日の写真、配布パンフレット、登壇者とプログラムをまとめたイベントアーカイブです。' : 'An event archive of “Breakshot,” held at Waseda University Senior High School Auditorium on October 31, 2026, featuring photographs, the event pamphlet, speakers, and program.'}</p>
         </div>
         <figure>
           <img src={mainEventCover.src} width={mainEventCover.width} height={mainEventCover.height} alt={mainEventCover.caption[language]} decoding="async" />
-          <figcaption>{mainEventCover.caption[language]}</figcaption>
+          <figcaption><strong lang="en">Breakshot</strong><span lang="en">October 31, 2026 · Waseda University Senior High School</span></figcaption>
         </figure>
       </header>
 
@@ -76,24 +77,10 @@ const MainEventArchivePage = () => {
       </section>
 
       <section id="event-speakers" className="main-event-chapter container" aria-labelledby="event-speakers-title">
-        <p className="main-event-eyebrow" lang="en">02 / People behind the ideas</p>
-        <h2 id="event-speakers-title" lang="en">Speakers</h2>
-        <p className="main-event-lead">{ja ? '2026年の登壇者7名を、登壇者紹介ビジュアルとともにご紹介します。' : 'Meet our seven 2026 speakers through their original introduction posters.'}</p>
-        <div className="main-event-speakers">{mainEventSpeakers.map(speaker => (
-          <article key={speaker.id}>
-            <img src={speaker.poster} width="864" height="1080" alt={ja ? `${speaker.name.ja}の登壇者紹介ビジュアル（日本語）` : `Original Japanese speaker introduction poster for ${speaker.name.en}`} loading="lazy" decoding="async" />
-            <div><h3>{speaker.name[language]}</h3><p className="main-event-role">{speaker.role[language]}</p><p>{speaker.shortBio[language]}</p>
-              <Link to={`/speakers#speaker-${speaker.id}`}>{ja ? 'プロフィールの詳細' : 'Full profile'} →</Link>
-              <a href={`#talk-${speaker.id}`}>{ja ? 'トーク紹介へ' : 'About the talk'} ↓</a>
-            </div>
-          </article>
-        ))}</div>
-      </section>
-
-      <section id="event-talks" className="main-event-chapter container" aria-labelledby="event-talks-title">
-        <p className="main-event-eyebrow" lang="en">03 / Seven perspectives</p>
-        <h2 id="event-talks-title" lang="en">Talks</h2>
-        <p className="main-event-lead">{ja ? '当日のプログラム順に、7つのトークの題名と紹介を掲載しています。' : 'Titles and introductions for the seven talks, in program order.'}</p>
+        <span id="event-talks" className="main-event-anchor" />
+        <p className="main-event-eyebrow" lang="en">02 / Seven speakers, seven perspectives</p>
+        <h2 id="event-speakers-title" lang="en">Speakers &amp; Talks</h2>
+        <p className="main-event-lead">{ja ? '当日のプログラム順に、7名の登壇者のプロフィールと、それぞれのトークをご紹介します。' : 'Meet the seven speakers and explore their talks, in program order.'}</p>
         <aside className="main-event-talks-notice" aria-labelledby="event-talks-release-title">
           <h3 id="event-talks-release-title">{ja ? 'トーク動画の公開について' : 'Talk video updates'}</h3>
           <p>{ja ? 'トーク動画がTED公式YouTubeチャンネルで公開されるまでには、もう少し時間がかかります。公開まで今しばらくお待ちください。公開されましたら公式SNSでお知らせしますので、引き続きフォローしてお待ちいただけますと幸いです。' : 'It will take a little more time for the talk videos to be published on TED’s official YouTube channel. Thank you for your patience. We will announce their release on our official social media channels, so please keep following us for updates.'}</p>
@@ -102,18 +89,29 @@ const MainEventArchivePage = () => {
             <a href="https://x.com/TEDxWUSHS" target="_blank" rel="noopener noreferrer">X ↗</a>
           </div>
         </aside>
-        <ol className="main-event-talks">{mainEventSpeakers.map((speaker, index) => (
-          <li id={`talk-${speaker.id}`} key={speaker.id}>
-            <span className="main-event-talk-number" aria-hidden="true">0{index + 1}</span>
-            <article><p className="main-event-eyebrow">{speaker.name[language]} / {speaker.talk.language[language]}</p><h3>{speaker.talk.title[language]}</h3><p>{speaker.talk.description[language]}</p></article>
-          </li>
-        ))}</ol>
+        <div className="main-event-speakers">{mainEventSpeakers.map((speaker, index) => (
+          <article id={`talk-${speaker.id}`} key={speaker.id}>
+            <img src={speaker.poster} width="864" height="1080" alt={ja ? `${speaker.name.ja}の登壇者紹介ビジュアル（日本語）` : `Original Japanese speaker introduction poster for ${speaker.name.en}`} loading="lazy" decoding="async" />
+            <div>
+              <p className="main-event-eyebrow" lang="en">Speaker 0{index + 1}</p>
+              <h3>{speaker.name[language]}</h3>
+              <p className="main-event-role">{speaker.role[language]}</p>
+              <p>{speaker.shortBio[language]}</p>
+              <Link to={`/speakers#speaker-${speaker.id}`}>{ja ? 'プロフィールの詳細' : 'Full profile'} →</Link>
+              <div className="main-event-speaker-talk">
+                <p className="main-event-eyebrow">{speaker.talk.language[language]}</p>
+                <h4>{speaker.talk.title[language]}</h4>
+                <p>{speaker.talk.description[language]}</p>
+              </div>
+            </div>
+          </article>
+        ))}</div>
       </section>
 
       <MainEventReport />
 
       <section id="event-team" className="main-event-chapter container" aria-labelledby="event-team-title">
-        <p className="main-event-eyebrow" lang="en">05 / Behind the scenes</p>
+        <p className="main-event-eyebrow" lang="en">04 / Behind the scenes</p>
         <h2 id="event-team-title" lang="en">Team</h2>
         <p className="main-event-lead">{ja ? 'TEDxWUSHS Youth 2026を企画・運営したチームメンバーです。' : 'The team who planned and organized TEDxWUSHS Youth 2026.'}</p>
         <ul className="main-event-team">{organizers.map(member => <li key={member.id}><h3 lang="en">{member.name}</h3><p>{member.grade[language]}</p><p>{member.role[language]}</p></li>)}</ul>

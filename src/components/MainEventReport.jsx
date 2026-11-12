@@ -10,7 +10,7 @@ const MainEventReport = () => {
       <section id="event-gallery" className="main-event-report" aria-labelledby="main-event-gallery-title">
         <div className="container">
           <header className="main-event-report__heading">
-            <p className="main-event-eyebrow" lang="en">04 / Scenes from the day</p>
+            <p className="main-event-eyebrow" lang="en">03 / Scenes from the day</p>
             <h2 id="main-event-gallery-title" lang="en">Gallery</h2>
             <p>{ja ? 'ステージ、客席、トークのひとこまを写真でご紹介します。' : 'Scenes from the stage, audience, and talks.'}</p>
           </header>

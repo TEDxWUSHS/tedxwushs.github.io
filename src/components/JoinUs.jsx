@@ -9,7 +9,7 @@ const joinCopy = {
   ja: {
     sectionSubtitle: 'TEDxWUSHS Youthへの参加方法と最新情報をご案内します。',
     optionsHeading: '参加方法と最新情報',
-    applicationsUpdate: '2026年のイベントは終了しました。ご参加・ご協力ありがとうございました。',
+    applicationsUpdate: 'TEDx WUSHS Youth 2026は無事に開催することができました。ご参加・ご協力ありがとうございました。',
     teamDescription: '来年度（2027年）の運営チームメンバー募集は公式SNSで行います。',
     teamAction: '募集状況を見る',
     audienceDescription: '2026年のイベントは終了しました。当日の写真と配布パンフレットをアーカイブでご覧いただけます。',
@@ -24,7 +24,7 @@ const joinCopy = {
   en: {
     sectionSubtitle: 'Explore ways to take part in TEDxWUSHS Youth and receive the latest event updates.',
     optionsHeading: 'Ways to Participate and Stay Updated',
-    applicationsUpdate: 'TEDxWUSHS Youth 2026 — Thank you for joining us. The event has concluded.',
+    applicationsUpdate: 'TEDx WUSHS Youth 2026 was successfully held. Thank you for joining and supporting us.',
     teamDescription: '2027 recruitment will take place on our official social media channels.',
     teamAction: 'View Recruitment Status',
     audienceDescription: 'Our 2026 event has concluded. Explore photographs and the event pamphlet in the archive.',

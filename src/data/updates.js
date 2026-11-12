@@ -242,8 +242,8 @@ export const siteUpdates = [
     id: 'main-event-2026-photo-archive', publishedAt: '2026-11-03', category: 'Event Archives', featured: true,
     href: '/archives/2026/main-event',
     copy: {
-      ja: { title: 'メインイベントの写真・配布資料を掲載しました', summary: '10月31日の「Breakshot」を、当日の写真と配布パンフレットで振り返るアーカイブを追加しました。登壇者とプログラムもご覧いただけます。', action: '当日のアーカイブを見る' },
-      en: { title: 'Main event photos and pamphlet now available', summary: 'Revisit “Breakshot” on October 31 through photographs and the event pamphlet, alongside the speakers and program.', action: 'Explore the event archive' },
+      ja: { title: 'TEDx WUSHS Youth 2026を無事に開催しました', summary: 'ご参加・ご協力ありがとうございました。メインイベントの写真、オープニングムービー、登壇者とトーク、配布資料をイベントアーカイブでご覧いただけます。', action: 'メインイベントのアーカイブを見る' },
+      en: { title: 'TEDx WUSHS Youth 2026 was successfully held', summary: 'Thank you for joining and supporting us. Explore photographs, the opening movie, speakers and talks, and the event pamphlet in our main event archive.', action: 'Explore the main event archive' },
     },
   },
   {

@@ -1,4 +1,5 @@
 import { motion, useReducedMotion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { useLanguage } from '../i18n/LanguageContext';
 import logoRed from '../assets/logo_red.png';
 
@@ -7,19 +8,17 @@ const aboutCopy = {
     programLink: 'TEDxプログラムについて詳しく見る',
     descriptions: [
       'TEDxWUSHS Youthは、早稲田大学高等学院の生徒が独立して企画・運営するTEDxイベントです。若者ならではの視点とパッションを武器に、高校生という枠を超えた、社会に響くメッセージを発信します。私たちは、対話を通じて互いの可能性を広げ、新しい一歩を踏み出すきっかけを作ります。',
-      'TEDxは、地域で自主的に運営されるイベントを通じて、人々がTEDのような体験を共有するためのプログラムです。TEDxWUSHS Youthでは、TED Talksの映像と7名のライブスピーカーによるトークを組み合わせ、対話とつながりを生み出します。',
-      '2026年のテーマは「Breakshot」。人生の軌道を変えた一打をテーマに、7名のスピーカーがそれぞれのアイデアを共有します。',
+      'TEDxは、地域で自主的に運営されるイベントを通じて、人々がTEDのような体験を共有するためのプログラムです。私たちは、アイデアを共有する場を通じて対話とつながりを育んでいます。',
+      'TEDx WUSHS Youth 2026は、皆さまのご協力により無事に開催することができました。開催概要や当日の記録は、イベントアーカイブにまとめています。',
     ],
-    venue: '早稲田大学高等学院 講堂',
   },
   en: {
     programLink: 'Learn more about the TEDx program',
     descriptions: [
       'TEDxWUSHS Youth is an independently organized TEDx event conceived and produced by students at Waseda University Senior High School. Drawing on the perspectives and passion unique to young people, we share messages that reach beyond the boundaries of high school. Through dialogue, we aim to expand one another’s possibilities and inspire a first step toward change.',
-      'TEDx is a program of local, self-organized events that bring people together to share a TED-like experience. TEDxWUSHS Youth combines TED Talks video with talks from seven live speakers to spark discussion and connection.',
-      'Our 2026 theme is “Breakshot.” Seven speakers will share the ideas and defining moments that changed the course of their lives.',
+      'TEDx is a program of local, self-organized events that bring people together to share a TED-like experience. We create space for sharing ideas, sparking discussion, and building connections.',
+      'TEDx WUSHS Youth 2026 was successfully held thanks to your support. Event details and records from the day are collected in our event archive.',
     ],
-    venue: 'Waseda University Senior High School Auditorium',
   }
 };
 
@@ -49,8 +48,8 @@ const About = () => {
               {copy.programLink} ↗
             </a>
             <p className="event-info">
-              <strong lang="en">Date:</strong> <span lang="en">October 31, 2026 (14:00 - 18:00 / Doors open 13:30)</span><br />
-              <strong lang="en">Venue:</strong> <a href="https://www.waseda.jp/school/shs/" target="_blank" rel="noopener noreferrer" className="highlight-link">{copy.venue}</a>, <span lang="en">Nerima, Tokyo</span>
+              <Link className="highlight-link" to="/archives/2026/main-event">{language === 'ja' ? '2026年メインイベントの記録を見る' : 'Explore the 2026 main event'} →</Link><br />
+              <Link className="highlight-link" to="/archives">{language === 'ja' ? 'イベントアーカイブ一覧' : 'All event archives'} →</Link>
             </p>
           </motion.div>
         </div>
